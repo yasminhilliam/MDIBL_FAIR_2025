@@ -1,6 +1,7 @@
 ---
-title: "Gene ID Conversion - 06/29/2025"
+title: "Gene ID Conversion"
 author: "Yasmin Hilliam, PhD"
+date: "2025-06-29"
 output: html_notebook
 ---
 

@@ -1,2 +1,0 @@
-"0","goana_res %>%"
-"0","  filter(row.names(goana_res) == ""GO:0050868"")"

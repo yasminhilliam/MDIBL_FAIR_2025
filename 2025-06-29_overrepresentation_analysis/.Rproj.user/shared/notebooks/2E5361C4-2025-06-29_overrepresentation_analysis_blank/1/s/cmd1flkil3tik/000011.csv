@@ -1,3 +1,0 @@
-"0","venn(list(""Upregulated genes"" = up_DEGs_vec,"
-"0","          ""Innate immune genes"" = innate_vec,"
-"0","          ""Expressed genes"" = all_genes_vec))"

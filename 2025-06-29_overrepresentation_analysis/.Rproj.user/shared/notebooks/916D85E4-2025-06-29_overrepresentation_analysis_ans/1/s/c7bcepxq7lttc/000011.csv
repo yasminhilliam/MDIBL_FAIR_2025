@@ -1,7 +1,0 @@
-"0","p.adjust(goana_res$P.Up,"
-"0","         method = ""fdr"") -> goana_res$P.Up.adj"
-"0",""
-"0","p.adjust(goana_res$P.Down,"
-"0","         method = ""fdr"") -> goana_res$P.Down.adj"
-"0",""
-"0","head(goana_res)"

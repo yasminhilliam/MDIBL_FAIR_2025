@@ -1,7 +1,0 @@
-"0","up_DEGs_vec -> Upregulated"
-"0",""
-"0","setdiff(all_genes_vec,Upregulated) -> NotRegulated"
-"0",""
-"0","intersect(all_genes_vec,innate_vec) -> OnPath"
-"0",""
-"0","setdiff(all_genes_vec,OnPath) -> NotOnPath"

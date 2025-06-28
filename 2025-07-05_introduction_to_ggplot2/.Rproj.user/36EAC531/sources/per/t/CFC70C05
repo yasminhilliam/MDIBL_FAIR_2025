@@ -1,6 +1,6 @@
 {
     "id": "CFC70C05",
-    "path": "~/Documents/R.projects/RClub/2025-07-05_introduction_to_ggplot2/2025_07_05_introduction_to_ggplot2_blank.Rmd",
+    "path": "~/Documents/GitHub/MDIBL_FAIR_2025/2025-07-05_introduction_to_ggplot2/2025_07_05_introduction_to_ggplot2_blank.Rmd",
     "project_path": "2025_07_05_introduction_to_ggplot2_blank.Rmd",
     "type": "r_markdown",
     "hash": "3459706108",
@@ -15,7 +15,7 @@
         "Source": "Source",
         "cursorPosition": "260,0",
         "scrollLine": "257",
-        "last_setup_crc32": "3ce5c455130f9ad3"
+        "last_setup_crc32": ""
     },
     "folds": "",
     "lastKnownWriteTime": 1751053160,

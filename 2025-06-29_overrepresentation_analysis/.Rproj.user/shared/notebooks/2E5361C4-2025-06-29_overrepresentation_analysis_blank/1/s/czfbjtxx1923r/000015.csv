@@ -1,8 +1,0 @@
-"0","goana_res %>%"
-"0","  filter(Ont == ""BP"" & N < 200 & P.Up.adj < 0.05) -> goana_res_filt"
-"0",""
-"0","goana_res_filt %>%"
-"0","  slice_min( # ""slices"" N number of rows with minimum values based on a variable"
-"0","    n = 10, # number of rows to slice"
-"0","    order_by = P.Up.adj # variable to order by "
-"0","  )"

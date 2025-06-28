@@ -1,0 +1,17 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zdW1tYXJ5KGR1cGxpY2F0ZWQoY29udl90YWJsZV91bmlxdWUkRU5TRU1CTCkpXG5gYGAifQ== -->
+
+```r
+
+summary(duplicated(conv_table_unique$ENSEMBL))
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+
+summary(duplicated(conv_table_unique$ENSEMBL))
+```"
+"1","   Mode   FALSE 
+logical   40839 
+"

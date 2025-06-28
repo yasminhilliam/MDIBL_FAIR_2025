@@ -1,0 +1,20 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZC5jc3YoXCIvVm9sdW1lcy9yYy9sYWIvSi9KQk9NQi9Cb21iZXJnZXJfTGFiX1VzZXJzL0N1cnJlbnRfVXNlcnMvWWFzbWluX0hpbGxpYW0vYWR1bHQuQ0YuQ1JTLzE2Uy9hbGwuc2FtcGxlLmFscGhhLmRpdmVyc2l0eS50aWR5LmNzdlwiKSAlPiVcbiAgbGVmdF9qb2luKC4sYWxsRGYsXG4gICAgICAgICAgICBieSA9IFwiaW5kZXhcIikgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgscGF0aWVudGlkLHNhbXBsZWxvYyxkYXRlLHZpcnVzLmJpbix2aXJ1cyx2aXJ1c18yLE9ic2VydmVkLENoYW8xLHNlLmNoYW8xLFNoYW5ub24sU2ltcHNvbikgJT4lXG4gIGRpc3RpbmN0KCkgLT4gYWxwaGFWaXJcbmBgYCJ9 -->
+
+```r
+read.csv(\"/Volumes/rc/lab/J/JBOMB/Bomberger_Lab_Users/Current_Users/Yasmin_Hilliam/adult.CF.CRS/16S/all.sample.alpha.diversity.tidy.csv\") %>%
+  left_join(.,allDf,
+            by = \"index\") %>%
+  dplyr::select(index,patientid,sampleloc,date,virus.bin,virus,virus_2,Observed,Chao1,se.chao1,Shannon,Simpson) %>%
+  distinct() -> alphaVir
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+read.csv(\"/Volumes/rc/lab/J/JBOMB/Bomberger_Lab_Users/Current_Users/Yasmin_Hilliam/adult.CF.CRS/16S/all.sample.alpha.diversity.tidy.csv\") %>%
+  left_join(.,allDf,
+            by = \"index\") %>%
+  dplyr::select(index,patientid,sampleloc,date,virus.bin,virus,virus_2,Observed,Chao1,se.chao1,Shannon,Simpson) %>%
+  distinct() -> alphaVir
+```"

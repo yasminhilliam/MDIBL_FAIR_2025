@@ -1,0 +1,20 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmlydXNDb21iICU+JVxuICBmaWx0ZXIoZ2VudXMgPT0gXCJNb3JheGVsbGFcIikgJT4lXG4gIGdncGxvdChhZXMoeCA9IHZpcnVzLmJpbixcbiAgICAgICAgICAgICB5ID0gcmVsLmFidW5kYW5jZSkpICtcbiAgZ2VvbV9ib3hwbG90KClcbmBgYCJ9 -->
+
+```r
+virusComb %>%
+  filter(genus == \"Moraxella\") %>%
+  ggplot(aes(x = virus.bin,
+             y = rel.abundance)) +
+  geom_boxplot()
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+virusComb %>%
+  filter(genus == \"Moraxella\") %>%
+  ggplot(aes(x = virus.bin,
+             y = rel.abundance)) +
+  geom_boxplot()
+```"

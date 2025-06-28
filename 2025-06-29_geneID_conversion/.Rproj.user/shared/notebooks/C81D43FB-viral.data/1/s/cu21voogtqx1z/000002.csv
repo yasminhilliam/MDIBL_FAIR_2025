@@ -1,0 +1,48 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWR1bHQgJT4lXG4gIGZpbHRlcihnZW4uT1RVICVpbiUgYWR1bHR2aXJhbHNpZykgJT4lXG4gIGdncGxvdChhZXMoeCA9IHZpcnVzLmJpbixcbiAgICAgICAgICAgICB5ID0gcmVsLmFidW5kYW5jZSkpICtcbiAgZ2VvbV9ib3hwbG90KCkgK1xuICBmYWNldF9ncmlkKGNvbHMgPSB2YXJzKHNhbXBsZWxvYyksXG4gICAgICAgICAgICAgcm93cyA9IHZhcnMoZ2VudXMpKVxuXG5hZHVsdCAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiQWNocm9tb2JhY3RlclwiKSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gdmlydXMsXG4gICAgICAgICAgICAgeSA9IHJlbC5hYnVuZGFuY2UpKSArXG4gIGdlb21fYm94cGxvdChvdXRsaWVyLnNoYXBlID0gTkEpICtcbiAgZ2VvbV9kb3RwbG90KGJpbmF4aXMgPSBcInlcIixcbiAgICAgICAgICAgICAgIHN0YWNrZGlyID0gXCJjZW50ZXJcIikgK1xuICBmYWNldF93cmFwKH5zYW1wbGVsb2MpICtcbiAgdGhlbWUoYXhpcy50ZXh0LnggPSBlbGVtZW50X3RleHQoYW5nbGUgPSA5MCxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaGp1c3QgPSAxLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2anVzdCA9IDEpKVxuYGBgIn0= -->
+
+```r
+adult %>%
+  filter(gen.OTU %in% adultviralsig) %>%
+  ggplot(aes(x = virus.bin,
+             y = rel.abundance)) +
+  geom_boxplot() +
+  facet_grid(cols = vars(sampleloc),
+             rows = vars(genus))
+
+adult %>%
+  filter(genus == \"Achromobacter\") %>%
+  ggplot(aes(x = virus,
+             y = rel.abundance)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_dotplot(binaxis = \"y\",
+               stackdir = \"center\") +
+  facet_wrap(~sampleloc) +
+  theme(axis.text.x = element_text(angle = 90,
+                                   hjust = 1,
+                                   vjust = 1))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+adult %>%
+  filter(gen.OTU %in% adultviralsig) %>%
+  ggplot(aes(x = virus.bin,
+             y = rel.abundance)) +
+  geom_boxplot() +
+  facet_grid(cols = vars(sampleloc),
+             rows = vars(genus))
+
+adult %>%
+  filter(genus == \"Achromobacter\") %>%
+  ggplot(aes(x = virus,
+             y = rel.abundance)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_dotplot(binaxis = \"y\",
+               stackdir = \"center\") +
+  facet_wrap(~sampleloc) +
+  theme(axis.text.x = element_text(angle = 90,
+                                   hjust = 1,
+                                   vjust = 1))
+```"

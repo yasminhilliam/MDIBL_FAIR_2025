@@ -1,0 +1,80 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2luc3B1UENvQU1ldGEgJT4lXG4gIGdyb3VwX2J5KHNhbXBsZWxvYykgJT4lXG4gIHN1bW1hcmlzZShzYW1wbGVsb2MuRGltMSA9IG1lYW4oRGltMSksXG4gICAgICAgICAgICBzYW1wbGVsb2MuRGltMiA9IG1lYW4oRGltMikpIC0+IHNhbXBsZWxvY0NlbnRyb2lkXG5cbmdncGxvdChzaW5zcHVQQ29BTWV0YSxcbiAgICAgICBhZXMoeCA9IERpbTEsXG4gICAgICAgICAgIHkgPSBEaW0yLFxuICAgICAgICAgICBjb2xvciA9IHNhbXBsZWxvYykpICtcbiAgZ2VvbV9wb2ludChzaXplID0gMixcbiAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgK1xuICBzY2FsZV9jb2xvcl9tYW51YWwobmFtZSA9IFwiU2FtcGxlIGxvY2F0aW9uXCIsXG4gICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiU2ludXNcIixcIlNwdXR1bVwiKSxcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGMoXCJwdXJwbGU0XCIsXCJvcmFuZ2VcIikpICtcbiAgc2NhbGVfZmlsbF9tYW51YWwobmFtZSA9IFwiU2FtcGxlIGxvY2F0aW9uXCIsXG4gICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiU2ludXNcIixcIlNwdXR1bVwiKSxcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGMoXCJwdXJwbGU0XCIsXCJvcmFuZ2VcIikpICtcbiAgc3RhdF9lbGxpcHNlKHR5cGUgPSBcInRcIikgK1xuICBnZW9tX3BvaW50KGRhdGEgPSBzYW1wbGVsb2NDZW50cm9pZCxcbiAgICAgICAgICAgICBhZXMoeCA9IHNhbXBsZWxvYy5EaW0xLFxuICAgICAgICAgICAgICAgICB5ID0gc2FtcGxlbG9jLkRpbTIsXG4gICAgICAgICAgICAgICAgIGZpbGwgPSBzYW1wbGVsb2MpLFxuICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgIHNoYXBlID0gMjEsXG4gICAgICAgICAgICAgY29sb3IgPSBcImJsYWNrXCIpICtcbiAgc2NhbGVfeF9jb250aW51b3VzKGxpbWl0cyA9IGMoLTEuMiwxLjIpKSArXG4gIHNjYWxlX3lfY29udGludW91cyhsaW1pdHMgPSBjKC0xLjIsMS4yKSkgK1xuICBsYWJzKHggPSBcIlBDb0ExICg0My42JSlcIixcbiAgICAgICB5ID0gXCJQQ29BMiAoMjIuNSUpXCIpIC0+IFBDb0FzYW1wbGVsb2NcblxuZ2dzYXZlKHBsb3QgPSBQQ29Bc2FtcGxlbG9jLFxuICAgICAgIFwiTW9yaXNpdGEtSG9ybi5QQ29BLnNhbXBsZWxvYy50aWZmXCIsXG4gICAgICAgd2lkdGggPSAxMCxcbiAgICAgICBoZWlnaHQgPSA4LFxuICAgICAgIHVuaXRzID0gYyhcImluXCIpKVxuYGBgIn0= -->
+
+```r
+sinspuPCoAMeta %>%
+  group_by(sampleloc) %>%
+  summarise(sampleloc.Dim1 = mean(Dim1),
+            sampleloc.Dim2 = mean(Dim2)) -> samplelocCentroid
+
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = sampleloc)) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Sample location\",
+                     labels = c(\"Sinus\",\"Sputum\"),
+                     values = c(\"purple4\",\"orange\")) +
+  scale_fill_manual(name = \"Sample location\",
+                     labels = c(\"Sinus\",\"Sputum\"),
+                     values = c(\"purple4\",\"orange\")) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = samplelocCentroid,
+             aes(x = sampleloc.Dim1,
+                 y = sampleloc.Dim2,
+                 fill = sampleloc),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_x_continuous(limits = c(-1.2,1.2)) +
+  scale_y_continuous(limits = c(-1.2,1.2)) +
+  labs(x = \"PCoA1 (43.6%)\",
+       y = \"PCoA2 (22.5%)\") -> PCoAsampleloc
+
+ggsave(plot = PCoAsampleloc,
+       \"Morisita-Horn.PCoA.sampleloc.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+sinspuPCoAMeta %>%
+  group_by(sampleloc) %>%
+  summarise(sampleloc.Dim1 = mean(Dim1),
+            sampleloc.Dim2 = mean(Dim2)) -> samplelocCentroid
+
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = sampleloc)) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Sample location\",
+                     labels = c(\"Sinus\",\"Sputum\"),
+                     values = c(\"purple4\",\"orange\")) +
+  scale_fill_manual(name = \"Sample location\",
+                     labels = c(\"Sinus\",\"Sputum\"),
+                     values = c(\"purple4\",\"orange\")) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = samplelocCentroid,
+             aes(x = sampleloc.Dim1,
+                 y = sampleloc.Dim2,
+                 fill = sampleloc),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_x_continuous(limits = c(-1.2,1.2)) +
+  scale_y_continuous(limits = c(-1.2,1.2)) +
+  labs(x = \"PCoA1 (43.6%)\",
+       y = \"PCoA2 (22.5%)\") -> PCoAsampleloc
+
+ggsave(plot = PCoAsampleloc,
+       \"Morisita-Horn.PCoA.sampleloc.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```"

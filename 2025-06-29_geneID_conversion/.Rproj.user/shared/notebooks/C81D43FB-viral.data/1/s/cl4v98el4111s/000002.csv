@@ -1,0 +1,38 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmlydXNDb21iICU+JVxuICBkcGx5cjo6c2VsZWN0KGluZGV4LGdlbi5PVFUscmVsLmFidW5kYW5jZSkgJT4lXG4gIHBpdm90X3dpZGVyKG5hbWVzX2Zyb20gPSBnZW4uT1RVLFxuICAgICAgICAgICAgICB2YWx1ZXNfZnJvbSA9IHJlbC5hYnVuZGFuY2UpICU+JVxuICBjb2x1bW5fdG9fcm93bmFtZXMoXCJpbmRleFwiKSAtPiBjb21iTTJkZlxuXG52aXJ1c0NvbWIgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgscGF0aWVudGlkLHNhbXBsZWxvYyx2aXNpdCx2aXJ1cy5iaW4sdmlydXMsZGF0YXNldCkgJT4lXG4gIGRpc3RpbmN0KCkgJT4lXG4gIGNvbHVtbl90b19yb3duYW1lcyhcImluZGV4XCIpIC0+IGNvbWJNMm1ldGFcblxudmlydXNDb21iICU+JVxuICBkcGx5cjo6c2VsZWN0KGdlbi5PVFUsa2luZ2RvbSxwaHlsdW0sY2xhc3Msb3JkZXIsZmFtaWx5LGdlbnVzKSAlPiVcbiAgZGlzdGluY3QoKSAtPiBjb21iTTJ0YXhhXG5gYGAifQ== -->
+
+```r
+virusComb %>%
+  dplyr::select(index,gen.OTU,rel.abundance) %>%
+  pivot_wider(names_from = gen.OTU,
+              values_from = rel.abundance) %>%
+  column_to_rownames(\"index\") -> combM2df
+
+virusComb %>%
+  dplyr::select(index,patientid,sampleloc,visit,virus.bin,virus,dataset) %>%
+  distinct() %>%
+  column_to_rownames(\"index\") -> combM2meta
+
+virusComb %>%
+  dplyr::select(gen.OTU,kingdom,phylum,class,order,family,genus) %>%
+  distinct() -> combM2taxa
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+virusComb %>%
+  dplyr::select(index,gen.OTU,rel.abundance) %>%
+  pivot_wider(names_from = gen.OTU,
+              values_from = rel.abundance) %>%
+  column_to_rownames(\"index\") -> combM2df
+
+virusComb %>%
+  dplyr::select(index,patientid,sampleloc,visit,virus.bin,virus,dataset) %>%
+  distinct() %>%
+  column_to_rownames(\"index\") -> combM2meta
+
+virusComb %>%
+  dplyr::select(gen.OTU,kingdom,phylum,class,order,family,genus) %>%
+  distinct() -> combM2taxa
+```"

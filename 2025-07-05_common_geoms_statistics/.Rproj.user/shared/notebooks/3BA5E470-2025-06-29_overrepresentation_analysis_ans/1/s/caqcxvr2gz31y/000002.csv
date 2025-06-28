@@ -1,0 +1,18 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua2VnZ2EobHJ0LFxuICAgICAgZ2VuZWlkID0gbHJ0JGdlbmVzJEVOVFJFWklELFxuICAgICAgc3BlY2llcyA9IFwiSHNcIixcbiAgICAgIEZEUiA9IDAuMDUpIC0+IGtlZ2dhX3Jlc1xuYGBgIn0= -->
+
+```r
+kegga(lrt,
+      geneid = lrt$genes$ENTREZID,
+      species = \"Hs\",
+      FDR = 0.05) -> kegga_res
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+kegga(lrt,
+      geneid = lrt$genes$ENTREZID,
+      species = \"Hs\",
+      FDR = 0.05) -> kegga_res
+```"

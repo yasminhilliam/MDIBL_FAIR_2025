@@ -1,0 +1,37 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VsZWN0KG9yZy5Icy5lZy5kYixcbiAgICAgICBrZXlzID0gZW5zZW1ibF9rZXksXG4gICAgICAga2V5dHlwZT1cIkVOU0VNQkxcIixcbiAgICAgICBjb2x1bW5zPWMoXCJFTlRSRVpJRFwiLFwiU1lNQk9MXCIsXCJHRU5FTkFNRVwiLFwiVU5JUFJPVFwiKSkgLT4gY29udl90YWJsZVxuXG5jb252X3RhYmxlWy1jKHdoaWNoKGR1cGxpY2F0ZWQoY29udl90YWJsZSRFTlNFTUJMKT09VFJVRSkpLF0gLT4gY29udl90YWJsZV91bmlxdWVcblxuaGVhZChjb252X3RhYmxlX3VuaXF1ZSlcbmBgYCJ9 -->
+
+```r
+select(org.Hs.eg.db,
+       keys = ensembl_key,
+       keytype=\"ENSEMBL\",
+       columns=c(\"ENTREZID\",\"SYMBOL\",\"GENENAME\",\"UNIPROT\")) -> conv_table
+
+conv_table[-c(which(duplicated(conv_table$ENSEMBL)==TRUE)),] -> conv_table_unique
+
+head(conv_table_unique)
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+select(org.Hs.eg.db,
+       keys = ensembl_key,
+       keytype=\"ENSEMBL\",
+       columns=c(\"ENTREZID\",\"SYMBOL\",\"GENENAME\",\"UNIPROT\")) -> conv_table
+
+conv_table[-c(which(duplicated(conv_table$ENSEMBL)==TRUE)),] -> conv_table_unique
+
+head(conv_table_unique)
+```"
+"1","
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6NSwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNiDDlyA1XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0VlRYVytpUUJRZFZPeHFzdDBtVGJ2N1NQWWR3NENvUEVMS0d0T1ZHckdKdTI4amp0UVVCZ0s0Vy85OHU0T2RhOHpZWkVsdU9KeHpQODRkWUg2M3RMckxMa0tvaVZxdEJtcXFIQ0wxY2ZGREh5SEVDWVFVMUVLZCt2N0NrNjVybGNjVmo3WVF2dmhCT0RicUM1dTRqNDF6ZW1pUEhPZU1OaDJNblkreWNkOGNuZFAyd0RBRzU3UXp3TlpBY3FSZ0FDWUFDd0Q0YUJ5Tk5yQXAxYmRjN0kwRmJycm1WRUNWd3htMGJnWHU0aFREcEUraFA1OU5BdGVTZXQ2U0pIOGlPdFk5TFU3MlVaWVhXVVczVEtnMzc2cXBweVFxc2pqSlZydmtLSDcvVU5UeWt1N1dXVXdaMWNESVRhQ1RpRmI3cENvSUt6ZTBJT1YvUkxEOXJhUkZ6cHR1U0xwTjlwcXJwVFJkMFVLVDEyaTdvM3ZEaHFyMnpNQ0dXZWQwM3ZoMWt0UDNoK0twNnhxdUVacXV2YlJCOTZ6N2NPaEkzNWZLU0VwTE1VNFY1QVYvMGY3VSt3bUg2d2VMdWY5N2NnZWR3bDlUNytHb2p2M0FEOXlwRDhXUHdXUTJmMWhJZ3pwRjlyY0h3ejRmZHF0Rm5zL2pzdjY2ZUh6bElmOEJhcFNRRWh3QzJWMlRpdlEyQmUvSG4xNmxrb3NzcjdZWjQwV05hekhwdEZncEpPSnF4MnBuYXoxNjJyRm52VCtVOUdiTzRucW9jS3lJRFJUUkc3RDZicVB4SnI4OXl1SXRvN0JQUWxZMGdjNXIra2ZBUzM1QWgvUHA1Y1dXVmJBb1o4dGVsVlVFU3JwUmxnQnpXQjI5L2dPUGw4RTBVQVFBQUE9PSJ9 -->
+
+<div data-pagedtable=\"false\">
+  <script data-pagedtable-source type=\"application/json\">
+{\"columns\":[{\"label\":[\"\"],\"name\":[\"_rn_\"],\"type\":[\"\"],\"align\":[\"left\"]},{\"label\":[\"ENSEMBL\"],\"name\":[1],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"ENTREZID\"],\"name\":[2],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"SYMBOL\"],\"name\":[3],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"GENENAME\"],\"name\":[4],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"UNIPROT\"],\"name\":[5],\"type\":[\"chr\"],\"align\":[\"left\"]}],\"data\":[{\"1\":\"ENSG00000121410\",\"2\":\"1\",\"3\":\"A1BG\",\"4\":\"alpha-1-B glycoprotein\",\"5\":\"A8K052\",\"_rn_\":\"1\"},{\"1\":\"ENSG00000175899\",\"2\":\"2\",\"3\":\"A2M\",\"4\":\"alpha-2-macroglobulin\",\"5\":\"P01023\",\"_rn_\":\"7\"},{\"1\":\"ENSG00000291190\",\"2\":\"3\",\"3\":\"A2MP1\",\"4\":\"alpha-2-macroglobulin pseudogene 1\",\"5\":\"NA\",\"_rn_\":\"14\"},{\"1\":\"ENSG00000171428\",\"2\":\"9\",\"3\":\"NAT1\",\"4\":\"N-acetyltransferase 1\",\"5\":\"A8K4E7\",\"_rn_\":\"15\"},{\"1\":\"ENSG00000156006\",\"2\":\"10\",\"3\":\"NAT2\",\"4\":\"N-acetyltransferase 2\",\"5\":\"A0A0S2A5X5\",\"_rn_\":\"23\"},{\"1\":\"ENSG00000196136\",\"2\":\"12\",\"3\":\"SERPINA3\",\"4\":\"serpin family A member 3\",\"5\":\"B3KS79\",\"_rn_\":\"56\"}],\"options\":{\"columns\":{\"min\":{},\"max\":[10],\"total\":[5]},\"rows\":{\"min\":[10],\"max\":[10],\"total\":[6]},\"pages\":{}}}
+  </script>
+</div>
+
+<!-- rnb-frame-end -->
+"

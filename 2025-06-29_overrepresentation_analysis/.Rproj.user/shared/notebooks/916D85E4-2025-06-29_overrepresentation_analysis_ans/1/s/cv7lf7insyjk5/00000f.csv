@@ -1,0 +1,4 @@
+"0","values <- c(length(intersect(OnPath,Upregulated)), # get number of upregulated immune genes"
+"0","            length(intersect(OnPath,NotRegulated)), # unregulated immune genes"
+"0","            length(intersect(NotOnPath,Upregulated)), # upregulated non immune genes"
+"0","            length(intersect(NotOnPath,NotRegulated))) # unregulated non immune genes"

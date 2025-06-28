@@ -1,0 +1,32 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXN0aW1hdGVfcmljaG5lc3MoY29tYlBzLFxuICAgICAgICAgICAgICAgICAgc3BsaXQgPSBUUlVFLFxuICAgICAgICAgICAgICAgICAgYyhcIk9ic2VydmVkXCIsXCJDaGFvMVwiLFwiU2hhbm5vblwiLFwiU2ltcHNvblwiKSkgLT4gY29tYkFscGhhXG5cblxuXG5jb21iQWxwaGEkaW5kZXggPC0gcm93bmFtZXMoY29tYkFscGhhKVxuXG53cml0ZS5jc3YoY29tYkFscGhhLFxuICAgICAgICAgIFwiYWR1bHQucGVkcy5hbHBoYS5kaXZlcnNpdHkuY3N2XCIsXG4gICAgICAgICAgcm93Lm5hbWVzID0gRkFMU0UpXG5gYGAifQ== -->
+
+```r
+estimate_richness(combPs,
+                  split = TRUE,
+                  c(\"Observed\",\"Chao1\",\"Shannon\",\"Simpson\")) -> combAlpha
+
+
+
+combAlpha$index <- rownames(combAlpha)
+
+write.csv(combAlpha,
+          \"adult.peds.alpha.diversity.csv\",
+          row.names = FALSE)
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+estimate_richness(combPs,
+                  split = TRUE,
+                  c(\"Observed\",\"Chao1\",\"Shannon\",\"Simpson\")) -> combAlpha
+
+
+
+combAlpha$index <- rownames(combAlpha)
+
+write.csv(combAlpha,
+          \"adult.peds.alpha.diversity.csv\",
+          row.names = FALSE)
+```"

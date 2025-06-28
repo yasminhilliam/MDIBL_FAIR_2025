@@ -1,0 +1,22 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZC50YWJsZShcImFkdWx0Lk0zLnZpcnVzLnNhbXBsZWxvYy9zaWduaWZpY2FudF9yZXN1bHRzLnRzdlwiLFxuICAgICAgICAgICBoZWFkZXIgPSBUUlVFKSAtPiBhZHVsdE0zcmVzXG5cbmFkdWx0TTNyZXMgJT4lXG4gIGZpbHRlcihtZXRhZGF0YSA9PSBcInZpcnVzLmJpblwiKSAlPiVcbiAgLiRmZWF0dXJlIC0+IGFkdWx0dmlyYWxzaWdcbmBgYCJ9 -->
+
+```r
+read.table(\"adult.M3.virus.sampleloc/significant_results.tsv\",
+           header = TRUE) -> adultM3res
+
+adultM3res %>%
+  filter(metadata == \"virus.bin\") %>%
+  .$feature -> adultviralsig
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+read.table(\"adult.M3.virus.sampleloc/significant_results.tsv\",
+           header = TRUE) -> adultM3res
+
+adultM3res %>%
+  filter(metadata == \"virus.bin\") %>%
+  .$feature -> adultviralsig
+```"

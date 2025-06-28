@@ -1,0 +1,140 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdUZpbHQkaW5kZXgpICU+JVxuICBmaWx0ZXIodmlydXMuYmluID09IDEpICU+JVxuICBkcGx5cjo6c2VsZWN0KHBhdGllbnRpZCkgJT4lXG4gIGRpc3RpbmN0KCkgJT4lXG4gIC4kcGF0aWVudGlkIC0+IHZpcnVzUHRJRFxuXG5hbGxEZiAlPiVcbiAgZmlsdGVyKGluZGV4ICVpbiUgc2luc3B1RmlsdCRpbmRleCkgJT4lXG4gIG11dGF0ZShnZW4gPSBpZl9lbHNlKGdlbnVzICVpbiUgZ2VuSW50LCBwYXN0ZShcIipcIixnZW51cyxcIipcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNlcCA9IFwiXCIpLCBcIk90aGVyXCIpKSAlPiVcbiAgbXV0YXRlKHZpcnVzLmNhdCA9IGlmX2Vsc2UodmlydXMuYmluID09IDAsIFwiTmVnYXRpdmVcIiwgXCJQb3NpdGl2ZVwiKSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoT1RVLGdlbixmYW1pbHkpICU+JVxuICBkaXN0aW5jdCgpICU+JVxuICBtdXRhdGUoZmFtaWx5ID0gTkEpIC0+IGF0dHJpYnV0ZXNcblxuZ2VuQ29sc0RmIDwtIGRhdGEuZnJhbWUoZ2VuQ29scylcblxucm93bmFtZXMoZ2VuQ29sc0RmKSAtPiBnZW5Db2xzRGYkZ2VuIFxuXG5hdHRyaWJ1dGVzICU+JVxuICBsZWZ0X2pvaW4oLixnZW5Db2xzRGYpICU+JVxuICBkaXN0aW5jdCgpICU+JVxuICBkcGx5cjo6c2VsZWN0KE9UVSxmYW1pbHksZ2VuQ29scykgLT4gYXR0cmlidXRlc1xuXG5hbGxEZiAlPiVcbiAgZmlsdGVyKGluZGV4ICVpbiUgc2luc3B1RmlsdCRpbmRleCkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgscGF0aWVudGlkLHNhbXBsZWxvYyxkYXRlKSAlPiVcbiAgZGlzdGluY3QoKSAlPiVcbiAgZ3JvdXBfYnkocGF0aWVudGlkLHNhbXBsZWxvYykgJT4lXG4gIGFycmFuZ2UoZGF0ZSxcbiAgICAgICAgICAuYnlfZ3JvdXAgPSBUUlVFKSAlPiVcbiAgbXV0YXRlKHRpbWUgPSBzZXFfYWxvbmcoZGF0ZSkpICU+JVxuICB1bmdyb3VwKCkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgsdGltZSkgLT4gc2luc3B1VmlzaXRcblxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdUZpbHQkaW5kZXgpICU+JVxuICBsZWZ0X2pvaW4oLixzaW5zcHVWaXNpdCkgJT4lXG4gIGRwbHlyOjpzZWxlY3QocGF0aWVudGlkLHNhbXBsZWxvYyxPVFUsdGltZSxyZWxfYWIpIC0+IHBvcHRhYmxlXG5cbmlmX2Vsc2UocG9wdGFibGUkcmVsX2FiID09IDAsIDAuMDAwMSwgcG9wdGFibGUkcmVsX2FiKSAtPiBwb3B0YWJsZSRyZWxfYWJcblxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdUZpbHQkaW5kZXgpICU+JVxuICBkcGx5cjo6c2VsZWN0KGluZGV4LHBhdGllbnRpZCxzYW1wbGVsb2MsdmlydXMuYmluKSAlPiVcbiAgZGlzdGluY3QoKSAlPiVcbiAgbGVmdF9qb2luKC4sc2luc3B1VmlzaXQpICU+JVxuICBmaWx0ZXIodmlydXMuYmluID09IDEpIC0+IHZpcmFsUG9zVmlzaXRcblxuZmlsdE11bGxlciA8LSBmdW5jdGlvbihQb3B1bGF0aW9uVGFibGUsUGF0aWVudElELFNhbXBsZUxvY2F0aW9uKXtcbiAgUG9wdWxhdGlvblRhYmxlICU+JVxuICAgIGRwbHlyOjpmaWx0ZXIocGF0aWVudGlkID09IFBhdGllbnRJRCAmIHNhbXBsZWxvYyA9PSBTYW1wbGVMb2NhdGlvbikgJT4lXG4gICAgZHBseXI6OnNlbGVjdChPVFUsdGltZSxyZWxfYWIpICU+JVxuICAgIGRpc3RpbmN0KCkgJT4lXG4gICAgcGl2b3Rfd2lkZXIobmFtZXNfZnJvbSA9IHRpbWUsXG4gICAgICAgICAgICAgICAgdmFsdWVzX2Zyb20gPSByZWxfYWIpICU+JVxuICAgIGNvbHVtbl90b19yb3duYW1lcyh2YXIgPSBcIk9UVVwiKSAtPiB4XG4gIFxuICBNdWxsZXIucGxvdChhdHRyaWJ1dGVzID0gYXR0cmlidXRlcyxcbiAgICAgICAgICAgICAgcG9wdWxhdGlvbi5kYXRhID0geCxcbiAgICAgICAgICAgICAgZGF0YS5tZXRob2QgPSBcInRhYmxlXCIpXG59XG5cbmZpbHRNdWxsZXIocG9wdGFibGUsXCJHRVNDRjAzXCIsXCJzcHV0dW1cIilcbmBgYCJ9 -->
+
+```r
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  filter(virus.bin == 1) %>%
+  dplyr::select(patientid) %>%
+  distinct() %>%
+  .$patientid -> virusPtID
+
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  mutate(gen = if_else(genus %in% genInt, paste(\"*\",genus,\"*\",
+                                                sep = \"\"), \"Other\")) %>%
+  mutate(virus.cat = if_else(virus.bin == 0, \"Negative\", \"Positive\")) %>%
+  dplyr::select(OTU,gen,family) %>%
+  distinct() %>%
+  mutate(family = NA) -> attributes
+
+genColsDf <- data.frame(genCols)
+
+rownames(genColsDf) -> genColsDf$gen 
+
+attributes %>%
+  left_join(.,genColsDf) %>%
+  distinct() %>%
+  dplyr::select(OTU,family,genCols) -> attributes
+
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  dplyr::select(index,patientid,sampleloc,date) %>%
+  distinct() %>%
+  group_by(patientid,sampleloc) %>%
+  arrange(date,
+          .by_group = TRUE) %>%
+  mutate(time = seq_along(date)) %>%
+  ungroup() %>%
+  dplyr::select(index,time) -> sinspuVisit
+
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  left_join(.,sinspuVisit) %>%
+  dplyr::select(patientid,sampleloc,OTU,time,rel_ab) -> poptable
+
+if_else(poptable$rel_ab == 0, 0.0001, poptable$rel_ab) -> poptable$rel_ab
+
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  dplyr::select(index,patientid,sampleloc,virus.bin) %>%
+  distinct() %>%
+  left_join(.,sinspuVisit) %>%
+  filter(virus.bin == 1) -> viralPosVisit
+
+filtMuller <- function(PopulationTable,PatientID,SampleLocation){
+  PopulationTable %>%
+    dplyr::filter(patientid == PatientID & sampleloc == SampleLocation) %>%
+    dplyr::select(OTU,time,rel_ab) %>%
+    distinct() %>%
+    pivot_wider(names_from = time,
+                values_from = rel_ab) %>%
+    column_to_rownames(var = \"OTU\") -> x
+  
+  Muller.plot(attributes = attributes,
+              population.data = x,
+              data.method = \"table\")
+}
+
+filtMuller(poptable,\"GESCF03\",\"sputum\")
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  filter(virus.bin == 1) %>%
+  dplyr::select(patientid) %>%
+  distinct() %>%
+  .$patientid -> virusPtID
+
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  mutate(gen = if_else(genus %in% genInt, paste(\"*\",genus,\"*\",
+                                                sep = \"\"), \"Other\")) %>%
+  mutate(virus.cat = if_else(virus.bin == 0, \"Negative\", \"Positive\")) %>%
+  dplyr::select(OTU,gen,family) %>%
+  distinct() %>%
+  mutate(family = NA) -> attributes
+
+genColsDf <- data.frame(genCols)
+
+rownames(genColsDf) -> genColsDf$gen 
+
+attributes %>%
+  left_join(.,genColsDf) %>%
+  distinct() %>%
+  dplyr::select(OTU,family,genCols) -> attributes
+
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  dplyr::select(index,patientid,sampleloc,date) %>%
+  distinct() %>%
+  group_by(patientid,sampleloc) %>%
+  arrange(date,
+          .by_group = TRUE) %>%
+  mutate(time = seq_along(date)) %>%
+  ungroup() %>%
+  dplyr::select(index,time) -> sinspuVisit
+
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  left_join(.,sinspuVisit) %>%
+  dplyr::select(patientid,sampleloc,OTU,time,rel_ab) -> poptable
+
+if_else(poptable$rel_ab == 0, 0.0001, poptable$rel_ab) -> poptable$rel_ab
+
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  dplyr::select(index,patientid,sampleloc,virus.bin) %>%
+  distinct() %>%
+  left_join(.,sinspuVisit) %>%
+  filter(virus.bin == 1) -> viralPosVisit
+
+filtMuller <- function(PopulationTable,PatientID,SampleLocation){
+  PopulationTable %>%
+    dplyr::filter(patientid == PatientID & sampleloc == SampleLocation) %>%
+    dplyr::select(OTU,time,rel_ab) %>%
+    distinct() %>%
+    pivot_wider(names_from = time,
+                values_from = rel_ab) %>%
+    column_to_rownames(var = \"OTU\") -> x
+  
+  Muller.plot(attributes = attributes,
+              population.data = x,
+              data.method = \"table\")
+}
+
+filtMuller(poptable,\"GESCF03\",\"sputum\")
+```"

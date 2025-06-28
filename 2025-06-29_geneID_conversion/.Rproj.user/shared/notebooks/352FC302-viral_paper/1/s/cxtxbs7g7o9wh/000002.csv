@@ -1,0 +1,240 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVmdF9qb2luKGFsbERmLGFkdWx0ZGF5cykgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGZpbHRlcihwYXRpZW50aWQgJWluJSBzaW51c3B0KSAlPiVcbiAgZmlsdGVyKHNhbXBsZWxvYyA9PSBcInNpbnVzXCIpICU+JVxuICBmaWx0ZXIoIWlzLm5hKGJlZm9yZS5hZnRlcikpICU+JVxuICBkcGx5cjo6c2VsZWN0KE9UVSxBYnVuZGFuY2UsaW5kZXgpICU+JVxuICBkaXN0aW5jdCgpICU+JVxuICBwaXZvdF93aWRlcihuYW1lc19mcm9tID0gT1RVLFxuICAgICAgICAgICAgICB2YWx1ZXNfZnJvbSA9IEFidW5kYW5jZSkgJT4lXG4gIGNvbHVtbl90b19yb3duYW1lcyhcImluZGV4XCIpIC0+IHNpbnVzU3Vic2V0XG5cbmxlZnRfam9pbihhbGxEZixhZHVsdGRheXMpICU+JVxuICBmaWx0ZXIoaW5kZXggJWluJSBzaW5zcHUpICU+JVxuICBmaWx0ZXIocGF0aWVudGlkICVpbiUgc2ludXNwdCkgJT4lXG4gIGZpbHRlcighaXMubmEoYmVmb3JlLmFmdGVyKSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgscGF0aWVudGlkLHNhbXBsZWxvYyx2aXJ1cy5iaW4sYmVmb3JlLmFmdGVyKSAtPiBzaW51c1N1YnNldE1ldGFcblxuc2ludXNTdWJzZXQgJT4lXG4gIGF2Z2Rpc3Qoc2FtcGxlID0gMTA0NSxcbiAgICAgICAgICBkbWV0aG9kID0gXCJob3JuXCIpIC0+IHNpbnVzU3Vic2V0RGlzdFxuXG5zaW51c1N1YnNldERpc3QgJT4lXG4gIGhjbHVzdChtZXRob2QgPSBcIndhcmQuRDJcIikgLT4gc2ludXNTdWJzZXRDbHVzdFxuXG53Y21kc2NhbGUoc2ludXNTdWJzZXREaXN0LFxuICAgICAgICAgIGVpZyA9IFRSVUUpIC0+IHNpbnVzU3Vic2V0UENvQVxuXG5vcmRpcGxvdChzaW51c1N1YnNldFBDb0EpXG5cbihzaW51c1N1YnNldFBDb0EkZWlnWzFdIC8gc3VtKHNpbnVzU3Vic2V0UENvQSRlaWcpKSoxMDAgIyA2OC4xJVxuXG4oc2ludXNTdWJzZXRQQ29BJGVpZ1syXSAvIHN1bShzaW51c1N1YnNldFBDb0EkZWlnKSkqMTAwICMgMTcuNCVcblxuc2ludXNTdWJzZXRQQ29BICU+JVxuICBzY29yZXMoKSAlPiVcbiAgYXNfdGliYmxlKHJvd25hbWVzID0gXCJpbmRleFwiKSAlPiVcbiAgZHBseXI6OnNlbGVjdChpbmRleCxEaW0xLERpbTIpIC0+IHNpbnVzU3Vic2V0SG9yblBDb0FcblxuaW5uZXJfam9pbihzaW51c1N1YnNldE1ldGEsc2ludXNTdWJzZXRIb3JuUENvQSkgLT4gc2ludXNTdWJzZXRQQ29BTWV0YVxuXG5kaXN0aW5jdChzaW51c1N1YnNldFBDb0FNZXRhKSAtPiBzaW51c1N1YnNldFBDb0FNZXRhXG5cbnNpbnVzU3Vic2V0UENvQU1ldGEgJT4lXG4gIG11dGF0ZShncm91cCA9IHBhc3RlKHBhdGllbnRpZCxiZWZvcmUuYWZ0ZXIsXG4gICAgICAgICAgICAgICAgICAgICAgIHNlcCA9IFwiX1wiKSkgLT4gc2ludXNTdWJzZXRQQ29BTWV0YVxuXG5iZXRhZGlzcGVyKHNpbnVzU3Vic2V0RGlzdCxcbiAgICAgICAgICAgZ3JvdXAgPSBhcy5mYWN0b3Ioc2ludXNTdWJzZXRQQ29BTWV0YSRncm91cCksXG4gICAgICAgICAgIHR5cGUgPSBcImNlbnRyb2lkXCIpIC0+IHNpbnVzU3Vic2V0REZDXG5cbnNpbnVzU3Vic2V0REZDIDwtIGFzLmRhdGEuZnJhbWUoc2ludXNTdWJzZXRERkMkZGlzdGFuY2VzKVxuXG5yb3duYW1lcyhzaW51c1N1YnNldERGQykgLT4gc2ludXNTdWJzZXRERkMkaW5kZXhcblxuc2ludXNTdWJzZXRERkMgJT4lXG4gIGRwbHlyOjpyZW5hbWUoY2VudHJvaWQuZGlzdGFuY2UgPSAxKSAtPiBzaW51c1N1YnNldERGQ1xuXG5sZWZ0X2pvaW4oc2ludXNTdWJzZXRQQ29BTWV0YSxzaW51c1N1YnNldERGQykgLT4gc2ludXNTdWJzZXRERkNcblxuYmV0YWRpc3RhbmNlcyhzaW51c1N1YnNldERGQykgLT4gc2ludXNhbGxjb21wXG5cbnNpbnVzYWxsY29tcCAlPiVcbiAgbXV0YXRlKGluZGV4ID0gcm93bmFtZXMoc2ludXNhbGxjb21wKSxcbiAgICAgICAgIC5iZWZvcmUgPSBncm91cCkgJT4lXG4gIHNlcGFyYXRlX3dpZGVyX2RlbGltKGNvbHMgPSBncm91cCxcbiAgICAgICAgICAgICAgICAgICAgICAgXCJfXCIsXG4gICAgICAgICAgICAgICAgICAgICAgIG5hbWVzID0gYyhcInBhdGllbnRpZFwiLFwiZ3JvdXBcIikpICU+JVxuICBwaXZvdF9sb25nZXIoY29scyA9IGMoNDo0MSksXG4gICAgICAgICAgICAgICBuYW1lc190byA9IFwiY29tcFwiLFxuICAgICAgICAgICAgICAgdmFsdWVzX3RvID0gXCJkaXN0YW5jZVwiKSAlPiVcbiAgc2VwYXJhdGVfd2lkZXJfZGVsaW0oY29scyA9IGNvbXAsXG4gICAgICAgICAgICAgICAgICAgICAgIFwiX1wiLFxuICAgICAgICAgICAgICAgICAgICAgICBuYW1lcyA9IGMoXCJjb21wX3BhdGllbnRpZFwiLFwiY29tcF9ncm91cFwiKSkgJT4lXG4gIGZpbHRlcihwYXRpZW50aWQgPT0gY29tcF9wYXRpZW50aWQpIC0+IHNpbnVzYWxsY29tcFxuXG5mYWN0b3Ioc2ludXNhbGxjb21wJGNvbXBfZ3JvdXAsXG4gICAgICAgbGV2ZWxzID0gYyhcImJlZm9yZVwiLFwiZHVyaW5nXCIsXCJhZnRlclwiKSkgLT4gc2ludXNhbGxjb21wJGNvbXBfZ3JvdXBcblxuZmFjdG9yKHNpbnVzYWxsY29tcCRncm91cCxcbiAgICAgICBsZXZlbHMgPSBjKFwiYmVmb3JlXCIsXCJkdXJpbmdcIixcImFmdGVyXCIpKSAtPiBzaW51c2FsbGNvbXAkZ3JvdXBcblxuc2ludXNhbGxjb21wICU+JVxuICBtdXRhdGUoc2VsZl90ZXN0ID0gaWZfZWxzZShncm91cCA9PSBjb21wX2dyb3VwLFwic2VsZlwiLFwibm9uLXNlbGZcIikpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSBncm91cCxcbiAgICAgICAgICAgICB5ID0gZGlzdGFuY2UsXG4gICAgICAgICAgICAgY29sb3IgPSBjb21wX2dyb3VwKSkgK1xuICBnZW9tX2JveHBsb3Qob3V0bGllcnMgPSBGQUxTRSkgK1xuICBnZW9tX2ppdHRlcihhZXMoc2hhcGUgPSBzZWxmX3Rlc3QpLFxuICAgICAgICAgICAgICBzaXplID0gNSxcbiAgICAgICAgICAgICAgYWxwaGEgPSAwLjUsXG4gICAgICAgICAgICAgIHdpZHRoID0gMC4xKSArXG4gIHNjYWxlX2NvbG9yX21hbnVhbCh2YWx1ZXMgPSBjKFwiIzIwYTM5ZVwiLFwiZ29sZFwiLFwiI2VmNWI1YlwiKSxcbiAgICAgICAgICAgICAgICAgICAgIGd1aWRlID0gXCJub25lXCIpICtcbiAgc2NhbGVfc2hhcGVfbWFudWFsKHZhbHVlcyA9IGMoMTYsMSksXG4gICAgICAgICAgICAgICAgICAgICBndWlkZSA9IFwibm9uZVwiKSArXG4gIHNjYWxlX3hfZGlzY3JldGUobmFtZSA9IFwiU2FtcGxlIHZpcmFsIHN0YXR1c1wiLFxuICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJQcmlvclwiLFwiQWN0aXZlXCIsXCJQb3N0XCIpKSArXG4gIGxhYnMoeSA9IFwiRGlzdGFuY2UgdG8gY2VudHJvaWRcIixcbiAgICAgICBzdWJ0aXRsZSA9IFwiQ2VudHJvaWQgY29tcGFyYXRvclwiKSArXG4gIGZhY2V0X3dyYXAofmNvbXBfZ3JvdXAsXG4gICAgICAgICAgICAgbGFiZWxsZXIgPSBhc19sYWJlbGxlcihjKFwiYmVmb3JlXCIgPSBcIlByaW9yXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiZHVyaW5nXCIgPSBcIkFjdGl2ZVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcImFmdGVyXCIgPSBcIlBvc3RcIikpKSArXG4gIHRoZW1lKHN0cmlwLmJhY2tncm91bmQgPSBlbGVtZW50X2JsYW5rKCksXG4gICAgICAgIHBsb3Quc3VidGl0bGUgPSBlbGVtZW50X3RleHQoc2l6ZSA9IDE4LFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhqdXN0ID0gMC41KSkgLT4gc2ludXNhbGxjb21wcGxvdFxuXG5yZXZlYWxfcGFuZWxzKHNpbnVzYWxsY29tcHBsb3QsXG4gICAgICAgICAgICAgIG9yZGVyID0gYygxLDIsMykpIC0+IHNpbnVzYWxsY29tcFJldmVhbFxuXG5yZXZlYWxfc2F2ZShzaW51c2FsbGNvbXBSZXZlYWwsXG4gICAgICAgICAgICBcImFkdWx0X3NpbnVzX3ZpcmFsX2NlbnRyb2lkX2Rpc3RhbmNlX2JveHBsb3QucGRmXCIsXG4gICAgICAgICAgICBoZWlnaHQgPSA4LFxuICAgICAgICAgICAgd2lkdGggPSAxMixcbiAgICAgICAgICAgIHVuaXRzID0gYyhcImluXCIpKVxuYGBgIn0= -->
+
+```r
+left_join(allDf,adultdays) %>%
+  filter(index %in% sinspu) %>%
+  filter(patientid %in% sinuspt) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(!is.na(before.after)) %>%
+  dplyr::select(OTU,Abundance,index) %>%
+  distinct() %>%
+  pivot_wider(names_from = OTU,
+              values_from = Abundance) %>%
+  column_to_rownames(\"index\") -> sinusSubset
+
+left_join(allDf,adultdays) %>%
+  filter(index %in% sinspu) %>%
+  filter(patientid %in% sinuspt) %>%
+  filter(!is.na(before.after)) %>%
+  dplyr::select(index,patientid,sampleloc,virus.bin,before.after) -> sinusSubsetMeta
+
+sinusSubset %>%
+  avgdist(sample = 1045,
+          dmethod = \"horn\") -> sinusSubsetDist
+
+sinusSubsetDist %>%
+  hclust(method = \"ward.D2\") -> sinusSubsetClust
+
+wcmdscale(sinusSubsetDist,
+          eig = TRUE) -> sinusSubsetPCoA
+
+ordiplot(sinusSubsetPCoA)
+
+(sinusSubsetPCoA$eig[1] / sum(sinusSubsetPCoA$eig))*100 # 68.1%
+
+(sinusSubsetPCoA$eig[2] / sum(sinusSubsetPCoA$eig))*100 # 17.4%
+
+sinusSubsetPCoA %>%
+  scores() %>%
+  as_tibble(rownames = \"index\") %>%
+  dplyr::select(index,Dim1,Dim2) -> sinusSubsetHornPCoA
+
+inner_join(sinusSubsetMeta,sinusSubsetHornPCoA) -> sinusSubsetPCoAMeta
+
+distinct(sinusSubsetPCoAMeta) -> sinusSubsetPCoAMeta
+
+sinusSubsetPCoAMeta %>%
+  mutate(group = paste(patientid,before.after,
+                       sep = \"_\")) -> sinusSubsetPCoAMeta
+
+betadisper(sinusSubsetDist,
+           group = as.factor(sinusSubsetPCoAMeta$group),
+           type = \"centroid\") -> sinusSubsetDFC
+
+sinusSubsetDFC <- as.data.frame(sinusSubsetDFC$distances)
+
+rownames(sinusSubsetDFC) -> sinusSubsetDFC$index
+
+sinusSubsetDFC %>%
+  dplyr::rename(centroid.distance = 1) -> sinusSubsetDFC
+
+left_join(sinusSubsetPCoAMeta,sinusSubsetDFC) -> sinusSubsetDFC
+
+betadistances(sinusSubsetDFC) -> sinusallcomp
+
+sinusallcomp %>%
+  mutate(index = rownames(sinusallcomp),
+         .before = group) %>%
+  separate_wider_delim(cols = group,
+                       \"_\",
+                       names = c(\"patientid\",\"group\")) %>%
+  pivot_longer(cols = c(4:41),
+               names_to = \"comp\",
+               values_to = \"distance\") %>%
+  separate_wider_delim(cols = comp,
+                       \"_\",
+                       names = c(\"comp_patientid\",\"comp_group\")) %>%
+  filter(patientid == comp_patientid) -> sinusallcomp
+
+factor(sinusallcomp$comp_group,
+       levels = c(\"before\",\"during\",\"after\")) -> sinusallcomp$comp_group
+
+factor(sinusallcomp$group,
+       levels = c(\"before\",\"during\",\"after\")) -> sinusallcomp$group
+
+sinusallcomp %>%
+  mutate(self_test = if_else(group == comp_group,\"self\",\"non-self\")) %>%
+  ggplot(aes(x = group,
+             y = distance,
+             color = comp_group)) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = self_test),
+              size = 5,
+              alpha = 0.5,
+              width = 0.1) +
+  scale_color_manual(values = c(\"#20a39e\",\"gold\",\"#ef5b5b\"),
+                     guide = \"none\") +
+  scale_shape_manual(values = c(16,1),
+                     guide = \"none\") +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Prior\",\"Active\",\"Post\")) +
+  labs(y = \"Distance to centroid\",
+       subtitle = \"Centroid comparator\") +
+  facet_wrap(~comp_group,
+             labeller = as_labeller(c(\"before\" = \"Prior\",
+                                      \"during\" = \"Active\",
+                                      \"after\" = \"Post\"))) +
+  theme(strip.background = element_blank(),
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> sinusallcompplot
+
+reveal_panels(sinusallcompplot,
+              order = c(1,2,3)) -> sinusallcompReveal
+
+reveal_save(sinusallcompReveal,
+            \"adult_sinus_viral_centroid_distance_boxplot.pdf\",
+            height = 8,
+            width = 12,
+            units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+left_join(allDf,adultdays) %>%
+  filter(index %in% sinspu) %>%
+  filter(patientid %in% sinuspt) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(!is.na(before.after)) %>%
+  dplyr::select(OTU,Abundance,index) %>%
+  distinct() %>%
+  pivot_wider(names_from = OTU,
+              values_from = Abundance) %>%
+  column_to_rownames(\"index\") -> sinusSubset
+
+left_join(allDf,adultdays) %>%
+  filter(index %in% sinspu) %>%
+  filter(patientid %in% sinuspt) %>%
+  filter(!is.na(before.after)) %>%
+  dplyr::select(index,patientid,sampleloc,virus.bin,before.after) -> sinusSubsetMeta
+
+sinusSubset %>%
+  avgdist(sample = 1045,
+          dmethod = \"horn\") -> sinusSubsetDist
+
+sinusSubsetDist %>%
+  hclust(method = \"ward.D2\") -> sinusSubsetClust
+
+wcmdscale(sinusSubsetDist,
+          eig = TRUE) -> sinusSubsetPCoA
+
+ordiplot(sinusSubsetPCoA)
+
+(sinusSubsetPCoA$eig[1] / sum(sinusSubsetPCoA$eig))*100 # 68.1%
+
+(sinusSubsetPCoA$eig[2] / sum(sinusSubsetPCoA$eig))*100 # 17.4%
+
+sinusSubsetPCoA %>%
+  scores() %>%
+  as_tibble(rownames = \"index\") %>%
+  dplyr::select(index,Dim1,Dim2) -> sinusSubsetHornPCoA
+
+inner_join(sinusSubsetMeta,sinusSubsetHornPCoA) -> sinusSubsetPCoAMeta
+
+distinct(sinusSubsetPCoAMeta) -> sinusSubsetPCoAMeta
+
+sinusSubsetPCoAMeta %>%
+  mutate(group = paste(patientid,before.after,
+                       sep = \"_\")) -> sinusSubsetPCoAMeta
+
+betadisper(sinusSubsetDist,
+           group = as.factor(sinusSubsetPCoAMeta$group),
+           type = \"centroid\") -> sinusSubsetDFC
+
+sinusSubsetDFC <- as.data.frame(sinusSubsetDFC$distances)
+
+rownames(sinusSubsetDFC) -> sinusSubsetDFC$index
+
+sinusSubsetDFC %>%
+  dplyr::rename(centroid.distance = 1) -> sinusSubsetDFC
+
+left_join(sinusSubsetPCoAMeta,sinusSubsetDFC) -> sinusSubsetDFC
+
+betadistances(sinusSubsetDFC) -> sinusallcomp
+
+sinusallcomp %>%
+  mutate(index = rownames(sinusallcomp),
+         .before = group) %>%
+  separate_wider_delim(cols = group,
+                       \"_\",
+                       names = c(\"patientid\",\"group\")) %>%
+  pivot_longer(cols = c(4:41),
+               names_to = \"comp\",
+               values_to = \"distance\") %>%
+  separate_wider_delim(cols = comp,
+                       \"_\",
+                       names = c(\"comp_patientid\",\"comp_group\")) %>%
+  filter(patientid == comp_patientid) -> sinusallcomp
+
+factor(sinusallcomp$comp_group,
+       levels = c(\"before\",\"during\",\"after\")) -> sinusallcomp$comp_group
+
+factor(sinusallcomp$group,
+       levels = c(\"before\",\"during\",\"after\")) -> sinusallcomp$group
+
+sinusallcomp %>%
+  mutate(self_test = if_else(group == comp_group,\"self\",\"non-self\")) %>%
+  ggplot(aes(x = group,
+             y = distance,
+             color = comp_group)) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = self_test),
+              size = 5,
+              alpha = 0.5,
+              width = 0.1) +
+  scale_color_manual(values = c(\"#20a39e\",\"gold\",\"#ef5b5b\"),
+                     guide = \"none\") +
+  scale_shape_manual(values = c(16,1),
+                     guide = \"none\") +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Prior\",\"Active\",\"Post\")) +
+  labs(y = \"Distance to centroid\",
+       subtitle = \"Centroid comparator\") +
+  facet_wrap(~comp_group,
+             labeller = as_labeller(c(\"before\" = \"Prior\",
+                                      \"during\" = \"Active\",
+                                      \"after\" = \"Post\"))) +
+  theme(strip.background = element_blank(),
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> sinusallcompplot
+
+reveal_panels(sinusallcompplot,
+              order = c(1,2,3)) -> sinusallcompReveal
+
+reveal_save(sinusallcompReveal,
+            \"adult_sinus_viral_centroid_distance_boxplot.pdf\",
+            height = 8,
+            width = 12,
+            units = c(\"in\"))
+```"

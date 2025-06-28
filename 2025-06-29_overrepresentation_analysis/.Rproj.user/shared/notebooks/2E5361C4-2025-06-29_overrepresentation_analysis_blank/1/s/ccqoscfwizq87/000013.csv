@@ -1,0 +1,3 @@
+"0","read.csv(""log2FC_PA_vs_Untreated.csv"") -> edgeR_data"
+"0",""
+"0","head(edgeR_data)"

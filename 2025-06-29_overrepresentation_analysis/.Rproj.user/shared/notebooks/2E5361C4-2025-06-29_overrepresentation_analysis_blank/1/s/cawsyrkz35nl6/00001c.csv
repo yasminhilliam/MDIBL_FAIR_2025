@@ -1,0 +1,4 @@
+"0","read.csv(""AnnotTable.csv"") -> annot"
+"0",""
+"0","left_join(lrt$genes,annot,"
+"0","          join_by(genes == ENSEMBL)) -> lrt$genes"

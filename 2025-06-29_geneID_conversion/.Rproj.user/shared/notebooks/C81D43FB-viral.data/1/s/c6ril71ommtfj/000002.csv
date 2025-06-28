@@ -1,0 +1,120 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXMuRGF0ZShkYXlzLnBWJGRhdGUsXG4gICAgICAgIGZvcm1hdCA9IFwiJW0vJWQvJXlcIikgLT4gZGF5cy5wViRkYXRlXG5cbmZhY3RvcihkYXlzLnBWJHZpcnVzLmJpbikgLT4gZGF5cy5wViR2aXJ1cy5iaW5cblxuYWxwaGFWaXIgJT4lXG4gIGZpbHRlcihzYW1wbGVsb2MgIT0gXCJ0aHJvYXRcIikgJT4lXG4gIGZpbHRlcihtZXRyaWMgPT0gXCJTaGFubm9uXCIpICU+JVxuICBsZWZ0X2pvaW4oLixkYXlzLnBWKSAlPiUgXG4gIGZpbHRlcighaXMubmEoZGF5cy5wb3N0LnBvcykpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSBkYXlzLnBvc3QucG9zLFxuICAgICAgICAgICAgIHkgPSBkaXZlcnNpdHksXG4gICAgICAgICAgICAgY29sb3IgPSBzYW1wbGVsb2MpKSArXG4gIGdlb21fdmxpbmUoeGludGVyY2VwdCA9IDApICtcbiAgZ2VvbV9wb2ludChzaXplID0gMyxcbiAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgK1xuICBnZW9tX2xpbmUoYWVzKGdyb3VwID0gaW50ZXJhY3Rpb24ocGF0aWVudGlkLHNhbXBsZWxvYykpKSArXG4gIGZhY2V0X3dyYXAofnBhdGllbnRpZCkgK1xuICB0aGVtZSgpIC0+IGFsbHB0cGxvdFxuXG5hbGxwdHBsb3RcblxuZ2dzYXZlKHBsb3QgPSBhbGxwdHBsb3QsXG4gICAgICAgXCJhbGwucGF0aWVudC5zaGFubm9uLmRheXMucG9zdC5wb3MucGRmXCIsXG4gICAgICAgd2lkdGggPSAxMixcbiAgICAgICBoZWlnaHQgPSA4LFxuICAgICAgIHVuaXRzID0gYyhcImluXCIpKVxuXG5hbHBoYVZpciAlPiVcbiAgZmlsdGVyKHNhbXBsZWxvYyAhPSBcInRocm9hdFwiKSAlPiVcbiAgZmlsdGVyKG1ldHJpYyA9PSBcIlNoYW5ub25cIikgJT4lXG4gIGxlZnRfam9pbiguLGRheXMucFYpICU+JVxuICBmaWx0ZXIoIWlzLm5hKGRheXMucG9zdC5wb3MpKSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gZGF5cy5wb3N0LnBvcyxcbiAgICAgICAgICAgICB5ID0gZGl2ZXJzaXR5LFxuICAgICAgICAgICAgIGNvbG9yID0gc2FtcGxlbG9jLFxuICAgICAgICAgICAgIGZpbGwgPSBzYW1wbGVsb2MpKSArXG4gIGdlb21fcG9pbnQoKSArXG4gIGdlb21fc21vb3RoKG1ldGhvZCA9IFwibG1cIikgK1xuICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzID0gYyhcInB1cnBsZTRcIixcIm9yYW5nZVwiKSkgK1xuICBzY2FsZV9maWxsX21hbnVhbCh2YWx1ZXMgPSBjKFwicHVycGxlNFwiLFwib3JhbmdlXCIpKSArXG4gIGZhY2V0X2dyaWQoY29scyA9IHZhcnMoc2FtcGxlbG9jKSxcbiAgICAgICAgICAgICBsYWJlbGxlciA9IGFzX2xhYmVsbGVyKGMoXCJzcHV0dW1cIiA9IFwiU3B1dHVtXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwic2ludXNcIiA9IFwiU2ludXNcIikpKSArXG4gIGxhYnMoeSA9IFwiU2hhbm5vbiBkaXZlcnNpdHlcIixcbiAgICAgICB4ID0gXCJEYXlzIGZyb20gcG9zaXRpdmUgdmlyYWwgc2FtcGxlXCIpICtcbiAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gXCJub25lXCIpIC0+IFNoYW5ub25zYW1wbGVsb2NcblxuU2hhbm5vbnNhbXBsZWxvY1xuXG5nZ3NhdmUocGxvdCA9IFNoYW5ub25zYW1wbGVsb2MsXG4gICAgICAgXCJhbGwuc2FtcGxlLlNoYW5ub24uZGF5cy5wb3N0LnBvcy5wZGZcIixcbiAgICAgICBoZWlnaHQgPSA4LFxuICAgICAgIHdpZHRoID0gMTIsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5gYGAifQ== -->
+
+```r
+as.Date(days.pV$date,
+        format = \"%m/%d/%y\") -> days.pV$date
+
+factor(days.pV$virus.bin) -> days.pV$virus.bin
+
+alphaVir %>%
+  filter(sampleloc != \"throat\") %>%
+  filter(metric == \"Shannon\") %>%
+  left_join(.,days.pV) %>% 
+  filter(!is.na(days.post.pos)) %>%
+  ggplot(aes(x = days.post.pos,
+             y = diversity,
+             color = sampleloc)) +
+  geom_vline(xintercept = 0) +
+  geom_point(size = 3,
+             alpha = 0.5) +
+  geom_line(aes(group = interaction(patientid,sampleloc))) +
+  facet_wrap(~patientid) +
+  theme() -> allptplot
+
+allptplot
+
+ggsave(plot = allptplot,
+       \"all.patient.shannon.days.post.pos.pdf\",
+       width = 12,
+       height = 8,
+       units = c(\"in\"))
+
+alphaVir %>%
+  filter(sampleloc != \"throat\") %>%
+  filter(metric == \"Shannon\") %>%
+  left_join(.,days.pV) %>%
+  filter(!is.na(days.post.pos)) %>%
+  ggplot(aes(x = days.post.pos,
+             y = diversity,
+             color = sampleloc,
+             fill = sampleloc)) +
+  geom_point() +
+  geom_smooth(method = \"lm\") +
+  scale_color_manual(values = c(\"purple4\",\"orange\")) +
+  scale_fill_manual(values = c(\"purple4\",\"orange\")) +
+  facet_grid(cols = vars(sampleloc),
+             labeller = as_labeller(c(\"sputum\" = \"Sputum\",
+                                      \"sinus\" = \"Sinus\"))) +
+  labs(y = \"Shannon diversity\",
+       x = \"Days from positive viral sample\") +
+  theme(legend.position = \"none\") -> Shannonsampleloc
+
+Shannonsampleloc
+
+ggsave(plot = Shannonsampleloc,
+       \"all.sample.Shannon.days.post.pos.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+as.Date(days.pV$date,
+        format = \"%m/%d/%y\") -> days.pV$date
+
+factor(days.pV$virus.bin) -> days.pV$virus.bin
+
+alphaVir %>%
+  filter(sampleloc != \"throat\") %>%
+  filter(metric == \"Shannon\") %>%
+  left_join(.,days.pV) %>% 
+  filter(!is.na(days.post.pos)) %>%
+  ggplot(aes(x = days.post.pos,
+             y = diversity,
+             color = sampleloc)) +
+  geom_vline(xintercept = 0) +
+  geom_point(size = 3,
+             alpha = 0.5) +
+  geom_line(aes(group = interaction(patientid,sampleloc))) +
+  facet_wrap(~patientid) +
+  theme() -> allptplot
+
+allptplot
+
+ggsave(plot = allptplot,
+       \"all.patient.shannon.days.post.pos.pdf\",
+       width = 12,
+       height = 8,
+       units = c(\"in\"))
+
+alphaVir %>%
+  filter(sampleloc != \"throat\") %>%
+  filter(metric == \"Shannon\") %>%
+  left_join(.,days.pV) %>%
+  filter(!is.na(days.post.pos)) %>%
+  ggplot(aes(x = days.post.pos,
+             y = diversity,
+             color = sampleloc,
+             fill = sampleloc)) +
+  geom_point() +
+  geom_smooth(method = \"lm\") +
+  scale_color_manual(values = c(\"purple4\",\"orange\")) +
+  scale_fill_manual(values = c(\"purple4\",\"orange\")) +
+  facet_grid(cols = vars(sampleloc),
+             labeller = as_labeller(c(\"sputum\" = \"Sputum\",
+                                      \"sinus\" = \"Sinus\"))) +
+  labs(y = \"Shannon diversity\",
+       x = \"Days from positive viral sample\") +
+  theme(legend.position = \"none\") -> Shannonsampleloc
+
+Shannonsampleloc
+
+ggsave(plot = Shannonsampleloc,
+       \"all.sample.Shannon.days.post.pos.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```"

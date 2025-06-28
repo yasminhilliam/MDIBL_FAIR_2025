@@ -1,0 +1,144 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGZpbHRlcihoZW10ICE9IFwicG9zdFwiKSAlPiVcbiAgZ3JvdXBfYnkocGF0aWVudGlkLHNhbXBsZWxvYykgJT4lXG4gIHNsaWNlX21pbihkYXRlKSAlPiVcbiAgLiRpbmRleCAtPiBmaXJzdF92aXNpdHNfbm9oZW10XG5cbmFsbERmICU+JVxuICBmaWx0ZXIoaW5kZXggJWluJSBzaW5zcHUpICU+JVxuICBmaWx0ZXIoaGVtdCAhPSBcInBvc3RcIikgJT4lXG4gIGdyb3VwX2J5KHBhdGllbnRpZCxzYW1wbGVsb2MpICU+JVxuICBzbGljZV9tYXgoZGF0ZSkgJT4lXG4gIC4kaW5kZXggLT4gbGFzdF92aXNpdHNfbm9oZW10XG5cbmZpcnN0X2xhc3RfdmlzaXRzX25vaGVtdCA8LSBjKGZpcnN0X3Zpc2l0c19ub2hlbXQsbGFzdF92aXNpdHNfbm9oZW10KVxuXG5sZWZ0X2pvaW4oYWxsRGYsY24pICU+JVxuICBsZWZ0X2pvaW4oLixuX3ZpcnVzZXMpICU+JVxuICBtdXRhdGUobnVtYmVyX3ZpcnVzZXMgPSBpZl9lbHNlKGlzLm5hKG51bWJlcl92aXJ1c2VzKSwwLG51bWJlcl92aXJ1c2VzKSkgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIGZpcnN0X2xhc3RfdmlzaXRzX25vaGVtdCkgJT4lXG4gIG11dGF0ZSh2aXNpdCA9IGlmX2Vsc2UoaW5kZXggJWluJSBmaXJzdF92aXNpdHMsXCJmaXJzdFwiLFwibGFzdFwiKSkgJT4lXG4gIGZpbHRlcihnZW51cyA9PSBcIlBzZXVkb21vbmFzXCIpICU+JVxuICBtdXRhdGUoUHNldWRvX2FidW5kYW5jZSA9IChtZWFuX2NuKihyZWxfYWIvMTAwKSkvNCkgJT4lICMgUGEgaGFzIDQgMTZTIGNvcGllcyBwZXIgZ2Vub21lXG4gIGZpbHRlcihQc2V1ZG9fYWJ1bmRhbmNlID49IDEpICU+JVxuICBncm91cF9ieSh2aXNpdCxudW1iZXJfdmlydXNlcyxzYW1wbGVsb2MpICU+JVxuICBpZGVudGlmeV9vdXRsaWVycyhQc2V1ZG9fYWJ1bmRhbmNlKSAtPiBQYVZpc2l0T3V0bGllcnNcbiAgXG5sZWZ0X2pvaW4oYWxsRGYsY24pICU+JVxuICBsZWZ0X2pvaW4oLixuX3ZpcnVzZXMpICU+JVxuICBtdXRhdGUobnVtYmVyX3ZpcnVzZXMgPSBpZl9lbHNlKGlzLm5hKG51bWJlcl92aXJ1c2VzKSwwLG51bWJlcl92aXJ1c2VzKSkgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIGZpcnN0X2xhc3RfdmlzaXRzX25vaGVtdCkgJT4lXG4gIG11dGF0ZSh2aXNpdCA9IGlmX2Vsc2UoaW5kZXggJWluJSBmaXJzdF92aXNpdHNfbm9oZW10LFwiZmlyc3RcIixcImxhc3RcIikpICU+JVxuICBmaWx0ZXIoZ2VudXMgPT0gXCJQc2V1ZG9tb25hc1wiKSAlPiVcbiAgbXV0YXRlKFBzZXVkb19hYnVuZGFuY2UgPSAobWVhbl9jbioocmVsX2FiLzEwMCkpLzQpICU+JSAjIFBhIGhhcyA0IDE2UyBjb3BpZXMgcGVyIGdlbm9tZVxuICBmaWx0ZXIoUHNldWRvX2FidW5kYW5jZSA+PSAxKSAlPiVcbiAgbXV0YXRlKG91dGxpZXIgPSBpZl9lbHNlKGluZGV4ICVpbiUgUGFWaXNpdE91dGxpZXJzLFRSVUUsRkFMU0UpKSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gdmlzaXQsXG4gICAgICAgICAgICAgeSA9IFBzZXVkb19hYnVuZGFuY2UsXG4gICAgICAgICAgICAgY29sb3IgPSB2aXNpdCkpICtcbiAgZ2VvbV9ib3hwbG90KGFlcyhncm91cCA9IHZpc2l0KSxcbiAgICAgICAgICAgICAgIG91dGxpZXJzID0gRkFMU0UpICtcbiAgZ2VvbV9saW5lKGFlcyhncm91cCA9IHBhdGllbnRpZCksXG4gICAgICAgICAgICBjb2xvciA9IFwiYmxhY2tcIikgK1xuICBnZW9tX3BvaW50KGFlcyhzaGFwZSA9IG91dGxpZXIpLFxuICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgIGFscGhhID0gMC41KSArIFxuICBzY2FsZV94X2Rpc2NyZXRlKGxhYmVscyA9IGMoXCJGaXJzdFwiLFwiRmluYWxcIikpICtcbiAgc2NhbGVfeV9sb2cxMCgpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKHZhbHVlcyA9IGMoXCIjMEJBNUY0XCIsXCIjRjQ1QTBCXCIpKSArXG4gIHNjYWxlX3NoYXBlX21hbnVhbCh2YWx1ZXMgPSBjKDE2LDEpKSArXG4gIGxhYnMoeCA9IFwiVmlzaXRcIixcbiAgICAgICB5ID0gXCIqUHNldWRvbW9uYXMqIHNwcC4gYWJ1bmRhbmNlXCIsXG4gICAgICAgc3VidGl0bGUgPSBcIk51bWJlciBvZiBSVklzIHBlciBzdWJqZWN0XCIpICtcbiAgZmFjZXRfZ3JpZChjb2xzID0gdmFycyhudW1iZXJfdmlydXNlcyksXG4gICAgICAgICAgICAgcm93cyA9IHZhcnMoc2FtcGxlbG9jKSxcbiAgICAgICAgICAgICBsYWJlbGxlciA9IGxhYmVsbGVyKC5yb3dzID0gYyhcInNpbnVzXCIgPSBcIlNpbnVzXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJzcHV0dW1cIiA9IFwiU3B1dHVtXCIpKSkgK1xuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSBcIm5vbmVcIixcbiAgICAgICAgYXhpcy50aXRsZS55ID0gZWxlbWVudF9tYXJrZG93bigpLFxuICAgICAgICBwbG90LnN1YnRpdGxlID0gZWxlbWVudF90ZXh0KHNpemUgPSAxOCxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBoanVzdCA9IDAuNSkpICMtPiBwc2V1ZG9hYnBsb3RcblxuZ2dzYXZlKHBsb3QgPSBwc2V1ZG9hYnBsb3QsXG4gICAgICAgXCJhZHVsdF9wc2V1ZG9tb25hc19hYnVuZGFuY2VfbnVtYmVyX3ZpcnVzZXMucGRmXCIsXG4gICAgICAgaGVpZ2h0ID0gOCxcbiAgICAgICB3aWR0aCA9IDEyLFxuICAgICAgIHVuaXRzID0gYyhcImluXCIpKVxuYGBgIn0= -->
+
+```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(hemt != \"post\") %>%
+  group_by(patientid,sampleloc) %>%
+  slice_min(date) %>%
+  .$index -> first_visits_nohemt
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(hemt != \"post\") %>%
+  group_by(patientid,sampleloc) %>%
+  slice_max(date) %>%
+  .$index -> last_visits_nohemt
+
+first_last_visits_nohemt <- c(first_visits_nohemt,last_visits_nohemt)
+
+left_join(allDf,cn) %>%
+  left_join(.,n_viruses) %>%
+  mutate(number_viruses = if_else(is.na(number_viruses),0,number_viruses)) %>%
+  filter(index %in% first_last_visits_nohemt) %>%
+  mutate(visit = if_else(index %in% first_visits,\"first\",\"last\")) %>%
+  filter(genus == \"Pseudomonas\") %>%
+  mutate(Pseudo_abundance = (mean_cn*(rel_ab/100))/4) %>% # Pa has 4 16S copies per genome
+  filter(Pseudo_abundance >= 1) %>%
+  group_by(visit,number_viruses,sampleloc) %>%
+  identify_outliers(Pseudo_abundance) -> PaVisitOutliers
+  
+left_join(allDf,cn) %>%
+  left_join(.,n_viruses) %>%
+  mutate(number_viruses = if_else(is.na(number_viruses),0,number_viruses)) %>%
+  filter(index %in% first_last_visits_nohemt) %>%
+  mutate(visit = if_else(index %in% first_visits_nohemt,\"first\",\"last\")) %>%
+  filter(genus == \"Pseudomonas\") %>%
+  mutate(Pseudo_abundance = (mean_cn*(rel_ab/100))/4) %>% # Pa has 4 16S copies per genome
+  filter(Pseudo_abundance >= 1) %>%
+  mutate(outlier = if_else(index %in% PaVisitOutliers,TRUE,FALSE)) %>%
+  ggplot(aes(x = visit,
+             y = Pseudo_abundance,
+             color = visit)) +
+  geom_boxplot(aes(group = visit),
+               outliers = FALSE) +
+  geom_line(aes(group = patientid),
+            color = \"black\") +
+  geom_point(aes(shape = outlier),
+             size = 5,
+             alpha = 0.5) + 
+  scale_x_discrete(labels = c(\"First\",\"Final\")) +
+  scale_y_log10() +
+  scale_color_manual(values = c(\"#0BA5F4\",\"#F45A0B\")) +
+  scale_shape_manual(values = c(16,1)) +
+  labs(x = \"Visit\",
+       y = \"*Pseudomonas* spp. abundance\",
+       subtitle = \"Number of RVIs per subject\") +
+  facet_grid(cols = vars(number_viruses),
+             rows = vars(sampleloc),
+             labeller = labeller(.rows = c(\"sinus\" = \"Sinus\",
+                                           \"sputum\" = \"Sputum\"))) +
+  theme(legend.position = \"none\",
+        axis.title.y = element_markdown(),
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) #-> pseudoabplot
+
+ggsave(plot = pseudoabplot,
+       \"adult_pseudomonas_abundance_number_viruses.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(hemt != \"post\") %>%
+  group_by(patientid,sampleloc) %>%
+  slice_min(date) %>%
+  .$index -> first_visits_nohemt
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(hemt != \"post\") %>%
+  group_by(patientid,sampleloc) %>%
+  slice_max(date) %>%
+  .$index -> last_visits_nohemt
+
+first_last_visits_nohemt <- c(first_visits_nohemt,last_visits_nohemt)
+
+left_join(allDf,cn) %>%
+  left_join(.,n_viruses) %>%
+  mutate(number_viruses = if_else(is.na(number_viruses),0,number_viruses)) %>%
+  filter(index %in% first_last_visits_nohemt) %>%
+  mutate(visit = if_else(index %in% first_visits,\"first\",\"last\")) %>%
+  filter(genus == \"Pseudomonas\") %>%
+  mutate(Pseudo_abundance = (mean_cn*(rel_ab/100))/4) %>% # Pa has 4 16S copies per genome
+  filter(Pseudo_abundance >= 1) %>%
+  group_by(visit,number_viruses,sampleloc) %>%
+  identify_outliers(Pseudo_abundance) -> PaVisitOutliers
+  
+left_join(allDf,cn) %>%
+  left_join(.,n_viruses) %>%
+  mutate(number_viruses = if_else(is.na(number_viruses),0,number_viruses)) %>%
+  filter(index %in% first_last_visits_nohemt) %>%
+  mutate(visit = if_else(index %in% first_visits_nohemt,\"first\",\"last\")) %>%
+  filter(genus == \"Pseudomonas\") %>%
+  mutate(Pseudo_abundance = (mean_cn*(rel_ab/100))/4) %>% # Pa has 4 16S copies per genome
+  filter(Pseudo_abundance >= 1) %>%
+  mutate(outlier = if_else(index %in% PaVisitOutliers,TRUE,FALSE)) %>%
+  ggplot(aes(x = visit,
+             y = Pseudo_abundance,
+             color = visit)) +
+  geom_boxplot(aes(group = visit),
+               outliers = FALSE) +
+  geom_line(aes(group = patientid),
+            color = \"black\") +
+  geom_point(aes(shape = outlier),
+             size = 5,
+             alpha = 0.5) + 
+  scale_x_discrete(labels = c(\"First\",\"Final\")) +
+  scale_y_log10() +
+  scale_color_manual(values = c(\"#0BA5F4\",\"#F45A0B\")) +
+  scale_shape_manual(values = c(16,1)) +
+  labs(x = \"Visit\",
+       y = \"*Pseudomonas* spp. abundance\",
+       subtitle = \"Number of RVIs per subject\") +
+  facet_grid(cols = vars(number_viruses),
+             rows = vars(sampleloc),
+             labeller = labeller(.rows = c(\"sinus\" = \"Sinus\",
+                                           \"sputum\" = \"Sputum\"))) +
+  theme(legend.position = \"none\",
+        axis.title.y = element_markdown(),
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) #-> pseudoabplot
+
+ggsave(plot = pseudoabplot,
+       \"adult_pseudomonas_abundance_number_viruses.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```"

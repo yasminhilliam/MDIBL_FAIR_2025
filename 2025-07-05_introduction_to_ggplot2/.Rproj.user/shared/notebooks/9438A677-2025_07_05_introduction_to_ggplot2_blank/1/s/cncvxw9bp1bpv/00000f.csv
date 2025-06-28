@@ -1,0 +1,5 @@
+"0","pdf(""multi.facet.mtcars.plot.pdf"", # file name to write to"
+"0","    height = 4, # plot height in inches"
+"0","    width = 6) # plot width in inches"
+"0",""
+"0","facetPlotTidy # tell R which plot to write to file"

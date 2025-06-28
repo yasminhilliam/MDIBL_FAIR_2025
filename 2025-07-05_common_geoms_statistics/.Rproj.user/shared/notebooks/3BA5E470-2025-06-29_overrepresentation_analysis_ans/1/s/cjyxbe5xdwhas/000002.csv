@@ -1,0 +1,18 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmFsdWVzIDwtIGMobGVuZ3RoKGludGVyc2VjdChPblBhdGgsVXByZWd1bGF0ZWQpKSwgIyBnZXQgbnVtYmVyIG9mIHVwcmVndWxhdGVkIGltbXVuZSBnZW5lc1xuICAgICAgICAgICAgbGVuZ3RoKGludGVyc2VjdChPblBhdGgsTm90UmVndWxhdGVkKSksICMgdW5yZWd1bGF0ZWQgaW1tdW5lIGdlbmVzXG4gICAgICAgICAgICBsZW5ndGgoaW50ZXJzZWN0KE5vdE9uUGF0aCxVcHJlZ3VsYXRlZCkpLCAjIHVwcmVndWxhdGVkIG5vbiBpbW11bmUgZ2VuZXNcbiAgICAgICAgICAgIGxlbmd0aChpbnRlcnNlY3QoTm90T25QYXRoLE5vdFJlZ3VsYXRlZCkpKSAjIHVucmVndWxhdGVkIG5vbiBpbW11bmUgZ2VuZXNcbmBgYCJ9 -->
+
+```r
+values <- c(length(intersect(OnPath,Upregulated)), # get number of upregulated immune genes
+            length(intersect(OnPath,NotRegulated)), # unregulated immune genes
+            length(intersect(NotOnPath,Upregulated)), # upregulated non immune genes
+            length(intersect(NotOnPath,NotRegulated))) # unregulated non immune genes
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+values <- c(length(intersect(OnPath,Upregulated)), # get number of upregulated immune genes
+            length(intersect(OnPath,NotRegulated)), # unregulated immune genes
+            length(intersect(NotOnPath,Upregulated)), # upregulated non immune genes
+            length(intersect(NotOnPath,NotRegulated))) # unregulated non immune genes
+```"

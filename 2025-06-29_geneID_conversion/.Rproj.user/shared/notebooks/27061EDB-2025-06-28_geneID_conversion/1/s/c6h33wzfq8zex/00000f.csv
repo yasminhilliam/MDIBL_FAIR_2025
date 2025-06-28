@@ -1,0 +1,1 @@
+"0","head(conv_table[duplicated(conv_table$ENSEMBL),]) # view the first six rows of duplicated IDs"

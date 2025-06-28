@@ -1,0 +1,112 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2luc3B1UENvQU1ldGEgJT4lXG4gIG11dGF0ZShjdC5ncm91cCA9IGNhc2Vfd2hlbihjdCA8PSAyMy4yOCB+IFwiaGlnaFwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY3QgPiAyMy4yOCAmIGN0IDw9IDMyLjkyIH4gXCJtb2RlcmF0ZVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY3QgPiAzMi45MiAmIGN0IDwgNDAgfiBcImxvd1wiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVFJVRSB+IFwibmVnYXRpdmVcIikpIC0+IHNpbnNwdVBDb0FNZXRhXG5cbnNpbnNwdVBDb0FNZXRhJGN0Lmdyb3VwIDwtIGZhY3RvcihzaW5zcHVQQ29BTWV0YSRjdC5ncm91cCxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsZXZlbHMgPSBjKFwiaGlnaFwiLFwibW9kZXJhdGVcIixcImxvd1wiLFwibmVnYXRpdmVcIikpXG5cbnNpbnNwdVBDb0FNZXRhICU+JVxuICBncm91cF9ieShjdC5ncm91cCkgJT4lXG4gIHN1bW1hcmlzZShjdC5EaW0xID0gbWVhbihEaW0xKSxcbiAgICAgICAgICAgIGN0LkRpbTIgPSBtZWFuKERpbTIpKSAtPiBjdENlbnRyb2lkXG5cbmdncGxvdChzaW5zcHVQQ29BTWV0YSxcbiAgICAgICBhZXMoeCA9IERpbTEsXG4gICAgICAgICAgIHkgPSBEaW0yLFxuICAgICAgICAgICBjb2xvciA9IGN0Lmdyb3VwKSkgK1xuICBnZW9tX3BvaW50KHNpemUgPSAyLFxuICAgICAgICAgICAgIGFscGhhID0gMC41KSArXG4gIHNjYWxlX2NvbG9yX21hbnVhbChuYW1lID0gXCJSZXNwaXJhdG9yeSB2aXJhbCBsb2FkXCIsXG4gICAgICAgICAgICAgICAgICAgICB2YWx1ZXMgPSBjdGNvbHMsXG4gICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiSGlnaCAoQzxzdWI+dDxcL3N1Yj4gJmxlOyAyMy4yOClcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJNb2RlcmF0ZSAoQzxzdWI+dDxcL3N1Yj4gMjMuMjggLSAzMi45MilcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJMb3cgKEM8c3ViPnQ8XC9zdWI+ID4zMi45MilcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJOZWdhdGl2ZVwiKSkgK1xuICBzY2FsZV9maWxsX21hbnVhbChuYW1lID0gXCJSZXNwaXJhdG9yeSB2aXJhbCBsb2FkXCIsXG4gICAgICAgICAgICAgICAgICAgICB2YWx1ZXMgPSBjdGNvbHMsXG4gICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJIaWdoIChDPHN1Yj50PFwvc3ViPiAmbGU7IDIzLjI4KVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIk1vZGVyYXRlIChDPHN1Yj50PFwvc3ViPiAyMy4yOCAtIDMyLjkyKVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIkxvdyAoQzxzdWI+dDxcL3N1Yj4gPjMyLjkyKVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIk5lZ2F0aXZlXCIpKSArXG4gIHN0YXRfZWxsaXBzZSh0eXBlID0gXCJ0XCIpICtcbiAgZ2VvbV9wb2ludChkYXRhID0gY3RDZW50cm9pZCxcbiAgICAgICAgICAgICBhZXMoeCA9IGN0LkRpbTEsXG4gICAgICAgICAgICAgICAgIHkgPSBjdC5EaW0yLFxuICAgICAgICAgICAgICAgICBmaWxsID0gY3QuZ3JvdXApLFxuICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgIHNoYXBlID0gMjEsXG4gICAgICAgICAgICAgY29sb3IgPSBcImJsYWNrXCIpICtcbiAgc2NhbGVfeF9jb250aW51b3VzKGxpbWl0cyA9IGMoLTEuMiwxLjIpKSArXG4gIHNjYWxlX3lfY29udGludW91cyhsaW1pdHMgPSBjKC0xLjIsMS4yKSkgK1xuICBsYWJzKHggPSBcIlBDb0ExICg0My42JSlcIixcbiAgICAgICB5ID0gXCJQQ29BMiAoMjIuNSUpXCIpICtcbiAgdGhlbWUobGVnZW5kLnRleHQgPSBlbGVtZW50X21hcmtkb3duKCkpIC0+IFBDb0FjdFxuXG5nZ3NhdmUocGxvdCA9IFBDb0FjdCxcbiAgICAgICBcIkJyYXktQ3VydGlzLlBDb0EuQ3QudmFsdWUudGlmZlwiLFxuICAgICAgIHdpZHRoID0gMTAsXG4gICAgICAgaGVpZ2h0ID0gOCxcbiAgICAgICB1bml0cyA9IGMoXCJpblwiKSlcbmBgYCJ9 -->
+
+```r
+sinspuPCoAMeta %>%
+  mutate(ct.group = case_when(ct <= 23.28 ~ \"high\",
+                              ct > 23.28 & ct <= 32.92 ~ \"moderate\",
+                              ct > 32.92 & ct < 40 ~ \"low\",
+                              TRUE ~ \"negative\")) -> sinspuPCoAMeta
+
+sinspuPCoAMeta$ct.group <- factor(sinspuPCoAMeta$ct.group,
+                                  levels = c(\"high\",\"moderate\",\"low\",\"negative\"))
+
+sinspuPCoAMeta %>%
+  group_by(ct.group) %>%
+  summarise(ct.Dim1 = mean(Dim1),
+            ct.Dim2 = mean(Dim2)) -> ctCentroid
+
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = ct.group)) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Respiratory viral load\",
+                     values = ctcols,
+                     labels = c(\"High (C<sub>t</sub> &le; 23.28)\",
+                                \"Moderate (C<sub>t</sub> 23.28 - 32.92)\",
+                                \"Low (C<sub>t</sub> >32.92)\",
+                                \"Negative\")) +
+  scale_fill_manual(name = \"Respiratory viral load\",
+                     values = ctcols,
+                    labels = c(\"High (C<sub>t</sub> &le; 23.28)\",
+                                \"Moderate (C<sub>t</sub> 23.28 - 32.92)\",
+                                \"Low (C<sub>t</sub> >32.92)\",
+                                \"Negative\")) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = ctCentroid,
+             aes(x = ct.Dim1,
+                 y = ct.Dim2,
+                 fill = ct.group),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_x_continuous(limits = c(-1.2,1.2)) +
+  scale_y_continuous(limits = c(-1.2,1.2)) +
+  labs(x = \"PCoA1 (43.6%)\",
+       y = \"PCoA2 (22.5%)\") +
+  theme(legend.text = element_markdown()) -> PCoAct
+
+ggsave(plot = PCoAct,
+       \"Bray-Curtis.PCoA.Ct.value.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+sinspuPCoAMeta %>%
+  mutate(ct.group = case_when(ct <= 23.28 ~ \"high\",
+                              ct > 23.28 & ct <= 32.92 ~ \"moderate\",
+                              ct > 32.92 & ct < 40 ~ \"low\",
+                              TRUE ~ \"negative\")) -> sinspuPCoAMeta
+
+sinspuPCoAMeta$ct.group <- factor(sinspuPCoAMeta$ct.group,
+                                  levels = c(\"high\",\"moderate\",\"low\",\"negative\"))
+
+sinspuPCoAMeta %>%
+  group_by(ct.group) %>%
+  summarise(ct.Dim1 = mean(Dim1),
+            ct.Dim2 = mean(Dim2)) -> ctCentroid
+
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = ct.group)) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Respiratory viral load\",
+                     values = ctcols,
+                     labels = c(\"High (C<sub>t</sub> &le; 23.28)\",
+                                \"Moderate (C<sub>t</sub> 23.28 - 32.92)\",
+                                \"Low (C<sub>t</sub> >32.92)\",
+                                \"Negative\")) +
+  scale_fill_manual(name = \"Respiratory viral load\",
+                     values = ctcols,
+                    labels = c(\"High (C<sub>t</sub> &le; 23.28)\",
+                                \"Moderate (C<sub>t</sub> 23.28 - 32.92)\",
+                                \"Low (C<sub>t</sub> >32.92)\",
+                                \"Negative\")) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = ctCentroid,
+             aes(x = ct.Dim1,
+                 y = ct.Dim2,
+                 fill = ct.group),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_x_continuous(limits = c(-1.2,1.2)) +
+  scale_y_continuous(limits = c(-1.2,1.2)) +
+  labs(x = \"PCoA1 (43.6%)\",
+       y = \"PCoA2 (22.5%)\") +
+  theme(legend.text = element_markdown()) -> PCoAct
+
+ggsave(plot = PCoAct,
+       \"Bray-Curtis.PCoA.Ct.value.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```"

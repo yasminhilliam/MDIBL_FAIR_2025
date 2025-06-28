@@ -1,0 +1,7 @@
+"0","ggplot(data=iris, "
+"0","       mapping = aes(x=Petal.Length, "
+"0","                     y=Petal.Width)) + # remove color from global aesthetics"
+"0","  geom_point(aes(color = Species)) + # set geom_point aesthetics - this will only color points"
+"0","  geom_smooth(method = lm) -> colorScatterlm2"
+"0",""
+"0","colorScatterlm2"

@@ -1,0 +1,62 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZC5jc3YoXCIyMDI0MTEwOC5sdW5nLmZ1bmN0aW9uLnJlcG9ydC5jc3ZcIikgLT4gbHVuZ2Z1bmNcblxuZ3N1YihcIiheXFxcXGR7MX0kKVwiLFwiMFxcXFwxXCIsbHVuZ2Z1bmMkcmVjb3JkX2lkKSAtPiBsdW5nZnVuYyRyZWNvcmRfaWRcblxubHVuZ2Z1bmMgJT4lXG4gIG11dGF0ZShwYXRpZW50aWQgPSBwYXN0ZShcIkdFU0NGXCIscmVjb3JkX2lkLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VwID0gXCJcIikpIC0+IGx1bmdmdW5jXG5cbmx1bmdmdW5jJHZpc2l0X2RhdGVcblxuZ3N1YihcIi1cIixcIi9cIixsdW5nZnVuYyR2aXNpdF9kYXRlKSAtPiBsdW5nZnVuYyR2aXNpdF9kYXRlXG5cbmdzdWIoXCIoXFxcXGR7MSwyfS9cXFxcZHsxLDJ9LykoMVxcXFxkezF9KVwiLFwiXFxcXDEyMFxcXFwyXCIsbHVuZ2Z1bmMkdmlzaXRfZGF0ZSkgLT4gbHVuZ2Z1bmMkdmlzaXRfZGF0ZVxuXG5nc3ViKFwiXihcXFxcZHsxfSkvXCIsXCIwXFxcXDEvXCIsbHVuZ2Z1bmMkdmlzaXRfZGF0ZSkgLT4gbHVuZ2Z1bmMkdmlzaXRfZGF0ZVxuXG5sdW5nZnVuYyAlPiVcbiAgZHBseXI6OnNlbGVjdChwYXRpZW50aWQsdmlzaXRfZGF0ZSxleGFjZXJiYXRpb24sZmV2LGZ2Yyxzbm90MjIsbWxrKSAlPiVcbiAgZHBseXI6OnJlbmFtZShkYXRlID0gdmlzaXRfZGF0ZSkgLT4gbHVuZ2Z1bmNEZlxuXG5sdW5nZnVuY0RmJGRhdGUgPC0gYXMuRGF0ZShsdW5nZnVuY0RmJGRhdGUsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICBmb3JtYXQgPSBcIiVtLyVkLyVZXCIpXG5cbndyaXRlLmNzdihsdW5nZnVuY0RmLFxuICAgICAgICAgIFwibHVuZy5mdW5jdGlvbi5yZXBvcnQuZm9ybWF0dGVkLmNzdlwiLFxuICAgICAgICAgIHJvdy5uYW1lcyA9IEZBTFNFKVxuYGBgIn0= -->
+
+```r
+read.csv(\"20241108.lung.function.report.csv\") -> lungfunc
+
+gsub(\"(^\\d{1}$)\",\"0\\1\",lungfunc$record_id) -> lungfunc$record_id
+
+lungfunc %>%
+  mutate(patientid = paste(\"GESCF\",record_id,
+                           sep = \"\")) -> lungfunc
+
+lungfunc$visit_date
+
+gsub(\"-\",\"/\",lungfunc$visit_date) -> lungfunc$visit_date
+
+gsub(\"(\\d{1,2}/\\d{1,2}/)(1\\d{1})\",\"\\120\\2\",lungfunc$visit_date) -> lungfunc$visit_date
+
+gsub(\"^(\\d{1})/\",\"0\\1/\",lungfunc$visit_date) -> lungfunc$visit_date
+
+lungfunc %>%
+  dplyr::select(patientid,visit_date,exacerbation,fev,fvc,snot22,mlk) %>%
+  dplyr::rename(date = visit_date) -> lungfuncDf
+
+lungfuncDf$date <- as.Date(lungfuncDf$date,
+                           format = \"%m/%d/%Y\")
+
+write.csv(lungfuncDf,
+          \"lung.function.report.formatted.csv\",
+          row.names = FALSE)
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+read.csv(\"20241108.lung.function.report.csv\") -> lungfunc
+
+gsub(\"(^\\d{1}$)\",\"0\\1\",lungfunc$record_id) -> lungfunc$record_id
+
+lungfunc %>%
+  mutate(patientid = paste(\"GESCF\",record_id,
+                           sep = \"\")) -> lungfunc
+
+lungfunc$visit_date
+
+gsub(\"-\",\"/\",lungfunc$visit_date) -> lungfunc$visit_date
+
+gsub(\"(\\d{1,2}/\\d{1,2}/)(1\\d{1})\",\"\\120\\2\",lungfunc$visit_date) -> lungfunc$visit_date
+
+gsub(\"^(\\d{1})/\",\"0\\1/\",lungfunc$visit_date) -> lungfunc$visit_date
+
+lungfunc %>%
+  dplyr::select(patientid,visit_date,exacerbation,fev,fvc,snot22,mlk) %>%
+  dplyr::rename(date = visit_date) -> lungfuncDf
+
+lungfuncDf$date <- as.Date(lungfuncDf$date,
+                           format = \"%m/%d/%Y\")
+
+write.csv(lungfuncDf,
+          \"lung.function.report.formatted.csv\",
+          row.names = FALSE)
+```"

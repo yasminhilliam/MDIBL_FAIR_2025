@@ -1,0 +1,26 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmlzaGVyLnRlc3QoaW5uYXRlX2ltbXVuZV9wYXRoX21hdHJpeCxcbiAgICAgICAgICAgIGFsdGVybmF0aXZlID0gXCJncmVhdGVyXCIpXG5gYGAifQ== -->
+
+```r
+fisher.test(innate_immune_path_matrix,
+            alternative = \"greater\")
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+fisher.test(innate_immune_path_matrix,
+            alternative = \"greater\")
+```"
+"1","
+	Fisher's Exact Test for Count Data
+
+data:  innate_immune_path_matrix
+p-value < 2.2e-16
+alternative hypothesis: true odds ratio is greater than 1
+95 percent confidence interval:
+ 2.695582      Inf
+sample estimates:
+odds ratio 
+  3.296432 
+"

@@ -1,0 +1,76 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3l0b2tpbmVQQ29BTWV0YSAlPiVcbiAgZ3JvdXBfYnkoazQpICU+JVxuICBzdW1tYXJpc2UoazQuRGltMSA9IG1lYW4oRGltMSksXG4gICAgICAgICAgICBrNC5EaW0yID0gbWVhbihEaW0yKSkgLT4gazRDZW50cm9pZFxuXG5nZ3Bsb3QoY3l0b2tpbmVQQ29BTWV0YSxcbiAgICAgICBhZXMoeCA9IERpbTEsXG4gICAgICAgICAgIHkgPSBEaW0yLFxuICAgICAgICAgICBjb2xvciA9IGs0KSkgK1xuICBnZW9tX3BvaW50KHNpemUgPSAyLFxuICAgICAgICAgICAgIGFscGhhID0gMC41KSArXG4gIHN0YXRfZWxsaXBzZSh0eXBlID0gXCJ0XCIpICtcbiAgZ2VvbV9wb2ludChkYXRhID0gazRDZW50cm9pZCxcbiAgICAgICAgICAgICBhZXMoeCA9IGs0LkRpbTEsXG4gICAgICAgICAgICAgICAgIHkgPSBrNC5EaW0yLFxuICAgICAgICAgICAgICAgICBmaWxsID0gazQpLFxuICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgIHNoYXBlID0gMjEsXG4gICAgICAgICAgICAgY29sb3IgPSBcImJsYWNrXCIpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKG5hbWUgPSBcIkNsdXN0ZXJcIixcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGNsdXN0Y29scykgK1xuICBzY2FsZV9maWxsX21hbnVhbChuYW1lID0gXCJDbHVzdGVyXCIsXG4gICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGNsdXN0Y29scykgK1xuICBsYWJzKHggPSBcIlBDb0ExICg3OS40JSlcIixcbiAgICAgICB5ID0gXCJQQ29BMiAoMTcuNyUpXCIpXG5cblxuXG5nZ3NhdmUocGxvdCA9IGN5dG9raW5lUENvQVZpcnVzLFxuICAgICAgIFwiQnJheS5jeXRva2luZS5QQ29BLnZpcmFsLnN0YXRlLnRpZmZcIixcbiAgICAgICB3aWR0aCA9IDEwLFxuICAgICAgIGhlaWdodCA9IDgsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5gYGAifQ== -->
+
+```r
+cytokinePCoAMeta %>%
+  group_by(k4) %>%
+  summarise(k4.Dim1 = mean(Dim1),
+            k4.Dim2 = mean(Dim2)) -> k4Centroid
+
+ggplot(cytokinePCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = k4)) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = k4Centroid,
+             aes(x = k4.Dim1,
+                 y = k4.Dim2,
+                 fill = k4),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_color_manual(name = \"Cluster\",
+                     values = clustcols) +
+  scale_fill_manual(name = \"Cluster\",
+                    values = clustcols) +
+  labs(x = \"PCoA1 (79.4%)\",
+       y = \"PCoA2 (17.7%)\")
+
+
+
+ggsave(plot = cytokinePCoAVirus,
+       \"Bray.cytokine.PCoA.viral.state.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+cytokinePCoAMeta %>%
+  group_by(k4) %>%
+  summarise(k4.Dim1 = mean(Dim1),
+            k4.Dim2 = mean(Dim2)) -> k4Centroid
+
+ggplot(cytokinePCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = k4)) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = k4Centroid,
+             aes(x = k4.Dim1,
+                 y = k4.Dim2,
+                 fill = k4),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_color_manual(name = \"Cluster\",
+                     values = clustcols) +
+  scale_fill_manual(name = \"Cluster\",
+                    values = clustcols) +
+  labs(x = \"PCoA1 (79.4%)\",
+       y = \"PCoA2 (17.7%)\")
+
+
+
+ggsave(plot = cytokinePCoAVirus,
+       \"Bray.cytokine.PCoA.viral.state.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```"

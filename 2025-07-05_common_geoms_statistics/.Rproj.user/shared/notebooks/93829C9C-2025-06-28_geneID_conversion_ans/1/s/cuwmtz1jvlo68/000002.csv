@@ -1,0 +1,34 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaWYgKCFyZXF1aXJlTmFtZXNwYWNlKFwiQmlvY01hbmFnZXJcIiwgcXVpZXRseSA9IFRSVUUpKVxuICBpbnN0YWxsLnBhY2thZ2VzKFwiQmlvY01hbmFnZXJcIilcblxuQmlvY01hbmFnZXI6Omluc3RhbGwoXCJiaW9tYVJ0XCIpXG5gYGAifQ== -->
+
+```r
+if (!requireNamespace(\"BiocManager\", quietly = TRUE))
+  install.packages(\"BiocManager\")
+
+BiocManager::install(\"biomaRt\")
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+if (!requireNamespace(\"BiocManager\", quietly = TRUE))
+  install.packages(\"BiocManager\")
+
+BiocManager::install(\"biomaRt\")
+```"
+"1","Update all/some/none? [a/s/n]: 
+"
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxublxubGlicmFyeShiaW9tYVJ0KSBcbmBgYCJ9 -->
+
+```r
+n
+library(biomaRt) 
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+n
+library(biomaRt) 
+```"

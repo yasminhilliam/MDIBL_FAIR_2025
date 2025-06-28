@@ -1,0 +1,204 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgscGF0aWVudGlkLGRhdGUsc2FtcGxlbG9jLHZpc2l0LHZpcnVzLmJpbikgJT4lXG4gIGRpc3RpbmN0KCkgJT4lXG4gIGNvdW50KHBhdGllbnRpZCxzYW1wbGVsb2MsdmlydXMuYmluKSAlPiVcbiAgZmlsdGVyKHZpcnVzLmJpbiA9PSAxKSAlPiVcbiAgZHBseXI6OnNlbGVjdChwYXRpZW50aWQsc2FtcGxlbG9jLG4pICU+JVxuICBkcGx5cjo6cmVuYW1lKG51bWJlcl92aXJ1c2VzID0gbikgLT4gbl92aXJ1c2VzXG5cbnNpbnNwdUFscGhhICU+JVxuICBncm91cF9ieShwYXRpZW50aWQsc2FtcGxlbG9jKSAlPiVcbiAgc2xpY2VfbWluKGRhdGUpICU+JVxuICAuJGluZGV4IC0+IGZpcnN0X3Zpc2l0c1xuXG5zaW5zcHVBbHBoYSAlPiVcbiAgZ3JvdXBfYnkocGF0aWVudGlkLHNhbXBsZWxvYykgJT4lXG4gIHNsaWNlX21heChkYXRlKSAlPiVcbiAgLiRpbmRleCAtPiBsYXN0X3Zpc2l0c1xuXG5maXJzdF9sYXN0X3Zpc2l0cyA8LSBjKGZpcnN0X3Zpc2l0cyxsYXN0X3Zpc2l0cylcblxuc2luc3B1QWxwaGEgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIGZpcnN0X2xhc3RfdmlzaXRzKSAlPiVcbiAgbXV0YXRlKHZpc2l0ID0gaWZfZWxzZShpbmRleCAlaW4lIGZpcnN0X3Zpc2l0cyxcImZpcnN0XCIsXCJsYXN0XCIpKSAlPiVcbiAgbGVmdF9qb2luKC4sbl92aXJ1c2VzKSAlPiVcbiAgbXV0YXRlKG51bWJlcl92aXJ1c2VzID0gaWZfZWxzZShpcy5uYShudW1iZXJfdmlydXNlcyksMCxudW1iZXJfdmlydXNlcykpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSB2aXNpdCxcbiAgICAgICAgICAgICB5ID0gU2hhbm5vbikpICtcbiAgZ2VvbV9ib3hwbG90KG91dGxpZXJzID0gRkFMU0UpICtcbiAgZ2VvbV9saW5lKGFlcyhjb2xvciA9IGFzLmZhY3RvcihudW1iZXJfdmlydXNlcyksXG4gICAgICAgICAgICAgICAgZ3JvdXAgPSBpbnRlcmFjdGlvbihwYXRpZW50aWQsc2FtcGxlbG9jKSkpICtcbiAgZ2VvbV9wb2ludChhZXMoY29sb3IgPSBhcy5mYWN0b3IobnVtYmVyX3ZpcnVzZXMpKSxcbiAgICAgICAgICAgICBzaXplID0gNSxcbiAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgK1xuICBzY2FsZV9jb2xvcl9tYW51YWwobmFtZSA9IFwiTnVtYmVyIG9mIHZpcmFsXFxuaW5mZWN0aW9ucyBkdXJpbmcgc3R1ZHlcIixcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGMoXCIjQzBDRUQxRkZcIixcIiMzRTkyRTBGRlwiLFwiIzJBM0Y2RUZGXCIsXCIjRkNEMzRCRkZcIikpICtcbiAgc2NhbGVfeF9kaXNjcmV0ZShuYW1lID0gXCJWaXNpdFwiLFxuICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJGaXJzdFwiLFwiRmluYWxcIikpICtcbiAgZmFjZXRfZ3JpZChjb2xzID0gdmFycyhzYW1wbGVsb2MpLFxuICAgICAgICAgICAgIGxhYmVsbGVyID0gYXNfbGFiZWxsZXIoYyhcInNpbnVzXCIgPSBcIlNpbnVzXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwic3B1dHVtXCIgPSBcIlNwdXR1bVwiKSkpXG5cbnNpbnNwdUFscGhhICU+JVxuICBmaWx0ZXIoaW5kZXggJWluJSBmaXJzdF9sYXN0X3Zpc2l0cykgJT4lXG4gIG11dGF0ZSh2aXNpdCA9IGlmX2Vsc2UoaW5kZXggJWluJSBmaXJzdF92aXNpdHMsXCJmaXJzdFwiLFwibGFzdFwiKSkgJT4lXG4gIGxlZnRfam9pbiguLG5fdmlydXNlcykgJT4lXG4gIG11dGF0ZShudW1iZXJfdmlydXNlcyA9IGlmX2Vsc2UoaXMubmEobnVtYmVyX3ZpcnVzZXMpLDAsbnVtYmVyX3ZpcnVzZXMpKSAlPiVcbiAgZHBseXI6OnNlbGVjdChwYXRpZW50aWQsc2FtcGxlbG9jLFNoYW5ub24sbnVtYmVyX3ZpcnVzZXMsdmlzaXQpICU+JVxuICBkaXN0aW5jdCgpICU+JVxuICBwaXZvdF93aWRlcihuYW1lc19mcm9tID0gdmlzaXQsXG4gICAgICAgICAgICAgIHZhbHVlc19mcm9tID0gU2hhbm5vbikgJT4lXG4gIG11dGF0ZShjaGFuZ2Vfc2hhbm5vbiA9IGZpcnN0LWxhc3QpIC0+IGRlbHRhX3NoYW5ub25cblxuYW92KGRhdGEgPSBkZWx0YV9zaGFubm9uLFxuICAgIGNoYW5nZV9zaGFubm9uIH4gbnVtYmVyX3ZpcnVzZXMgKyBzYW1wbGVsb2MpIC0+IGRlbHRhX3NoYW5ub25fQU5PVkFcbiAgXG5zdW1tYXJ5KGRlbHRhX3NoYW5ub25fQU5PVkEpXG5cbmRlbHRhX3NoYW5ub24gJT4lXG4gIGdyb3VwX2J5KHNhbXBsZWxvYyxudW1iZXJfdmlydXNlcykgJT4lXG4gIGlkZW50aWZ5X291dGxpZXJzKGNoYW5nZV9zaGFubm9uKSAjIEdFU0NGMjAgb3V0bGllciBpbiBib3RoIGNhc2VzXG5cbmRlbHRhX3NoYW5ub24gJT4lXG4gIG11dGF0ZShvdXRsaWVyID0gaWZfZWxzZShwYXRpZW50aWQgPT0gXCJHRVNDRjIwXCIsVFJVRSxGQUxTRSkpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSBudW1iZXJfdmlydXNlcyxcbiAgICAgICAgICAgICB5ID0gY2hhbmdlX3NoYW5ub24sXG4gICAgICAgICAgICAgZ3JvdXAgPSBudW1iZXJfdmlydXNlcyxcbiAgICAgICAgICAgICBjb2xvciA9IHNhbXBsZWxvYykpICtcbiAgZ2VvbV9obGluZSh5aW50ZXJjZXB0ID0gMCkgK1xuICBnZW9tX2JveHBsb3Qob3V0bGllcnMgPSBGQUxTRSkgK1xuICBnZW9tX2ppdHRlcihhZXMoc2hhcGUgPSBvdXRsaWVyKSxcbiAgICAgICAgICAgICAgd2lkdGggPSAwLjIsXG4gICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgK1xuICBsYWJzKHggPSBcIk51bWJlciBvZiB2aXJhbFxcbmluZmVjdGlvbnMgcGVyIHN1YmplY3RcIixcbiAgICAgICB5ID0gXCJDaGFuZ2UgaW4gU0RJXFxuKGZpcnN0IHZpc2l0IC0gZmluYWwgdmlzaXQpXCIpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKHZhbHVlcyA9IGxvY2NvbHMpICtcbiAgc2NhbGVfc2hhcGVfbWFudWFsKHZhbHVlcyA9IGMoMTYsMSkpICtcbiAgZmFjZXRfd3JhcCh+c2FtcGxlbG9jLFxuICAgICAgICAgICAgICBsYWJlbGxlciA9IGFzX2xhYmVsbGVyKGMoXCJzaW51c1wiID0gXCJTaW51c1wiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJzcHV0dW1cIiA9IFwiU3B1dHVtXCIpKSkgK1xuICAgdGhlbWUobGVnZW5kLnBvc2l0aW9uID0gXCJub25lXCIsXG4gICAgICAgICBzdHJpcC5iYWNrZ3JvdW5kID0gZWxlbWVudF9ibGFuaygpKSAtPiBzaGFubm9uY2hhbmdlXG5cbnJldmVhbF9sYXllcnMoc2hhbm5vbmNoYW5nZSkgLT4gc2hhbm5vbnJldmVhbFxuXG5yZXZlYWxfc2F2ZShzaGFubm9ucmV2ZWFsLFxuICAgICAgICAgICAgXCJjaGFuZ2Vfc2hhbm5vbl9uX3ZpcnVzZXNfYm94cGxvdC5wZGZcIixcbiAgICAgICAgICAgIGhlaWdodCA9IDgsXG4gICAgICAgICAgICB3aWR0aCA9MTIsXG4gICAgICAgICAgICB1bml0cyA9IGMoXCJpblwiKSlcblxuZ2dzYXZlKHBsb3QgPSBzaGFubm9uY2hhbmdlLFxuICAgICAgIFwiY2hhbmdlX3NoYW5ub25fbl92aXJ1c2VzX2JveHBsb3QucGRmXCIsXG4gICAgICAgaGVpZ2h0ID0gOCxcbiAgICAgICB3aWR0aCA9IDEyLFxuICAgICAgIHVuaXRzID0gYyhcImluXCIpKVxuYGBgIn0= -->
+
+```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,patientid,date,sampleloc,visit,virus.bin) %>%
+  distinct() %>%
+  count(patientid,sampleloc,virus.bin) %>%
+  filter(virus.bin == 1) %>%
+  dplyr::select(patientid,sampleloc,n) %>%
+  dplyr::rename(number_viruses = n) -> n_viruses
+
+sinspuAlpha %>%
+  group_by(patientid,sampleloc) %>%
+  slice_min(date) %>%
+  .$index -> first_visits
+
+sinspuAlpha %>%
+  group_by(patientid,sampleloc) %>%
+  slice_max(date) %>%
+  .$index -> last_visits
+
+first_last_visits <- c(first_visits,last_visits)
+
+sinspuAlpha %>%
+  filter(index %in% first_last_visits) %>%
+  mutate(visit = if_else(index %in% first_visits,\"first\",\"last\")) %>%
+  left_join(.,n_viruses) %>%
+  mutate(number_viruses = if_else(is.na(number_viruses),0,number_viruses)) %>%
+  ggplot(aes(x = visit,
+             y = Shannon)) +
+  geom_boxplot(outliers = FALSE) +
+  geom_line(aes(color = as.factor(number_viruses),
+                group = interaction(patientid,sampleloc))) +
+  geom_point(aes(color = as.factor(number_viruses)),
+             size = 5,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Number of viral\ninfections during study\",
+                     values = c(\"#C0CED1FF\",\"#3E92E0FF\",\"#2A3F6EFF\",\"#FCD34BFF\")) +
+  scale_x_discrete(name = \"Visit\",
+                   labels = c(\"First\",\"Final\")) +
+  facet_grid(cols = vars(sampleloc),
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\")))
+
+sinspuAlpha %>%
+  filter(index %in% first_last_visits) %>%
+  mutate(visit = if_else(index %in% first_visits,\"first\",\"last\")) %>%
+  left_join(.,n_viruses) %>%
+  mutate(number_viruses = if_else(is.na(number_viruses),0,number_viruses)) %>%
+  dplyr::select(patientid,sampleloc,Shannon,number_viruses,visit) %>%
+  distinct() %>%
+  pivot_wider(names_from = visit,
+              values_from = Shannon) %>%
+  mutate(change_shannon = first-last) -> delta_shannon
+
+aov(data = delta_shannon,
+    change_shannon ~ number_viruses + sampleloc) -> delta_shannon_ANOVA
+  
+summary(delta_shannon_ANOVA)
+
+delta_shannon %>%
+  group_by(sampleloc,number_viruses) %>%
+  identify_outliers(change_shannon) # GESCF20 outlier in both cases
+
+delta_shannon %>%
+  mutate(outlier = if_else(patientid == \"GESCF20\",TRUE,FALSE)) %>%
+  ggplot(aes(x = number_viruses,
+             y = change_shannon,
+             group = number_viruses,
+             color = sampleloc)) +
+  geom_hline(yintercept = 0) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.2,
+              size = 5,
+              alpha = 0.5) +
+  labs(x = \"Number of viral\ninfections per subject\",
+       y = \"Change in SDI\n(first visit - final visit)\") +
+  scale_color_manual(values = loccols) +
+  scale_shape_manual(values = c(16,1)) +
+  facet_wrap(~sampleloc,
+              labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                       \"sputum\" = \"Sputum\"))) +
+   theme(legend.position = \"none\",
+         strip.background = element_blank()) -> shannonchange
+
+reveal_layers(shannonchange) -> shannonreveal
+
+reveal_save(shannonreveal,
+            \"change_shannon_n_viruses_boxplot.pdf\",
+            height = 8,
+            width =12,
+            units = c(\"in\"))
+
+ggsave(plot = shannonchange,
+       \"change_shannon_n_viruses_boxplot.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,patientid,date,sampleloc,visit,virus.bin) %>%
+  distinct() %>%
+  count(patientid,sampleloc,virus.bin) %>%
+  filter(virus.bin == 1) %>%
+  dplyr::select(patientid,sampleloc,n) %>%
+  dplyr::rename(number_viruses = n) -> n_viruses
+
+sinspuAlpha %>%
+  group_by(patientid,sampleloc) %>%
+  slice_min(date) %>%
+  .$index -> first_visits
+
+sinspuAlpha %>%
+  group_by(patientid,sampleloc) %>%
+  slice_max(date) %>%
+  .$index -> last_visits
+
+first_last_visits <- c(first_visits,last_visits)
+
+sinspuAlpha %>%
+  filter(index %in% first_last_visits) %>%
+  mutate(visit = if_else(index %in% first_visits,\"first\",\"last\")) %>%
+  left_join(.,n_viruses) %>%
+  mutate(number_viruses = if_else(is.na(number_viruses),0,number_viruses)) %>%
+  ggplot(aes(x = visit,
+             y = Shannon)) +
+  geom_boxplot(outliers = FALSE) +
+  geom_line(aes(color = as.factor(number_viruses),
+                group = interaction(patientid,sampleloc))) +
+  geom_point(aes(color = as.factor(number_viruses)),
+             size = 5,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Number of viral\ninfections during study\",
+                     values = c(\"#C0CED1FF\",\"#3E92E0FF\",\"#2A3F6EFF\",\"#FCD34BFF\")) +
+  scale_x_discrete(name = \"Visit\",
+                   labels = c(\"First\",\"Final\")) +
+  facet_grid(cols = vars(sampleloc),
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\")))
+
+sinspuAlpha %>%
+  filter(index %in% first_last_visits) %>%
+  mutate(visit = if_else(index %in% first_visits,\"first\",\"last\")) %>%
+  left_join(.,n_viruses) %>%
+  mutate(number_viruses = if_else(is.na(number_viruses),0,number_viruses)) %>%
+  dplyr::select(patientid,sampleloc,Shannon,number_viruses,visit) %>%
+  distinct() %>%
+  pivot_wider(names_from = visit,
+              values_from = Shannon) %>%
+  mutate(change_shannon = first-last) -> delta_shannon
+
+aov(data = delta_shannon,
+    change_shannon ~ number_viruses + sampleloc) -> delta_shannon_ANOVA
+  
+summary(delta_shannon_ANOVA)
+
+delta_shannon %>%
+  group_by(sampleloc,number_viruses) %>%
+  identify_outliers(change_shannon) # GESCF20 outlier in both cases
+
+delta_shannon %>%
+  mutate(outlier = if_else(patientid == \"GESCF20\",TRUE,FALSE)) %>%
+  ggplot(aes(x = number_viruses,
+             y = change_shannon,
+             group = number_viruses,
+             color = sampleloc)) +
+  geom_hline(yintercept = 0) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.2,
+              size = 5,
+              alpha = 0.5) +
+  labs(x = \"Number of viral\ninfections per subject\",
+       y = \"Change in SDI\n(first visit - final visit)\") +
+  scale_color_manual(values = loccols) +
+  scale_shape_manual(values = c(16,1)) +
+  facet_wrap(~sampleloc,
+              labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                       \"sputum\" = \"Sputum\"))) +
+   theme(legend.position = \"none\",
+         strip.background = element_blank()) -> shannonchange
+
+reveal_layers(shannonchange) -> shannonreveal
+
+reveal_save(shannonreveal,
+            \"change_shannon_n_viruses_boxplot.pdf\",
+            height = 8,
+            width =12,
+            units = c(\"in\"))
+
+ggsave(plot = shannonchange,
+       \"change_shannon_n_viruses_boxplot.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```"

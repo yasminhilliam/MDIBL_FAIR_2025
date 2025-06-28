@@ -1,0 +1,62 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVkc0RmICU+JVxuICBmaWx0ZXIodmlydXMgIT0gXCIwXCIpICU+JVxuICBmaWx0ZXIodmlydXNfdHlwZSA9PSBcIkhSVlwiIHwgdmlydXNfdHlwZSA9PSBcIjBcIikgJT4lXG4gIGZpbHRlcihnZW51cyAlaW4lIHBlZHNJbnQpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSBnZW51cyxcbiAgICAgICAgICAgICB5ID0gcmVsX2FiKSkgK1xuICBnZW9tX2JveHBsb3QoYWVzKGZpbGwgPSB2aXJ1c190eXBlKSxcbiAgICAgICAgICAgICAgYWxwaGEgPSAwLjUsXG4gICAgICAgICAgICAgIGRyYXdfcXVhbnRpbGVzID0gYygwLjUpKSArXG4gICNnZW9tX3BvaW50KGFlcyhjb2xvciA9IHZpcnVzX3R5cGUpLFxuICAjICAgICAgICAgICBzaXplID0gNSxcbiAgIyAgICAgICAgICAgc2hhcGUgPSAxLFxuICAjICAgICAgICAgICBwb3NpdGlvbiA9IHBvc2l0aW9uX2RvZGdlKHdpZHRoID0gMC45KSkgK1xuICBzY2FsZV95X2xvZzEwKG5hbWUgPSBcIlJlbGF0aXZlIGFidW5kYW5jZSAoJSlcIikgK1xuICBzY2FsZV94X2Rpc2NyZXRlKG5hbWUgPSBcIkdlbnVzXCIpICtcbiAgc2NhbGVfZmlsbF9tYW51YWwobmFtZSA9IFwiU2FtcGxlIHZpcmFsIHN0YXR1c1wiLFxuICAgICAgICAgICAgICAgICAgICB2YWx1ZXMgPSBjKFwiZ3JleVwiLFwicmVkM1wiKSxcbiAgICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYyhcIk5lZ2F0aXZlXCIsXCJoUlZcIikpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKG5hbWUgPSBcIlNhbXBsZSB2aXJhbCBzdGF0dXNcIixcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGMoXCJncmV5XCIsXCJyZWQzXCIpLFxuICAgICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYyhcIk5lZ2F0aXZlXCIsXCJoUlZcIikpICtcbiAgdGhlbWUoYXhpcy50ZXh0LnggPSBlbGVtZW50X3RleHQoZmFjZSA9IFwiaXRhbGljXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFuZ2xlID0gNDUsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhqdXN0ID0gMSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmp1c3QgPSAxKSxcbiAgICAgICAgbGVnZW5kLnBvc2l0aW9uID0gXCJ0b3BcIilcbmBgYCJ9 -->
+
+```r
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus %in% pedsInt) %>%
+  ggplot(aes(x = genus,
+             y = rel_ab)) +
+  geom_boxplot(aes(fill = virus_type),
+              alpha = 0.5,
+              draw_quantiles = c(0.5)) +
+  #geom_point(aes(color = virus_type),
+  #           size = 5,
+  #           shape = 1,
+  #           position = position_dodge(width = 0.9)) +
+  scale_y_log10(name = \"Relative abundance (%)\") +
+  scale_x_discrete(name = \"Genus\") +
+  scale_fill_manual(name = \"Sample viral status\",
+                    values = c(\"grey\",\"red3\"),
+                    labels = c(\"Negative\",\"hRV\")) +
+  scale_color_manual(name = \"Sample viral status\",
+                     values = c(\"grey\",\"red3\"),
+                     labels = c(\"Negative\",\"hRV\")) +
+  theme(axis.text.x = element_text(face = \"italic\",
+                                   angle = 45,
+                                   hjust = 1,
+                                   vjust = 1),
+        legend.position = \"top\")
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus %in% pedsInt) %>%
+  ggplot(aes(x = genus,
+             y = rel_ab)) +
+  geom_boxplot(aes(fill = virus_type),
+              alpha = 0.5,
+              draw_quantiles = c(0.5)) +
+  #geom_point(aes(color = virus_type),
+  #           size = 5,
+  #           shape = 1,
+  #           position = position_dodge(width = 0.9)) +
+  scale_y_log10(name = \"Relative abundance (%)\") +
+  scale_x_discrete(name = \"Genus\") +
+  scale_fill_manual(name = \"Sample viral status\",
+                    values = c(\"grey\",\"red3\"),
+                    labels = c(\"Negative\",\"hRV\")) +
+  scale_color_manual(name = \"Sample viral status\",
+                     values = c(\"grey\",\"red3\"),
+                     labels = c(\"Negative\",\"hRV\")) +
+  theme(axis.text.x = element_text(face = \"italic\",
+                                   angle = 45,
+                                   hjust = 1,
+                                   vjust = 1),
+        legend.position = \"top\")
+```"

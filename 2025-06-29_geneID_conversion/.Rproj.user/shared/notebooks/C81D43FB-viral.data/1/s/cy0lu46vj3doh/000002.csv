@@ -1,0 +1,12 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZC5jc3YoXCJwZWRpYXRyaWMuZGF0YS95YXNtaW4uY3N2XCIpIC0+IHBlZHNEZlxuYGBgIn0= -->
+
+```r
+read.csv(\"pediatric.data/yasmin.csv\") -> pedsDf
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+read.csv(\"pediatric.data/yasmin.csv\") -> pedsDf
+```"

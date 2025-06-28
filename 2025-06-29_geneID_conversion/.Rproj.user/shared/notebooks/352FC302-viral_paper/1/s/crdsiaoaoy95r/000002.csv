@@ -1,0 +1,132 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmlyYWxQb3MgJT4lXG4gIGNvdW50KFNpdGUsdmlydXMuY3QpICU+JVxuICBtdXRhdGUodmlydXMgPSBjYXNlX3doZW4odmlydXMuY3QgPT0gXCJGbHUuQS4xLkN0XCIgfiBcIkluZmx1ZW56YSBBXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICB2aXJ1cy5jdCA9PSBcIkZsdS5BLjIuQ3RcIiB+IFwiSW5mbHVlbnphIEFcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHZpcnVzLmN0ID09IFwiSFJWLkN0XCIgfiBcIkh1bWFuIHJoaW5vdmlydXNcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHZpcnVzLmN0ID09IFwiTVBWLkN0XCIgfiBcIk1ldGFwbmV1bW92aXJ1c1wiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgdmlydXMuY3QgPT0gXCJPQzQzLkN0XCIgfiBcIlNlYXNvbmFsIGNvcm9uYXZpcnVzXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICB2aXJ1cy5jdCA9PSBcIlJTVi5DdFwiIH4gXCJSZXNwaXJhdG9yeSBzeW5jeXRpYWwgdmlydXNcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHZpcnVzLmN0ID09IFwiWDIyOUUuQ3RcIiB+IFwiU2Vhc29uYWwgY29yb25hdmlydXNcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIFRSVUUgfiBcIlBhcmFpbmZsdWVuemEgdmlydXNcIikpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSBuLFxuICAgICAgICAgICAgIHkgPSB2aXJ1cyxcbiAgICAgICAgICAgICBmaWxsID0gdmlydXMuY3QpKSArXG4gIGdlb21fY29sKCkgK1xuICBsYWJzKHggPSBcIk51bWJlciBvZiBzYW1wbGVzXCIpICtcbiAgZmFjZXRfd3JhcCh+U2l0ZSxcbiAgICAgICAgICAgICBsYWJlbGxlciA9IGFzX2xhYmVsbGVyKGMoXCJzaW51c1wiID0gXCJTaW51c1wiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcInNwdXR1bVwiID0gXCJTcHV0dW1cIikpKSArXG4gIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9IFwibm9uZVwiLFxuICAgICAgICBheGlzLnRleHQueSA9IGVsZW1lbnRfdGV4dChoanVzdCA9IDEpLFxuICAgICAgICBheGlzLnRpdGxlLnkgPSBlbGVtZW50X2JsYW5rKCksXG4gICAgICAgIHN0cmlwLmJhY2tncm91bmQgPSBlbGVtZW50X2JsYW5rKCkpIC0+IHZpcmFsc3VtbWFyeVxuXG5nZ3NhdmUocGxvdCA9IHZpcmFsc3VtbWFyeSxcbiAgICAgICBcImFkdWx0X3ZpcmFsX2luZmVjdGlvbl9zdW1tYXJ5X2JhcnBsb3QucGRmXCIsXG4gICAgICAgaGVpZ2h0ID0gNixcbiAgICAgICB3aWR0aCA9IDgsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5cbmxlZnRfam9pbih2aXJhbFBvcyxjeXRvVmlydXMpICU+JVxuICBmaWx0ZXIoY3l0b2tpbmUgJWluJSBjeXRvSW50KSAlPiVcbiAgZ3JvdXBfYnkoY3l0b2tpbmUpICU+JVxuICBpZGVudGlmeV9vdXRsaWVycyh2YWx1ZSkgJT4lXG4gIC4kaW5kZXggLT4gY3l0T3V0bGllcnNcbiAgXG5sZWZ0X2pvaW4odmlyYWxQb3MsY3l0b1ZpcnVzKSAlPiVcbiAgZmlsdGVyKGN5dG9raW5lID09IFwiSUwxMFwiKSAlPiVcbiAgbXV0YXRlKG91dGxpZXIgPSBpZl9lbHNlKGluZGV4ICVpbiUgY3l0T3V0bGllcnMsVFJVRSxGQUxTRSkpICU+JVxuICBmaWx0ZXIob3V0bGllciA9PSBGQUxTRSkgJT4lXG4gIGdncGxvdChhZXMoeCA9IHZhbHVlLFxuICAgICAgICAgICAgIHkgPSBjdCkpICtcbiAgZ2VvbV9zbW9vdGgobWV0aG9kID0gXCJsbVwiLFxuICAgICAgICAgICAgICBjb2xvciA9IFwibWVkaXVtdmlvbGV0cmVkXCIsXG4gICAgICAgICAgICAgIGZpbGwgPSBcIm1lZGl1bXZpb2xldHJlZFwiLFxuICAgICAgICAgICAgICBhbHBoYSA9IDAuMykgK1xuICBnZW9tX3BvaW50KGNvbG9yID0gXCJtZWRpdW12aW9sZXRyZWRcIixcbiAgICAgICAgICAgICBzaXplID0gNSxcbiAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgXG5cbmN5dG9WaXJ1cyAlPiVcbiAgZmlsdGVyKGN5dG9raW5lID09IFwiSUZOYTJcIikgJT4lXG4gIGxtZXIoZGF0YSA9IC4sXG4gICAgICAgdmFsdWUgfiB2aXJ1cy5iaW4gKyAoMXxwYXRpZW50aWQpKSAtPiBJRk5hMkxtXG5cbnN1bW1hcnkoQVBSSUxMbSlcblxuc3VtbWFyeShDM0wxTG0pXG5cbnN1bW1hcnkoSUZOYTJMbSlcblxuc3VtbWFyeShJTDEwTG0pXG5gYGAifQ== -->
+
+```r
+viralPos %>%
+  count(Site,virus.ct) %>%
+  mutate(virus = case_when(virus.ct == \"Flu.A.1.Ct\" ~ \"Influenza A\",
+                           virus.ct == \"Flu.A.2.Ct\" ~ \"Influenza A\",
+                           virus.ct == \"HRV.Ct\" ~ \"Human rhinovirus\",
+                           virus.ct == \"MPV.Ct\" ~ \"Metapneumovirus\",
+                           virus.ct == \"OC43.Ct\" ~ \"Seasonal coronavirus\",
+                           virus.ct == \"RSV.Ct\" ~ \"Respiratory syncytial virus\",
+                           virus.ct == \"X229E.Ct\" ~ \"Seasonal coronavirus\",
+                           TRUE ~ \"Parainfluenza virus\")) %>%
+  ggplot(aes(x = n,
+             y = virus,
+             fill = virus.ct)) +
+  geom_col() +
+  labs(x = \"Number of samples\") +
+  facet_wrap(~Site,
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) +
+  theme(legend.position = \"none\",
+        axis.text.y = element_text(hjust = 1),
+        axis.title.y = element_blank(),
+        strip.background = element_blank()) -> viralsummary
+
+ggsave(plot = viralsummary,
+       \"adult_viral_infection_summary_barplot.pdf\",
+       height = 6,
+       width = 8,
+       units = c(\"in\"))
+
+left_join(viralPos,cytoVirus) %>%
+  filter(cytokine %in% cytoInt) %>%
+  group_by(cytokine) %>%
+  identify_outliers(value) %>%
+  .$index -> cytOutliers
+  
+left_join(viralPos,cytoVirus) %>%
+  filter(cytokine == \"IL10\") %>%
+  mutate(outlier = if_else(index %in% cytOutliers,TRUE,FALSE)) %>%
+  filter(outlier == FALSE) %>%
+  ggplot(aes(x = value,
+             y = ct)) +
+  geom_smooth(method = \"lm\",
+              color = \"mediumvioletred\",
+              fill = \"mediumvioletred\",
+              alpha = 0.3) +
+  geom_point(color = \"mediumvioletred\",
+             size = 5,
+             alpha = 0.5) 
+
+cytoVirus %>%
+  filter(cytokine == \"IFNa2\") %>%
+  lmer(data = .,
+       value ~ virus.bin + (1|patientid)) -> IFNa2Lm
+
+summary(APRILLm)
+
+summary(C3L1Lm)
+
+summary(IFNa2Lm)
+
+summary(IL10Lm)
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+viralPos %>%
+  count(Site,virus.ct) %>%
+  mutate(virus = case_when(virus.ct == \"Flu.A.1.Ct\" ~ \"Influenza A\",
+                           virus.ct == \"Flu.A.2.Ct\" ~ \"Influenza A\",
+                           virus.ct == \"HRV.Ct\" ~ \"Human rhinovirus\",
+                           virus.ct == \"MPV.Ct\" ~ \"Metapneumovirus\",
+                           virus.ct == \"OC43.Ct\" ~ \"Seasonal coronavirus\",
+                           virus.ct == \"RSV.Ct\" ~ \"Respiratory syncytial virus\",
+                           virus.ct == \"X229E.Ct\" ~ \"Seasonal coronavirus\",
+                           TRUE ~ \"Parainfluenza virus\")) %>%
+  ggplot(aes(x = n,
+             y = virus,
+             fill = virus.ct)) +
+  geom_col() +
+  labs(x = \"Number of samples\") +
+  facet_wrap(~Site,
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) +
+  theme(legend.position = \"none\",
+        axis.text.y = element_text(hjust = 1),
+        axis.title.y = element_blank(),
+        strip.background = element_blank()) -> viralsummary
+
+ggsave(plot = viralsummary,
+       \"adult_viral_infection_summary_barplot.pdf\",
+       height = 6,
+       width = 8,
+       units = c(\"in\"))
+
+left_join(viralPos,cytoVirus) %>%
+  filter(cytokine %in% cytoInt) %>%
+  group_by(cytokine) %>%
+  identify_outliers(value) %>%
+  .$index -> cytOutliers
+  
+left_join(viralPos,cytoVirus) %>%
+  filter(cytokine == \"IL10\") %>%
+  mutate(outlier = if_else(index %in% cytOutliers,TRUE,FALSE)) %>%
+  filter(outlier == FALSE) %>%
+  ggplot(aes(x = value,
+             y = ct)) +
+  geom_smooth(method = \"lm\",
+              color = \"mediumvioletred\",
+              fill = \"mediumvioletred\",
+              alpha = 0.3) +
+  geom_point(color = \"mediumvioletred\",
+             size = 5,
+             alpha = 0.5) 
+
+cytoVirus %>%
+  filter(cytokine == \"IFNa2\") %>%
+  lmer(data = .,
+       value ~ virus.bin + (1|patientid)) -> IFNa2Lm
+
+summary(APRILLm)
+
+summary(C3L1Lm)
+
+summary(IFNa2Lm)
+
+summary(IL10Lm)
+```"

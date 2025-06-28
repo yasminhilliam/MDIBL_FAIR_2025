@@ -1,0 +1,5 @@
+"0","mean.sd <- function(x){"
+"0","  tibble(y = mean(x), # tell the function that we want a tibble output (similar to dataframe)"
+"0","         ymin = y - sd(x), # calculates the minimum value for error bar"
+"0","         ymax = y + sd(x)) # calculates the maximum value for error bar"
+"0","}"

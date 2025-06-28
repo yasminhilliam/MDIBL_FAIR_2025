@@ -1,0 +1,198 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVkc0RmICU+JVxuICBmaWx0ZXIodmlydXMgIT0gXCIwXCIpICU+JVxuICBmaWx0ZXIodmlydXNfdHlwZSA9PSBcIkhSVlwiIHwgdmlydXNfdHlwZSA9PSBcIjBcIikgJT4lXG4gIGZpbHRlcihnZW51cyA9PSBcIkNvcnluZWJhY3Rlcml1bVwiKSAlPiVcbiAgZmlsdGVyKHJlbF9hYiA+IDApIC0+IGNvcnluZWRhdGFcblxubG1lcihkYXRhID0gY29yeW5lZGF0YSxcbiAgICAgcmVsX2FiIH4gdmlydXNfdHlwZSArICgxfHBhdGllbnRfSUQpKSAtPiBjb3J5bmVMbVxuXG5zdW1tYXJ5KGNvcnluZUxtKVxuXG5hbm92YShjb3J5bmVMbSlcblxucGVkc0RmICU+JVxuICBmaWx0ZXIodmlydXMgIT0gXCIwXCIpICU+JVxuICBmaWx0ZXIodmlydXNfdHlwZSA9PSBcIkhSVlwiIHwgdmlydXNfdHlwZSA9PSBcIjBcIikgJT4lXG4gIGZpbHRlcihnZW51cyA9PSBcIkRvbG9zaWdyYW51bHVtXCIpICU+JVxuICBmaWx0ZXIocmVsX2FiID4gMCkgLT4gZG9sb3NpZGF0YVxuXG5sbWVyKGRhdGEgPSBkb2xvc2lkYXRhLFxuICAgICByZWxfYWIgfiB2aXJ1c190eXBlICsgKDF8cGF0aWVudF9JRCkpIC0+IGRvbG9zaUxtXG5cbnN1bW1hcnkoZG9sb3NpTG0pXG5cbmFub3ZhKGRvbG9zaUxtKVxuXG5wZWRzRGYgJT4lXG4gIGZpbHRlcih2aXJ1cyAhPSBcIjBcIikgJT4lXG4gIGZpbHRlcih2aXJ1c190eXBlID09IFwiSFJWXCIgfCB2aXJ1c190eXBlID09IFwiMFwiKSAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiQ3V0aWJhY3Rlcml1bVwiKSAlPiVcbiAgZmlsdGVyKHJlbF9hYiA+IDApIC0+IGN1dGlkYXRhXG5cbmxtZXIoZGF0YSA9IGN1dGlkYXRhLFxuICAgICByZWxfYWIgfiB2aXJ1c190eXBlICsgKDF8cGF0aWVudF9JRCkpIC0+IGN1dGlMbVxuXG5zdW1tYXJ5KGN1dGlMbSlcblxuYW5vdmEoY3V0aUxtKVxuXG5wZWRzRGYgJT4lXG4gIGZpbHRlcih2aXJ1cyAhPSBcIjBcIikgJT4lXG4gIGZpbHRlcih2aXJ1c190eXBlID09IFwiSFJWXCIgfCB2aXJ1c190eXBlID09IFwiMFwiKSAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiUHNldWRvbW9uYXNcIikgJT4lXG4gIGZpbHRlcihyZWxfYWIgPiAwKSAtPiBwc2V1ZG9kYXRhXG5cbmxtZXIoZGF0YSA9IHBzZXVkb2RhdGEsXG4gICAgIHJlbF9hYiB+ICh2aXJ1c190eXBlICsgQ0ZfQ1JTX0NvbnRyb2xfRUMpICsgKDF8cGF0aWVudF9JRCkpIC0+IHBzZXVkb0xtXG5cbnN1bW1hcnkocHNldWRvTG0pXG5cbmFub3ZhKHBzZXVkb0xtKVxuXG5lbW1lYW5zKHBzZXVkb0xtLGMoXCJ2aXJ1c190eXBlXCIsXCJDRl9DUlNfQ29udHJvbF9FQ1wiKSkgLT4gcHNldWRvRW1tXG5cbmNvbnRyYXN0KHBzZXVkb0VtbSxcInR1a2V5XCIpXG5cbnBlZHNEZiAlPiVcbiAgZmlsdGVyKHZpcnVzICE9IFwiMFwiKSAlPiVcbiAgZmlsdGVyKHZpcnVzX3R5cGUgPT0gXCJIUlZcIiB8IHZpcnVzX3R5cGUgPT0gXCIwXCIpICU+JVxuICBmaWx0ZXIoZ2VudXMgPT0gXCJIYWVtb3BoaWx1c1wiKSAlPiVcbiAgZmlsdGVyKHJlbF9hYiA+IDApIC0+IGhhZW1vZGF0YVxuXG5sbWVyKGRhdGEgPSBoYWVtb2RhdGEsXG4gICAgIHJlbF9hYiB+IHZpcnVzX3R5cGUgKyArIENGX0NSU19Db250cm9sX0VDICsgKHZpcnVzX3R5cGUqQ0ZfQ1JTX0NvbnRyb2xfRUMpICsgKDF8cGF0aWVudF9JRCkpIC0+IGhhZW1vTG1cblxuc3VtbWFyeShoYWVtb0xtKVxuXG5hbm92YShoYWVtb0xtKVxuXG5wZWRzRGYgJT4lXG4gIGZpbHRlcih2aXJ1cyAhPSBcIjBcIikgJT4lXG4gIGZpbHRlcih2aXJ1c190eXBlID09IFwiSFJWXCIgfCB2aXJ1c190eXBlID09IFwiMFwiKSAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiU3RhcGh5bG9jb2NjdXNcIikgJT4lXG4gIGZpbHRlcihyZWxfYWIgPiAwKSAtPiBzdGFwaGRhdGFcblxubG1lcihkYXRhID0gc3RhcGhkYXRhLFxuICAgICByZWxfYWIgfiB2aXJ1c190eXBlICsgKDF8cGF0aWVudF9JRCkpIC0+IHN0YXBoTG1cblxuc3VtbWFyeShzdGFwaExtKVxuXG5hbm92YShzdGFwaExtKVxuXG5wZWRzRGYgJT4lXG4gIGZpbHRlcih2aXJ1cyAhPSBcIjBcIikgJT4lXG4gIGZpbHRlcih2aXJ1c190eXBlID09IFwiSFJWXCIgfCB2aXJ1c190eXBlID09IFwiMFwiKSAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiU3RyZXB0b2NvY2N1c1wiKSAlPiVcbiAgZmlsdGVyKHJlbF9hYiA+IDApIC0+IHN0cmVwZGF0YVxuXG5sbWVyKGRhdGEgPSBzdHJlcGRhdGEsXG4gICAgIHJlbF9hYiB+IHZpcnVzX3R5cGUgKyAoMXxwYXRpZW50X0lEKSkgLT4gc3RyZXBMbVxuXG5zdW1tYXJ5KHN0cmVwTG0pXG5cbmFub3ZhKHN0cmVwTG0pXG5gYGAifQ== -->
+
+```r
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Corynebacterium\") %>%
+  filter(rel_ab > 0) -> corynedata
+
+lmer(data = corynedata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> coryneLm
+
+summary(coryneLm)
+
+anova(coryneLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Dolosigranulum\") %>%
+  filter(rel_ab > 0) -> dolosidata
+
+lmer(data = dolosidata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> dolosiLm
+
+summary(dolosiLm)
+
+anova(dolosiLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Cutibacterium\") %>%
+  filter(rel_ab > 0) -> cutidata
+
+lmer(data = cutidata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> cutiLm
+
+summary(cutiLm)
+
+anova(cutiLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  filter(rel_ab > 0) -> pseudodata
+
+lmer(data = pseudodata,
+     rel_ab ~ (virus_type + CF_CRS_Control_EC) + (1|patient_ID)) -> pseudoLm
+
+summary(pseudoLm)
+
+anova(pseudoLm)
+
+emmeans(pseudoLm,c(\"virus_type\",\"CF_CRS_Control_EC\")) -> pseudoEmm
+
+contrast(pseudoEmm,\"tukey\")
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Haemophilus\") %>%
+  filter(rel_ab > 0) -> haemodata
+
+lmer(data = haemodata,
+     rel_ab ~ virus_type + + CF_CRS_Control_EC + (virus_type*CF_CRS_Control_EC) + (1|patient_ID)) -> haemoLm
+
+summary(haemoLm)
+
+anova(haemoLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Staphylococcus\") %>%
+  filter(rel_ab > 0) -> staphdata
+
+lmer(data = staphdata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> staphLm
+
+summary(staphLm)
+
+anova(staphLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Streptococcus\") %>%
+  filter(rel_ab > 0) -> strepdata
+
+lmer(data = strepdata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> strepLm
+
+summary(strepLm)
+
+anova(strepLm)
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Corynebacterium\") %>%
+  filter(rel_ab > 0) -> corynedata
+
+lmer(data = corynedata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> coryneLm
+
+summary(coryneLm)
+
+anova(coryneLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Dolosigranulum\") %>%
+  filter(rel_ab > 0) -> dolosidata
+
+lmer(data = dolosidata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> dolosiLm
+
+summary(dolosiLm)
+
+anova(dolosiLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Cutibacterium\") %>%
+  filter(rel_ab > 0) -> cutidata
+
+lmer(data = cutidata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> cutiLm
+
+summary(cutiLm)
+
+anova(cutiLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  filter(rel_ab > 0) -> pseudodata
+
+lmer(data = pseudodata,
+     rel_ab ~ (virus_type + CF_CRS_Control_EC) + (1|patient_ID)) -> pseudoLm
+
+summary(pseudoLm)
+
+anova(pseudoLm)
+
+emmeans(pseudoLm,c(\"virus_type\",\"CF_CRS_Control_EC\")) -> pseudoEmm
+
+contrast(pseudoEmm,\"tukey\")
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Haemophilus\") %>%
+  filter(rel_ab > 0) -> haemodata
+
+lmer(data = haemodata,
+     rel_ab ~ virus_type + + CF_CRS_Control_EC + (virus_type*CF_CRS_Control_EC) + (1|patient_ID)) -> haemoLm
+
+summary(haemoLm)
+
+anova(haemoLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Staphylococcus\") %>%
+  filter(rel_ab > 0) -> staphdata
+
+lmer(data = staphdata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> staphLm
+
+summary(staphLm)
+
+anova(staphLm)
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Streptococcus\") %>%
+  filter(rel_ab > 0) -> strepdata
+
+lmer(data = strepdata,
+     rel_ab ~ virus_type + (1|patient_ID)) -> strepLm
+
+summary(strepLm)
+
+anova(strepLm)
+```"

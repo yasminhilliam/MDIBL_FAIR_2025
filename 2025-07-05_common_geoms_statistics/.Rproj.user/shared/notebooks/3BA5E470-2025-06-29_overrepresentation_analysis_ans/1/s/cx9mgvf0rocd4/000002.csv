@@ -1,0 +1,11 @@
+"1","
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6OSwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSDDlyA5XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUEyMVJRVTdDUUJUOXRBVnRFNDNHeExna0ppNXBxTGdRTjVwQWRDZkVRTUoyYUVlc3RETk5Pd2czWWUzU1czZ0FkNjdjZVFMaUFRdzYwODQwdE5xa25mZmUvMi82L3N4ZGQ5U3lSaFlBNkdBWUd1aFZEcUU2SEZ3M3pnRzRBRkFCQTB5eExualRBUWVDN0cwVURxT1lNdXlUK3RRbktNRjFsNFpSZ0JlbExxM1Q0ZDlkb1Z5aFQ1QlB4bHRRNUVkRmZobStmanl2M25vNWZ6OVp1ZlgyY2M1ZmxrdVBmWTl6L3FYc2hRR3FCSVU0a2JGTUtSb0RISWNTNnozQzFMQzNLdll3VXAxZE9pY0s5KzFjci9YdGpjcTJxTmpJZTVUY3lxcXBVb3hqeG5SdWIwWlNCZXVtZCtHMG02ZHR4eWxQNEFZbytkUHVJWWJzKzVqdnhObTZaTm1pRWZNcDRTWk4zRjJ0Wks3RUpXRi9Sa1FtcitFK3pNaTA0VFRQU2cxNlJDYmlyNm1VdlR2L1lEUExvZjFJZTAyZEZpWVRuMkExVUlER09GQTdlL2hKd2wxK051blIyRkhzNTVkaWNUV3hHV1ZJV1N5WEJrcEpaNGYxTHlOZUlFN1NBZ0FBIn0= -->
+
+<div data-pagedtable=\"false\">
+  <script data-pagedtable-source type=\"application/json\">
+{\"columns\":[{\"label\":[\"\"],\"name\":[\"_rn_\"],\"type\":[\"\"],\"align\":[\"left\"]},{\"label\":[\"Term\"],\"name\":[1],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"Ont\"],\"name\":[2],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"N\"],\"name\":[3],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"Up\"],\"name\":[4],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"Down\"],\"name\":[5],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"P.Up\"],\"name\":[6],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"P.Down\"],\"name\":[7],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"P.Up.adj\"],\"name\":[8],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"P.Down.adj\"],\"name\":[9],\"type\":[\"dbl\"],\"align\":[\"right\"]}],\"data\":[{\"1\":\"protein kinase complex\",\"2\":\"CC\",\"3\":\"143\",\"4\":\"19\",\"5\":\"6\",\"6\":\"0.003631997\",\"7\":\"0.2991901\",\"8\":\"0.04998468\",\"9\":\"1\",\"_rn_\":\"GO:1902911\"}],\"options\":{\"columns\":{\"min\":{},\"max\":[10],\"total\":[9]},\"rows\":{\"min\":[10],\"max\":[10],\"total\":[1]},\"pages\":{}}}
+  </script>
+</div>
+
+<!-- rnb-frame-end -->
+"

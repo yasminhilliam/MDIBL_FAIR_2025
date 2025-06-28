@@ -1,0 +1,74 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBEZWZpbmUgdGhlIHZlY3RvciBvZiBjb2x1bW4gbmFtZXNcbmN5dHNpZyA8LSBjKFwiSUZOQlwiLFwiSUZOZ1wiLFwiSUwxMFwiLFwib3N0ZW9jYWxjaW5cIilcblxuY3l0b2tpbmVNZXRhICU+JVxuICBkcGx5cjo6c2VsZWN0KGluZGV4LHZpcnVzLmJpbixhbGxfb2YoY3l0c2lnKSkgJT4lXG4gIHBpdm90X2xvbmdlcihjb2xzID0gYyhjeXRzaWcpLFxuICAgICAgICAgICAgICAgbmFtZXNfdG8gPSBcImN5dG9raW5lXCIsXG4gICAgICAgICAgICAgICB2YWx1ZXNfdG8gPSBcInZhbHVlXCIpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSB2aXJ1cy5iaW4sXG4gICAgICAgICAgICAgeSA9IHZhbHVlLFxuICAgICAgICAgICAgIGNvbG9yID0gY3l0b2tpbmUpKSArXG4gIGdlb21fdmlvbGluKG5hLnJtID0gVFJVRSxcbiAgICAgICAgICAgICAgc2NhbGUgPSBcImNvdW50XCIsXG4gICAgICAgICAgICAgIGRyYXdfcXVhbnRpbGVzID0gYygwLjUpKSArXG4gIGdlb21faml0dGVyKHdpZHRoID0gMC4wNSxcbiAgICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfeF9kaXNjcmV0ZShuYW1lID0gXCJSZXNwaXJhdG9yeSB2aXJhbFxcbmluZmVjdGlvbiBzdGF0dXNcIixcbiAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiTmVnYXRpdmVcIixcIlBvc2l0aXZlXCIpKSArXG4gIHNjYWxlX3lfY29udGludW91cyhuYW1lID0gXCJPYnNlcnZlZCBjb25jZW50cmF0aW9uXFxucGVyIHNhbXBsZVwiKSArXG4gIGZhY2V0X2dyaWQocm93cyA9IHZhcnMoY3l0b2tpbmUpLFxuICAgICAgICAgICAgIHNjYWxlcyA9IFwiZnJlZVwiKSArXG4gIHRoZW1lKHBhbmVsLmJvcmRlciA9IGVsZW1lbnRfcmVjdChjb2xvciA9IFwiZ3JleTQ4XCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBmaWxsID0gTkEpLFxuICAgICAgICBsZWdlbmQucG9zaXRpb24gPSBcIm5vbmVcIikgLT4gY3l0c2lnVmlvbGluXG5cbmN5dHNpZ1Zpb2xpblxuXG5nZ3NhdmUocGxvdCA9IGN5dHNpZ1Zpb2xpbixcbiAgICAgICBcInNpZ25pZmljYW50LmN5dG9raW5lcy5zaW51cy52aXJ1cy50aWZmXCIsXG4gICAgICAgd2lkdGggPSA4LFxuICAgICAgIGhlaWdodCA9IDEyLFxuICAgICAgIHVuaXRzID0gYyhcImluXCIpKVxuYGBgIn0= -->
+
+```r
+# Define the vector of column names
+cytsig <- c(\"IFNB\",\"IFNg\",\"IL10\",\"osteocalcin\")
+
+cytokineMeta %>%
+  dplyr::select(index,virus.bin,all_of(cytsig)) %>%
+  pivot_longer(cols = c(cytsig),
+               names_to = \"cytokine\",
+               values_to = \"value\") %>%
+  ggplot(aes(x = virus.bin,
+             y = value,
+             color = cytokine)) +
+  geom_violin(na.rm = TRUE,
+              scale = \"count\",
+              draw_quantiles = c(0.5)) +
+  geom_jitter(width = 0.05,
+              alpha = 0.5) +
+  scale_x_discrete(name = \"Respiratory viral\ninfection status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_y_continuous(name = \"Observed concentration\nper sample\") +
+  facet_grid(rows = vars(cytokine),
+             scales = \"free\") +
+  theme(panel.border = element_rect(color = \"grey48\",
+                                    fill = NA),
+        legend.position = \"none\") -> cytsigViolin
+
+cytsigViolin
+
+ggsave(plot = cytsigViolin,
+       \"significant.cytokines.sinus.virus.tiff\",
+       width = 8,
+       height = 12,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+# Define the vector of column names
+cytsig <- c(\"IFNB\",\"IFNg\",\"IL10\",\"osteocalcin\")
+
+cytokineMeta %>%
+  dplyr::select(index,virus.bin,all_of(cytsig)) %>%
+  pivot_longer(cols = c(cytsig),
+               names_to = \"cytokine\",
+               values_to = \"value\") %>%
+  ggplot(aes(x = virus.bin,
+             y = value,
+             color = cytokine)) +
+  geom_violin(na.rm = TRUE,
+              scale = \"count\",
+              draw_quantiles = c(0.5)) +
+  geom_jitter(width = 0.05,
+              alpha = 0.5) +
+  scale_x_discrete(name = \"Respiratory viral\ninfection status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_y_continuous(name = \"Observed concentration\nper sample\") +
+  facet_grid(rows = vars(cytokine),
+             scales = \"free\") +
+  theme(panel.border = element_rect(color = \"grey48\",
+                                    fill = NA),
+        legend.position = \"none\") -> cytsigViolin
+
+cytsigViolin
+
+ggsave(plot = cytsigViolin,
+       \"significant.cytokines.sinus.virus.tiff\",
+       width = 8,
+       height = 12,
+       units = c(\"in\"))
+```"

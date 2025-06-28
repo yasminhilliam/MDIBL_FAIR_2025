@@ -1,0 +1,142 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGdyb3VwX2J5KGluZGV4KSAlPiVcbiAgZmlsdGVyKHJlbF9hYiA9PSBtYXgocmVsX2FiLFxuICAgICAgICAgICAgICAgICAgICAgICBuYS5ybSA9IFRSVUUpKSAlPiVcbiAgZHBseXI6OnNlbGVjdChpbmRleCxnZW51cykgJT4lXG4gIHJlbmFtZShtb3N0LmFiID0gZ2VudXMpICU+JVxuICBsZWZ0X2pvaW4oc2luc3B1QnJheVBDb0FNZXRhLC4sXG4gICAgICAgICAgICBieSA9IFwiaW5kZXhcIikgLT4gc2luc3B1QnJheVBDb0FNZXRhXG5cbnNpbnNwdUJyYXlQQ29BTWV0YSAlPiVcbiAgbXV0YXRlKG1vc3QuYWIgPSBjYXNlX3doZW4obW9zdC5hYiA9PSBcIkFjaHJvbW9iYWN0ZXJcIiB+IHBhc3RlKFwiKlwiLG1vc3QuYWIsXCIqXCIpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb3N0LmFiID09IFwiQmFjaWxsdXNcIiB+IHBhc3RlKFwiKlwiLG1vc3QuYWIsXCIqXCIpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb3N0LmFiID09IFwiQnVya2hvbGRlcmlhXCIgfiBwYXN0ZShcIipcIixtb3N0LmFiLFwiKlwiKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbW9zdC5hYiA9PSBcIkNvcnluZWJhY3Rlcml1bVwiIH4gcGFzdGUoXCIqXCIsbW9zdC5hYixcIipcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vc3QuYWIgPT0gXCJFc2NoZXJpY2hpYVwiIH4gcGFzdGUoXCIqXCIsbW9zdC5hYixcIipcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vc3QuYWIgPT0gXCJHcmFudWxpY2F0ZWxsYVwiIH4gcGFzdGUoXCIqXCIsbW9zdC5hYixcIipcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vc3QuYWIgPT0gXCJIYWVtb3BoaWx1c1wiIH4gcGFzdGUoXCIqXCIsbW9zdC5hYixcIipcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vc3QuYWIgPT0gXCJNb3JheGVsbGFcIiB+IHBhc3RlKFwiKlwiLG1vc3QuYWIsXCIqXCIpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb3N0LmFiID09IFwiTmVpc3NlcmlhXCIgfiBwYXN0ZShcIipcIixtb3N0LmFiLFwiKlwiKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbW9zdC5hYiA9PSBcIlByZXZvdGVsbGFcIiB+IHBhc3RlKFwiKlwiLG1vc3QuYWIsXCIqXCIpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb3N0LmFiID09IFwiUHNldWRvbW9uYXNcIiB+IHBhc3RlKFwiKlwiLG1vc3QuYWIsXCIqXCIpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb3N0LmFiID09IFwiUm90aGlhXCIgfiBwYXN0ZShcIipcIixtb3N0LmFiLFwiKlwiKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbW9zdC5hYiA9PSBcIlNlcnJhdGlhXCIgfiBwYXN0ZShcIipcIixtb3N0LmFiLFwiKlwiKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbW9zdC5hYiA9PSBcIlN0YXBoeWxvY29jY3VzXCIgfiBwYXN0ZShcIipcIixtb3N0LmFiLFwiKlwiKSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbW9zdC5hYiA9PSBcIlN0ZW5vdHJvcGhvbW9uYXNcIiB+IHBhc3RlKFwiKlwiLG1vc3QuYWIsXCIqXCIpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb3N0LmFiID09IFwiU3RyZXB0b2NvY2N1c1wiIH4gcGFzdGUoXCIqXCIsbW9zdC5hYixcIipcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vc3QuYWIgPT0gXCJWZWlsbG9uZWxsYVwiIH4gcGFzdGUoXCIqXCIsbW9zdC5hYixcIipcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgIFRSVUUgfiBcIk90aGVyXCIpKSAtPiBzaW5zcHVCcmF5UENvQU1ldGFcblxuc2luc3B1QnJheVBDb0FNZXRhJG1vc3QuYWIgPC0gZ3N1YihcIiBcIixcIlwiLHNpbnNwdUJyYXlQQ29BTWV0YSRtb3N0LmFiKVxuXG5zaW5zcHVCcmF5UENvQU1ldGEkbW9zdC5hYiA8LSBmYWN0b3Ioc2luc3B1QnJheVBDb0FNZXRhJG1vc3QuYWIsbGV2ZWxzPWMoXCIqQ29yeW5lYmFjdGVyaXVtKlwiLFwiKlJvdGhpYSpcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiKkJhY2lsbHVzKlwiLFwiKkdyYW51bGljYXRlbGxhKlwiLFwiKlN0YXBoeWxvY29jY3VzKlwiLFwiKlN0cmVwdG9jb2NjdXMqXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIipQcmV2b3RlbGxhKlwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCIqQWNocm9tb2JhY3RlcipcIixcIipCdXJraG9sZGVyaWEqXCIsXCIqRXNjaGVyaWNoaWEqXCIsXCIqSGFlbW9waGlsdXMqXCIsXCIqTW9yYXhlbGxhKlwiLFwiKk5laXNzZXJpYSpcIixcIipQc2V1ZG9tb25hcypcIixcIipTZXJyYXRpYSpcIixcIipTdGVub3Ryb3Bob21vbmFzKlwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCIqVmVpbGxvbmVsbGEqXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIk90aGVyXCIpKVxuXG5nZW5Db2xzSXRhbCA8LSBjKFwiKkNvcnluZWJhY3Rlcml1bSpcIiA9IFwiI0ZCNzM3QVwiLFxuICAgICAgICAgICAgIFwiKlJvdGhpYSpcIiA9IFwiI0Y1N0E1RlwiLFxuICAgICAgICAgICAgIFwiKkJhY2lsbHVzKlwiID0gXCIjREU4QzAwXCIsXG4gICAgICAgICAgICAgXCIqR3JhbnVsaWNhdGVsbGEqXCIgPVwiI0NEOTYwMFwiLFxuICAgICAgICAgICAgIFwiKlN0YXBoeWxvY29jY3VzKlwiID0gXCIjQjc5RjAwXCIsXG4gICAgICAgICAgICAgXCIqU3RyZXB0b2NvY2N1cypcIiA9IFwiIzlEQTcwMFwiLFxuICAgICAgICAgICAgIFwiKlByZXZvdGVsbGEqXCIgPSBcIiNGNTY0RTNcIixcbiAgICAgICAgICAgICBcIipBY2hyb21vYmFjdGVyKlwiID0gXCIjOUY4Q0ZGXCIsXG4gICAgICAgICAgICAgXCIqQnVya2hvbGRlcmlhKlwiID0gXCIjNUE5REZGXCIsXG4gICAgICAgICAgICAgXCIqRXNjaGVyaWNoaWEqXCIgPSBcIiMwMEFCRkRcIixcbiAgICAgICAgICAgICBcIipIYWVtb3BoaWx1cypcIiA9IFwiIzAwQjZFQlwiLFxuICAgICAgICAgICAgIFwiKk1vcmF4ZWxsYSpcIiA9IFwiIzAwQkRENVwiLFxuICAgICAgICAgICAgIFwiKk5laXNzZXJpYSpcIiA9IFwiIzAwQzBCOVwiLFxuICAgICAgICAgICAgIFwiKlBzZXVkb21vbmFzKlwiID0gXCIjMDBDMTlBXCIsXG4gICAgICAgICAgICAgXCIqU2VycmF0aWEqXCIgPSBcIiMwMEJGNzdcIixcbiAgICAgICAgICAgICBcIipTdGVub3Ryb3Bob21vbmFzKlwiID0gXCIjMDBCQjRCXCIsXG4gICAgICAgICAgICAgXCIqVmVpbGxvbmVsbGEqXCIgPSBcIiNGRjZDOTFcIixcbiAgICAgICAgICAgICBcIk90aGVyXCIgPSBcImdyZXk4MFwiKVxuXG5tb3N0cHJldmNvbHMgPC0gYyhcIkFjdGlub215Y2VzXCIgPSBcIiNGNTY0RTNcIixcbiAgICAgICAgICAgICBcIkNvcnluZWJhY3Rlcml1bVwiID0gXCIjRkI3MzdBXCIsXG4gICAgICAgICAgICAgXCJSb3RoaWFcIiA9IFwiI0Y1N0E1RlwiLFxuICAgICAgICAgICAgIFwiQmFjaWxsdXNcIiA9IFwiI0RFOEMwMFwiLFxuICAgICAgICAgICAgIFwiU3RhcGh5bG9jb2NjdXNcIiA9IFwiIzAwQUJGRFwiLFxuICAgICAgICAgICAgIFwiU3RyZXB0b2NvY2N1c1wiID0gXCIjOURBNzAwXCIsXG4gICAgICAgICAgICAgXCJHZW1lbGxhXCIgPSBcIiM5RjhDRkZcIixcbiAgICAgICAgICAgICBcIlBzZXVkb21vbmFzXCIgPSBcIiMwMEMxOUFcIixcbiAgICAgICAgICAgICBcIlZlaWxsb25lbGxhXCIgPSBcIiNGRjZDOTFcIilcbmBgYCJ9 -->
+
+```r
+allDf %>%
+  group_by(index) %>%
+  filter(rel_ab == max(rel_ab,
+                       na.rm = TRUE)) %>%
+  dplyr::select(index,genus) %>%
+  rename(most.ab = genus) %>%
+  left_join(sinspuBrayPCoAMeta,.,
+            by = \"index\") -> sinspuBrayPCoAMeta
+
+sinspuBrayPCoAMeta %>%
+  mutate(most.ab = case_when(most.ab == \"Achromobacter\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Bacillus\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Burkholderia\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Corynebacterium\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Escherichia\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Granulicatella\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Haemophilus\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Moraxella\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Neisseria\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Prevotella\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Pseudomonas\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Rothia\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Serratia\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Staphylococcus\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Stenotrophomonas\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Streptococcus\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Veillonella\" ~ paste(\"*\",most.ab,\"*\"),
+                             TRUE ~ \"Other\")) -> sinspuBrayPCoAMeta
+
+sinspuBrayPCoAMeta$most.ab <- gsub(\" \",\"\",sinspuBrayPCoAMeta$most.ab)
+
+sinspuBrayPCoAMeta$most.ab <- factor(sinspuBrayPCoAMeta$most.ab,levels=c(\"*Corynebacterium*\",\"*Rothia*\",
+                              \"*Bacillus*\",\"*Granulicatella*\",\"*Staphylococcus*\",\"*Streptococcus*\",
+                              \"*Prevotella*\",
+                              \"*Achromobacter*\",\"*Burkholderia*\",\"*Escherichia*\",\"*Haemophilus*\",\"*Moraxella*\",\"*Neisseria*\",\"*Pseudomonas*\",\"*Serratia*\",\"*Stenotrophomonas*\",
+                              \"*Veillonella*\",
+                              \"Other\"))
+
+genColsItal <- c(\"*Corynebacterium*\" = \"#FB737A\",
+             \"*Rothia*\" = \"#F57A5F\",
+             \"*Bacillus*\" = \"#DE8C00\",
+             \"*Granulicatella*\" =\"#CD9600\",
+             \"*Staphylococcus*\" = \"#B79F00\",
+             \"*Streptococcus*\" = \"#9DA700\",
+             \"*Prevotella*\" = \"#F564E3\",
+             \"*Achromobacter*\" = \"#9F8CFF\",
+             \"*Burkholderia*\" = \"#5A9DFF\",
+             \"*Escherichia*\" = \"#00ABFD\",
+             \"*Haemophilus*\" = \"#00B6EB\",
+             \"*Moraxella*\" = \"#00BDD5\",
+             \"*Neisseria*\" = \"#00C0B9\",
+             \"*Pseudomonas*\" = \"#00C19A\",
+             \"*Serratia*\" = \"#00BF77\",
+             \"*Stenotrophomonas*\" = \"#00BB4B\",
+             \"*Veillonella*\" = \"#FF6C91\",
+             \"Other\" = \"grey80\")
+
+mostprevcols <- c(\"Actinomyces\" = \"#F564E3\",
+             \"Corynebacterium\" = \"#FB737A\",
+             \"Rothia\" = \"#F57A5F\",
+             \"Bacillus\" = \"#DE8C00\",
+             \"Staphylococcus\" = \"#00ABFD\",
+             \"Streptococcus\" = \"#9DA700\",
+             \"Gemella\" = \"#9F8CFF\",
+             \"Pseudomonas\" = \"#00C19A\",
+             \"Veillonella\" = \"#FF6C91\")
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  group_by(index) %>%
+  filter(rel_ab == max(rel_ab,
+                       na.rm = TRUE)) %>%
+  dplyr::select(index,genus) %>%
+  rename(most.ab = genus) %>%
+  left_join(sinspuBrayPCoAMeta,.,
+            by = \"index\") -> sinspuBrayPCoAMeta
+
+sinspuBrayPCoAMeta %>%
+  mutate(most.ab = case_when(most.ab == \"Achromobacter\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Bacillus\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Burkholderia\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Corynebacterium\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Escherichia\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Granulicatella\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Haemophilus\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Moraxella\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Neisseria\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Prevotella\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Pseudomonas\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Rothia\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Serratia\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Staphylococcus\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Stenotrophomonas\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Streptococcus\" ~ paste(\"*\",most.ab,\"*\"),
+                             most.ab == \"Veillonella\" ~ paste(\"*\",most.ab,\"*\"),
+                             TRUE ~ \"Other\")) -> sinspuBrayPCoAMeta
+
+sinspuBrayPCoAMeta$most.ab <- gsub(\" \",\"\",sinspuBrayPCoAMeta$most.ab)
+
+sinspuBrayPCoAMeta$most.ab <- factor(sinspuBrayPCoAMeta$most.ab,levels=c(\"*Corynebacterium*\",\"*Rothia*\",
+                              \"*Bacillus*\",\"*Granulicatella*\",\"*Staphylococcus*\",\"*Streptococcus*\",
+                              \"*Prevotella*\",
+                              \"*Achromobacter*\",\"*Burkholderia*\",\"*Escherichia*\",\"*Haemophilus*\",\"*Moraxella*\",\"*Neisseria*\",\"*Pseudomonas*\",\"*Serratia*\",\"*Stenotrophomonas*\",
+                              \"*Veillonella*\",
+                              \"Other\"))
+
+genColsItal <- c(\"*Corynebacterium*\" = \"#FB737A\",
+             \"*Rothia*\" = \"#F57A5F\",
+             \"*Bacillus*\" = \"#DE8C00\",
+             \"*Granulicatella*\" =\"#CD9600\",
+             \"*Staphylococcus*\" = \"#B79F00\",
+             \"*Streptococcus*\" = \"#9DA700\",
+             \"*Prevotella*\" = \"#F564E3\",
+             \"*Achromobacter*\" = \"#9F8CFF\",
+             \"*Burkholderia*\" = \"#5A9DFF\",
+             \"*Escherichia*\" = \"#00ABFD\",
+             \"*Haemophilus*\" = \"#00B6EB\",
+             \"*Moraxella*\" = \"#00BDD5\",
+             \"*Neisseria*\" = \"#00C0B9\",
+             \"*Pseudomonas*\" = \"#00C19A\",
+             \"*Serratia*\" = \"#00BF77\",
+             \"*Stenotrophomonas*\" = \"#00BB4B\",
+             \"*Veillonella*\" = \"#FF6C91\",
+             \"Other\" = \"grey80\")
+
+mostprevcols <- c(\"Actinomyces\" = \"#F564E3\",
+             \"Corynebacterium\" = \"#FB737A\",
+             \"Rothia\" = \"#F57A5F\",
+             \"Bacillus\" = \"#DE8C00\",
+             \"Staphylococcus\" = \"#00ABFD\",
+             \"Streptococcus\" = \"#9DA700\",
+             \"Gemella\" = \"#9F8CFF\",
+             \"Pseudomonas\" = \"#00C19A\",
+             \"Veillonella\" = \"#FF6C91\")
+```"

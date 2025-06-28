@@ -1,0 +1,308 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2luc3B1RmlsdE1ldGEgJT4lXG4gIG11dGF0ZShwdF9zYW1wbGVsb2NfdmlydXMgPSBwYXN0ZShwdF9zYW1wbGVsb2MsdmlydXMuYmluLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VwID0gXCJfXCIpKSAtPiBzaW5zcHVGaWx0TWV0YVxuXG5iZXRhZGlzcGVyKHNpbnNwdURpc3QsXG4gICAgICAgICAgIGdyb3VwID0gYXMuZmFjdG9yKHNpbnNwdUZpbHRNZXRhJHB0X3NhbXBsZWxvY192aXJ1cyksXG4gICAgICAgICAgIHR5cGUgPSBcImNlbnRyb2lkXCIpIC0+IHNpbnNwdURGQ1xuXG4jIGN1c3RvbSBmdW5jdGlvbiBmcm9tIGh0dHBzOi8vZ2l0aHViLmNvbS92ZWdhbmRldnMvdmVnYW4vaXNzdWVzLzYwNlxuXG5iZXRhZGlzdGFuY2VzIDwtIGZ1bmN0aW9uKHgpe1xuICAgICBjbnQgPC0geCRjZW50cm9pZHNcbiAgICAgY29vcmQgPC0geCR2ZWN0b3JzXG4gICAgIHBvcyA8LSB3aGljaCh4JGVpZyA+PSAwKVxuICAgICBuZWcgPC0gd2hpY2goeCRlaWcgPCAwKVxuICAgICBkIDwtIGFwcGx5KGNudFsscG9zXSwgMSxcbiAgICAgICAgICAgICAgICBmdW5jdGlvbih6KSByb3dTdW1zKHN3ZWVwKGNvb3JkWyxwb3NdLCAyLCB6KV4yKSlcbiAgICAgaWYgKGxlbmd0aChuZWcpKVxuICAgICAgICAgZCA8LSBkIC0gYXBwbHkoY250WywgbmVnXSwgMSxcbiAgICAgICAgICAgICAgICAgICAgICAgIGZ1bmN0aW9uKHopIHJvd1N1bXMoc3dlZXAoY29vcmRbLG5lZ10sIDIsIHopXjIpKVxuICAgICBkIDwtIGFzLmRhdGEuZnJhbWUoc3FydChkKSlcbiAgICAgY2JpbmQoXCJncm91cFwiID0geCRncm91cCwgZClcbn1cblxuYmV0YWRpc3RhbmNlcyhzaW5zcHVERkMpIC0+IGFsbGNvbXBkaXN0YW5jZXNcblxucm93bmFtZXMoYWxsY29tcGRpc3RhbmNlcykgLT4gYWxsY29tcGRpc3RhbmNlcyRpbmRleFxuXG5hbGxjb21wZGlzdGFuY2VzICU+JVxuICBwaXZvdF9sb25nZXIoY29scyA9IDI6ODgsXG4gICAgICAgICAgICAgICBuYW1lc190byA9IFwiY29tcF9ncm91cFwiLFxuICAgICAgICAgICAgICAgdmFsdWVzX3RvID0gXCJkaXN0YW5jZVwiKSAlPiVcbiAgcmVsb2NhdGUoaW5kZXgsXG4gICAgICAgICAgIC5iZWZvcmUgPSBncm91cCkgJT4lXG4gIGRwbHlyOjpyZW5hbWUoc2FtcGxlX2dyb3VwID0gZ3JvdXApICU+JVxuICBzZXBhcmF0ZV93aWRlcl9kZWxpbShzYW1wbGVfZ3JvdXAsXCJfXCIsXG4gICAgICAgICAgICAgICAgICAgICAgIG5hbWVzID0gYyhcInNhbXBsZV9wdGlkXCIsXCJzYW1wbGVfbG9jXCIsXCJzYW1wbGVfdmlyXCIpKSAlPiVcbiAgc2VwYXJhdGVfd2lkZXJfZGVsaW0oY29tcF9ncm91cCxcIl9cIixcbiAgICAgICAgICAgICAgICAgICAgICAgbmFtZXMgPSBjKFwiY29tcF9wdGlkXCIsXCJjb21wX2xvY1wiLFwiY29tcF92aXJcIikpICU+JVxuICBmaWx0ZXIoc2FtcGxlX3B0aWQgPT0gY29tcF9wdGlkKSAlPiVcbiAgZmlsdGVyKHNhbXBsZV9sb2MgPT0gY29tcF9sb2MpICU+JVxuICBmaWx0ZXIoKHNhbXBsZV92aXIgPT0gMSAmIGNvbXBfdmlyID09IDApIHwgKHNhbXBsZV92aXIgPT0gMCAmIGNvbXBfdmlyID09IDApKSAtPiB2aXJ2c25vbnZpcmNlbnRyb2lkXG5cbnZpcnZzbm9udmlyY2VudHJvaWQgJT4lXG4gIGZpbHRlcihzYW1wbGVfbG9jID09IFwic2ludXNcIikgLT4gc2ludmlyZGlzdGFuY2VcblxuZmFjdG9yKHNpbnZpcmRpc3RhbmNlJHNhbXBsZV92aXIpIC0+IHNpbnZpcmRpc3RhbmNlJHNhbXBsZV92aXJcblxudmlydnNub252aXJjZW50cm9pZCAlPiVcbiAgZmlsdGVyKHNhbXBsZV9sb2MgPT0gXCJzcHV0dW1cIikgLT4gc3B1dmlyZGlzdGFuY2VcblxuZmFjdG9yKHNwdXZpcmRpc3RhbmNlJHNhbXBsZV92aXIpIC0+IHNwdXZpcmRpc3RhbmNlJHNhbXBsZV92aXJcblxubG1lcihkYXRhID0gc2ludmlyZGlzdGFuY2UsXG4gICAgIGRpc3RhbmNlIH4gc2FtcGxlX3ZpciArICgxfHNhbXBsZV9wdGlkKSkgLT4gc2ludmlyTG1cblxuc3VtbWFyeShzaW52aXJMbSlcblxuYW5vdmEoc2ludmlyTG0pXG5cbmxtZXIoZGF0YSA9IHNwdXZpcmRpc3RhbmNlLFxuICAgICBkaXN0YW5jZSB+IHNhbXBsZV92aXIgKyAoMXxzYW1wbGVfcHRpZCkpIC0+IHNwdXZpckxtXG5cbnN1bW1hcnkoc3B1dmlyTG0pXG5cbmFub3ZhKHNwdXZpckxtKVxuXG52aXJ2c25vbnZpcmNlbnRyb2lkICU+JVxuICBncm91cF9ieShzYW1wbGVfbG9jLHNhbXBsZV92aXIpICU+JVxuICBpZGVudGlmeV9vdXRsaWVycyhkaXN0YW5jZSkgJT4lXG4gIC4kaW5kZXggLT4gdmlyb3V0bGllclxuXG5zaW52aXJkaXN0YW5jZSAlPiVcbiAgbXV0YXRlKG91dGxpZXIgPSBpZl9lbHNlKGluZGV4ICVpbiUgdmlyb3V0bGllcixUUlVFLEZBTFNFKSkgJT4lXG4gIGdncGxvdChhZXMoeCA9IHNhbXBsZV92aXIsXG4gICAgICAgICAgIHkgPSBkaXN0YW5jZSxcbiAgICAgICAgICAgY29sb3IgPSBzYW1wbGVfbG9jKSkgK1xuICBhbm5vdGF0ZShcInNlZ21lbnRcIixcbiAgICAgICAgICAgeCA9IDEsXG4gICAgICAgICAgIHhlbmQgPSAyLFxuICAgICAgICAgICB5ID0gMS4wNSxcbiAgICAgICAgICAgbGluZXdpZHRoID0gMSkgK1xuICBhbm5vdGF0ZShcInRleHRcIixcbiAgICAgICAgICAgbGFiZWwgPSBcIioqKlwiLFxuICAgICAgICAgICB4ID0gMS41LFxuICAgICAgICAgICB5ID0gMS4wNzUsXG4gICAgICAgICAgIHNpemUgPSAxNCkgK1xuICBnZW9tX2JveHBsb3Qob3V0bGllcnMgPSBGQUxTRSkgK1xuICBnZW9tX2ppdHRlcihhZXMoc2hhcGUgPSBvdXRsaWVyKSxcbiAgICAgICAgICAgICAgd2lkdGggPSAwLjIsXG4gICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgK1xuICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzID0gbG9jY29scykgK1xuICBzY2FsZV9zaGFwZV9tYW51YWwodmFsdWVzID0gYygxNiwxKSkgK1xuICBzY2FsZV94X2Rpc2NyZXRlKG5hbWUgPSBcIlNhbXBsZSB2aXJhbCBzdGF0dXNcIixcbiAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiTmVnYXRpdmVcIixcIlBvc2l0aXZlXCIpKSArXG4gIHNjYWxlX3lfY29udGludW91cyhuYW1lID0gXCJEaXN0YW5jZSB0byBjZW50cm9pZFwiLFxuICAgICAgICAgICAgICAgICAgICAgbGltaXRzID0gYygtMC4xLDEuMikpICtcbiAgbGFicyhzdWJ0aXRsZSA9IFwiU2ludXNcIikgK1xuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSBcIm5vbmVcIixcbiAgICAgICAgcGxvdC5zdWJ0aXRsZSA9IGVsZW1lbnRfdGV4dChzaXplID0gMTgsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaGp1c3QgPSAwLjUpKSAtPiBzaW5wbG90XG5cbnNwdXZpcmRpc3RhbmNlICU+JVxuICBtdXRhdGUob3V0bGllciA9IGlmX2Vsc2UoaW5kZXggJWluJSB2aXJvdXRsaWVyLFRSVUUsRkFMU0UpKSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gc2FtcGxlX3ZpcixcbiAgICAgICAgICAgeSA9IGRpc3RhbmNlLFxuICAgICAgICAgICBjb2xvciA9IHNhbXBsZV9sb2MpKSArXG4gIGFubm90YXRlKFwic2VnbWVudFwiLFxuICAgICAgICAgICB4ID0gMSxcbiAgICAgICAgICAgeGVuZCA9IDIsXG4gICAgICAgICAgIHkgPSAwLjg1LFxuICAgICAgICAgICBsaW5ld2lkdGggPSAxKSArXG4gIGFubm90YXRlKFwidGV4dFwiLFxuICAgICAgICAgICBsYWJlbCA9IFwiKipcIixcbiAgICAgICAgICAgeCA9IDEuNSxcbiAgICAgICAgICAgeSA9IDAuODc1LFxuICAgICAgICAgICBzaXplID0gMTQpICtcbiAgZ2VvbV9ib3hwbG90KG91dGxpZXJzID0gRkFMU0UpICtcbiAgZ2VvbV9qaXR0ZXIoYWVzKHNoYXBlID0gb3V0bGllciksXG4gICAgICAgICAgICAgIHdpZHRoID0gMC4yLFxuICAgICAgICAgICAgICBzaXplID0gNSxcbiAgICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKHZhbHVlcyA9IGxvY2NvbHMsXG4gICAgICAgICAgICAgICAgICAgICBndWlkZSA9IFwibm9uZVwiKSArXG4gIHNjYWxlX3NoYXBlX21hbnVhbChuYW1lID0gTlVMTCxcbiAgICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJOb24tb3V0bGllclwiLFwiT3V0bGllclwiKSxcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGMoMTYsMSkpICtcbiAgc2NhbGVfeF9kaXNjcmV0ZShuYW1lID0gXCJTYW1wbGUgdmlyYWwgc3RhdHVzXCIsXG4gICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYyhcIk5lZ2F0aXZlXCIsXCJQb3NpdGl2ZVwiKSkgK1xuICBzY2FsZV95X2NvbnRpbnVvdXMobmFtZSA9IFwiRGlzdGFuY2UgdG8gY2VudHJvaWRcIixcbiAgICAgICAgICAgICAgICAgICAgIGxpbWl0cyA9IGMoLTAuMSwxLjIpKSArXG4gIGxhYnMoc3VidGl0bGUgPSBcIlNwdXR1bVwiKSArXG4gIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9IFwiaW5zaWRlXCIsXG4gICAgICAgIGxlZ2VuZC5wb3NpdGlvbi5pbnNpZGUgPSBjKDAuOCwwLjkpLFxuICAgICAgICBsZWdlbmQuYmFja2dyb3VuZCA9IGVsZW1lbnRfcmVjdChjb2xvciA9IFwiYmxhY2tcIiksXG4gICAgICAgIGF4aXMudGlja3MueSA9IGVsZW1lbnRfYmxhbmsoKSxcbiAgICAgICAgYXhpcy50ZXh0LnkgPSBlbGVtZW50X3RleHQoY29sb3IgPSBcIndoaXRlXCIpLFxuICAgICAgICBheGlzLnRpdGxlLnkgPSBlbGVtZW50X3RleHQoY29sb3IgPSBcIndoaXRlXCIpLFxuICAgICAgICBwbG90LnN1YnRpdGxlID0gZWxlbWVudF90ZXh0KHNpemUgPSAxOCxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBoanVzdCA9IDAuNSkpIC0+IHNwdXBsb3RcblxucGxvdF9ncmlkKHNpbnBsb3Qsc3B1cGxvdCkgLT4gc2luc3B1cGxvdFxuXG5nZ3NhdmUocGxvdCA9IHNpbnNwdXBsb3QsXG4gICAgICAgXCJhZHVsdF9zYW1wbGVsb2NfY2VudHJvaWRfZGlzdGFuY2VfdnNfaW5mZWN0ZWQucGRmXCIsXG4gICAgICAgaGVpZ2h0ID0gOCxcbiAgICAgICB3aWR0aCA9IDEyLFxuICAgICAgIHVuaXRzID0gYyhcImluXCIpKVxuYGBgIn0= -->
+
+```r
+sinspuFiltMeta %>%
+  mutate(pt_sampleloc_virus = paste(pt_sampleloc,virus.bin,
+                                    sep = \"_\")) -> sinspuFiltMeta
+
+betadisper(sinspuDist,
+           group = as.factor(sinspuFiltMeta$pt_sampleloc_virus),
+           type = \"centroid\") -> sinspuDFC
+
+# custom function from https://github.com/vegandevs/vegan/issues/606
+
+betadistances <- function(x){
+     cnt <- x$centroids
+     coord <- x$vectors
+     pos <- which(x$eig >= 0)
+     neg <- which(x$eig < 0)
+     d <- apply(cnt[,pos], 1,
+                function(z) rowSums(sweep(coord[,pos], 2, z)^2))
+     if (length(neg))
+         d <- d - apply(cnt[, neg], 1,
+                        function(z) rowSums(sweep(coord[,neg], 2, z)^2))
+     d <- as.data.frame(sqrt(d))
+     cbind(\"group\" = x$group, d)
+}
+
+betadistances(sinspuDFC) -> allcompdistances
+
+rownames(allcompdistances) -> allcompdistances$index
+
+allcompdistances %>%
+  pivot_longer(cols = 2:88,
+               names_to = \"comp_group\",
+               values_to = \"distance\") %>%
+  relocate(index,
+           .before = group) %>%
+  dplyr::rename(sample_group = group) %>%
+  separate_wider_delim(sample_group,\"_\",
+                       names = c(\"sample_ptid\",\"sample_loc\",\"sample_vir\")) %>%
+  separate_wider_delim(comp_group,\"_\",
+                       names = c(\"comp_ptid\",\"comp_loc\",\"comp_vir\")) %>%
+  filter(sample_ptid == comp_ptid) %>%
+  filter(sample_loc == comp_loc) %>%
+  filter((sample_vir == 1 & comp_vir == 0) | (sample_vir == 0 & comp_vir == 0)) -> virvsnonvircentroid
+
+virvsnonvircentroid %>%
+  filter(sample_loc == \"sinus\") -> sinvirdistance
+
+factor(sinvirdistance$sample_vir) -> sinvirdistance$sample_vir
+
+virvsnonvircentroid %>%
+  filter(sample_loc == \"sputum\") -> spuvirdistance
+
+factor(spuvirdistance$sample_vir) -> spuvirdistance$sample_vir
+
+lmer(data = sinvirdistance,
+     distance ~ sample_vir + (1|sample_ptid)) -> sinvirLm
+
+summary(sinvirLm)
+
+anova(sinvirLm)
+
+lmer(data = spuvirdistance,
+     distance ~ sample_vir + (1|sample_ptid)) -> spuvirLm
+
+summary(spuvirLm)
+
+anova(spuvirLm)
+
+virvsnonvircentroid %>%
+  group_by(sample_loc,sample_vir) %>%
+  identify_outliers(distance) %>%
+  .$index -> viroutlier
+
+sinvirdistance %>%
+  mutate(outlier = if_else(index %in% viroutlier,TRUE,FALSE)) %>%
+  ggplot(aes(x = sample_vir,
+           y = distance,
+           color = sample_loc)) +
+  annotate(\"segment\",
+           x = 1,
+           xend = 2,
+           y = 1.05,
+           linewidth = 1) +
+  annotate(\"text\",
+           label = \"***\",
+           x = 1.5,
+           y = 1.075,
+           size = 14) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.2,
+              size = 5,
+              alpha = 0.5) +
+  scale_color_manual(values = loccols) +
+  scale_shape_manual(values = c(16,1)) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_y_continuous(name = \"Distance to centroid\",
+                     limits = c(-0.1,1.2)) +
+  labs(subtitle = \"Sinus\") +
+  theme(legend.position = \"none\",
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> sinplot
+
+spuvirdistance %>%
+  mutate(outlier = if_else(index %in% viroutlier,TRUE,FALSE)) %>%
+  ggplot(aes(x = sample_vir,
+           y = distance,
+           color = sample_loc)) +
+  annotate(\"segment\",
+           x = 1,
+           xend = 2,
+           y = 0.85,
+           linewidth = 1) +
+  annotate(\"text\",
+           label = \"**\",
+           x = 1.5,
+           y = 0.875,
+           size = 14) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.2,
+              size = 5,
+              alpha = 0.5) +
+  scale_color_manual(values = loccols,
+                     guide = \"none\") +
+  scale_shape_manual(name = NULL,
+                     labels = c(\"Non-outlier\",\"Outlier\"),
+                     values = c(16,1)) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_y_continuous(name = \"Distance to centroid\",
+                     limits = c(-0.1,1.2)) +
+  labs(subtitle = \"Sputum\") +
+  theme(legend.position = \"inside\",
+        legend.position.inside = c(0.8,0.9),
+        legend.background = element_rect(color = \"black\"),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_text(color = \"white\"),
+        axis.title.y = element_text(color = \"white\"),
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> spuplot
+
+plot_grid(sinplot,spuplot) -> sinspuplot
+
+ggsave(plot = sinspuplot,
+       \"adult_sampleloc_centroid_distance_vs_infected.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+sinspuFiltMeta %>%
+  mutate(pt_sampleloc_virus = paste(pt_sampleloc,virus.bin,
+                                    sep = \"_\")) -> sinspuFiltMeta
+
+betadisper(sinspuDist,
+           group = as.factor(sinspuFiltMeta$pt_sampleloc_virus),
+           type = \"centroid\") -> sinspuDFC
+
+# custom function from https://github.com/vegandevs/vegan/issues/606
+
+betadistances <- function(x){
+     cnt <- x$centroids
+     coord <- x$vectors
+     pos <- which(x$eig >= 0)
+     neg <- which(x$eig < 0)
+     d <- apply(cnt[,pos], 1,
+                function(z) rowSums(sweep(coord[,pos], 2, z)^2))
+     if (length(neg))
+         d <- d - apply(cnt[, neg], 1,
+                        function(z) rowSums(sweep(coord[,neg], 2, z)^2))
+     d <- as.data.frame(sqrt(d))
+     cbind(\"group\" = x$group, d)
+}
+
+betadistances(sinspuDFC) -> allcompdistances
+
+rownames(allcompdistances) -> allcompdistances$index
+
+allcompdistances %>%
+  pivot_longer(cols = 2:88,
+               names_to = \"comp_group\",
+               values_to = \"distance\") %>%
+  relocate(index,
+           .before = group) %>%
+  dplyr::rename(sample_group = group) %>%
+  separate_wider_delim(sample_group,\"_\",
+                       names = c(\"sample_ptid\",\"sample_loc\",\"sample_vir\")) %>%
+  separate_wider_delim(comp_group,\"_\",
+                       names = c(\"comp_ptid\",\"comp_loc\",\"comp_vir\")) %>%
+  filter(sample_ptid == comp_ptid) %>%
+  filter(sample_loc == comp_loc) %>%
+  filter((sample_vir == 1 & comp_vir == 0) | (sample_vir == 0 & comp_vir == 0)) -> virvsnonvircentroid
+
+virvsnonvircentroid %>%
+  filter(sample_loc == \"sinus\") -> sinvirdistance
+
+factor(sinvirdistance$sample_vir) -> sinvirdistance$sample_vir
+
+virvsnonvircentroid %>%
+  filter(sample_loc == \"sputum\") -> spuvirdistance
+
+factor(spuvirdistance$sample_vir) -> spuvirdistance$sample_vir
+
+lmer(data = sinvirdistance,
+     distance ~ sample_vir + (1|sample_ptid)) -> sinvirLm
+
+summary(sinvirLm)
+
+anova(sinvirLm)
+
+lmer(data = spuvirdistance,
+     distance ~ sample_vir + (1|sample_ptid)) -> spuvirLm
+
+summary(spuvirLm)
+
+anova(spuvirLm)
+
+virvsnonvircentroid %>%
+  group_by(sample_loc,sample_vir) %>%
+  identify_outliers(distance) %>%
+  .$index -> viroutlier
+
+sinvirdistance %>%
+  mutate(outlier = if_else(index %in% viroutlier,TRUE,FALSE)) %>%
+  ggplot(aes(x = sample_vir,
+           y = distance,
+           color = sample_loc)) +
+  annotate(\"segment\",
+           x = 1,
+           xend = 2,
+           y = 1.05,
+           linewidth = 1) +
+  annotate(\"text\",
+           label = \"***\",
+           x = 1.5,
+           y = 1.075,
+           size = 14) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.2,
+              size = 5,
+              alpha = 0.5) +
+  scale_color_manual(values = loccols) +
+  scale_shape_manual(values = c(16,1)) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_y_continuous(name = \"Distance to centroid\",
+                     limits = c(-0.1,1.2)) +
+  labs(subtitle = \"Sinus\") +
+  theme(legend.position = \"none\",
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> sinplot
+
+spuvirdistance %>%
+  mutate(outlier = if_else(index %in% viroutlier,TRUE,FALSE)) %>%
+  ggplot(aes(x = sample_vir,
+           y = distance,
+           color = sample_loc)) +
+  annotate(\"segment\",
+           x = 1,
+           xend = 2,
+           y = 0.85,
+           linewidth = 1) +
+  annotate(\"text\",
+           label = \"**\",
+           x = 1.5,
+           y = 0.875,
+           size = 14) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.2,
+              size = 5,
+              alpha = 0.5) +
+  scale_color_manual(values = loccols,
+                     guide = \"none\") +
+  scale_shape_manual(name = NULL,
+                     labels = c(\"Non-outlier\",\"Outlier\"),
+                     values = c(16,1)) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_y_continuous(name = \"Distance to centroid\",
+                     limits = c(-0.1,1.2)) +
+  labs(subtitle = \"Sputum\") +
+  theme(legend.position = \"inside\",
+        legend.position.inside = c(0.8,0.9),
+        legend.background = element_rect(color = \"black\"),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_text(color = \"white\"),
+        axis.title.y = element_text(color = \"white\"),
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> spuplot
+
+plot_grid(sinplot,spuplot) -> sinspuplot
+
+ggsave(plot = sinspuplot,
+       \"adult_sampleloc_centroid_distance_vs_infected.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```"

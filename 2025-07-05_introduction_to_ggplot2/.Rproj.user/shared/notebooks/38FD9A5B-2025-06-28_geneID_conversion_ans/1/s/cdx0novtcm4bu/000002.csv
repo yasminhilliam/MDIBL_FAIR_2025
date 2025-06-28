@@ -1,0 +1,29 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VsZWN0KG9yZy5Icy5lZy5kYixcbiAgICAgICBrZXlzID0gXCJFTlNHMDAwMDAxMDgzNDJcIiwgIyBFbnNlbWJsIElEIHdlIHdhbnQgdG8gZmluZCBpZGVudGlmaWVycyBmb3JcbiAgICAgICBrZXl0eXBlID0gXCJFTlNFTUJMXCIsICMgdGVsbHMgdGhlIGZ1bmN0aW9uIHRoYXQgd2UgYXJlIHVzaW5nIGFuIEVuc2VtYmwgSUQgYXMgb3VyIHJlZmVyZW5jZVxuICAgICAgIGNvbHVtbnMgPSBjKFwiRU5UUkVaSURcIixcIlNZTUJPTFwiLFwiR0VORU5BTUVcIikpICMgc2VsZWN0cyB0aGUgaWRlbnRpZmllcnMgd2UgYXJlIGludGVyZXN0ZWQgaW5cbmBgYCJ9 -->
+
+```r
+select(org.Hs.eg.db,
+       keys = \"ENSG00000108342\", # Ensembl ID we want to find identifiers for
+       keytype = \"ENSEMBL\", # tells the function that we are using an Ensembl ID as our reference
+       columns = c(\"ENTREZID\",\"SYMBOL\",\"GENENAME\")) # selects the identifiers we are interested in
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+select(org.Hs.eg.db,
+       keys = \"ENSG00000108342\", # Ensembl ID we want to find identifiers for
+       keytype = \"ENSEMBL\", # tells the function that we are using an Ensembl ID as our reference
+       columns = c(\"ENTREZID\",\"SYMBOL\",\"GENENAME\")) # selects the identifiers we are interested in
+```"
+"1","
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6NCwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSDDlyA0XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVJYVS9DTUJTOVFBZXlSQ1h4MFJmK0FBdHplK0JWcEJBVE41T0JDZnBXdDRHTG95VmI1OGVmUis5bVM2Uk5tdDU3VHMvdHViZlJiTzNaYXhzQU9rQklHem9XaG1BOXJlYWpDUUFDQUMwZzBLL1BMN3gwaFFIQlBmaEhYTkp3dVJqWHl4MVBQUC9Hb0lucisyTVR1MXZPUFFPN2prVXUrUGV3bE5tdXlwbk0rSGE0WWJFVXhkQXpyRmljN2RKUzZZa0NlMmlEQnRNSGxaN1JjQlhSbC91Wnlydkw1MkQ2ZUdRWE5LVGhiVUNOeXYxQ2ZEcTYrbmxETlB2MCtUaG5aV25ZdHhNbW1iTXBVSXZad1pEMHhGNW1ncU9vWFkrd2E0aGJrUUVNS2w2N1NFYnhXOFhmUjU1cjhKMDkzOWFQS29kdzZ2WVlrejhiN1I4bDcrcGhwSHliOFZUM2s3UFhOTmVWay9SRGhSYzRqR1lXenI3SXVOU05JbG82VWtpbUpUYituRWFhMXVId0N3ZXFyMzFZQWdBQSJ9 -->
+
+<div data-pagedtable=\"false\">
+  <script data-pagedtable-source type=\"application/json\">
+{\"columns\":[{\"label\":[\"ENSEMBL\"],\"name\":[1],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"ENTREZID\"],\"name\":[2],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"SYMBOL\"],\"name\":[3],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"GENENAME\"],\"name\":[4],\"type\":[\"chr\"],\"align\":[\"left\"]}],\"data\":[{\"1\":\"ENSG00000108342\",\"2\":\"1440\",\"3\":\"CSF3\",\"4\":\"colony stimulating factor 3\"}],\"options\":{\"columns\":{\"min\":{},\"max\":[10],\"total\":[4]},\"rows\":{\"min\":[10],\"max\":[10],\"total\":[1]},\"pages\":{}}}
+  </script>
+</div>
+
+<!-- rnb-frame-end -->
+"

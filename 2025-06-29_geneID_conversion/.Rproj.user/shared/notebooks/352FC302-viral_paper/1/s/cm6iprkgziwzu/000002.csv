@@ -1,0 +1,52 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2dwbG90KHNpbnNwdVBDb0FNZXRhLFxuICAgICAgIGFlcyh4ID0gRGltMSxcbiAgICAgICAgICAgeSA9IERpbTIsXG4gICAgICAgICAgIGNvbG9yID0gdmlydXMuYmluKSkgK1xuICBnZW9tX2hsaW5lKHlpbnRlcmNlcHQgPSAwLFxuICAgICAgICAgICAgIGNvbG9yID0gXCJncmV5XCIpICtcbiAgZ2VvbV92bGluZSh4aW50ZXJjZXB0ID0gMCxcbiAgICAgICAgICAgICBjb2xvciA9IFwiZ3JleVwiKSArXG4gIGdlb21fcG9pbnQoc2l6ZSA9IDUsXG4gICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKG5hbWUgPSBcIlNhbXBsZSB2aXJhbFxcbnN0YXR1c1wiLFxuICAgICAgICAgICAgICAgICAgICAgdmFsdWVzID0gdmlyY29scyxcbiAgICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJOZWdhdGl2ZVwiLFwiUG9zaXRpdmVcIikpICtcbiAgbGFicyh4ID0gXCJQQ29BIDEgKDUwLjYlKVwiLFxuICAgICAgIHkgPSBcIlBDb0EgMiAoMjYuMiUpXCIpICtcbiAgc2NhbGVfeF9jb250aW51b3VzKGxpbWl0cyA9IGMoLTAuNywwLjcpKSArXG4gIHNjYWxlX3lfY29udGludW91cyhsaW1pdHMgPSBjKC0wLjY1LDAuNjUpKSArXG4gIHRoZW1lKHBhbmVsLmdyaWQgPSBlbGVtZW50X2JsYW5rKCksXG4gICAgICAgIGxlZ2VuZC5wb3NpdGlvbiA9IFwiaW5zaWRlXCIsXG4gICAgICAgIGxlZ2VuZC5wb3NpdGlvbi5pbnNpZGUgPSBjKDAuMTUsMC45MDUpLFxuICAgICAgICBsZWdlbmQuYmFja2dyb3VuZCA9IGVsZW1lbnRfcmVjdChjb2xvciA9IFwiYmxhY2tcIikpIC0+IHZpcmFsc3RhdHVzUENvQVxuYGBgIn0= -->
+
+```r
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = virus.bin)) +
+  geom_hline(yintercept = 0,
+             color = \"grey\") +
+  geom_vline(xintercept = 0,
+             color = \"grey\") +
+  geom_point(size = 5,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Sample viral\nstatus\",
+                     values = vircols,
+                     labels = c(\"Negative\",\"Positive\")) +
+  labs(x = \"PCoA 1 (50.6%)\",
+       y = \"PCoA 2 (26.2%)\") +
+  scale_x_continuous(limits = c(-0.7,0.7)) +
+  scale_y_continuous(limits = c(-0.65,0.65)) +
+  theme(panel.grid = element_blank(),
+        legend.position = \"inside\",
+        legend.position.inside = c(0.15,0.905),
+        legend.background = element_rect(color = \"black\")) -> viralstatusPCoA
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = virus.bin)) +
+  geom_hline(yintercept = 0,
+             color = \"grey\") +
+  geom_vline(xintercept = 0,
+             color = \"grey\") +
+  geom_point(size = 5,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Sample viral\nstatus\",
+                     values = vircols,
+                     labels = c(\"Negative\",\"Positive\")) +
+  labs(x = \"PCoA 1 (50.6%)\",
+       y = \"PCoA 2 (26.2%)\") +
+  scale_x_continuous(limits = c(-0.7,0.7)) +
+  scale_y_continuous(limits = c(-0.65,0.65)) +
+  theme(panel.grid = element_blank(),
+        legend.position = \"inside\",
+        legend.position.inside = c(0.15,0.905),
+        legend.background = element_rect(color = \"black\")) -> viralstatusPCoA
+```"

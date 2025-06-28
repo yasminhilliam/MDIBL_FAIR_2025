@@ -1,0 +1,28 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQmlvY01hbmFnZXI6Omluc3RhbGwoXCJnb2FuYVwiKVxuXG5gYGAifQ== -->
+
+```r
+BiocManager::install(\"goana\")
+
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+BiocManager::install(\"goana\")
+
+```"
+"1","Update all/some/none? [a/s/n]: 
+"
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxublxuYGBgIn0= -->
+
+```r
+n
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+n
+```"

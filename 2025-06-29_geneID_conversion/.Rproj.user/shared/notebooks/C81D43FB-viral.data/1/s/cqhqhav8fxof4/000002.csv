@@ -1,0 +1,118 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmFjdG9yKGx1bmdmdW5jRGYkZXhhY2VyYmF0aW9uKSAtPiBsdW5nZnVuY0RmJGV4YWNlcmJhdGlvblxuXG4jIERlZmluZSB0aGUgcGF0aWVudGlkIGFzIHRoZSByYW5kb20gZWZmZWN0IHZhcmlhYmxlXG5wYXRpZW50X2lkX2Zvcm11bGEgPC0gXCIoMSB8IHBhdGllbnRpZClcIlxuXG4jIEluaXRpYWxpemUgYSBsaXN0IHRvIHN0b3JlIHRoZSBtb2RlbHNcbmx1bmdmdW5jbW9kZWxzIDwtIGxpc3QoKVxuXG4jIEl0ZXJhdGUgdGhyb3VnaCBjb2x1bW5zIG9mIHRoZSBkYXRhZnJhbWUgZXhjZXB0IGZvciB0aGUgXCJwYXRpZW50aWRcIiBjb2x1bW5cbmZvciAocmVzcG9uc2UgaW4gbmFtZXMobHVuZ2Z1bmNEZilbNjpsZW5ndGgobmFtZXMobHVuZ2Z1bmNEZikpXSkgeyAgIyBFeGNsdWRlIHRoZSBmaXJzdCBjb2x1bW4gKFwicGF0aWVudGlkXCIpXG4gICAgZml4ZWRfZWZmZWN0cyA8LSBcImV4YWNlcmJhdGlvblwiXG4gIFxuICAgIGZvcm11bGEgPC0gYXMuZm9ybXVsYShwYXN0ZShyZXNwb25zZSwgXCJ+XCIsIGZpeGVkX2VmZmVjdHMsXCIrXCIsIHBhdGllbnRfaWRfZm9ybXVsYSkpXG4gIFxuICAgICMgRml0IHRoZSBsaW5lYXIgbWl4ZWQtZWZmZWN0cyBtb2RlbFxuICAgIG1vZGVsIDwtIGxtZXIoZm9ybXVsYSwgZGF0YSA9IGx1bmdmdW5jRGYpXG4gIFxuICAgICMgU3RvcmUgdGhlIG1vZGVsIGluIHRoZSBsaXN0IHVzaW5nIHRoZSByZXNwb25zZSB2YXJpYWJsZSBuYW1lXG4gICAgbHVuZ2Z1bmNtb2RlbHNbW3Jlc3BvbnNlXV0gPC0gbW9kZWxcbiAgXG4gICAgIyBPcHRpb25hbDogUHJpbnQgdGhlIHN1bW1hcnkgb2YgdGhlIG1vZGVsXG4gICAgcHJpbnQocGFzdGUoXCJNb2RlbCBmb3I6XCIsIHJlc3BvbnNlKSlcbiAgICBwcmludChzdW1tYXJ5KG1vZGVsKSlcbn1cblxubHVuZ2Z1bmNEZiAlPiVcbiAgcGl2b3RfbG9uZ2VyKGNvbHMgPSBjKDY6OSksXG4gICAgICAgICAgICAgICBuYW1lc190byA9IFwibWVhc3VyZVwiLFxuICAgICAgICAgICAgICAgdmFsdWVzX3RvID0gXCJ2YWx1ZVwiKSAlPiVcbiAgZmlsdGVyKCFpcy5uYShleGFjZXJiYXRpb24pKSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gZXhhY2VyYmF0aW9uLFxuICAgICAgICAgICAgIHkgPSB2YWx1ZSxcbiAgICAgICAgICAgICBjb2xvciA9IG1lYXN1cmUpKSArXG4gIGdlb21fdmlvbGluKG5hLnJtID0gVFJVRSxcbiAgICAgICAgICAgICAgc2NhbGUgPSBcImNvdW50XCIsXG4gICAgICAgICAgICAgIGRyYXdfcXVhbnRpbGVzID0gYygwLjUpKSArXG4gIGdlb21faml0dGVyKHdpZHRoID0gMC4wNSxcbiAgICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfeF9kaXNjcmV0ZShuYW1lID0gXCJFeGFjZXJiYXRpb24gdmlzaXRcIixcbiAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiTm9cIixcIlllc1wiKSkgK1xuICBmYWNldF9ncmlkKHJvd3MgPSB2YXJzKG1lYXN1cmUpLFxuICAgICAgICAgICAgIHNjYWxlcyA9IFwiZnJlZVwiKSArXG4gIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9IFwibm9uZVwiLFxuICAgICAgICBwYW5lbC5ib3JkZXIgPSBlbGVtZW50X3JlY3QoY29sb3IgPSBcImdyZXk0OFwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZmlsbCA9IE5BKSxcbiAgICAgICAgYXhpcy50aXRsZS55ID0gZWxlbWVudF9ibGFuaygpKSAtPiBsdW5nZnVuY0V4XG5cbmx1bmdmdW5jRXhcblxuZ2dzYXZlKHBsb3QgPSBsdW5nZnVuY0V4LFxuICAgICAgIFwicmVzcGlyYXRvcnkubWVhc3VyZXMuZXhhY2VyYmF0aW9uLnRpZmZcIixcbiAgICAgICBoZWlnaHQgPSAxMixcbiAgICAgICB3aWR0aCA9IDgsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5gYGAifQ== -->
+
+```r
+factor(lungfuncDf$exacerbation) -> lungfuncDf$exacerbation
+
+# Define the patientid as the random effect variable
+patient_id_formula <- \"(1 | patientid)\"
+
+# Initialize a list to store the models
+lungfuncmodels <- list()
+
+# Iterate through columns of the dataframe except for the \"patientid\" column
+for (response in names(lungfuncDf)[6:length(names(lungfuncDf))]) {  # Exclude the first column (\"patientid\")
+    fixed_effects <- \"exacerbation\"
+  
+    formula <- as.formula(paste(response, \"~\", fixed_effects,\"+\", patient_id_formula))
+  
+    # Fit the linear mixed-effects model
+    model <- lmer(formula, data = lungfuncDf)
+  
+    # Store the model in the list using the response variable name
+    lungfuncmodels[[response]] <- model
+  
+    # Optional: Print the summary of the model
+    print(paste(\"Model for:\", response))
+    print(summary(model))
+}
+
+lungfuncDf %>%
+  pivot_longer(cols = c(6:9),
+               names_to = \"measure\",
+               values_to = \"value\") %>%
+  filter(!is.na(exacerbation)) %>%
+  ggplot(aes(x = exacerbation,
+             y = value,
+             color = measure)) +
+  geom_violin(na.rm = TRUE,
+              scale = \"count\",
+              draw_quantiles = c(0.5)) +
+  geom_jitter(width = 0.05,
+              alpha = 0.5) +
+  scale_x_discrete(name = \"Exacerbation visit\",
+                   labels = c(\"No\",\"Yes\")) +
+  facet_grid(rows = vars(measure),
+             scales = \"free\") +
+  theme(legend.position = \"none\",
+        panel.border = element_rect(color = \"grey48\",
+                                    fill = NA),
+        axis.title.y = element_blank()) -> lungfuncEx
+
+lungfuncEx
+
+ggsave(plot = lungfuncEx,
+       \"respiratory.measures.exacerbation.tiff\",
+       height = 12,
+       width = 8,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+factor(lungfuncDf$exacerbation) -> lungfuncDf$exacerbation
+
+# Define the patientid as the random effect variable
+patient_id_formula <- \"(1 | patientid)\"
+
+# Initialize a list to store the models
+lungfuncmodels <- list()
+
+# Iterate through columns of the dataframe except for the \"patientid\" column
+for (response in names(lungfuncDf)[6:length(names(lungfuncDf))]) {  # Exclude the first column (\"patientid\")
+    fixed_effects <- \"exacerbation\"
+  
+    formula <- as.formula(paste(response, \"~\", fixed_effects,\"+\", patient_id_formula))
+  
+    # Fit the linear mixed-effects model
+    model <- lmer(formula, data = lungfuncDf)
+  
+    # Store the model in the list using the response variable name
+    lungfuncmodels[[response]] <- model
+  
+    # Optional: Print the summary of the model
+    print(paste(\"Model for:\", response))
+    print(summary(model))
+}
+
+lungfuncDf %>%
+  pivot_longer(cols = c(6:9),
+               names_to = \"measure\",
+               values_to = \"value\") %>%
+  filter(!is.na(exacerbation)) %>%
+  ggplot(aes(x = exacerbation,
+             y = value,
+             color = measure)) +
+  geom_violin(na.rm = TRUE,
+              scale = \"count\",
+              draw_quantiles = c(0.5)) +
+  geom_jitter(width = 0.05,
+              alpha = 0.5) +
+  scale_x_discrete(name = \"Exacerbation visit\",
+                   labels = c(\"No\",\"Yes\")) +
+  facet_grid(rows = vars(measure),
+             scales = \"free\") +
+  theme(legend.position = \"none\",
+        panel.border = element_rect(color = \"grey48\",
+                                    fill = NA),
+        axis.title.y = element_blank()) -> lungfuncEx
+
+lungfuncEx
+
+ggsave(plot = lungfuncEx,
+       \"respiratory.measures.exacerbation.tiff\",
+       height = 12,
+       width = 8,
+       units = c(\"in\"))
+```"

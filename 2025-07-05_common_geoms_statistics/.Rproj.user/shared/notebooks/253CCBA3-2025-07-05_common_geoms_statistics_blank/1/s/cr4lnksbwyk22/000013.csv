@@ -1,0 +1,4 @@
+"0","ggplot(data = gapminder, "
+"0","       aes(x = gdpPercap, "
+"0","           y = lifeExp)) +"
+"0","  geom_bin2d() # notice that now on the y axis, we've added another feature from the data and now ""counts"" is depicted by color."

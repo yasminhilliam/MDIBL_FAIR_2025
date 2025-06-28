@@ -1,0 +1,26 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmlzaGVyLnRlc3QoTWVzc3ltdCxcbiAgICAgICAgICAgIGFsdGVybmF0aXZlID0gXCJ0d28uc2lkZWRcIilcbmBgYCJ9 -->
+
+```r
+fisher.test(Messymt,
+            alternative = \"two.sided\")
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+fisher.test(Messymt,
+            alternative = \"two.sided\")
+```"
+"1","
+	Fisher's Exact Test for Count Data
+
+data:  Messymt
+p-value = 4.374e-13
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 1.955115 3.310313
+sample estimates:
+odds ratio 
+  2.541431 
+"

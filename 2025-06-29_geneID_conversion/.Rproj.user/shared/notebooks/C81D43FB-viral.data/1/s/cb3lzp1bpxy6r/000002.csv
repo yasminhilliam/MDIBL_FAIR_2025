@@ -1,0 +1,108 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZC5jc3YoXCIvVm9sdW1lcy9KQk9NQi9Cb21iZXJnZXJfTGFiX1VzZXJzL0N1cnJlbnRfVXNlcnMvWWFzbWluX0hpbGxpYW0vYWR1bHQuQ0YuQ1JTL3ZpcmFsLmRhdGEvMjAyMjAxMjEuYm9tYmVyZ2VyLnZpcmFsLnNwZWNpbWVucy5yZXN1bHRzLmNzdlwiKSAtPiB2aXJhbFBhbmVsXG5cbnZpcmFsUGFuZWwgJT4lXG4gIGRwbHlyOjpzZWxlY3QoUGF0aWVudC5JRCxEYXRlLFNpdGUsXG4gICAgICAgICAgICAgICAgRmx1LkEuMSxGbHUuQS4xLkN0LCxcbiAgICAgICAgICAgICAgICBGbHUuQS4yLEZsdS5BLjIuQ3QsXG4gICAgICAgICAgICAgICAgRmx1LkEuMyxGbHUuQS4zLkN0LFxuICAgICAgICAgICAgICAgIEZsdS5CLjEsRmx1LkIuMS5DdCxcbiAgICAgICAgICAgICAgICBGbHUuQi4yLEZsdS5CLjIuQ3QsXG4gICAgICAgICAgICAgICAgRmx1LkIuMyxGbHUuQi4zLkN0LFxuICAgICAgICAgICAgICAgIEIuVklDLEIuVklDLkN0LFxuICAgICAgICAgICAgICAgIEIuWUFNLEIuWUFNLkN0LFxuICAgICAgICAgICAgICAgIEZsdS5DLEZsdS5DLkN0LFxuICAgICAgICAgICAgICAgIE1QVixNUFYuQ3QsXG4gICAgICAgICAgICAgICAgUlNWLFJTVi5DdCxcbiAgICAgICAgICAgICAgICBIUlYsSFJWLkN0LFxuICAgICAgICAgICAgICAgIFBJVjEsUElWMS5DdCxcbiAgICAgICAgICAgICAgICBQSVYyLFBJVjIuQ3QsXG4gICAgICAgICAgICAgICAgUElWMyxQSVYzLkN0LFxuICAgICAgICAgICAgICAgIFBJVjQsUElWNC5DdCxcbiAgICAgICAgICAgICAgICBBZFYsQWRWLkN0LFxuICAgICAgICAgICAgICAgIHBFVi5ENjgscEVWLkQ2OC5DdCxcbiAgICAgICAgICAgICAgICBYMjI5RSxYMjI5RS5DdCxcbiAgICAgICAgICAgICAgICBPQzQzLE9DNDMuQ3QpIC0+IHZpcmFsUGFuZWxcblxudmlyYWxQYW5lbCAlPiVcbiAgcGl2b3RfbG9uZ2VyKGNvbHMgPSBjKHNlcShmcm9tID0gNSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0byA9IDQzLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJ5ID0gMikpLFxuICAgICAgICAgICAgICAgbmFtZXNfdG8gPSBcInZpcnVzLmN0XCIsXG4gICAgICAgICAgICAgICB2YWx1ZXNfdG8gPSBcImN0XCIpICU+JVxuICBkcGx5cjo6c2VsZWN0KFBhdGllbnQuSUQsRGF0ZSxTaXRlLHZpcnVzLmN0LGN0KSAlPiVcbiAgZmlsdGVyKCFpcy5uYShjdCkpIC0+IHZpcmFsUG9zXG5cbmdzdWIoXCIvXCIsXCJfXCIsdmlyYWxQb3MkRGF0ZSkgLT4gdmlyYWxQb3MkRGF0ZVxuXG5nc3ViKFwiKFxcXFxkezEsMn1fXFxcXGR7MSwyfV8pKFxcXFxkezJ9KShcXFxcZHsyfSlcIiwgXCJcXFxcMVxcXFwzXCIsdmlyYWxQb3MkRGF0ZSkgLT4gdmlyYWxQb3MkRGF0ZVxuXG5nc3ViKFwiXjAoXFxcXGR7MX1fXFxcXGR7MSwyfV9cXFxcZHsyfSlcIixcIlxcXFwxXCIsdmlyYWxQb3MkRGF0ZSkgLT4gdmlyYWxQb3MkRGF0ZVxuXG5nc3ViKFwiKFxcXFxkezEsMn1fKTAoXFxcXGR7MX1fXFxcXGR7Mn0pXCIsXCJcXFxcMVxcXFwyXCIsdmlyYWxQb3MkRGF0ZSkgLT4gdmlyYWxQb3MkRGF0ZVxuXG5nc3ViKFwiU1wiLFwic1wiLHZpcmFsUG9zJFNpdGUpIC0+IHZpcmFsUG9zJFNpdGVcblxuZ3N1YihcIi1cIixcIlwiLHZpcmFsUG9zJFBhdGllbnQuSUQpIC0+IHZpcmFsUG9zJFBhdGllbnQuSURcblxudmlyYWxQb3MgJT4lXG4gIG11dGF0ZShpbmRleCA9IHBhc3RlKFBhdGllbnQuSUQsU2l0ZSxEYXRlLFxuICAgICAgICAgICAgICAgICAgICAgICBzZXAgPSBcIl9cIikpIC0+IHZpcmFsUG9zXG5gYGAifQ== -->
+
+```r
+read.csv(\"/Volumes/JBOMB/Bomberger_Lab_Users/Current_Users/Yasmin_Hilliam/adult.CF.CRS/viral.data/20220121.bomberger.viral.specimens.results.csv\") -> viralPanel
+
+viralPanel %>%
+  dplyr::select(Patient.ID,Date,Site,
+                Flu.A.1,Flu.A.1.Ct,,
+                Flu.A.2,Flu.A.2.Ct,
+                Flu.A.3,Flu.A.3.Ct,
+                Flu.B.1,Flu.B.1.Ct,
+                Flu.B.2,Flu.B.2.Ct,
+                Flu.B.3,Flu.B.3.Ct,
+                B.VIC,B.VIC.Ct,
+                B.YAM,B.YAM.Ct,
+                Flu.C,Flu.C.Ct,
+                MPV,MPV.Ct,
+                RSV,RSV.Ct,
+                HRV,HRV.Ct,
+                PIV1,PIV1.Ct,
+                PIV2,PIV2.Ct,
+                PIV3,PIV3.Ct,
+                PIV4,PIV4.Ct,
+                AdV,AdV.Ct,
+                pEV.D68,pEV.D68.Ct,
+                X229E,X229E.Ct,
+                OC43,OC43.Ct) -> viralPanel
+
+viralPanel %>%
+  pivot_longer(cols = c(seq(from = 5,
+                            to = 43,
+                            by = 2)),
+               names_to = \"virus.ct\",
+               values_to = \"ct\") %>%
+  dplyr::select(Patient.ID,Date,Site,virus.ct,ct) %>%
+  filter(!is.na(ct)) -> viralPos
+
+gsub(\"/\",\"_\",viralPos$Date) -> viralPos$Date
+
+gsub(\"(\\d{1,2}_\\d{1,2}_)(\\d{2})(\\d{2})\", \"\\1\\3\",viralPos$Date) -> viralPos$Date
+
+gsub(\"^0(\\d{1}_\\d{1,2}_\\d{2})\",\"\\1\",viralPos$Date) -> viralPos$Date
+
+gsub(\"(\\d{1,2}_)0(\\d{1}_\\d{2})\",\"\\1\\2\",viralPos$Date) -> viralPos$Date
+
+gsub(\"S\",\"s\",viralPos$Site) -> viralPos$Site
+
+gsub(\"-\",\"\",viralPos$Patient.ID) -> viralPos$Patient.ID
+
+viralPos %>%
+  mutate(index = paste(Patient.ID,Site,Date,
+                       sep = \"_\")) -> viralPos
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+read.csv(\"/Volumes/JBOMB/Bomberger_Lab_Users/Current_Users/Yasmin_Hilliam/adult.CF.CRS/viral.data/20220121.bomberger.viral.specimens.results.csv\") -> viralPanel
+
+viralPanel %>%
+  dplyr::select(Patient.ID,Date,Site,
+                Flu.A.1,Flu.A.1.Ct,,
+                Flu.A.2,Flu.A.2.Ct,
+                Flu.A.3,Flu.A.3.Ct,
+                Flu.B.1,Flu.B.1.Ct,
+                Flu.B.2,Flu.B.2.Ct,
+                Flu.B.3,Flu.B.3.Ct,
+                B.VIC,B.VIC.Ct,
+                B.YAM,B.YAM.Ct,
+                Flu.C,Flu.C.Ct,
+                MPV,MPV.Ct,
+                RSV,RSV.Ct,
+                HRV,HRV.Ct,
+                PIV1,PIV1.Ct,
+                PIV2,PIV2.Ct,
+                PIV3,PIV3.Ct,
+                PIV4,PIV4.Ct,
+                AdV,AdV.Ct,
+                pEV.D68,pEV.D68.Ct,
+                X229E,X229E.Ct,
+                OC43,OC43.Ct) -> viralPanel
+
+viralPanel %>%
+  pivot_longer(cols = c(seq(from = 5,
+                            to = 43,
+                            by = 2)),
+               names_to = \"virus.ct\",
+               values_to = \"ct\") %>%
+  dplyr::select(Patient.ID,Date,Site,virus.ct,ct) %>%
+  filter(!is.na(ct)) -> viralPos
+
+gsub(\"/\",\"_\",viralPos$Date) -> viralPos$Date
+
+gsub(\"(\\d{1,2}_\\d{1,2}_)(\\d{2})(\\d{2})\", \"\\1\\3\",viralPos$Date) -> viralPos$Date
+
+gsub(\"^0(\\d{1}_\\d{1,2}_\\d{2})\",\"\\1\",viralPos$Date) -> viralPos$Date
+
+gsub(\"(\\d{1,2}_)0(\\d{1}_\\d{2})\",\"\\1\\2\",viralPos$Date) -> viralPos$Date
+
+gsub(\"S\",\"s\",viralPos$Site) -> viralPos$Site
+
+gsub(\"-\",\"\",viralPos$Patient.ID) -> viralPos$Patient.ID
+
+viralPos %>%
+  mutate(index = paste(Patient.ID,Site,Date,
+                       sep = \"_\")) -> viralPos
+```"

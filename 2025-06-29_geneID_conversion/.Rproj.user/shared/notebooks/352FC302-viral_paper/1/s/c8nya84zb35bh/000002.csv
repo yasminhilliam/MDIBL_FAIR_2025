@@ -1,0 +1,40 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2luc3B1QWxwaGEgJT4lXG4gIGxlZnRfam9pbiguLHZpcmFsUG9zKSAlPiVcbiAgZmlsdGVyKGluZGV4ICVpbiUgc2luc3B1KSAtPiBjdGNvbXBcblxuc3VtbWFyeShsbWVyKGRhdGEgPSBjdGNvbXAsXG4gICAgICAgICAgICAgU2hhbm5vbiB+IGN0ICsgc2FtcGxlbG9jICsgKGN0ICogc2FtcGxlbG9jKSArICgxfHBhdGllbnRpZCkpKVxuXG5zaW5zcHVBbHBoYSAlPiVcbiAgbGVmdF9qb2luKC4sdmlyYWxQb3MpICU+JVxuICBmaWx0ZXIoaW5kZXggJWluJSBzaW5zcHUpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSBTaGFubm9uLFxuICAgICAgICAgICAgIHkgPSBjdCkpICtcbiAgZ2VvbV9wb2ludCgpICtcbiAgZ2VvbV9zbW9vdGgobWV0aG9kID0gXCJsbVwiKSArXG4gIGZhY2V0X3dyYXAofnNhbXBsZWxvYylcbmBgYCJ9 -->
+
+```r
+sinspuAlpha %>%
+  left_join(.,viralPos) %>%
+  filter(index %in% sinspu) -> ctcomp
+
+summary(lmer(data = ctcomp,
+             Shannon ~ ct + sampleloc + (ct * sampleloc) + (1|patientid)))
+
+sinspuAlpha %>%
+  left_join(.,viralPos) %>%
+  filter(index %in% sinspu) %>%
+  ggplot(aes(x = Shannon,
+             y = ct)) +
+  geom_point() +
+  geom_smooth(method = \"lm\") +
+  facet_wrap(~sampleloc)
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+sinspuAlpha %>%
+  left_join(.,viralPos) %>%
+  filter(index %in% sinspu) -> ctcomp
+
+summary(lmer(data = ctcomp,
+             Shannon ~ ct + sampleloc + (ct * sampleloc) + (1|patientid)))
+
+sinspuAlpha %>%
+  left_join(.,viralPos) %>%
+  filter(index %in% sinspu) %>%
+  ggplot(aes(x = Shannon,
+             y = ct)) +
+  geom_point() +
+  geom_smooth(method = \"lm\") +
+  facet_wrap(~sampleloc)
+```"

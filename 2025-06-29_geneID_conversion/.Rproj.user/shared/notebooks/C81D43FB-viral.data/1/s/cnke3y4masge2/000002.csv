@@ -1,0 +1,20 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWR1bHQgJT4lXG4gIGZpbHRlcihnZW51cyA9PSBcIkdyYW51bGljYXRlbGxhXCIpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSB2aXJ1cy5iaW4sXG4gICAgICAgICAgIHkgPSByZWwuYWJ1bmRhbmNlKSkgK1xuICBnZW9tX2JveHBsb3QoKVxuYGBgIn0= -->
+
+```r
+adult %>%
+  filter(genus == \"Granulicatella\") %>%
+  ggplot(aes(x = virus.bin,
+           y = rel.abundance)) +
+  geom_boxplot()
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+adult %>%
+  filter(genus == \"Granulicatella\") %>%
+  ggplot(aes(x = virus.bin,
+           y = rel.abundance)) +
+  geom_boxplot()
+```"

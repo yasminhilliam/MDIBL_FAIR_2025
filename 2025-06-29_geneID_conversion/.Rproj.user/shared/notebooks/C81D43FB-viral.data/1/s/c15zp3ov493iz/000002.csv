@@ -1,0 +1,20 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWFhc2xpbjMoaW5wdXRfZGF0YSA9IHBlZHNNM2RmLFxuICAgICAgICAgaW5wdXRfbWV0YWRhdGEgPSBwZWRzTTNtZXRhLFxuICAgICAgICAgb3V0cHV0ID0gXCIvVXNlcnMvZjAwNm4xay9Eb2N1bWVudHMvUi5wcm9qZWN0cy92aXJhbC5kYXRhLnByb2plY3QvcGVkcy5NMy52aXJ1c1wiLFxuICAgICAgICAgZm9ybXVsYSA9IFwifiB2aXJ1cy5iaW5cIixcbiAgICAgICAgIHJhbmRvbV9lZmZlY3RzID0gXCJwYXRpZW50aWRcIilcbmBgYCJ9 -->
+
+```r
+maaslin3(input_data = pedsM3df,
+         input_metadata = pedsM3meta,
+         output = \"/Users/f006n1k/Documents/R.projects/viral.data.project/peds.M3.virus\",
+         formula = \"~ virus.bin\",
+         random_effects = \"patientid\")
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+maaslin3(input_data = pedsM3df,
+         input_metadata = pedsM3meta,
+         output = \"/Users/f006n1k/Documents/R.projects/viral.data.project/peds.M3.virus\",
+         formula = \"~ virus.bin\",
+         random_effects = \"patientid\")
+```"

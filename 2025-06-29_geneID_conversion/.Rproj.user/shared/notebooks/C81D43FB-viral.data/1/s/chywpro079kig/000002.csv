@@ -1,0 +1,46 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGZpbHRlcighaXMubmEodmlydXMuYmluKSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgsT1RVLHJlbF9hYikgJT4lXG4gIHBpdm90X3dpZGVyKG5hbWVzX2Zyb20gPSBPVFUsXG4gICAgICAgICAgICAgIHZhbHVlc19mcm9tID0gcmVsX2FiKSAlPiVcbiAgY29sdW1uX3RvX3Jvd25hbWVzKFwiaW5kZXhcIikgLT4gTTJEZlxuXG5hbGxEZiAlPiVcbiAgZmlsdGVyKCFpcy5uYSh2aXJ1cy5iaW4pKSAlPiVcbiAgZHBseXI6OnNlbGVjdChpbmRleCxwYXRpZW50aWQsc2FtcGxlbG9jLGRhdGUsdmlydXMuYmluLHZpcnVzKSAlPiVcbiAgZGlzdGluY3QoKSAlPiVcbiAgY29sdW1uX3RvX3Jvd25hbWVzKFwiaW5kZXhcIikgJT4lXG4gIG11dGF0ZSh2aXJ1cy5zYW1wbGVsb2MgPSBwYXN0ZShzYW1wbGVsb2MsdmlydXMuYmluLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VwID0gXCIuXCIpKSAtPiBNMk1ldGFcblxuYWxsRGYgJT4lXG4gIGRwbHlyOjpzZWxlY3QoT1RVLGtpbmdkb20scGh5bHVtLGNsYXNzLG9yZGVyLGZhbWlseSxnZW51cykgJT4lXG4gIGRpc3RpbmN0KCkgLT4gTTJUYXhhXG5gYGAifQ== -->
+
+```r
+allDf %>%
+  filter(!is.na(virus.bin)) %>%
+  dplyr::select(index,OTU,rel_ab) %>%
+  pivot_wider(names_from = OTU,
+              values_from = rel_ab) %>%
+  column_to_rownames(\"index\") -> M2Df
+
+allDf %>%
+  filter(!is.na(virus.bin)) %>%
+  dplyr::select(index,patientid,sampleloc,date,virus.bin,virus) %>%
+  distinct() %>%
+  column_to_rownames(\"index\") %>%
+  mutate(virus.sampleloc = paste(sampleloc,virus.bin,
+                                 sep = \".\")) -> M2Meta
+
+allDf %>%
+  dplyr::select(OTU,kingdom,phylum,class,order,family,genus) %>%
+  distinct() -> M2Taxa
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  filter(!is.na(virus.bin)) %>%
+  dplyr::select(index,OTU,rel_ab) %>%
+  pivot_wider(names_from = OTU,
+              values_from = rel_ab) %>%
+  column_to_rownames(\"index\") -> M2Df
+
+allDf %>%
+  filter(!is.na(virus.bin)) %>%
+  dplyr::select(index,patientid,sampleloc,date,virus.bin,virus) %>%
+  distinct() %>%
+  column_to_rownames(\"index\") %>%
+  mutate(virus.sampleloc = paste(sampleloc,virus.bin,
+                                 sep = \".\")) -> M2Meta
+
+allDf %>%
+  dplyr::select(OTU,kingdom,phylum,class,order,family,genus) %>%
+  distinct() -> M2Taxa
+```"

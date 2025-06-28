@@ -1,0 +1,7 @@
+"0","getBM(mart = ensembl,"
+"0","      values = c(""CFTR"",""CXCL8""),"
+"0","      filters = ""external_gene_name"","
+"0","      attributes = c(""external_gene_name"",""ensembl_gene_id"",""description""),"
+"0","      uniqueRows = TRUE) -> biomart_output"
+"0",""
+"0","head(biomart_output)"

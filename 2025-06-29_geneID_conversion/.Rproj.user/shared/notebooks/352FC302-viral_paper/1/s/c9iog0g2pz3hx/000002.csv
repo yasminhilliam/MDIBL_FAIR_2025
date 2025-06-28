@@ -1,0 +1,134 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGZpbHRlcihzYW1wbGVsb2MgPT0gXCJzcHV0dW1cIikgJT4lXG4gIGZpbHRlcihyZWxfYWIgPiAwKSAlPiVcbiAgZHBseXI6OnNlbGVjdChPVFUsaW5kZXgpICU+JVxuICBkaXN0aW5jdCgpICU+JVxuICBjb3VudChPVFUpICU+JVxuICBmaWx0ZXIobiA+IDEpICU+JVxuICAuJE9UVSAtPiBzcHV0YXhhXG5cbmZvcih4IGluIHNwdXRheGEpe1xuICBwbG90X2dlbmVyYShhbGxEZixcInNwdXR1bVwiLHNwdXRheGEpXG59XG5cbnNwdUludCA8LSBjKFwiMGZhNDgxOTU3NTI1YTgwOTY0MTIxMTY1YzI4MGYyMGZcIixcIjM3ZjlkOTVkMzIxNDM4NDc3OTY3MjgxZGNmYTRlZmMxXCIsXCI5OTIyZjY5YTU5NTIxYjI3YTQwODUxNzE4ZDgyMGIwYVwiLFwiYjNiZDQ5NTM1N2QxZWI4YzZjOGFhMjk1M2RjZjBmYjVcIilcblxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGZpbHRlcihzYW1wbGVsb2MgPT0gXCJzcHV0dW1cIikgJT4lXG4gIGZpbHRlcihPVFUgJWluJSBzcHVJbnQpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSB2aXJ1cy5iaW4sXG4gICAgICAgICAgICAgeSA9IHJlbF9hYixcbiAgICAgICAgICAgICBjb2xvciA9IHZpcnVzLmJpbikpICtcbiAgZ2VvbV9ib3hwbG90KCkgK1xuICBnZW9tX2ppdHRlcih3aWR0aCA9IDAuMSkgK1xuICBmYWNldF93cmFwKH5nZW51cylcblxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGZpbHRlcihzYW1wbGVsb2MgPT0gXCJzcHV0dW1cIikgJT4lXG4gIGZpbHRlcihnZW51cyA9PSBcIlBzZXVkb21vbmFzXCIpICU+JVxuICBkaXN0aW5jdCgpIC0+IHNwdXR1bVBzZXVkb21vbmFzXG5cbnN1bW1hcnkobG1lcihkYXRhID0gc3B1dHVtUHNldWRvbW9uYXMsXG4gICAgICAgICAgICAgcmVsX2FiIH4gdmlydXMuYmluICsgaGVtdCArICh2aXJ1cy5iaW4gKiBoZW10KSArICgxfHBhdGllbnRpZCkpKVxuXG5hbGxEZiAlPiVcbiAgZmlsdGVyKGluZGV4ICVpbiUgc2luc3B1KSAlPiVcbiAgZmlsdGVyKHNhbXBsZWxvYyA9PSBcInNwdXR1bVwiKSAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiU3RhcGh5bG9jb2NjdXNcIikgJT4lXG4gIGRpc3RpbmN0KCkgLT4gc3B1dHVtU3RhcGh5bG9jb2NjdXNcblxuc3VtbWFyeShsbWVyKGRhdGEgPSBzcHV0dW1TdGFwaHlsb2NvY2N1cyxcbiAgICAgICAgICAgICByZWxfYWIgfiB2aXJ1cy5iaW4gKyBoZW10ICsgKHZpcnVzLmJpbiAqIGhlbXQpICsgKDF8cGF0aWVudGlkKSkpXG5cbmFsbERmICU+JVxuICBmaWx0ZXIoaW5kZXggJWluJSBzaW5zcHUpICU+JVxuICBmaWx0ZXIoc2FtcGxlbG9jID09IFwic3B1dHVtXCIpICU+JVxuICBmaWx0ZXIoZ2VudXMgPT0gXCJSb3RoaWFcIikgJT4lXG4gIGRpc3RpbmN0KCkgLT4gc3B1dHVtUm90aGlhXG5cbnN1bW1hcnkobG1lcihkYXRhID0gc3B1dHVtUm90aGlhLFxuICAgICAgICAgICAgIHJlbF9hYiB+IHZpcnVzLmJpbiArIGhlbXQgKyAodmlydXMuYmluICogaGVtdCkgKyAoMXxwYXRpZW50aWQpKSlcblxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGZpbHRlcihzYW1wbGVsb2MgPT0gXCJzcHV0dW1cIikgJT4lXG4gIGZpbHRlcihnZW51cyA9PSBcIlN0cmVwdG9jb2NjdXNcIikgJT4lXG4gIGRpc3RpbmN0KCkgLT4gc3B1dHVtU3RyZXBcblxuc3VtbWFyeShsbWVyKGRhdGEgPSBzcHV0dW1TdHJlcCxcbiAgICAgICAgICAgICByZWxfYWIgfiB2aXJ1cy5iaW4gKyBoZW10ICsgKHZpcnVzLmJpbiAqIGhlbXQpICsgKDF8cGF0aWVudGlkKSkpXG5gYGAifQ== -->
+
+```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(rel_ab > 0) %>%
+  dplyr::select(OTU,index) %>%
+  distinct() %>%
+  count(OTU) %>%
+  filter(n > 1) %>%
+  .$OTU -> sputaxa
+
+for(x in sputaxa){
+  plot_genera(allDf,\"sputum\",sputaxa)
+}
+
+spuInt <- c(\"0fa481957525a80964121165c280f20f\",\"37f9d95d321438477967281dcfa4efc1\",\"9922f69a59521b27a40851718d820b0a\",\"b3bd495357d1eb8c6c8aa2953dcf0fb5\")
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(OTU %in% spuInt) %>%
+  ggplot(aes(x = virus.bin,
+             y = rel_ab,
+             color = virus.bin)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.1) +
+  facet_wrap(~genus)
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  distinct() -> sputumPseudomonas
+
+summary(lmer(data = sputumPseudomonas,
+             rel_ab ~ virus.bin + hemt + (virus.bin * hemt) + (1|patientid)))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(genus == \"Staphylococcus\") %>%
+  distinct() -> sputumStaphylococcus
+
+summary(lmer(data = sputumStaphylococcus,
+             rel_ab ~ virus.bin + hemt + (virus.bin * hemt) + (1|patientid)))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(genus == \"Rothia\") %>%
+  distinct() -> sputumRothia
+
+summary(lmer(data = sputumRothia,
+             rel_ab ~ virus.bin + hemt + (virus.bin * hemt) + (1|patientid)))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(genus == \"Streptococcus\") %>%
+  distinct() -> sputumStrep
+
+summary(lmer(data = sputumStrep,
+             rel_ab ~ virus.bin + hemt + (virus.bin * hemt) + (1|patientid)))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(rel_ab > 0) %>%
+  dplyr::select(OTU,index) %>%
+  distinct() %>%
+  count(OTU) %>%
+  filter(n > 1) %>%
+  .$OTU -> sputaxa
+
+for(x in sputaxa){
+  plot_genera(allDf,\"sputum\",sputaxa)
+}
+
+spuInt <- c(\"0fa481957525a80964121165c280f20f\",\"37f9d95d321438477967281dcfa4efc1\",\"9922f69a59521b27a40851718d820b0a\",\"b3bd495357d1eb8c6c8aa2953dcf0fb5\")
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(OTU %in% spuInt) %>%
+  ggplot(aes(x = virus.bin,
+             y = rel_ab,
+             color = virus.bin)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.1) +
+  facet_wrap(~genus)
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  distinct() -> sputumPseudomonas
+
+summary(lmer(data = sputumPseudomonas,
+             rel_ab ~ virus.bin + hemt + (virus.bin * hemt) + (1|patientid)))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(genus == \"Staphylococcus\") %>%
+  distinct() -> sputumStaphylococcus
+
+summary(lmer(data = sputumStaphylococcus,
+             rel_ab ~ virus.bin + hemt + (virus.bin * hemt) + (1|patientid)))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(genus == \"Rothia\") %>%
+  distinct() -> sputumRothia
+
+summary(lmer(data = sputumRothia,
+             rel_ab ~ virus.bin + hemt + (virus.bin * hemt) + (1|patientid)))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sputum\") %>%
+  filter(genus == \"Streptococcus\") %>%
+  distinct() -> sputumStrep
+
+summary(lmer(data = sputumStrep,
+             rel_ab ~ virus.bin + hemt + (virus.bin * hemt) + (1|patientid)))
+```"

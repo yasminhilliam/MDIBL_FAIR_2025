@@ -1,0 +1,198 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGZpbHRlcihzYW1wbGVsb2MgPT0gXCJzaW51c1wiKSAlPiVcbiAgZmlsdGVyKHJlbF9hYiA+IDApICU+JVxuICBkcGx5cjo6c2VsZWN0KE9UVSxpbmRleCkgJT4lXG4gIGRpc3RpbmN0KCkgJT4lXG4gIGNvdW50KE9UVSkgJT4lXG4gIGZpbHRlcihuID4gMSkgJT4lXG4gIC4kT1RVIC0+IHNpbnRheGFcblxucGxvdF9nZW5lcmEgPC0gZnVuY3Rpb24oZGYsbG9jYXRpb24sdGF4YSl7XG4gIHBkZihwYXN0ZShcbiAgICBwYXN0ZShcbiAgICAgIGxvY2F0aW9uLFwidGF4YVwiLHNlcCA9IFwiX1wiKSxcbiAgICBwYXN0ZShcbiAgICAgIHgsXCJ2aXJ1cy5wZGZcIixzZXAgPSBcIl9cIiksXG4gICAgICAgICAgICAgIHNlcCA9IFwiL1wiKSxcbiAgICAgIHBhcGVyID0gXCJhNFwiKVxuICAgIFxuICAgIHByaW50KGRmICU+JVxuICAgICAgICAgICAgZmlsdGVyKGluZGV4ICVpbiUgc2luc3B1KSAlPiVcbiAgICAgICAgICAgIGZpbHRlcihzYW1wbGVsb2MgPT0gbG9jYXRpb24pICU+JVxuICAgICAgICAgICAgZmlsdGVyKE9UVSA9PSB4KSAlPiVcbiAgICAgICAgICAgIGdncGxvdChhZXMoeCA9IHZpcnVzLmJpbixcbiAgICAgICAgICAgICAgIHkgPSByZWxfYWIsXG4gICAgICAgICAgICAgICBjb2xvciA9IHZpcnVzLmJpbikpICtcbiAgICAgICAgICAgIGdlb21fYm94cGxvdCgpKVxuICAgIFxuICAgIGRldi5vZmYoKVxuICAgIH1cbn1cblxuZm9yKHggaW4gc2ludGF4YSl7XG4gIHBsb3RfZ2VuZXJhKGFsbERmLFwic2ludXNcIix4KVxufVxuXG5zaW51c0ludCA8LSBjKFwiMGZhNDgxOTU3NTI1YTgwOTY0MTIxMTY1YzI4MGYyMGZcIixcIjM3ZjlkOTVkMzIxNDM4NDc3OTY3MjgxZGNmYTRlZmMxXCIpXG5cbmFsbERmICU+JVxuICBmaWx0ZXIoaW5kZXggJWluJSBzaW5zcHUpICU+JVxuICBmaWx0ZXIoc2FtcGxlbG9jID09IFwic2ludXNcIikgJT4lXG4gIGZpbHRlcihPVFUgJWluJSBzaW51c0ludCkgJT4lXG4gIGdyb3VwX2J5KGdlbnVzLHZpcnVzLmJpbikgJT4lXG4gIGlkZW50aWZ5X291dGxpZXJzKHJlbF9hYikgJT4lXG4gIC4kaW5kZXggLT4gc2ludXNPdXRsaWVyc1xuXG5hbGxEZiAlPiVcbiAgZmlsdGVyKGluZGV4ICVpbiUgc2luc3B1KSAlPiVcbiAgZmlsdGVyKHNhbXBsZWxvYyA9PSBcInNpbnVzXCIpICU+JVxuICBmaWx0ZXIoZ2VudXMgPT0gXCJQc2V1ZG9tb25hc1wiKSAlPiVcbiAgZGlzdGluY3QoKSAtPiBzaW51c1BzZXVkb21vbmFzXG5cbnN1bW1hcnkobG1lcihkYXRhID0gc2ludXNQc2V1ZG9tb25hcyxcbiAgICAgICAgICAgICByZWxfYWIgfiB2aXJ1cy5iaW4gKyAoMXxwYXRpZW50aWQpKSlcblxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGZpbHRlcihzYW1wbGVsb2MgPT0gXCJzaW51c1wiKSAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiU3RhcGh5bG9jb2NjdXNcIikgJT4lXG4gIGRpc3RpbmN0KCkgLT4gc2ludXNTdGFwaHlsb2NvY2N1c1xuXG5zdW1tYXJ5KGxtZXIoZGF0YSA9IHNpbnVzU3RhcGh5bG9jb2NjdXMsXG4gICAgICAgICAgICAgcmVsX2FiIH4gdmlydXMuYmluICsgKDF8cGF0aWVudGlkKSkpXG4gIFxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGZpbHRlcihzYW1wbGVsb2MgPT0gXCJzaW51c1wiKSAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiUHNldWRvbW9uYXNcIikgJT4lXG4gIG11dGF0ZShvdXRsaWVyID0gaWZfZWxzZShpbmRleCAlaW4lIHNpbnVzT3V0bGllcnMsXCJUUlVFXCIsXCJGQUxTRVwiKSkgJT4lXG4gIGdncGxvdChhZXMoeCA9IHZpcnVzLmJpbixcbiAgICAgICAgICAgICB5ID0gcmVsX2FiLFxuICAgICAgICAgICAgIGNvbG9yID0gdmlydXMuYmluKSkgK1xuICBnZW9tX2JveHBsb3Qob3V0bGllcnMgPSBGQUxTRSkgK1xuICBnZW9tX2ppdHRlcihhZXMoc2hhcGUgPSBvdXRsaWVyKSxcbiAgICAgICAgICAgICAgd2lkdGggPSAwLjEsXG4gICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgK1xuICBnZW9tX3NlZ21lbnQoeSA9IDEwNSxcbiAgICAgICAgICAgICAgIHggPSAxLFxuICAgICAgICAgICAgICAgeGVuZCA9IDIsXG4gICAgICAgICAgICAgICBjb2xvciA9IFwiYmxhY2tcIikgK1xuICBhbm5vdGF0ZShcInRleHRcIixcbiAgICAgICAgICAgeCA9IDEuNSxcbiAgICAgICAgICAgeSA9IDEwNyxcbiAgICAgICAgICAgbGFiZWwgPSBcIipcIixcbiAgICAgICAgICAgc2l6ZSA9IDE0KSArXG4gIHNjYWxlX3hfZGlzY3JldGUobmFtZSA9IFwiU2FtcGxlIHZpcmFsIHN0YXR1c1wiLFxuICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJOZWdhdGl2ZVwiLFwiUG9zaXRpdmVcIikpICtcbiAgc2NhbGVfc2hhcGVfbWFudWFsKHZhbHVlcyA9IGMoMTYsMSkpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKHZhbHVlcyA9IGMoXCJwdXJwbGU0XCIsXCJvcmFuZ2VcIikpICtcbiAgc2NhbGVfeV9jb250aW51b3VzKGxpbWl0cyA9IGMoLTEsMTEwKSxcbiAgICAgICAgICAgICAgICAgICAgIGJyZWFrcyA9IGMoMCwyNSw1MCw3NSwxMDApKSArXG4gIGxhYnMoeSA9IFwiUmVsYXRpdmUgYWJ1bmRhbmNlICglKVwiKSArXG4gIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9IFwibm9uZVwiKVxuYGBgIn0= -->
+
+```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(rel_ab > 0) %>%
+  dplyr::select(OTU,index) %>%
+  distinct() %>%
+  count(OTU) %>%
+  filter(n > 1) %>%
+  .$OTU -> sintaxa
+
+plot_genera <- function(df,location,taxa){
+  pdf(paste(
+    paste(
+      location,\"taxa\",sep = \"_\"),
+    paste(
+      x,\"virus.pdf\",sep = \"_\"),
+              sep = \"/\"),
+      paper = \"a4\")
+    
+    print(df %>%
+            filter(index %in% sinspu) %>%
+            filter(sampleloc == location) %>%
+            filter(OTU == x) %>%
+            ggplot(aes(x = virus.bin,
+               y = rel_ab,
+               color = virus.bin)) +
+            geom_boxplot())
+    
+    dev.off()
+    }
+}
+
+for(x in sintaxa){
+  plot_genera(allDf,\"sinus\",x)
+}
+
+sinusInt <- c(\"0fa481957525a80964121165c280f20f\",\"37f9d95d321438477967281dcfa4efc1\")
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(OTU %in% sinusInt) %>%
+  group_by(genus,virus.bin) %>%
+  identify_outliers(rel_ab) %>%
+  .$index -> sinusOutliers
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  distinct() -> sinusPseudomonas
+
+summary(lmer(data = sinusPseudomonas,
+             rel_ab ~ virus.bin + (1|patientid)))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(genus == \"Staphylococcus\") %>%
+  distinct() -> sinusStaphylococcus
+
+summary(lmer(data = sinusStaphylococcus,
+             rel_ab ~ virus.bin + (1|patientid)))
+  
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  mutate(outlier = if_else(index %in% sinusOutliers,\"TRUE\",\"FALSE\")) %>%
+  ggplot(aes(x = virus.bin,
+             y = rel_ab,
+             color = virus.bin)) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.1,
+              size = 5,
+              alpha = 0.5) +
+  geom_segment(y = 105,
+               x = 1,
+               xend = 2,
+               color = \"black\") +
+  annotate(\"text\",
+           x = 1.5,
+           y = 107,
+           label = \"*\",
+           size = 14) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_shape_manual(values = c(16,1)) +
+  scale_color_manual(values = c(\"purple4\",\"orange\")) +
+  scale_y_continuous(limits = c(-1,110),
+                     breaks = c(0,25,50,75,100)) +
+  labs(y = \"Relative abundance (%)\") +
+  theme(legend.position = \"none\")
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(rel_ab > 0) %>%
+  dplyr::select(OTU,index) %>%
+  distinct() %>%
+  count(OTU) %>%
+  filter(n > 1) %>%
+  .$OTU -> sintaxa
+
+plot_genera <- function(df,location,taxa){
+  pdf(paste(
+    paste(
+      location,\"taxa\",sep = \"_\"),
+    paste(
+      x,\"virus.pdf\",sep = \"_\"),
+              sep = \"/\"),
+      paper = \"a4\")
+    
+    print(df %>%
+            filter(index %in% sinspu) %>%
+            filter(sampleloc == location) %>%
+            filter(OTU == x) %>%
+            ggplot(aes(x = virus.bin,
+               y = rel_ab,
+               color = virus.bin)) +
+            geom_boxplot())
+    
+    dev.off()
+    }
+}
+
+for(x in sintaxa){
+  plot_genera(allDf,\"sinus\",x)
+}
+
+sinusInt <- c(\"0fa481957525a80964121165c280f20f\",\"37f9d95d321438477967281dcfa4efc1\")
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(OTU %in% sinusInt) %>%
+  group_by(genus,virus.bin) %>%
+  identify_outliers(rel_ab) %>%
+  .$index -> sinusOutliers
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  distinct() -> sinusPseudomonas
+
+summary(lmer(data = sinusPseudomonas,
+             rel_ab ~ virus.bin + (1|patientid)))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(genus == \"Staphylococcus\") %>%
+  distinct() -> sinusStaphylococcus
+
+summary(lmer(data = sinusStaphylococcus,
+             rel_ab ~ virus.bin + (1|patientid)))
+  
+allDf %>%
+  filter(index %in% sinspu) %>%
+  filter(sampleloc == \"sinus\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  mutate(outlier = if_else(index %in% sinusOutliers,\"TRUE\",\"FALSE\")) %>%
+  ggplot(aes(x = virus.bin,
+             y = rel_ab,
+             color = virus.bin)) +
+  geom_boxplot(outliers = FALSE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.1,
+              size = 5,
+              alpha = 0.5) +
+  geom_segment(y = 105,
+               x = 1,
+               xend = 2,
+               color = \"black\") +
+  annotate(\"text\",
+           x = 1.5,
+           y = 107,
+           label = \"*\",
+           size = 14) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_shape_manual(values = c(16,1)) +
+  scale_color_manual(values = c(\"purple4\",\"orange\")) +
+  scale_y_continuous(limits = c(-1,110),
+                     breaks = c(0,25,50,75,100)) +
+  labs(y = \"Relative abundance (%)\") +
+  theme(legend.position = \"none\")
+```"

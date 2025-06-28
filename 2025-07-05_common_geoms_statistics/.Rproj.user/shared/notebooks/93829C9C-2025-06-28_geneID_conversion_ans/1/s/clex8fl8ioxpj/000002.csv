@@ -1,0 +1,63 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQmlvY01hbmFnZXI6Omluc3RhbGwoXCJvcmcuTW0uZWcuZGJcIilcbmBgYCJ9 -->
+
+```r
+BiocManager::install(\"org.Mm.eg.db\")
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+BiocManager::install(\"org.Mm.eg.db\")
+```"
+"1","Update all/some/none? [a/s/n]: 
+"
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxublxubGlicmFyeShvcmcuTW0uZWcuZGIpXG5cbmtleXMob3JnLk1tLmVnLmRiLFxuICAgICBrZXl0eXBlID0gXCJFTlNFTUJMXCIpIC0+IE1tX2tleVxuXG5zZWxlY3Qob3JnLk1tLmVnLmRiLFxuICAgICAgIGtleXMgPSBNbV9rZXksXG4gICAgICAga2V5dHlwZSA9IFwiRU5TRU1CTFwiLFxuICAgICAgIGNvbHVtbnMgPSBjKFwiRU5UUkVaSURcIixcIlNZTUJPTFwiLFwiR0VORU5BTUVcIixcIlVOSVBST1RcIikpIC0+IE1tX2NvbnZfdGFibGVcblxuTW1fY29udl90YWJsZVstYyh3aGljaChkdXBsaWNhdGVkKE1tX2NvbnZfdGFibGUkRU5TRU1CTCk9PVRSVUUpKSxdIC0+IE1tX2NvbnZfdGFibGVfdW5pcXVlXG5cbmhlYWQoTW1fY29udl90YWJsZV91bmlxdWUpXG5gYGAifQ== -->
+
+```r
+n
+library(org.Mm.eg.db)
+
+keys(org.Mm.eg.db,
+     keytype = \"ENSEMBL\") -> Mm_key
+
+select(org.Mm.eg.db,
+       keys = Mm_key,
+       keytype = \"ENSEMBL\",
+       columns = c(\"ENTREZID\",\"SYMBOL\",\"GENENAME\",\"UNIPROT\")) -> Mm_conv_table
+
+Mm_conv_table[-c(which(duplicated(Mm_conv_table$ENSEMBL)==TRUE)),] -> Mm_conv_table_unique
+
+head(Mm_conv_table_unique)
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+n
+library(org.Mm.eg.db)
+
+keys(org.Mm.eg.db,
+     keytype = \"ENSEMBL\") -> Mm_key
+
+select(org.Mm.eg.db,
+       keys = Mm_key,
+       keytype = \"ENSEMBL\",
+       columns = c(\"ENTREZID\",\"SYMBOL\",\"GENENAME\",\"UNIPROT\")) -> Mm_conv_table
+
+Mm_conv_table[-c(which(duplicated(Mm_conv_table$ENSEMBL)==TRUE)),] -> Mm_conv_table_unique
+
+head(Mm_conv_table_unique)
+```"
+"1","
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6NSwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNiDDlyA1XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE1VlRXMitiTUJoMUxpUnJwRTNWT3UxMWFOcmJTc1ExSlk5RVpWV2xockJjMURadmhqZ3B3akVJbkczWmorOW1VanRGVmw2S1pQRDV6bmUrbTgzMCtzSHFQZlFBQUMzUWJqZEJTMkZib0N6bVB6UVhBR1lBb0FIYTRLejYvbUZPRnhYTDFqbGJIVTU4OUlQWmVERzcwUStQcFZ2TzhDUmo2cTV1bjJZYzY4bzV5UmlPYVZ1bk5hNWhudGFZZzZGdFN6VXFobUc2VnpVd2RGK0JwWnQxWU5XQlhRZU9GTFVWL3MwRjcwRUNLUWR0RDlMMFNFUXhOT3JBcmdOVEN2a2xYSWFYS3NUNUU5Uk1iUXZqSXR2Z0xOcmhoS2c0U1JGMyt3cUxQWVk0WmE5dFFwQWFhREJHZEk5cEFVbTVSZ1VzaGVjM21HYzV6Y3FrMUdCWlpuRUNLVnFwZEY4d0V4T21DWG4xL2U3TlF5MUt5Q29oR3pWbTdvaFNkS21XdTBoYnN6eDRyM3JxRm0walZLakcyeVgyMnlYeWREcis4R2Q0cndzMGNWM1hHQWprRFVaM2orSllPeVBEdTE4ZTBjUnlCdnBSRjlxR2FkblMvVllJM0tLU0oxUzRzY3R1bGo4ZTNYSDR6Zy9tVTM5NWV5MGl6UjdIbzhtUnZmRURQL0RHdmhBdmd0dHdPcGxMaWM2SzdIZGZKSHQvNks0aVgzNnNibldkMmZyRTFtZTV3aGl6YWZFS2hiRzNnaFQyMXdXTHg5Q3pKT215czA4eXdrVE5DNTZwTG00VWt1RjhSNnJLVmxyOHRDT3A1dWdTMzhySnBrcktLMjd3RGhvOHR0Z3JMMlUwLzhubmg4aUczVHJSRDRZUndpTHlDdjNpMnc5c1FJZjU5UE1pSWVLbjZqRnIyYWNaaFVMU2l6TXNMSWZXd2ZOL0NZcVNRTkFFQUFBPSJ9 -->
+
+<div data-pagedtable=\"false\">
+  <script data-pagedtable-source type=\"application/json\">
+{\"columns\":[{\"label\":[\"\"],\"name\":[\"_rn_\"],\"type\":[\"\"],\"align\":[\"left\"]},{\"label\":[\"ENSEMBL\"],\"name\":[1],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"ENTREZID\"],\"name\":[2],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"SYMBOL\"],\"name\":[3],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"GENENAME\"],\"name\":[4],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"UNIPROT\"],\"name\":[5],\"type\":[\"chr\"],\"align\":[\"left\"]}],\"data\":[{\"1\":\"ENSMUSG00000030359\",\"2\":\"11287\",\"3\":\"Pzp\",\"4\":\"PZP, alpha-2-macroglobulin like\",\"5\":\"E9QPW0\",\"_rn_\":\"1\"},{\"1\":\"ENSMUSG00000020804\",\"2\":\"11298\",\"3\":\"Aanat\",\"4\":\"arylalkylamine N-acetyltransferase\",\"5\":\"O88816\",\"_rn_\":\"5\"},{\"1\":\"ENSMUSG00000025375\",\"2\":\"11302\",\"3\":\"Aatk\",\"4\":\"apoptosis-associated tyrosine kinase\",\"5\":\"A6BLY8\",\"_rn_\":\"7\"},{\"1\":\"ENSMUSG00000015243\",\"2\":\"11303\",\"3\":\"Abca1\",\"4\":\"ATP-binding cassette, sub-family A member 1\",\"5\":\"B1AWZ8\",\"_rn_\":\"18\"},{\"1\":\"ENSMUSG00000028125\",\"2\":\"11304\",\"3\":\"Abca4\",\"4\":\"ATP-binding cassette, sub-family A member 4\",\"5\":\"O35600\",\"_rn_\":\"20\"},{\"1\":\"ENSMUSG00000026944\",\"2\":\"11305\",\"3\":\"Abca2\",\"4\":\"ATP-binding cassette, sub-family A member 2\",\"5\":\"P41234\",\"_rn_\":\"22\"}],\"options\":{\"columns\":{\"min\":{},\"max\":[10],\"total\":[5]},\"rows\":{\"min\":[10],\"max\":[10],\"total\":[6]},\"pages\":{}}}
+  </script>
+</div>
+
+<!-- rnb-frame-end -->
+"

@@ -1,0 +1,2 @@
+"0","iris_histo +"
+"0","  facet_grid(cols = vars(Species)) # with facet_grid we can choose whether to wrap in rows or columns"

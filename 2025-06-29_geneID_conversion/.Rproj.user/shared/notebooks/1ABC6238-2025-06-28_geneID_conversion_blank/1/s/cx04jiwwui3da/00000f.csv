@@ -1,0 +1,7 @@
+"0","View(listFilters(ensembl))"
+"0",""
+"0","getBM(mart = ensembl,"
+"0","      values = c(""ENSG00000000971"",""ENSG00000004139"",""ENSG00000005339""),"
+"0","      filters = ""ensembl_gene_id"","
+"0","      attributes = c(""ensembl_gene_id"",""entrezgene_id"",""ensembl_gene_id"",""description""),"
+"0","      uniqueRows = TRUE) -> ensembl_biomart_output"

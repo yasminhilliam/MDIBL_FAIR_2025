@@ -1,0 +1,38 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KHZlZ2FuKVxubGlicmFyeShlY29kaXN0KVxubGlicmFyeShnZ2g0eClcbmxpYnJhcnkoZGVuZGV4dGVuZClcbmxpYnJhcnkobG1lNClcbmxpYnJhcnkobG1lclRlc3QpXG5saWJyYXJ5KGdndGV4dClcbmxpYnJhcnkobWFhc2xpbjMpXG5saWJyYXJ5KGNvd3Bsb3QpXG5saWJyYXJ5KGJyb29tLm1peGVkKVxubGlicmFyeShQRVJNQU5PVkEpXG5saWJyYXJ5KGdnbmV3c2NhbGUpXG5saWJyYXJ5KE11bGxlclBsb3QpXG5gYGAifQ== -->
+
+```r
+library(tidyverse)
+library(vegan)
+library(ecodist)
+library(ggh4x)
+library(dendextend)
+library(lme4)
+library(lmerTest)
+library(ggtext)
+library(maaslin3)
+library(cowplot)
+library(broom.mixed)
+library(PERMANOVA)
+library(ggnewscale)
+library(MullerPlot)
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+library(tidyverse)
+library(vegan)
+library(ecodist)
+library(ggh4x)
+library(dendextend)
+library(lme4)
+library(lmerTest)
+library(ggtext)
+library(maaslin3)
+library(cowplot)
+library(broom.mixed)
+library(PERMANOVA)
+library(ggnewscale)
+library(MullerPlot)
+```"

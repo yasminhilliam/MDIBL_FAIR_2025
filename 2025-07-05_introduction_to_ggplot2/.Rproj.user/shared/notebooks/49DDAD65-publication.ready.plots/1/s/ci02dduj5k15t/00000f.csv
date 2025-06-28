@@ -1,0 +1,6 @@
+"0","iris %>%"
+"0","  group_by(Species) %>% # group_by tells R which variable to use to group observations"
+"0","  summarise(mean.Petal.Length = mean(Petal.Length), # add a column containing mean values per species"
+"0","            standard.deviation = sd(Petal.Length)) -> irisSummary # add a column containing standard deviation"
+"0",""
+"0","head(irisSummary)"

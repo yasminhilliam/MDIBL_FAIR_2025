@@ -1,0 +1,6 @@
+"0","ggplot(data = iris,"
+"0","       aes(x = Petal.Length, # it is very common to see 'mapping =' omitted from the code - ggplot will accept either"
+"0","           y = Petal.Width)) + # use a + to add elements to your plot"
+"0","  geom_point() -> basicScatter"
+"0",""
+"0","basicScatter"

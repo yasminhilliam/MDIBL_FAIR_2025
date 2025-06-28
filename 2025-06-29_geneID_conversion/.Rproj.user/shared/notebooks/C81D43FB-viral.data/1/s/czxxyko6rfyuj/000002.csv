@@ -1,0 +1,116 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgsc2FtcGxlbG9jLHZpcnVzLmJpbixPVFUsQWJ1bmRhbmNlKSAlPiVcbiAgZmlsdGVyKCFpcy5uYSh2aXJ1cy5iaW4pKSAlPiVcbiAgZmlsdGVyKHNhbXBsZWxvYyA9PSBcInNpbnVzXCIpICU+JVxuICBwaXZvdF93aWRlcihuYW1lc19mcm9tID0gXCJPVFVcIixcbiAgICAgICAgICAgICAgdmFsdWVzX2Zyb20gPSBcIkFidW5kYW5jZVwiLFxuICAgICAgICAgICAgICB2YWx1ZXNfZmlsbCA9IDApIC0+IHNpblxuXG5zaW4gJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgsc2FtcGxlbG9jLHZpcnVzLmJpbikgLT4gc2luTWV0YVxuXG5zaW4gJT4lXG4gIGRwbHlyOjpzZWxlY3QoLXNhbXBsZWxvYywtdmlydXMuYmluKSAlPiVcbiAgY29sdW1uX3RvX3Jvd25hbWVzKFwiaW5kZXhcIikgJT4lXG4gIGF2Z2Rpc3Qoc2FtcGxlID0gOTAwLFxuICAgICAgICAgIGRtZXRob2QgPSBcImhvcm5cIikgLT4gc2luRGlzdFxuXG53Y21kc2NhbGUoc2luRGlzdCxcbiAgICAgICAgICBlaWcgPSBUUlVFKSAtPiBzaW5QQ29BXG5cbm9yZGlwbG90KHNpblBDb0EpXG5cbihzaW5QQ29BJGVpZ1sxXSAvIHN1bShzaW5QQ29BJGVpZykpKjEwMCAjIHZhcmlhbmNlIGV4cGxhaW5lZCBieSB2ZWN0b3IgMSA9IDYzLjklXG5cbihzaW5QQ29BJGVpZ1syXSAvIHN1bShzaW5QQ29BJGVpZykpKjEwMCAjIHZhcmlhbmNlIGV4cGxhaW5lZCBieSB2ZWN0b3IgMiA9IDE3LjElXG5cbnNpblBDb0EgJT4lXG4gIHNjb3JlcygpICU+JVxuICBhc190aWJibGUocm93bmFtZXMgPSBcImluZGV4XCIpICU+JVxuICBkcGx5cjo6c2VsZWN0KGluZGV4LERpbTEsRGltMikgLT4gc2luSG9yblBDb0FcblxuaW5uZXJfam9pbihzaW5NZXRhLHNpbkhvcm5QQ29BKSAtPiBzaW5QQ29BTWV0YVxuXG5zaW5QQ29BTWV0YSAlPiVcbiAgZ3JvdXBfYnkodmlydXMuYmluKSAlPiVcbiAgbXV0YXRlKG1lYW4uZGltMSA9IG1lYW4oRGltMSkpICU+JVxuICBtdXRhdGUobWVhbi5kaW0yID0gbWVhbihEaW0yKSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QodmlydXMuYmluLG1lYW4uZGltMSxtZWFuLmRpbTIpICU+JVxuICBkaXN0aW5jdCgpIC0+IHNpbkRpbU1lYW5zXG5cblxuZ2dwbG90KGRhdGEgPSBzaW5QQ29BTWV0YSxcbiAgICAgICBhZXMoeCA9IERpbTEsXG4gICAgICAgICAgIHkgPSBEaW0yLFxuICAgICAgICAgICBjb2xvciA9IHZpcnVzLmJpbikpICtcbiAgZ2VvbV9wb2ludChkYXRhID0gc2luRGltTWVhbnMsXG4gICAgICAgICAgICAgYWVzKHggPSBtZWFuLmRpbTEsXG4gICAgICAgICAgICAgICAgIHkgPSBtZWFuLmRpbTIsXG4gICAgICAgICAgICAgICAgIGNvbG9yID0gdmlydXMuYmluKSxcbiAgICAgICAgICAgICBzaXplID0gNSkgK1xuICBnZW9tX3BvaW50KCkgK1xuICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzID0gYyhcInB1cnBsZTRcIixcIm9yYW5nZVwiKSkgK1xuICBzdGF0X2VsbGlwc2UodHlwZSA9IFwidFwiKVxuYGBgIn0= -->
+
+```r
+allDf %>%
+  dplyr::select(index,sampleloc,virus.bin,OTU,Abundance) %>%
+  filter(!is.na(virus.bin)) %>%
+  filter(sampleloc == \"sinus\") %>%
+  pivot_wider(names_from = \"OTU\",
+              values_from = \"Abundance\",
+              values_fill = 0) -> sin
+
+sin %>%
+  dplyr::select(index,sampleloc,virus.bin) -> sinMeta
+
+sin %>%
+  dplyr::select(-sampleloc,-virus.bin) %>%
+  column_to_rownames(\"index\") %>%
+  avgdist(sample = 900,
+          dmethod = \"horn\") -> sinDist
+
+wcmdscale(sinDist,
+          eig = TRUE) -> sinPCoA
+
+ordiplot(sinPCoA)
+
+(sinPCoA$eig[1] / sum(sinPCoA$eig))*100 # variance explained by vector 1 = 63.9%
+
+(sinPCoA$eig[2] / sum(sinPCoA$eig))*100 # variance explained by vector 2 = 17.1%
+
+sinPCoA %>%
+  scores() %>%
+  as_tibble(rownames = \"index\") %>%
+  dplyr::select(index,Dim1,Dim2) -> sinHornPCoA
+
+inner_join(sinMeta,sinHornPCoA) -> sinPCoAMeta
+
+sinPCoAMeta %>%
+  group_by(virus.bin) %>%
+  mutate(mean.dim1 = mean(Dim1)) %>%
+  mutate(mean.dim2 = mean(Dim2)) %>%
+  dplyr::select(virus.bin,mean.dim1,mean.dim2) %>%
+  distinct() -> sinDimMeans
+
+
+ggplot(data = sinPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = virus.bin)) +
+  geom_point(data = sinDimMeans,
+             aes(x = mean.dim1,
+                 y = mean.dim2,
+                 color = virus.bin),
+             size = 5) +
+  geom_point() +
+  scale_color_manual(values = c(\"purple4\",\"orange\")) +
+  stat_ellipse(type = \"t\")
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  dplyr::select(index,sampleloc,virus.bin,OTU,Abundance) %>%
+  filter(!is.na(virus.bin)) %>%
+  filter(sampleloc == \"sinus\") %>%
+  pivot_wider(names_from = \"OTU\",
+              values_from = \"Abundance\",
+              values_fill = 0) -> sin
+
+sin %>%
+  dplyr::select(index,sampleloc,virus.bin) -> sinMeta
+
+sin %>%
+  dplyr::select(-sampleloc,-virus.bin) %>%
+  column_to_rownames(\"index\") %>%
+  avgdist(sample = 900,
+          dmethod = \"horn\") -> sinDist
+
+wcmdscale(sinDist,
+          eig = TRUE) -> sinPCoA
+
+ordiplot(sinPCoA)
+
+(sinPCoA$eig[1] / sum(sinPCoA$eig))*100 # variance explained by vector 1 = 63.9%
+
+(sinPCoA$eig[2] / sum(sinPCoA$eig))*100 # variance explained by vector 2 = 17.1%
+
+sinPCoA %>%
+  scores() %>%
+  as_tibble(rownames = \"index\") %>%
+  dplyr::select(index,Dim1,Dim2) -> sinHornPCoA
+
+inner_join(sinMeta,sinHornPCoA) -> sinPCoAMeta
+
+sinPCoAMeta %>%
+  group_by(virus.bin) %>%
+  mutate(mean.dim1 = mean(Dim1)) %>%
+  mutate(mean.dim2 = mean(Dim2)) %>%
+  dplyr::select(virus.bin,mean.dim1,mean.dim2) %>%
+  distinct() -> sinDimMeans
+
+
+ggplot(data = sinPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = virus.bin)) +
+  geom_point(data = sinDimMeans,
+             aes(x = mean.dim1,
+                 y = mean.dim2,
+                 color = virus.bin),
+             size = 5) +
+  geom_point() +
+  scale_color_manual(values = c(\"purple4\",\"orange\")) +
+  stat_ellipse(type = \"t\")
+```"

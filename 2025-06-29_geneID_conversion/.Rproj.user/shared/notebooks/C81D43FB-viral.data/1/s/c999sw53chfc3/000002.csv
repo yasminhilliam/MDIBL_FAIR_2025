@@ -1,0 +1,22 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZC5jc3YoXCJhZHVsdC5wZWRzLmRheXMucG9zdC52aXJhbC5pbmZlY3Rpb24uY3N2XCIpIC0+IGRheXMucFZcblxuYXMuRGF0ZShkYXlzLnBWJGRhdGUsXG4gICAgICAgIGZvcm1hdCA9IFwiJW0vJWQvJXlcIikgLT4gZGF5cy5wViRkYXRlXG5cbmZhY3RvcihkYXlzLnBWJHZpcnVzLmJpbikgLT4gZGF5cy5wViR2aXJ1cy5iaW5cbmBgYCJ9 -->
+
+```r
+read.csv(\"adult.peds.days.post.viral.infection.csv\") -> days.pV
+
+as.Date(days.pV$date,
+        format = \"%m/%d/%y\") -> days.pV$date
+
+factor(days.pV$virus.bin) -> days.pV$virus.bin
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+read.csv(\"adult.peds.days.post.viral.infection.csv\") -> days.pV
+
+as.Date(days.pV$date,
+        format = \"%m/%d/%y\") -> days.pV$date
+
+factor(days.pV$virus.bin) -> days.pV$virus.bin
+```"

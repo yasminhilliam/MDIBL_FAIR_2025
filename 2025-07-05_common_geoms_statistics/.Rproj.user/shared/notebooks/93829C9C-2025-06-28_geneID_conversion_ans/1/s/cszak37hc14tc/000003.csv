@@ -1,0 +1,41 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zdW1tYXJ5KGR1cGxpY2F0ZWQodHhpX3RhYmxlX3VuaXF1ZSRFTlNFTUJMKSlcbmBgYCJ9 -->
+
+```r
+
+summary(duplicated(txi_table_unique$ENSEMBL))
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+
+summary(duplicated(txi_table_unique$ENSEMBL))
+```"
+"1","   Mode   FALSE 
+logical   40839 
+"
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVmlldyhsaXN0QXR0cmlidXRlcyhlbnNlbWJsKSlcblxuZ2V0Qk0obWFydCA9IGVuc2VtYmwsXG4gICAgICB2YWx1ZXMgPSB0eGlfa2V5LFxuICAgICAgZmlsdGVycyA9IFwiZW5zZW1ibF9nZW5lX2lkXCIsXG4gICAgICBhdHRyaWJ1dGVzID0gYyhcImVuc2VtYmxfZ2VuZV9pZFwiLFwiZW50cmV6Z2VuZV9pZFwiLFwiZGVzY3JpcHRpb25cIixcImV4dGVybmFsX2dlbmVfbmFtZVwiLFwidW5pcHJvdF9nbl9zeW1ib2xcIiksXG4gICAgICB1bmlxdWVSb3dzPSBUUlVFKSAtPiB0eGlfYmlvbWFydFxuYGBgIn0= -->
+
+```r
+View(listAttributes(ensembl))
+
+getBM(mart = ensembl,
+      values = txi_key,
+      filters = \"ensembl_gene_id\",
+      attributes = c(\"ensembl_gene_id\",\"entrezgene_id\",\"description\",\"external_gene_name\",\"uniprot_gn_symbol\"),
+      uniqueRows= TRUE) -> txi_biomart
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+View(listAttributes(ensembl))
+
+getBM(mart = ensembl,
+      values = txi_key,
+      filters = \"ensembl_gene_id\",
+      attributes = c(\"ensembl_gene_id\",\"entrezgene_id\",\"description\",\"external_gene_name\",\"uniprot_gn_symbol\"),
+      uniqueRows= TRUE) -> txi_biomart
+```"

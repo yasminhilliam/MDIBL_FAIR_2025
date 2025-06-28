@@ -1,0 +1,33 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5nZXRCTShtYXJ0ID0gZW5zZW1ibCxcbiAgICAgIHZhbHVlcyA9IGMoXCJDRlRSXCIsXCJDWENMOFwiKSxcbiAgICAgIGZpbHRlcnMgPSBcImV4dGVybmFsX2dlbmVfbmFtZVwiLFxuICAgICAgYXR0cmlidXRlcyA9YyhcImV4dGVybmFsX2dlbmVfbmFtZVwiLFwiZW5zZW1ibF9nZW5lX2lkXCIsXCJkZXNjcmlwdGlvblwiLFwidW5pcHJvdHN3aXNzcHJvdFwiKSxcbiAgICAgIHVuaXF1ZVJvd3MgPSBUUlVFKVxuYGBgIn0= -->
+
+```r
+
+getBM(mart = ensembl,
+      values = c(\"CFTR\",\"CXCL8\"),
+      filters = \"external_gene_name\",
+      attributes =c(\"external_gene_name\",\"ensembl_gene_id\",\"description\",\"uniprotswissprot\"),
+      uniqueRows = TRUE)
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+
+getBM(mart = ensembl,
+      values = c(\"CFTR\",\"CXCL8\"),
+      filters = \"external_gene_name\",
+      attributes =c(\"external_gene_name\",\"ensembl_gene_id\",\"description\",\"uniprotswissprot\"),
+      uniqueRows = TRUE)
+```"
+"1","
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NCwibmNvbCI6NCwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNCDDlyA0XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3VlRiVXZETUJDK2JkM0V5VlQwRC9RUGRLeHpLNTEra3VwVWtDR2J3a0JFc2pUV1lKdU1KUFhsbTc5Y1Ridm1RK3NMZnRCQXVDZlA1ZTZldTdUVG8vbGVlOTRHZ0FaWVZoMGFUUTJoZVhVNWRud0FUUURVd0lMMXpEN3JTN3NhV0hwdjUzYmxzSUx4NWZRTDNBem13YmxmUHBRanQ0NG5zNVBlYXJsZTMvc3Q3WHFqUVgvMEhWMnVjUmFNYlNVUWt3bEpGdG9TRzNNV3BsZ2hob2t0U0pUR1NIRmhYODk0S2pEWlB6MlpCUGJzSlZudytPQVE0L3k4Ny9yKzRPYS9FaDRHenR3SjdJUXJlbWZqZTVMd0I2cXp4alJDTExUOW54TjV2Zjd3RHhPVlp3ZUZiVjI0ZTBOdjlKbnR1WU5oNVROcE1wUVFXVW0wUTU0VkVRekZ0eEZoNURhN1lsNlBNS25uV0Rob1dOQWJJWkZZMEtXaW5CWFVkc3JvVW5BbG42aVVHYWdVWGhmOHFXdUtkL1N1djBLaHRxSVF4MGdhaFlac2gwaWg3cDNJbEFHOFZVTFdlSzVFQjlXelA2QlZDYTZKQ3FHMVprcENCOStuN01FWitCVi9ZOG1pckdoT3JWYW53RllaWnpMcTcwVjR5MHllc0VpL3JPa25SZ3NTbTh3aGVTemdwaDVJUG8vdVVsQ21US09hbFYzRkZUSWhiY3hqdytTdHc5c0hKVWd2WEJjRUFBQT0ifQ== -->
+
+<div data-pagedtable=\"false\">
+  <script data-pagedtable-source type=\"application/json\">
+{\"columns\":[{\"label\":[\"external_gene_name\"],\"name\":[1],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"ensembl_gene_id\"],\"name\":[2],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"description\"],\"name\":[3],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"uniprotswissprot\"],\"name\":[4],\"type\":[\"chr\"],\"align\":[\"left\"]}],\"data\":[{\"1\":\"CFTR\",\"2\":\"ENSG00000001626\",\"3\":\"CF transmembrane conductance regulator [Source:HGNC Symbol;Acc:HGNC:1884]\",\"4\":\"\"},{\"1\":\"CFTR\",\"2\":\"ENSG00000001626\",\"3\":\"CF transmembrane conductance regulator [Source:HGNC Symbol;Acc:HGNC:1884]\",\"4\":\"P13569\"},{\"1\":\"CXCL8\",\"2\":\"ENSG00000169429\",\"3\":\"C-X-C motif chemokine ligand 8 [Source:HGNC Symbol;Acc:HGNC:6025]\",\"4\":\"\"},{\"1\":\"CXCL8\",\"2\":\"ENSG00000169429\",\"3\":\"C-X-C motif chemokine ligand 8 [Source:HGNC Symbol;Acc:HGNC:6025]\",\"4\":\"P10145\"}],\"options\":{\"columns\":{\"min\":{},\"max\":[10],\"total\":[4]},\"rows\":{\"min\":[10],\"max\":[10],\"total\":[4]},\"pages\":{}}}
+  </script>
+</div>
+
+<!-- rnb-frame-end -->
+"

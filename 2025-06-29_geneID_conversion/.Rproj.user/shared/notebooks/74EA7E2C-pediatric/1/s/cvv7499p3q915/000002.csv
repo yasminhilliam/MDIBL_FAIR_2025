@@ -1,0 +1,48 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVkc0RmICU+JVxuICBmaWx0ZXIoZ2VudXMgIT0gXCJWaWJyaW9cIikgLT4gcGVkc0RmXG5cbnBlZHNEZiAlPiVcbiAgZ3JvdXBfYnkoU2FtcGxlKSAlPiVcbiAgc3VtbWFyaXNlKHRvdCA9IHN1bShBYnVuZGFuY2UpKSAlPiVcbiAgZmlsdGVyKHRvdCA+IDExMDApICU+JVxuICAuJFNhbXBsZSAtPiBwZWRzZmlsdFxuXG5wZWRzRGYgJT4lXG4gIGZpbHRlcihTYW1wbGUgJWluJSBwZWRzZmlsdCkgLT4gcGVkc0RmXG5cbnBlZHNEZiAlPiVcbiAgZ3JvdXBfYnkoU2FtcGxlKSAlPiVcbiAgbXV0YXRlKHJlbF9hYiA9IEFidW5kYW5jZS9zdW0oQWJ1bmRhbmNlKSoxMDApICU+JVxuICB1bmdyb3VwKCkgLT4gcGVkc0RmXG5cbmdzdWIoXCJuIFwiLFwiblwiLHBlZHNEZiR2aXJ1cykgLT4gcGVkc0RmJHZpcnVzXG5cbmBgYCJ9 -->
+
+```r
+pedsDf %>%
+  filter(genus != \"Vibrio\") -> pedsDf
+
+pedsDf %>%
+  group_by(Sample) %>%
+  summarise(tot = sum(Abundance)) %>%
+  filter(tot > 1100) %>%
+  .$Sample -> pedsfilt
+
+pedsDf %>%
+  filter(Sample %in% pedsfilt) -> pedsDf
+
+pedsDf %>%
+  group_by(Sample) %>%
+  mutate(rel_ab = Abundance/sum(Abundance)*100) %>%
+  ungroup() -> pedsDf
+
+gsub(\"n \",\"n\",pedsDf$virus) -> pedsDf$virus
+
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+pedsDf %>%
+  filter(genus != \"Vibrio\") -> pedsDf
+
+pedsDf %>%
+  group_by(Sample) %>%
+  summarise(tot = sum(Abundance)) %>%
+  filter(tot > 1100) %>%
+  .$Sample -> pedsfilt
+
+pedsDf %>%
+  filter(Sample %in% pedsfilt) -> pedsDf
+
+pedsDf %>%
+  group_by(Sample) %>%
+  mutate(rel_ab = Abundance/sum(Abundance)*100) %>%
+  ungroup() -> pedsDf
+
+gsub(\"n \",\"n\",pedsDf$virus) -> pedsDf$virus
+
+```"

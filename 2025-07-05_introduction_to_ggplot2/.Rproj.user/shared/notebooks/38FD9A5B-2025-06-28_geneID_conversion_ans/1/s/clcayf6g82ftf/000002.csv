@@ -1,0 +1,35 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBzaG93IGFsbCBpZGVudGlmaWVycyBhdmFpbGFibGUgaW4gdGhpcyBkYXRhc2V0XG5rZXl0eXBlcyhvcmcuSHMuZWcuZGIpXG5gYGAifQ== -->
+
+```r
+# show all identifiers available in this dataset
+keytypes(org.Hs.eg.db)
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+# show all identifiers available in this dataset
+keytypes(org.Hs.eg.db)
+```"
+"1"," [1] \"ACCNUM\"       \"ALIAS\"        \"ENSEMBL\"      \"ENSEMBLPROT\"  \"ENSEMBLTRANS\"
+ [6] \"ENTREZID\"     \"ENZYME\"       \"EVIDENCE\"     \"EVIDENCEALL\"  \"GENENAME\"    
+[11] \"GENETYPE\"     \"GO\"           \"GOALL\"        \"IPI\"          \"MAP\"         
+[16] \"OMIM\"         \"ONTOLOGY\"     \"ONTOLOGYALL\"  \"PATH\"         \"PFAM\"        
+[21] \"PMID\"         \"PROSITE\"      \"REFSEQ\"       \"SYMBOL\"       \"UCSCKG\"      
+[26] \"UNIPROT\"     
+"
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBvcGVucyB0aGUgaGVscCBwYW5lbCB0aGF0IGRlc2NyaWJlcyBhbGwgYXZhaWxhYmxlIGlkZW50aWZpZXJzIGluIHRoZSBkYXRhYmFzZVxuaGVscChcIlJFRlNFUVwiKVxuYGBgIn0= -->
+
+```r
+# opens the help panel that describes all available identifiers in the database
+help(\"REFSEQ\")
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+# opens the help panel that describes all available identifiers in the database
+help(\"REFSEQ\")
+```"

@@ -1,0 +1,102 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGZpbHRlcighaXMubmEodmlydXMuYmluKSkgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdUZpbHQkaW5kZXgpICU+JVxuICBmaWx0ZXIoZ2VudXMgPT0gXCJSb3RoaWFcIikgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgscGF0aWVudGlkLGRhdGUsdmlydXMuYmluLHJlbF9hYikgJT4lXG4gIGRpc3RpbmN0KCkgLT4gcm90aGlhQWJcblxuaW5uZXJfam9pbihyb3RoaWFBYixsdW5nZnVuY0RmKSAtPiByb3RoaWFBYkx1bmdmdW5jXG5cbmxtZXIoZGF0YSA9IHJvdGhpYUFiTHVuZ2Z1bmMsIFxuICAgICByZWxfYWIgfiAxICsgZmV2ICsgdmlydXMuYmluICsgKDEgfCBwYXRpZW50aWQpKSAtPiByb3RoaWFMbVxuXG5zdW1tYXJ5KHJvdGhpYUxtKVxuXG5yb3RoaWFBYkx1bmdmdW5jICU+JVxuICBmaWx0ZXIocmVsX2FiID4gMCkgJT4lXG5nZ3Bsb3QoYWVzKHggPSBmZXYsXG4gICAgICAgICAgIHkgPSByZWxfYWIsXG4gICAgICAgICAgIGNvbG9yID0gdmlydXMuYmluLFxuICAgICAgICAgICBmaWxsID0gdmlydXMuYmluKSkgK1xuICBnZW9tX3Ntb290aChtZXRob2QgPSBcImxtXCIpICtcbiAgZ2VvbV9wb2ludCgpICtcbiAgc2NhbGVfY29sb3JfZGlzY3JldGUobmFtZSA9IFwiUmVzcGlyYXRvcnkgdmlyYWxcXG5pbmZlY3Rpb24gc3RhdHVzXCIsXG4gICAgICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJOZWdhdGl2ZVwiLFwiUG9zaXRpdmVcIikpICtcbiAgc2NhbGVfZmlsbF9kaXNjcmV0ZShuYW1lID0gXCJSZXNwaXJhdG9yeSB2aXJhbFxcbmluZmVjdGlvbiBzdGF0dXNcIixcbiAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiTmVnYXRpdmVcIixcIlBvc2l0aXZlXCIpKSArXG4gIGFubm90YXRlKFwibGFiZWxcIixcbiAgICAgICAgICAgbGFiZWwgPSBcIlAgPSAwLjAwOTk1XCIsXG4gICAgICAgICAgIHggPSA5OSxcbiAgICAgICAgICAgeSA9IDUwLFxuICAgICAgICAgICBjb2xvciA9IFwiIzAwYmZjNFwiKSArXG4gIGxhYnMoeCA9IFwiRkVWMVwiLFxuICAgICAgIHkgPSBcIipSb3RoaWEqIHNwcC48YnI+cmVsYXRpdmUgYWJ1bmRhbmNlICglKVwiKSArXG4gIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfbWFya2Rvd24oKSxcbiAgICAgICAgbGVnZW5kLnBvc2l0aW9uID0gXCJpbnNpZGVcIixcbiAgICAgICAgbGVnZW5kLnBvc2l0aW9uLmluc2lkZSA9IGMoMC4yLDAuOCksXG4gICAgICAgIGxlZ2VuZC5iYWNrZ3JvdW5kID0gZWxlbWVudF9yZWN0KGZpbGwgPSBcIndoaXRlXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbG9yID0gXCJibGFja1wiKSkgLT4gcm90aGlhQWJQbG90XG5cbnJvdGhpYUFiUGxvdFxuXG5nZ3NhdmUocGxvdCA9IHJvdGhpYUFiUGxvdCxcbiAgICAgICBcIlJvdGhpYS5hYnVuZGFuY2UuRkVWLnRpZmZcIixcbiAgICAgICBoZWlnaHQgPSA4LFxuICAgICAgIHdpZHRoID0gMTIsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5gYGAifQ== -->
+
+```r
+allDf %>%
+  filter(!is.na(virus.bin)) %>%
+  filter(index %in% sinspuFilt$index) %>%
+  filter(genus == \"Rothia\") %>%
+  dplyr::select(index,patientid,date,virus.bin,rel_ab) %>%
+  distinct() -> rothiaAb
+
+inner_join(rothiaAb,lungfuncDf) -> rothiaAbLungfunc
+
+lmer(data = rothiaAbLungfunc, 
+     rel_ab ~ 1 + fev + virus.bin + (1 | patientid)) -> rothiaLm
+
+summary(rothiaLm)
+
+rothiaAbLungfunc %>%
+  filter(rel_ab > 0) %>%
+ggplot(aes(x = fev,
+           y = rel_ab,
+           color = virus.bin,
+           fill = virus.bin)) +
+  geom_smooth(method = \"lm\") +
+  geom_point() +
+  scale_color_discrete(name = \"Respiratory viral\ninfection status\",
+                       labels = c(\"Negative\",\"Positive\")) +
+  scale_fill_discrete(name = \"Respiratory viral\ninfection status\",
+                      labels = c(\"Negative\",\"Positive\")) +
+  annotate(\"label\",
+           label = \"P = 0.00995\",
+           x = 99,
+           y = 50,
+           color = \"#00bfc4\") +
+  labs(x = \"FEV1\",
+       y = \"*Rothia* spp.<br>relative abundance (%)\") +
+  theme(axis.title.y = element_markdown(),
+        legend.position = \"inside\",
+        legend.position.inside = c(0.2,0.8),
+        legend.background = element_rect(fill = \"white\",
+                                         color = \"black\")) -> rothiaAbPlot
+
+rothiaAbPlot
+
+ggsave(plot = rothiaAbPlot,
+       \"Rothia.abundance.FEV.tiff\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  filter(!is.na(virus.bin)) %>%
+  filter(index %in% sinspuFilt$index) %>%
+  filter(genus == \"Rothia\") %>%
+  dplyr::select(index,patientid,date,virus.bin,rel_ab) %>%
+  distinct() -> rothiaAb
+
+inner_join(rothiaAb,lungfuncDf) -> rothiaAbLungfunc
+
+lmer(data = rothiaAbLungfunc, 
+     rel_ab ~ 1 + fev + virus.bin + (1 | patientid)) -> rothiaLm
+
+summary(rothiaLm)
+
+rothiaAbLungfunc %>%
+  filter(rel_ab > 0) %>%
+ggplot(aes(x = fev,
+           y = rel_ab,
+           color = virus.bin,
+           fill = virus.bin)) +
+  geom_smooth(method = \"lm\") +
+  geom_point() +
+  scale_color_discrete(name = \"Respiratory viral\ninfection status\",
+                       labels = c(\"Negative\",\"Positive\")) +
+  scale_fill_discrete(name = \"Respiratory viral\ninfection status\",
+                      labels = c(\"Negative\",\"Positive\")) +
+  annotate(\"label\",
+           label = \"P = 0.00995\",
+           x = 99,
+           y = 50,
+           color = \"#00bfc4\") +
+  labs(x = \"FEV1\",
+       y = \"*Rothia* spp.<br>relative abundance (%)\") +
+  theme(axis.title.y = element_markdown(),
+        legend.position = \"inside\",
+        legend.position.inside = c(0.2,0.8),
+        legend.background = element_rect(fill = \"white\",
+                                         color = \"black\")) -> rothiaAbPlot
+
+rothiaAbPlot
+
+ggsave(plot = rothiaAbPlot,
+       \"Rothia.abundance.FEV.tiff\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```"

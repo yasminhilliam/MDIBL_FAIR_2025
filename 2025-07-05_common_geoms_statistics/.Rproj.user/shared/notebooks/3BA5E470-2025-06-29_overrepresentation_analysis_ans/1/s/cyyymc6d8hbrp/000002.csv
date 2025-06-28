@@ -1,0 +1,29 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF0cml4KHZhbHVlcywgbnJvdyA9IDIsXG4gICAgICAgZGltbmFtZXMgPSBsaXN0KFxuICAgICAgICAgVXByZWd1bGF0ZWQgPSBjKFwiWWVzXCIsXCJOb1wiKSxcbiAgICAgICAgIE9uUGF0aCA9IGMoXCJZZXNcIixcIk5vXCIpXG4gICAgICAgKSkgLT4gaW5uYXRlX2ltbXVuZV9wYXRoX21hdHJpeFxuXG5pbm5hdGVfaW1tdW5lX3BhdGhfbWF0cml4XG5gYGAifQ== -->
+
+```r
+matrix(values, nrow = 2,
+       dimnames = list(
+         Upregulated = c(\"Yes\",\"No\"),
+         OnPath = c(\"Yes\",\"No\")
+       )) -> innate_immune_path_matrix
+
+innate_immune_path_matrix
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+matrix(values, nrow = 2,
+       dimnames = list(
+         Upregulated = c(\"Yes\",\"No\"),
+         OnPath = c(\"Yes\",\"No\")
+       )) -> innate_immune_path_matrix
+
+innate_immune_path_matrix
+```"
+"1","           OnPath
+Upregulated Yes    No
+        Yes  97   926
+        No  461 14509
+"

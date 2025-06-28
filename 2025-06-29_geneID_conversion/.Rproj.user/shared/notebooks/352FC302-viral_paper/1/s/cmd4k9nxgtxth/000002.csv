@@ -1,0 +1,56 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgsc2FtcGxlbG9jLHZpcnVzLmJpbixPVFUsQWJ1bmRhbmNlKSAlPiVcbiAgZmlsdGVyKCFpcy5uYSh2aXJ1cy5iaW4pKSAlPiVcbiAgZ3JvdXBfYnkoaW5kZXgpICU+JSBcbiAgbXV0YXRlKE4gPSBzdW0oQWJ1bmRhbmNlKSkgJT4lXG4gIHVuZ3JvdXAoKSAlPiVcbiAgZmlsdGVyKE4gPj0gMTA0NSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgpICU+JVxuICBkaXN0aW5jdCgpICU+JVxuICAuJGluZGV4IC0+IHNpbnNwdSBcblxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lICMgbm90IGludGVyZXN0ZWQgaW4gdGhyb2F0IHNhbXBsZXMgLSBubyB2aXJhbCBzd2Fic1xuICBkcGx5cjo6c2VsZWN0KE9UVSxBYnVuZGFuY2UsaW5kZXgpICU+JVxuICBwaXZvdF93aWRlcihuYW1lc19mcm9tID0gT1RVLFxuICAgICAgICAgICAgICB2YWx1ZXNfZnJvbSA9IEFidW5kYW5jZSxcbiAgICAgICAgICAgICAgdmFsdWVzX2ZuID0gbWVhbikgJT4lXG4gIGNvbHVtbl90b19yb3duYW1lcyguLHZhciA9IFwiaW5kZXhcIikgLT4gc2luc3B1RGZcblxuYXMubWF0cml4KHNpbnNwdURmKSAtPiBzaW5zcHVNYXRcblxuYWxsQWxwaGEgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgLT4gc2luc3B1QWxwaGFcbmBgYCJ9 -->
+
+```r
+allDf %>%
+  dplyr::select(index,sampleloc,virus.bin,OTU,Abundance) %>%
+  filter(!is.na(virus.bin)) %>%
+  group_by(index) %>% 
+  mutate(N = sum(Abundance)) %>%
+  ungroup() %>%
+  filter(N >= 1045) %>%
+  dplyr::select(index) %>%
+  distinct() %>%
+  .$index -> sinspu 
+
+allDf %>%
+  filter(index %in% sinspu) %>% # not interested in throat samples - no viral swabs
+  dplyr::select(OTU,Abundance,index) %>%
+  pivot_wider(names_from = OTU,
+              values_from = Abundance,
+              values_fn = mean) %>%
+  column_to_rownames(.,var = \"index\") -> sinspuDf
+
+as.matrix(sinspuDf) -> sinspuMat
+
+allAlpha %>%
+  filter(index %in% sinspu) -> sinspuAlpha
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  dplyr::select(index,sampleloc,virus.bin,OTU,Abundance) %>%
+  filter(!is.na(virus.bin)) %>%
+  group_by(index) %>% 
+  mutate(N = sum(Abundance)) %>%
+  ungroup() %>%
+  filter(N >= 1045) %>%
+  dplyr::select(index) %>%
+  distinct() %>%
+  .$index -> sinspu 
+
+allDf %>%
+  filter(index %in% sinspu) %>% # not interested in throat samples - no viral swabs
+  dplyr::select(OTU,Abundance,index) %>%
+  pivot_wider(names_from = OTU,
+              values_from = Abundance,
+              values_fn = mean) %>%
+  column_to_rownames(.,var = \"index\") -> sinspuDf
+
+as.matrix(sinspuDf) -> sinspuMat
+
+allAlpha %>%
+  filter(index %in% sinspu) -> sinspuAlpha
+```"

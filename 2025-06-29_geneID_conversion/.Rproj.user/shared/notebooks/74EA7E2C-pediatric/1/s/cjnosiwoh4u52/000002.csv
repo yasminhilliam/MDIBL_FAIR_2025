@@ -1,0 +1,52 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVkc0RmICU+JVxuICBmaWx0ZXIoZ2VudXMgPT0gXCJWaWJyaW9cIikgJT4lXG4gIGZpbHRlcihyZWxfYWIgPiAwKSAlPiVcbiAgbXV0YXRlKGxhYiA9IGlmX2Vsc2UocXVhbnRfcmVhZGluZyA+IDIwICYgcmVsX2FiID4yMCxTYW1wbGUsXCJcIikpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSBxdWFudF9yZWFkaW5nLFxuICAgICAgICAgICAgIHkgPSByZWxfYWIpKSArXG4gIGdlb21fcG9pbnQoYWVzKGNvbG9yID0gQ0ZfQ1JTX0NvbnRyb2xfRUMpLFxuICAgICAgICAgICAgIHNpemUgPSAzLFxuICAgICAgICAgICAgIGFscGhhID0gMC41KSArXG4gIGdlb21fbGFiZWxfcmVwZWwoYWVzKGxhYmVsID0gaWZfZWxzZShsYWIgIT0gXCJcIixsYWIsXCJcIikpLFxuICAgICAgICAgICAgICAgICAgIG1pbi5zZWdtZW50Lmxlbmd0aCA9IDApICtcbiAgc2NhbGVfY29sb3JfZGlzY3JldGUobmFtZSA9IFwiU2FtcGxlIHR5cGVcIikgK1xuICBsYWJzKHggPSBcIkROQSBjb25jLiAobmcvwrVMKVwiLFxuICAgICAgIHkgPSBcIipWaWJyaW8qIHJlbGF0aXZlPGJyPmFidW5kYW5jZSAoJSlcIikgK1xuICB0aGVtZShheGlzLnRpdGxlID0gZWxlbWVudF9tYXJrZG93bigpKSAtPiBkbmFyZWxfYWJwbG90XG5cbmdnc2F2ZShwbG90ID0gZG5hcmVsX2FicGxvdCxcbiAgICAgICBcInBlZHNfdmlicmlvX3JlbF9hYl9kbmFfY29uYy5wZGZcIixcbiAgICAgICBoZWlnaHQgPSA2LFxuICAgICAgIHdpZHRoID0gOCxcbiAgICAgICB1bml0cyA9IGMoXCJpblwiKSlcbmBgYCJ9 -->
+
+```r
+pedsDf %>%
+  filter(genus == \"Vibrio\") %>%
+  filter(rel_ab > 0) %>%
+  mutate(lab = if_else(quant_reading > 20 & rel_ab >20,Sample,\"\")) %>%
+  ggplot(aes(x = quant_reading,
+             y = rel_ab)) +
+  geom_point(aes(color = CF_CRS_Control_EC),
+             size = 3,
+             alpha = 0.5) +
+  geom_label_repel(aes(label = if_else(lab != \"\",lab,\"\")),
+                   min.segment.length = 0) +
+  scale_color_discrete(name = \"Sample type\") +
+  labs(x = \"DNA conc. (ng/µL)\",
+       y = \"*Vibrio* relative<br>abundance (%)\") +
+  theme(axis.title = element_markdown()) -> dnarel_abplot
+
+ggsave(plot = dnarel_abplot,
+       \"peds_vibrio_rel_ab_dna_conc.pdf\",
+       height = 6,
+       width = 8,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+pedsDf %>%
+  filter(genus == \"Vibrio\") %>%
+  filter(rel_ab > 0) %>%
+  mutate(lab = if_else(quant_reading > 20 & rel_ab >20,Sample,\"\")) %>%
+  ggplot(aes(x = quant_reading,
+             y = rel_ab)) +
+  geom_point(aes(color = CF_CRS_Control_EC),
+             size = 3,
+             alpha = 0.5) +
+  geom_label_repel(aes(label = if_else(lab != \"\",lab,\"\")),
+                   min.segment.length = 0) +
+  scale_color_discrete(name = \"Sample type\") +
+  labs(x = \"DNA conc. (ng/µL)\",
+       y = \"*Vibrio* relative<br>abundance (%)\") +
+  theme(axis.title = element_markdown()) -> dnarel_abplot
+
+ggsave(plot = dnarel_abplot,
+       \"peds_vibrio_rel_ab_dna_conc.pdf\",
+       height = 6,
+       width = 8,
+       units = c(\"in\"))
+```"

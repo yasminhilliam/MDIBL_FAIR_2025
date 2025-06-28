@@ -1,0 +1,24 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVmlldyhsaXN0RmlsdGVycyhlbnNlbWJsKSlcblxuZ2V0Qk0obWFydCA9IGVuc2VtYmwsXG4gICAgICB2YWx1ZXMgPSBjKFwiRU5TRzAwMDAwMDAwOTcxXCIsXCJFTlNHMDAwMDAwMDQxMzlcIixcIkVOU0cwMDAwMDAwNTMzOVwiKSxcbiAgICAgIGZpbHRlcnMgPSBcImVuc2VtYmxfZ2VuZV9pZFwiLFxuICAgICAgYXR0cmlidXRlcyA9IGMoXCJlbnNlbWJsX2dlbmVfaWRcIixcImVudHJlemdlbmVfaWRcIixcImVuc2VtYmxfZ2VuZV9pZFwiLFwiZGVzY3JpcHRpb25cIiksXG4gICAgICB1bmlxdWVSb3dzID0gVFJVRSkgLT4gZW5zZW1ibF9iaW9tYXJ0X291dHB1dFxuYGBgIn0= -->
+
+```r
+View(listFilters(ensembl))
+
+getBM(mart = ensembl,
+      values = c(\"ENSG00000000971\",\"ENSG00000004139\",\"ENSG00000005339\"),
+      filters = \"ensembl_gene_id\",
+      attributes = c(\"ensembl_gene_id\",\"entrezgene_id\",\"ensembl_gene_id\",\"description\"),
+      uniqueRows = TRUE) -> ensembl_biomart_output
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+View(listFilters(ensembl))
+
+getBM(mart = ensembl,
+      values = c(\"ENSG00000000971\",\"ENSG00000004139\",\"ENSG00000005339\"),
+      filters = \"ensembl_gene_id\",
+      attributes = c(\"ensembl_gene_id\",\"entrezgene_id\",\"ensembl_gene_id\",\"description\"),
+      uniqueRows = TRUE) -> ensembl_biomart_output
+```"

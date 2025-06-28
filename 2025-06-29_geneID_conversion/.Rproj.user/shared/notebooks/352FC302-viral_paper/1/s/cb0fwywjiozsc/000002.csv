@@ -1,0 +1,66 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGVmdF9qb2luKGFkdWx0ZGF5cyxjbikgJT4lXG4gIGxlZnRfam9pbiguLGFsbERmKSAlPiVcbiAgZmlsdGVyKGluZGV4ICVpbiUgc2luc3B1KSAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiUHNldWRvbW9uYXNcIikgJT4lXG4gIG11dGF0ZShQc2V1ZG9fYWJ1bmRhbmNlID0gbWVhbl9jbioocmVsX2FiLzEwMCkvNCxcbiAgICAgICAgIC5iZWZvcmUgPSBPVFUpICU+JVxuICBmaWx0ZXIoUHNldWRvX2FidW5kYW5jZSA+IDEpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSBkYXlzLnBvc3QucG9zLFxuICAgICAgICAgICAgIHkgPSBQc2V1ZG9fYWJ1bmRhbmNlLFxuICAgICAgICAgICAgIGNvbG9yID0gc2FtcGxlbG9jKSkgK1xuICBnZW9tX3Ntb290aChhZXMoZmlsbCA9IHNhbXBsZWxvYyksXG4gICAgICAgICAgICAgIGFscGhhID0gMC4yKSArXG4gIGdlb21fcG9pbnQoc2l6ZSA9IDUsXG4gICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfeV9sb2cxMChsaW1pdHMgPSBjKDAuMSwyZTgpKSArXG4gIHNjYWxlX2NvbG9yX21hbnVhbChuYW1lID0gXCJTYW1wbGUgbG9jYXRpb25cIixcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGxvY2NvbHMsXG4gICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiU2ludXNcIixcIlNwdXR1bVwiKSkgK1xuICBzY2FsZV9maWxsX21hbnVhbChuYW1lID0gXCJTYW1wbGUgbG9jYXRpb25cIixcbiAgICAgICAgICAgICAgICAgICAgdmFsdWVzID0gbG9jY29scyxcbiAgICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYyhcIlNpbnVzXCIsXCJTcHV0dW1cIikpICtcbiAgbGFicyh4ID0gXCJEYXlzIGZyb20gUlZJXCIsXG4gICAgICAgeSA9IFwiKlBzZXVkb21vbmFzKiBzcHAuIGFidW5kYW5jZVwiKSArXG4gIHRoZW1lKGF4aXMudGl0bGUueSA9IGVsZW1lbnRfbWFya2Rvd24oKSxcbiAgICAgICAgbGVnZW5kLnBvc2l0aW9uID0gXCJub25lXCIpICtcbiAgZmFjZXRfZ3JpZChyb3dzID0gdmFycyhzYW1wbGVsb2MpLFxuICAgICAgICAgICAgIGxhYmVsbGVyID0gYXNfbGFiZWxsZXIoYyhcInNpbnVzXCIgPSBcIlNpbnVzXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwic3B1dHVtXCIgPSBcIlNwdXR1bVwiKSkpIC0+IGRheXNwb3N0cGxvdFxuYGBgIn0= -->
+
+```r
+left_join(adultdays,cn) %>%
+  left_join(.,allDf) %>%
+  filter(index %in% sinspu) %>%
+  filter(genus == \"Pseudomonas\") %>%
+  mutate(Pseudo_abundance = mean_cn*(rel_ab/100)/4,
+         .before = OTU) %>%
+  filter(Pseudo_abundance > 1) %>%
+  ggplot(aes(x = days.post.pos,
+             y = Pseudo_abundance,
+             color = sampleloc)) +
+  geom_smooth(aes(fill = sampleloc),
+              alpha = 0.2) +
+  geom_point(size = 5,
+             alpha = 0.5) +
+  scale_y_log10(limits = c(0.1,2e8)) +
+  scale_color_manual(name = \"Sample location\",
+                     values = loccols,
+                     labels = c(\"Sinus\",\"Sputum\")) +
+  scale_fill_manual(name = \"Sample location\",
+                    values = loccols,
+                    labels = c(\"Sinus\",\"Sputum\")) +
+  labs(x = \"Days from RVI\",
+       y = \"*Pseudomonas* spp. abundance\") +
+  theme(axis.title.y = element_markdown(),
+        legend.position = \"none\") +
+  facet_grid(rows = vars(sampleloc),
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) -> dayspostplot
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+left_join(adultdays,cn) %>%
+  left_join(.,allDf) %>%
+  filter(index %in% sinspu) %>%
+  filter(genus == \"Pseudomonas\") %>%
+  mutate(Pseudo_abundance = mean_cn*(rel_ab/100)/4,
+         .before = OTU) %>%
+  filter(Pseudo_abundance > 1) %>%
+  ggplot(aes(x = days.post.pos,
+             y = Pseudo_abundance,
+             color = sampleloc)) +
+  geom_smooth(aes(fill = sampleloc),
+              alpha = 0.2) +
+  geom_point(size = 5,
+             alpha = 0.5) +
+  scale_y_log10(limits = c(0.1,2e8)) +
+  scale_color_manual(name = \"Sample location\",
+                     values = loccols,
+                     labels = c(\"Sinus\",\"Sputum\")) +
+  scale_fill_manual(name = \"Sample location\",
+                    values = loccols,
+                    labels = c(\"Sinus\",\"Sputum\")) +
+  labs(x = \"Days from RVI\",
+       y = \"*Pseudomonas* spp. abundance\") +
+  theme(axis.title.y = element_markdown(),
+        legend.position = \"none\") +
+  facet_grid(rows = vars(sampleloc),
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) -> dayspostplot
+```"

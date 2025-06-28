@@ -1,0 +1,114 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVkc0RmICU+JVxuICBmaWx0ZXIodmlydXMgIT0gXCIwXCIpICU+JVxuICBmaWx0ZXIodmlydXNfdHlwZSA9PSBcIkhSVlwiIHwgdmlydXNfdHlwZSA9PSBcIjBcIikgJT4lXG4gIGZpbHRlcihnZW51cyA9PSBcIlBzZXVkb21vbmFzXCIpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSB2aXJ1c190eXBlLFxuICAgICAgICAgICAgIHkgPSByZWxfYWIpKSArXG4gIGdlb21fdmlvbGluKCkgK1xuICBnZW9tX3BvaW50KClcblxucGVkc0RmICU+JVxuICBmaWx0ZXIodmlydXMgIT0gXCIwXCIpICU+JVxuICBmaWx0ZXIoZ2VudXMgPT0gXCJQc2V1ZG9tb25hc1wiKSAlPiVcbiAgZmlsdGVyKHZpcnVzX3R5cGUgPT0gXCIwXCIgfCB2aXJ1c190eXBlID09IFwiSFJWXCIpICU+JVxuICBncm91cF9ieSh2aXJ1c190eXBlKSAlPiVcbiAgc3VtbWFyaXNlKG1lYW4gPSBtZWFuKHJlbF9hYiksXG4gICAgICAgICAgICBtZWRpYW4gPSBtZWRpYW4ocmVsX2FiKSkgLT4gcHNldWRvaFJWc3VtXG5cbnBlZHNEZiAlPiVcbiAgZmlsdGVyKHZpcnVzICE9IFwiMFwiKSAlPiVcbiAgZmlsdGVyKGdlbnVzID09IFwiUHNldWRvbW9uYXNcIikgJT4lXG4gIGZpbHRlcih2aXJ1c190eXBlID09IFwiMFwiIHwgdmlydXNfdHlwZSA9PSBcIkhSVlwiKSAlPiVcbiAgZ2dwbG90KGFlcyh5ID0gcmVsX2FiLFxuICAgICAgICAgICAgIHggPSB2aXJ1c190eXBlLFxuICAgICAgICAgICAgIGNvbG9yID0gdmlydXNfdHlwZSkpICtcbiAgZ2VvbV92aW9saW4oYWVzKGZpbGwgPSB2aXJ1c190eXBlLCksXG4gICAgICAgICAgICAgIGFscGhhID0gMC41KSArXG4gIGdlb21fc2VnbWVudCh5ID0gNC45OSxcbiAgICAgICAgICAgICAgIHggPSAwLjksXG4gICAgICAgICAgICAgICB4ZW5kID0gMS4xLFxuICAgICAgICAgICAgICAgY29sb3IgPSBcImdyZXlcIixcbiAgICAgICAgICAgICAgIGxpbmV3aWR0aCA9IDEpICtcbiAgZ2VvbV9zZWdtZW50KHkgPSAxMy4xLFxuICAgICAgICAgICAgICAgeCA9IDEuOSxcbiAgICAgICAgICAgICAgIHhlbmQgPSAyLjEsXG4gICAgICAgICAgICAgICBjb2xvciA9IFwiIzExOTJDNVwiLFxuICAgICAgICAgICAgICAgbGluZXdpZHRoID0gMSkgK1xuICBzY2FsZV9maWxsX21hbnVhbCh2YWx1ZXMgPSBjKFwiZ3JleVwiLFwiIzExOTJDNVwiKSkgK1xuICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzID0gYyhcImdyZXlcIixcIiMxMTkyQzVcIikpICtcbiAgc2NhbGVfeF9kaXNjcmV0ZShsYWJlbHMgPSBjKFwiTm8gdmlydXNcIixcIkhSVlwiKSkgK1xuICBsYWJzKHkgPSBcIipQc2V1ZG9tb25hcyo8YnI+cmVsYXRpdmUgYWJ1bmRhbmNlICglKVwiLFxuICAgICAgIHggPSBcIlNhbXBsZSB2aXJhbCBzdGF0dXNcIikgK1xuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSBcIm5vbmVcIixcbiAgICAgICAgYXhpcy50aXRsZS55ID0gZWxlbWVudF9tYXJrZG93bihmYWNlID0gXCJib2xkXCIpLFxuICAgICAgICBheGlzLnRpdGxlLnggPSBlbGVtZW50X3RleHQoZmFjZSA9IFwiYm9sZFwiKSkgLT4gcHNldWRvaFJWcGxvdFxuXG5wc2V1ZG9oUlZwbG90XG5cbmdnc2F2ZShwbG90ID0gcHNldWRvaFJWcGxvdCxcbiAgICAgICBcInBlZHNfcHNldWRvbW9uYXNfSFJWX2FidW5kYW5jZS50aWZmXCIsXG4gICAgICAgaGVpZ2h0ID0gNixcbiAgICAgICB3aWR0aCA9IDYsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5gYGAifQ== -->
+
+```r
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  ggplot(aes(x = virus_type,
+             y = rel_ab)) +
+  geom_violin() +
+  geom_point()
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  filter(virus_type == \"0\" | virus_type == \"HRV\") %>%
+  group_by(virus_type) %>%
+  summarise(mean = mean(rel_ab),
+            median = median(rel_ab)) -> pseudohRVsum
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  filter(virus_type == \"0\" | virus_type == \"HRV\") %>%
+  ggplot(aes(y = rel_ab,
+             x = virus_type,
+             color = virus_type)) +
+  geom_violin(aes(fill = virus_type,),
+              alpha = 0.5) +
+  geom_segment(y = 4.99,
+               x = 0.9,
+               xend = 1.1,
+               color = \"grey\",
+               linewidth = 1) +
+  geom_segment(y = 13.1,
+               x = 1.9,
+               xend = 2.1,
+               color = \"#1192C5\",
+               linewidth = 1) +
+  scale_fill_manual(values = c(\"grey\",\"#1192C5\")) +
+  scale_color_manual(values = c(\"grey\",\"#1192C5\")) +
+  scale_x_discrete(labels = c(\"No virus\",\"HRV\")) +
+  labs(y = \"*Pseudomonas*<br>relative abundance (%)\",
+       x = \"Sample viral status\") +
+  theme(legend.position = \"none\",
+        axis.title.y = element_markdown(face = \"bold\"),
+        axis.title.x = element_text(face = \"bold\")) -> pseudohRVplot
+
+pseudohRVplot
+
+ggsave(plot = pseudohRVplot,
+       \"peds_pseudomonas_HRV_abundance.tiff\",
+       height = 6,
+       width = 6,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(virus_type == \"HRV\" | virus_type == \"0\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  ggplot(aes(x = virus_type,
+             y = rel_ab)) +
+  geom_violin() +
+  geom_point()
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  filter(virus_type == \"0\" | virus_type == \"HRV\") %>%
+  group_by(virus_type) %>%
+  summarise(mean = mean(rel_ab),
+            median = median(rel_ab)) -> pseudohRVsum
+
+pedsDf %>%
+  filter(virus != \"0\") %>%
+  filter(genus == \"Pseudomonas\") %>%
+  filter(virus_type == \"0\" | virus_type == \"HRV\") %>%
+  ggplot(aes(y = rel_ab,
+             x = virus_type,
+             color = virus_type)) +
+  geom_violin(aes(fill = virus_type,),
+              alpha = 0.5) +
+  geom_segment(y = 4.99,
+               x = 0.9,
+               xend = 1.1,
+               color = \"grey\",
+               linewidth = 1) +
+  geom_segment(y = 13.1,
+               x = 1.9,
+               xend = 2.1,
+               color = \"#1192C5\",
+               linewidth = 1) +
+  scale_fill_manual(values = c(\"grey\",\"#1192C5\")) +
+  scale_color_manual(values = c(\"grey\",\"#1192C5\")) +
+  scale_x_discrete(labels = c(\"No virus\",\"HRV\")) +
+  labs(y = \"*Pseudomonas*<br>relative abundance (%)\",
+       x = \"Sample viral status\") +
+  theme(legend.position = \"none\",
+        axis.title.y = element_markdown(face = \"bold\"),
+        axis.title.x = element_text(face = \"bold\")) -> pseudohRVplot
+
+pseudohRVplot
+
+ggsave(plot = pseudohRVplot,
+       \"peds_pseudomonas_HRV_abundance.tiff\",
+       height = 6,
+       width = 6,
+       units = c(\"in\"))
+```"

@@ -1,0 +1,7 @@
+"0","if (!requireNamespace(""BiocManager"", quietly = TRUE))"
+"0","  install.packages(""BiocManager"")"
+"0",""
+"0","BiocManager::install(""biomaRt"")"
+"1","Update all/some/none? [a/s/n]: "
+"0","n"
+"0","library(biomaRt) "

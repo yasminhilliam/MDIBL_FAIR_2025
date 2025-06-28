@@ -1,0 +1,8 @@
+"0","ggplot(data = iris,"
+"0","       mapping = aes(x = Petal.Length,"
+"0","                     y = Petal.Width)) +"
+"0","  geom_point(color = ""blue"", # note that these options are not parsed through the aes() argument"
+"0","             size = 5,"
+"0","             shape = 1) -> openCircleBlue"
+"0",""
+"0","openCircleBlue"

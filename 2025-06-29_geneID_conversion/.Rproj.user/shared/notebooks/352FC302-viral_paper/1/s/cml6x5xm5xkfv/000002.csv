@@ -1,0 +1,22 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGxlZnRfam9pbiguLGVucm9sbG1lbnRfZGF0YSkgJT4lXG4gIGxlZnRfam9pbiguLHNpbnNwdV9kYXRhKSAlPiVcbiAgbGVmdF9qb2luKC4sY24pICU+JVxuICBcbmBgYCJ9 -->
+
+```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  left_join(.,enrollment_data) %>%
+  left_join(.,sinspu_data) %>%
+  left_join(.,cn) %>%
+  
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  filter(index %in% sinspu) %>%
+  left_join(.,enrollment_data) %>%
+  left_join(.,sinspu_data) %>%
+  left_join(.,cn) %>%
+  
+```"

@@ -1,0 +1,80 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3l0b1ZpcnVzICU+JVxuICBmaWx0ZXIoY3l0b2tpbmUgPT0gXCJJTDEwXCIpICU+JVxuICBmaWx0ZXIoaW5kZXggJWluJSBzaW5zcHUpIC0+IElMMTBjYXRcblxuc3VtbWFyeShsbWVyKGRhdGEgPSBJTDEwY2F0LFxuICAgICAgICAgICAgIHZhbHVlIH4gdmlydXMuYmluICsgKDF8cGF0aWVudGlkKSkpXG5cbmFub3ZhKGxtZXIoZGF0YSA9IElMMTBjYXQsXG4gICAgICAgICAgICAgdmFsdWUgfiB2aXJ1cy5iaW4gKyAoMXxwYXRpZW50aWQpKSlcblxuY3l0b1ZpcnVzICU+JVxuICBmaWx0ZXIoY3l0b2tpbmUgPT0gXCJBUFJJTFwiIHwgY3l0b2tpbmUgPT0gXCJJTDEwXCIpICU+JVxuICBmaWx0ZXIoaW5kZXggJWluJSBzaW5zcHUpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSB2aXJ1cy5iaW4sXG4gICAgICAgICAgICAgeSA9IHZhbHVlLFxuICAgICAgICAgICAgIGNvbG9yID0gY3l0b2tpbmUpKSArXG4gIGdlb21fdmlvbGluKGRyYXdfcXVhbnRpbGVzID0gYygwLjUpKSArXG4gIGdlb21faml0dGVyKHdpZHRoID0gMC4yLFxuICAgICAgICAgICAgICBzaXplID0gNSxcbiAgICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfeV9sb2cxMChuYW1lID0gXCJDb25jZW50cmF0aW9uIChwZy9tTClcIikgK1xuICBzY2FsZV94X2Rpc2NyZXRlKG5hbWUgPSBcIlNhbXBsZSB2aXJhbCBzdGF0dXNcIixcbiAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiTmVnYXRpdmVcIixcIlBvc2l0aXZlXCIpKSArXG4gIHNjYWxlX2NvbG9yX21hbnVhbCh2YWx1ZXMgPSBjKFwibWVkaXVtdmlvbGV0cmVkXCIsXCJzZWFncmVlbjJcIikpICtcbiAgZmFjZXRfd3JhcCh+Y3l0b2tpbmUsXG4gICAgICAgICAgICAgbGFiZWxsZXIgPSBhc19sYWJlbGxlcihjKFwiQVBSSUxcIj1cIkFQUklMXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiSUwxMFwiPVwiSUwtMTBcIikpKSArXG4gIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9IFwibm9uZVwiLFxuICAgICAgICBzdHJpcC5iYWNrZ3JvdW5kID0gZWxlbWVudF9ibGFuaygpKSAtPiBBUFJJTElMMTBcblxuZ2dzYXZlKHBsb3QgPSBBUFJJTElMMTAsXG4gICAgICAgXCJBUFJJTF9JTC0xMF9ib3hwbG90LnBkZlwiLFxuICAgICAgIGhlaWdodCA9IDgsXG4gICAgICAgd2lkdGggPSAxMixcbiAgICAgICB1bml0cyA9IGMoXCJpblwiKSlcbmBgYCJ9 -->
+
+```r
+cytoVirus %>%
+  filter(cytokine == \"IL10\") %>%
+  filter(index %in% sinspu) -> IL10cat
+
+summary(lmer(data = IL10cat,
+             value ~ virus.bin + (1|patientid)))
+
+anova(lmer(data = IL10cat,
+             value ~ virus.bin + (1|patientid)))
+
+cytoVirus %>%
+  filter(cytokine == \"APRIL\" | cytokine == \"IL10\") %>%
+  filter(index %in% sinspu) %>%
+  ggplot(aes(x = virus.bin,
+             y = value,
+             color = cytokine)) +
+  geom_violin(draw_quantiles = c(0.5)) +
+  geom_jitter(width = 0.2,
+              size = 5,
+              alpha = 0.5) +
+  scale_y_log10(name = \"Concentration (pg/mL)\") +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_color_manual(values = c(\"mediumvioletred\",\"seagreen2\")) +
+  facet_wrap(~cytokine,
+             labeller = as_labeller(c(\"APRIL\"=\"APRIL\",
+                                      \"IL10\"=\"IL-10\"))) +
+  theme(legend.position = \"none\",
+        strip.background = element_blank()) -> APRILIL10
+
+ggsave(plot = APRILIL10,
+       \"APRIL_IL-10_boxplot.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+cytoVirus %>%
+  filter(cytokine == \"IL10\") %>%
+  filter(index %in% sinspu) -> IL10cat
+
+summary(lmer(data = IL10cat,
+             value ~ virus.bin + (1|patientid)))
+
+anova(lmer(data = IL10cat,
+             value ~ virus.bin + (1|patientid)))
+
+cytoVirus %>%
+  filter(cytokine == \"APRIL\" | cytokine == \"IL10\") %>%
+  filter(index %in% sinspu) %>%
+  ggplot(aes(x = virus.bin,
+             y = value,
+             color = cytokine)) +
+  geom_violin(draw_quantiles = c(0.5)) +
+  geom_jitter(width = 0.2,
+              size = 5,
+              alpha = 0.5) +
+  scale_y_log10(name = \"Concentration (pg/mL)\") +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_color_manual(values = c(\"mediumvioletred\",\"seagreen2\")) +
+  facet_wrap(~cytokine,
+             labeller = as_labeller(c(\"APRIL\"=\"APRIL\",
+                                      \"IL10\"=\"IL-10\"))) +
+  theme(legend.position = \"none\",
+        strip.background = element_blank()) -> APRILIL10
+
+ggsave(plot = APRILIL10,
+       \"APRIL_IL-10_boxplot.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+```"

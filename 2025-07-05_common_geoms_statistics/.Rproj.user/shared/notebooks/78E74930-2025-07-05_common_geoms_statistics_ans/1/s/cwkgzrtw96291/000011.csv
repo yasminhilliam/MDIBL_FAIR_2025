@@ -1,0 +1,2 @@
+"0",""
+"0","hist(iris$Sepal.Width, main = ""Sepal Width"", xlab = ""Width"")"

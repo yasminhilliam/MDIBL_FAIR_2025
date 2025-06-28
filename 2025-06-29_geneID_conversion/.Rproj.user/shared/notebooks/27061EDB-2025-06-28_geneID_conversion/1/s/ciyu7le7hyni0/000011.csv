@@ -1,0 +1,8 @@
+"0","select(org.Hs.eg.db,"
+"0","       keys = ensembl_key,"
+"0","       keytype=""ENSEMBL"","
+"0","       columns=c(""ENTREZID"",""SYMBOL"",""GENENAME"",""UNIPROT"")) -> conv_table"
+"0",""
+"0","conv_table[-c(which(duplicated(conv_table$ENSEMBL)==TRUE)),] -> conv_table_unique"
+"0",""
+"0","head(conv_table_unique)"

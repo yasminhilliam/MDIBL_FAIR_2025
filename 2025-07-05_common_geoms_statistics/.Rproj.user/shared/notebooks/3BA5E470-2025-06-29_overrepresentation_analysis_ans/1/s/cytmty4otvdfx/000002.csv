@@ -1,0 +1,26 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmlzaGVyLnRlc3QoTWVzc3ltdCxcbiAgICAgICAgICAgIGFsdGVybmF0aXZlID0gXCJncmVhdGVyXCIpXG5gYGAifQ== -->
+
+```r
+fisher.test(Messymt,
+            alternative = \"greater\")
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+fisher.test(Messymt,
+            alternative = \"greater\")
+```"
+"1","
+	Fisher's Exact Test for Count Data
+
+data:  Messymt
+p-value = 2.856e-13
+alternative hypothesis: true odds ratio is greater than 1
+95 percent confidence interval:
+ 2.036071      Inf
+sample estimates:
+odds ratio 
+  2.541431 
+"

@@ -1,0 +1,51 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZFJEUyhcImRhdGFfdHhpbXBvcnQuUkRTXCIpIC0+IHR4aVxuXG5yb3duYW1lcyh0eGkkY291bnRzKSAtPiB0eGlfZW5zZW1ibFxuXG5rZXlzKG9yZy5Icy5lZy5kYixcbiAgICAga2V5dHlwZSA9IFwiRU5TRU1CTFwiKSAtPiB0eGlfa2V5XG5cbnNlbGVjdChvcmcuSHMuZWcuZGIsIFxuICAgICAgIGtleXMgPSB0eGlfa2V5LCBcbiAgICAgICBrZXl0eXBlID0gXCJFTlNFTUJMXCIsXG4gICAgICAgY29sdW1ucz1jKFwiRU5UUkVaSURcIixcIlNZTUJPTFwiLFwiR0VORU5BTUVcIikpIC0+IHR4aV90YWJsZVxuXG50eGlfdGFibGVbLWMod2hpY2goZHVwbGljYXRlZCh0eGlfdGFibGUkRU5TRU1CTCk9PVRSVUUpKSxdIC0+IHR4aV90YWJsZV91bmlxdWVcblxuaGVhZCh0eGlfdGFibGVfdW5pcXVlKVxuYGBgIn0= -->
+
+```r
+readRDS(\"data_tximport.RDS\") -> txi
+
+rownames(txi$counts) -> txi_ensembl
+
+keys(org.Hs.eg.db,
+     keytype = \"ENSEMBL\") -> txi_key
+
+select(org.Hs.eg.db, 
+       keys = txi_key, 
+       keytype = \"ENSEMBL\",
+       columns=c(\"ENTREZID\",\"SYMBOL\",\"GENENAME\")) -> txi_table
+
+txi_table[-c(which(duplicated(txi_table$ENSEMBL)==TRUE)),] -> txi_table_unique
+
+head(txi_table_unique)
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+readRDS(\"data_tximport.RDS\") -> txi
+
+rownames(txi$counts) -> txi_ensembl
+
+keys(org.Hs.eg.db,
+     keytype = \"ENSEMBL\") -> txi_key
+
+select(org.Hs.eg.db, 
+       keys = txi_key, 
+       keytype = \"ENSEMBL\",
+       columns=c(\"ENTREZID\",\"SYMBOL\",\"GENENAME\")) -> txi_table
+
+txi_table[-c(which(duplicated(txi_table$ENSEMBL)==TRUE)),] -> txi_table_unique
+
+head(txi_table_unique)
+```"
+"1","
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6NCwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNiDDlyA0XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0VlMwVzdhTUJRMUlhUXRVcmRLVmFjK1JuMFB3a2xoNURHb0dhcFVzZ3FZMU8zTkJKTkdjK3pJQ2R0NDI1ZDNjOEFYZGFiU0xGMzUrQnpmNjNOdHorNmVndTVURnlIVVJyWnRvWFpIUWRUNXN2amtqUkJTQkVJdFpLT3padjZsTmwwcVlLdTRVT0ZvNFgyY3pDZjlabUFmMytMK01mMXhNQXJESTlvUE1RN2YybzF2L2RFeFBSajIrOE5qT2h6aVlHZzRhbUVBUG9BQUFQaXdEa1l0N0J2NWRvVEhFNDNia1QvVnNLUGdJNVMyazJqeEdzTkpwL040OW5pZlJJRlI4d05oNVRQeHNEZDJNN1pOUlNsRlRYT3UxYXU5Nm5zRlNhWEltRmh1MkVHOGVWTjB5NHB1VmlLam5McGc1Q3J4U0Vyckxhc2w0ZFdhU2xMOVJ3VGIxeFdWcFNxNkprWE90bTdrRnJSWVV1a0d4aS9vY0ZMUVN2ZG1hL0pFUFVjOEhUL0FGY1RKWWhaL3U3L1RhMmYrZFRyK2ZGQW5jUkluMFRRMktwOUo4Yk1IMWMrYmQvbU5kc014TGFTTVZHQUJ5TzZLMUtTM2xpcGZyVjZNbEJOUjFybmdLc202M0ZmOEo3a2xEZUppd3hzbkt5OTkzdkR2M2dBYmVydmtXWFBvanRySHVaNmRWOWplMjdEK0dIL0JvVHpMT1lWK0dGbFNCcFZYOUllRzc5U0Y3TzZqVjhxYzE5Q29ZcXRlTFdvQ0tkMVVNR0IycmFPWHZ4bStNdmZYQXdBQSJ9 -->
+
+<div data-pagedtable=\"false\">
+  <script data-pagedtable-source type=\"application/json\">
+{\"columns\":[{\"label\":[\"\"],\"name\":[\"_rn_\"],\"type\":[\"\"],\"align\":[\"left\"]},{\"label\":[\"ENSEMBL\"],\"name\":[1],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"ENTREZID\"],\"name\":[2],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"SYMBOL\"],\"name\":[3],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"GENENAME\"],\"name\":[4],\"type\":[\"chr\"],\"align\":[\"left\"]}],\"data\":[{\"1\":\"ENSG00000121410\",\"2\":\"1\",\"3\":\"A1BG\",\"4\":\"alpha-1-B glycoprotein\",\"_rn_\":\"1\"},{\"1\":\"ENSG00000175899\",\"2\":\"2\",\"3\":\"A2M\",\"4\":\"alpha-2-macroglobulin\",\"_rn_\":\"2\"},{\"1\":\"ENSG00000291190\",\"2\":\"3\",\"3\":\"A2MP1\",\"4\":\"alpha-2-macroglobulin pseudogene 1\",\"_rn_\":\"3\"},{\"1\":\"ENSG00000171428\",\"2\":\"9\",\"3\":\"NAT1\",\"4\":\"N-acetyltransferase 1\",\"_rn_\":\"4\"},{\"1\":\"ENSG00000156006\",\"2\":\"10\",\"3\":\"NAT2\",\"4\":\"N-acetyltransferase 2\",\"_rn_\":\"5\"},{\"1\":\"ENSG00000196136\",\"2\":\"12\",\"3\":\"SERPINA3\",\"4\":\"serpin family A member 3\",\"_rn_\":\"6\"}],\"options\":{\"columns\":{\"min\":{},\"max\":[10],\"total\":[4]},\"rows\":{\"min\":[10],\"max\":[10],\"total\":[6]},\"pages\":{}}}
+  </script>
+</div>
+
+<!-- rnb-frame-end -->
+"

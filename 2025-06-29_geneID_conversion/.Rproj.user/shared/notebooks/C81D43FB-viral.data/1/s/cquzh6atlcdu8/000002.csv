@@ -1,0 +1,20 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWRvbmlzMihjeXRva2luZURpc3QgfiBjeXRva2luZVBDb0FNZXRhJGs0LFxuICAgICAgICBzdHJhdGEgPSBjeXRva2luZVBDb0FNZXRhJHBhdGllbnRpZCxcbiAgICAgICAgbmEucm0gPSBUUlVFKSAtPiBjeXRva2luZWs0QWRvbmlzXG5cbmN5dG9raW5lazRBZG9uaXMkYW92LnRhYiRgUHIoPkYpYFsxXSAtPiBjeXRva2luZWs0UHZhbHVlXG5gYGAifQ== -->
+
+```r
+adonis2(cytokineDist ~ cytokinePCoAMeta$k4,
+        strata = cytokinePCoAMeta$patientid,
+        na.rm = TRUE) -> cytokinek4Adonis
+
+cytokinek4Adonis$aov.tab$`Pr(>F)`[1] -> cytokinek4Pvalue
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+adonis2(cytokineDist ~ cytokinePCoAMeta$k4,
+        strata = cytokinePCoAMeta$patientid,
+        na.rm = TRUE) -> cytokinek4Adonis
+
+cytokinek4Adonis$aov.tab$`Pr(>F)`[1] -> cytokinek4Pvalue
+```"

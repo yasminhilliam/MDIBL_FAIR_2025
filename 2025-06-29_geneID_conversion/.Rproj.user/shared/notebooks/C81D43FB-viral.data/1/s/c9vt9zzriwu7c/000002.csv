@@ -1,0 +1,104 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmlydXNDb2xzIDwtIGMoXCJIdW1hbiBtZXRhcG5ldW1vdmlydXNcIiA9IFwiZmlyZWJyaWNrNFwiLFxuICAgICAgICAgICAgICAgXCJIdW1hbiByaGlub3ZpcnVzXCIgPSBcImZpcmVicmljazFcIixcbiAgICAgICAgICAgICAgIFwiSW5mbHVlbnphIEFcIiA9IFwiZGFya29yYW5nZTJcIixcbiAgICAgICAgICAgICAgIFwiUGFyYWluZmx1ZW56YSB2aXJ1cyAxXCIgPSBcImdvbGRlbnJvZDNcIixcbiAgICAgICAgICAgICAgIFwiUGFyYWluZmx1ZW56YSB2aXJ1cyAyXCIgPSBcImdvbGRcIixcbiAgICAgICAgICAgICAgIFwiUGFyYWluZmx1ZW56YSB2aXJ1cyAzXCIgPSBcInNlYWdyZWVuNFwiLFxuICAgICAgICAgICAgICAgXCJQYXJhaW5mbHVlbnphIHZpcnVzIDRcIiA9IFwic2VhZ3JlZW4xXCIsXG4gICAgICAgICAgICAgICBcIlJlc3BpcmF0b3J5IHN5bmN5dGlhbCB2aXJ1c1wiID0gXCJyb3lhbGJsdWU0XCIsXG4gICAgICAgICAgICAgICBcIlNlYXNvbmFsIGh1bWFuIGNvcm9uYXZpcnVzIDIyOUVcIiA9IFwicm95YWxibHVlMVwiLFxuICAgICAgICAgICAgICAgXCJTZWFzb25hbCBodW1hbiBjb3JvbmF2aXJ1cyBPQzQzXCIgPSBcImhvdHBpbmtcIixcbiAgICAgICAgICAgICAgIFwiTm9uZVwiID0gXCJncmV5NDhcIilcblxubG9jbGFicyA8LSBjKFwic2ludXNcIiA9IFwiU2ludXNcIixcbiAgICAgICAgICAgICBcInNwdXR1bVwiID0gXCJTcHV0dW1cIilcblxuZ2VuQ29scyA8LSBjKFwiKkNvcnluZWJhY3Rlcml1bSpcIiA9IFwiI0ZCNzM3QVwiLFxuICAgICAgICAgICAgIFwiKlJvdGhpYSpcIiA9IFwiI0Y1N0E1RlwiLFxuICAgICAgICAgICAgIFwiKkJhY2lsbHVzKlwiID0gXCIjREU4QzAwXCIsXG4gICAgICAgICAgICAgXCIqR3JhbnVsaWNhdGVsbGEqXCIgPVwiI0NEOTYwMFwiLFxuICAgICAgICAgICAgIFwiKlN0YXBoeWxvY29jY3VzKlwiID0gXCIjQjc5RjAwXCIsXG4gICAgICAgICAgICAgXCIqU3RyZXB0b2NvY2N1cypcIiA9IFwiIzlEQTcwMFwiLFxuICAgICAgICAgICAgIFwiKlByZXZvdGVsbGEqXCIgPSBcIiNGNTY0RTNcIixcbiAgICAgICAgICAgICBcIipBY2hyb21vYmFjdGVyKlwiID0gXCIjOUY4Q0ZGXCIsXG4gICAgICAgICAgICAgXCIqQnVya2hvbGRlcmlhKlwiID0gXCIjNUE5REZGXCIsXG4gICAgICAgICAgICAgXCIqRXNjaGVyaWNoaWEqXCIgPSBcIiMwMEFCRkRcIixcbiAgICAgICAgICAgICBcIipIYWVtb3BoaWx1cypcIiA9IFwiIzAwQjZFQlwiLFxuICAgICAgICAgICAgIFwiKk1vcmF4ZWxsYSpcIiA9IFwiIzAwQkRENVwiLFxuICAgICAgICAgICAgIFwiKk5laXNzZXJpYSpcIiA9IFwiIzAwQzBCOVwiLFxuICAgICAgICAgICAgIFwiKlBzZXVkb21vbmFzKlwiID0gXCIjMDBDMTlBXCIsXG4gICAgICAgICAgICAgXCIqU2VycmF0aWEqXCIgPSBcIiMwMEJGNzdcIixcbiAgICAgICAgICAgICBcIipTdGVub3Ryb3Bob21vbmFzKlwiID0gXCIjMDBCQjRCXCIsXG4gICAgICAgICAgICAgXCIqVmVpbGxvbmVsbGEqXCIgPSBcIiNGRjZDOTFcIixcbiAgICAgICAgICAgICBcIk90aGVyXCIgPSBcImdyZXk4MFwiKVxuXG5jb2xmdW5jIDwtIGNvbG9yUmFtcFBhbGV0dGUoYyhcInB1cnBsZTRcIiwgXCJvcmFuZ2VcIikpXG5cbmNvbGZ1bmMoNClcblxuY3Rjb2xzIDwtIGMoXCJuZWdhdGl2ZVwiID0gXCIjNTUxQThCXCIsXG4gICAgICAgICAgICBcImxvd1wiID0gXCIjOEQ0ODVDXCIsXG4gICAgICAgICAgICBcIm1vZGVyYXRlXCIgPSBcIiNDNjc2MkVcIixcbiAgICAgICAgICAgIFwiaGlnaFwiID0gXCIjRkZBNTAwXCIpXG5cbmNsdXN0Y29scyA8LSBjKFwiMVwiID0gXCIjQjc5RjAwXCIsXG4gICAgICAgICAgICAgICBcIjJcIiA9IFwiIzAwQzE5QVwiLFxuICAgICAgICAgICAgICAgXCIzXCIgPSBcIiM5RjhDRkZcIixcbiAgICAgICAgICAgICAgIFwiNFwiID0gXCIjRkI3MzdBXCIpXG5gYGAifQ== -->
+
+```r
+virusCols <- c(\"Human metapneumovirus\" = \"firebrick4\",
+               \"Human rhinovirus\" = \"firebrick1\",
+               \"Influenza A\" = \"darkorange2\",
+               \"Parainfluenza virus 1\" = \"goldenrod3\",
+               \"Parainfluenza virus 2\" = \"gold\",
+               \"Parainfluenza virus 3\" = \"seagreen4\",
+               \"Parainfluenza virus 4\" = \"seagreen1\",
+               \"Respiratory syncytial virus\" = \"royalblue4\",
+               \"Seasonal human coronavirus 229E\" = \"royalblue1\",
+               \"Seasonal human coronavirus OC43\" = \"hotpink\",
+               \"None\" = \"grey48\")
+
+loclabs <- c(\"sinus\" = \"Sinus\",
+             \"sputum\" = \"Sputum\")
+
+genCols <- c(\"*Corynebacterium*\" = \"#FB737A\",
+             \"*Rothia*\" = \"#F57A5F\",
+             \"*Bacillus*\" = \"#DE8C00\",
+             \"*Granulicatella*\" =\"#CD9600\",
+             \"*Staphylococcus*\" = \"#B79F00\",
+             \"*Streptococcus*\" = \"#9DA700\",
+             \"*Prevotella*\" = \"#F564E3\",
+             \"*Achromobacter*\" = \"#9F8CFF\",
+             \"*Burkholderia*\" = \"#5A9DFF\",
+             \"*Escherichia*\" = \"#00ABFD\",
+             \"*Haemophilus*\" = \"#00B6EB\",
+             \"*Moraxella*\" = \"#00BDD5\",
+             \"*Neisseria*\" = \"#00C0B9\",
+             \"*Pseudomonas*\" = \"#00C19A\",
+             \"*Serratia*\" = \"#00BF77\",
+             \"*Stenotrophomonas*\" = \"#00BB4B\",
+             \"*Veillonella*\" = \"#FF6C91\",
+             \"Other\" = \"grey80\")
+
+colfunc <- colorRampPalette(c(\"purple4\", \"orange\"))
+
+colfunc(4)
+
+ctcols <- c(\"negative\" = \"#551A8B\",
+            \"low\" = \"#8D485C\",
+            \"moderate\" = \"#C6762E\",
+            \"high\" = \"#FFA500\")
+
+clustcols <- c(\"1\" = \"#B79F00\",
+               \"2\" = \"#00C19A\",
+               \"3\" = \"#9F8CFF\",
+               \"4\" = \"#FB737A\")
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+virusCols <- c(\"Human metapneumovirus\" = \"firebrick4\",
+               \"Human rhinovirus\" = \"firebrick1\",
+               \"Influenza A\" = \"darkorange2\",
+               \"Parainfluenza virus 1\" = \"goldenrod3\",
+               \"Parainfluenza virus 2\" = \"gold\",
+               \"Parainfluenza virus 3\" = \"seagreen4\",
+               \"Parainfluenza virus 4\" = \"seagreen1\",
+               \"Respiratory syncytial virus\" = \"royalblue4\",
+               \"Seasonal human coronavirus 229E\" = \"royalblue1\",
+               \"Seasonal human coronavirus OC43\" = \"hotpink\",
+               \"None\" = \"grey48\")
+
+loclabs <- c(\"sinus\" = \"Sinus\",
+             \"sputum\" = \"Sputum\")
+
+genCols <- c(\"*Corynebacterium*\" = \"#FB737A\",
+             \"*Rothia*\" = \"#F57A5F\",
+             \"*Bacillus*\" = \"#DE8C00\",
+             \"*Granulicatella*\" =\"#CD9600\",
+             \"*Staphylococcus*\" = \"#B79F00\",
+             \"*Streptococcus*\" = \"#9DA700\",
+             \"*Prevotella*\" = \"#F564E3\",
+             \"*Achromobacter*\" = \"#9F8CFF\",
+             \"*Burkholderia*\" = \"#5A9DFF\",
+             \"*Escherichia*\" = \"#00ABFD\",
+             \"*Haemophilus*\" = \"#00B6EB\",
+             \"*Moraxella*\" = \"#00BDD5\",
+             \"*Neisseria*\" = \"#00C0B9\",
+             \"*Pseudomonas*\" = \"#00C19A\",
+             \"*Serratia*\" = \"#00BF77\",
+             \"*Stenotrophomonas*\" = \"#00BB4B\",
+             \"*Veillonella*\" = \"#FF6C91\",
+             \"Other\" = \"grey80\")
+
+colfunc <- colorRampPalette(c(\"purple4\", \"orange\"))
+
+colfunc(4)
+
+ctcols <- c(\"negative\" = \"#551A8B\",
+            \"low\" = \"#8D485C\",
+            \"moderate\" = \"#C6762E\",
+            \"high\" = \"#FFA500\")
+
+clustcols <- c(\"1\" = \"#B79F00\",
+               \"2\" = \"#00C19A\",
+               \"3\" = \"#9F8CFF\",
+               \"4\" = \"#FB737A\")
+```"

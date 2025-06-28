@@ -1,0 +1,14 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZC5jc3YocGFzdGUod2QsXCJhbGwuc2FtcGxlLmRhdGFmcmFtZS50aWR5LmNzdlwiLFxuICAgICAgICAgICAgICAgc2VwID0gXCIvXCIpKSAtPiBhbGxEZlxuYGBgIn0= -->
+
+```r
+read.csv(paste(wd,\"all.sample.dataframe.tidy.csv\",
+               sep = \"/\")) -> allDf
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+read.csv(paste(wd,\"all.sample.dataframe.tidy.csv\",
+               sep = \"/\")) -> allDf
+```"

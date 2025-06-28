@@ -1,0 +1,78 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWV0YWJvbG9uTWV0YSAlPiVcbiAgZHBseXI6OnNlbGVjdCgtZGF0ZSwtc2FtcGxlbG9jLC12aXJ1cy5iaW4sLXBhdGllbnRpZCwtazQpICU+JVxuICBjb2x1bW5fdG9fcm93bmFtZXMoXCJpbmRleFwiKSAtPiBtZXRhYm9sb25NYXRcblxubWV0YWJvbG9uTWF0W2lzLm5hKG1ldGFib2xvbk1hdCldIDwtIDBcblxubWV0YWJvbG9uTWF0ICU+JVxuICBmaWx0ZXIocm93U3VtcyhtZXRhYm9sb25NYXQpICE9IDApIC0+IG1ldGFib2xvbk1hdFxuXG4jIG5hLm9taXQobWV0YWJvbG9uTWF0KSAtPiBtZXRhYm9sb25NYXRcbiAgXG52ZWdkaXN0KG1ldGFib2xvbk1hdCxcbiAgICAgICAgbWV0aG9kID0gXCJicmF5XCIsXG4gICAgICAgIG5hLnJtID0gVFJVRSkgLT4gbWV0YWJvbG9uRGlzdFxuXG53Y21kc2NhbGUobWV0YWJvbG9uRGlzdCxcbiAgICAgICAgICBlaWcgPSBUUlVFKSAtPiBtZXRhYm9sb25QQ29BXG5cbm1ldGFib2xvblBDb0FcblxuKG1ldGFib2xvblBDb0EkZWlnWzFdIC8gc3VtKG1ldGFib2xvblBDb0EkZWlnKSkqMTAwICMgdmFyaWFuY2UgZXhwbGFpbmVkIGJ5IFBDMVxuIyA2Mi40N1xuXG4obWV0YWJvbG9uUENvQSRlaWdbMl0gLyBzdW0obWV0YWJvbG9uUENvQSRlaWcpKSoxMDAgIyB2YXJpYW5jZSBleHBsYWluZWQgYnkgUEMyXG4jIDMzLjg3XG5cbm9yZGlwbG90KG1ldGFib2xvblBDb0EpXG5cbm1ldGFib2xvblBDb0EgJT4lXG4gIHNjb3JlcygpICU+JVxuICBhc190aWJibGUocm93bmFtZXMgPSBcImluZGV4XCIpICU+JVxuICBkcGx5cjo6c2VsZWN0KGluZGV4LERpbTEsRGltMikgLT4gbWV0YWJvbG9uUENvQVxuXG5pbm5lcl9qb2luKG1ldGFib2xvbk1ldGEsbWV0YWJvbG9uUENvQSkgLT4gbWV0YWJvbG9uUENvQU1ldGFcbmBgYCJ9 -->
+
+```r
+metabolonMeta %>%
+  dplyr::select(-date,-sampleloc,-virus.bin,-patientid,-k4) %>%
+  column_to_rownames(\"index\") -> metabolonMat
+
+metabolonMat[is.na(metabolonMat)] <- 0
+
+metabolonMat %>%
+  filter(rowSums(metabolonMat) != 0) -> metabolonMat
+
+# na.omit(metabolonMat) -> metabolonMat
+  
+vegdist(metabolonMat,
+        method = \"bray\",
+        na.rm = TRUE) -> metabolonDist
+
+wcmdscale(metabolonDist,
+          eig = TRUE) -> metabolonPCoA
+
+metabolonPCoA
+
+(metabolonPCoA$eig[1] / sum(metabolonPCoA$eig))*100 # variance explained by PC1
+# 62.47
+
+(metabolonPCoA$eig[2] / sum(metabolonPCoA$eig))*100 # variance explained by PC2
+# 33.87
+
+ordiplot(metabolonPCoA)
+
+metabolonPCoA %>%
+  scores() %>%
+  as_tibble(rownames = \"index\") %>%
+  dplyr::select(index,Dim1,Dim2) -> metabolonPCoA
+
+inner_join(metabolonMeta,metabolonPCoA) -> metabolonPCoAMeta
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+metabolonMeta %>%
+  dplyr::select(-date,-sampleloc,-virus.bin,-patientid,-k4) %>%
+  column_to_rownames(\"index\") -> metabolonMat
+
+metabolonMat[is.na(metabolonMat)] <- 0
+
+metabolonMat %>%
+  filter(rowSums(metabolonMat) != 0) -> metabolonMat
+
+# na.omit(metabolonMat) -> metabolonMat
+  
+vegdist(metabolonMat,
+        method = \"bray\",
+        na.rm = TRUE) -> metabolonDist
+
+wcmdscale(metabolonDist,
+          eig = TRUE) -> metabolonPCoA
+
+metabolonPCoA
+
+(metabolonPCoA$eig[1] / sum(metabolonPCoA$eig))*100 # variance explained by PC1
+# 62.47
+
+(metabolonPCoA$eig[2] / sum(metabolonPCoA$eig))*100 # variance explained by PC2
+# 33.87
+
+ordiplot(metabolonPCoA)
+
+metabolonPCoA %>%
+  scores() %>%
+  as_tibble(rownames = \"index\") %>%
+  dplyr::select(index,Dim1,Dim2) -> metabolonPCoA
+
+inner_join(metabolonMeta,metabolonPCoA) -> metabolonPCoAMeta
+```"

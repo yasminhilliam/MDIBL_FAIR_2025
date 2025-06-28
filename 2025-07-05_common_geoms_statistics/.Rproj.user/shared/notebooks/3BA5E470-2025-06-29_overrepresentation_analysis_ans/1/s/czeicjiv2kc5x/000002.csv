@@ -1,0 +1,24 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudXBfREVHc192ZWMgLT4gVXByZWd1bGF0ZWRcblxuc2V0ZGlmZihhbGxfZ2VuZXNfdmVjLFVwcmVndWxhdGVkKSAtPiBOb3RSZWd1bGF0ZWRcblxuaW50ZXJzZWN0KGFsbF9nZW5lc192ZWMsaW5uYXRlX3ZlYykgLT4gT25QYXRoXG5cbnNldGRpZmYoYWxsX2dlbmVzX3ZlYyxPblBhdGgpIC0+IE5vdE9uUGF0aFxuYGBgIn0= -->
+
+```r
+up_DEGs_vec -> Upregulated
+
+setdiff(all_genes_vec,Upregulated) -> NotRegulated
+
+intersect(all_genes_vec,innate_vec) -> OnPath
+
+setdiff(all_genes_vec,OnPath) -> NotOnPath
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+up_DEGs_vec -> Upregulated
+
+setdiff(all_genes_vec,Upregulated) -> NotRegulated
+
+intersect(all_genes_vec,innate_vec) -> OnPath
+
+setdiff(all_genes_vec,OnPath) -> NotOnPath
+```"

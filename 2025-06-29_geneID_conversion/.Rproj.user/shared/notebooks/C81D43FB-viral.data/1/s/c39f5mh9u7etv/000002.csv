@@ -1,0 +1,88 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2luc3B1UENvQU1ldGEgJT4lXG4gIGxlZnRfam9pbiguLHNpbnNwdWs0KSAlPiVcbiAgcmVuYW1lKGNsdXN0ZXIgPSBzaW5zcHVrNCkgLT4gc2luc3B1UENvQU1ldGFcblxuc2luc3B1UENvQU1ldGEgJT4lXG4gIGdyb3VwX2J5KGNsdXN0ZXIpICU+JVxuICBzdW1tYXJpc2UoY2x1c3Rlci5EaW0xID0gbWVhbihEaW0xKSxcbiAgICAgICAgICAgIGNsdXN0ZXIuRGltMiA9IG1lYW4oRGltMikpIC0+IGNsdXN0ZXJDZW50cm9pZFxuXG5nZ3Bsb3Qoc2luc3B1UENvQU1ldGEsXG4gICAgICAgYWVzKHggPSBEaW0xLFxuICAgICAgICAgICB5ID0gRGltMixcbiAgICAgICAgICAgY29sb3IgPSBmYWN0b3IoY2x1c3RlcikpKSArXG4gIGdlb21fcG9pbnQoc2l6ZSA9IDIsXG4gICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKG5hbWUgPSBcIkNsdXN0ZXJcIixcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGMoXCIjQjc5RjAwXCIsXCIjMDBDMTlBXCIsXCIjOUY4Q0ZGXCIsXCIjRkI3MzdBXCIpKSArXG4gIHNjYWxlX2ZpbGxfbWFudWFsKG5hbWUgPSBcIkNsdXN0ZXJcIixcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGMoXCIjQjc5RjAwXCIsXCIjMDBDMTlBXCIsXCIjOUY4Q0ZGXCIsXCIjRkI3MzdBXCIpKSArXG4gIHN0YXRfZWxsaXBzZSh0eXBlID0gXCJ0XCIpICtcbiAgZ2VvbV9wb2ludChkYXRhID0gY2x1c3RlckNlbnRyb2lkLFxuICAgICAgICAgICAgIGFlcyh4ID0gY2x1c3Rlci5EaW0xLFxuICAgICAgICAgICAgICAgICB5ID0gY2x1c3Rlci5EaW0yLFxuICAgICAgICAgICAgICAgICBmaWxsID0gZmFjdG9yKGNsdXN0ZXIpKSxcbiAgICAgICAgICAgICBzaXplID0gNSxcbiAgICAgICAgICAgICBzaGFwZSA9IDIxLFxuICAgICAgICAgICAgIGNvbG9yID0gXCJibGFja1wiKSArXG4gIHNjYWxlX3hfY29udGludW91cyhsaW1pdHMgPSBjKC0xLjIsMS4yKSkgK1xuICBzY2FsZV95X2NvbnRpbnVvdXMobGltaXRzID0gYygtMS4yLDEuMikpICtcbiAgbGFicyh4ID0gXCJQQ29BMSAoNDMuNiUpXCIsXG4gICAgICAgeSA9IFwiUENvQTIgKDIyLjUlKVwiKSAtPiBQQ29BY2x1c3RlclxuXG5QQ29BY2x1c3RlclxuXG5nZ3NhdmUocGxvdCA9IFBDb0FjbHVzdGVyLFxuICAgICAgIFwiTW9yaXNpdGEtSG9ybi5QQ29BLmNsdXN0ZXIudGlmZlwiLFxuICAgICAgIHdpZHRoID0gMTAsXG4gICAgICAgaGVpZ2h0ID0gOCxcbiAgICAgICB1bml0cyA9IGMoXCJpblwiKSlcbmBgYCJ9 -->
+
+```r
+sinspuPCoAMeta %>%
+  left_join(.,sinspuk4) %>%
+  rename(cluster = sinspuk4) -> sinspuPCoAMeta
+
+sinspuPCoAMeta %>%
+  group_by(cluster) %>%
+  summarise(cluster.Dim1 = mean(Dim1),
+            cluster.Dim2 = mean(Dim2)) -> clusterCentroid
+
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = factor(cluster))) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Cluster\",
+                     values = c(\"#B79F00\",\"#00C19A\",\"#9F8CFF\",\"#FB737A\")) +
+  scale_fill_manual(name = \"Cluster\",
+                     values = c(\"#B79F00\",\"#00C19A\",\"#9F8CFF\",\"#FB737A\")) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = clusterCentroid,
+             aes(x = cluster.Dim1,
+                 y = cluster.Dim2,
+                 fill = factor(cluster)),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_x_continuous(limits = c(-1.2,1.2)) +
+  scale_y_continuous(limits = c(-1.2,1.2)) +
+  labs(x = \"PCoA1 (43.6%)\",
+       y = \"PCoA2 (22.5%)\") -> PCoAcluster
+
+PCoAcluster
+
+ggsave(plot = PCoAcluster,
+       \"Morisita-Horn.PCoA.cluster.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+sinspuPCoAMeta %>%
+  left_join(.,sinspuk4) %>%
+  rename(cluster = sinspuk4) -> sinspuPCoAMeta
+
+sinspuPCoAMeta %>%
+  group_by(cluster) %>%
+  summarise(cluster.Dim1 = mean(Dim1),
+            cluster.Dim2 = mean(Dim2)) -> clusterCentroid
+
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = factor(cluster))) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Cluster\",
+                     values = c(\"#B79F00\",\"#00C19A\",\"#9F8CFF\",\"#FB737A\")) +
+  scale_fill_manual(name = \"Cluster\",
+                     values = c(\"#B79F00\",\"#00C19A\",\"#9F8CFF\",\"#FB737A\")) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = clusterCentroid,
+             aes(x = cluster.Dim1,
+                 y = cluster.Dim2,
+                 fill = factor(cluster)),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_x_continuous(limits = c(-1.2,1.2)) +
+  scale_y_continuous(limits = c(-1.2,1.2)) +
+  labs(x = \"PCoA1 (43.6%)\",
+       y = \"PCoA2 (22.5%)\") -> PCoAcluster
+
+PCoAcluster
+
+ggsave(plot = PCoAcluster,
+       \"Morisita-Horn.PCoA.cluster.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```"

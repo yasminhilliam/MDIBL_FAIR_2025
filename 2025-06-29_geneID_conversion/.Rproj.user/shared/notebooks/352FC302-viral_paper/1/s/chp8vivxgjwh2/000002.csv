@@ -1,0 +1,196 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIHVuZ3JvdXAoKSAlPiVcbiAgZmlsdGVyKGluZGV4ICVpbiUgc2luc3B1KSAlPiVcbiAgZHBseXI6OnNlbGVjdChpbmRleCxwYXRpZW50aWQsZGF0ZSxzYW1wbGVsb2MsdmlydXMuYmluKSAlPiVcbiAgZGlzdGluY3QoKSAlPiVcbiAgZ3JvdXBfYnkobW9udGggPSBmbG9vcl9kYXRlKGRhdGUsIFwibW9udGhcIiksXG4gICAgICAgICAgIHNhbXBsZWxvYyx2aXJ1cy5iaW4pICU+JVxuICBjb3VudChpbmRleCkgJT4lXG4gIHN1bW1hcml6ZShzdW0gPSBzdW0obikpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSBtb250aCxcbiAgICAgICAgICAgICB5ID0gc2FtcGxlbG9jLFxuICAgICAgICAgICAgIHNpemUgPSBzdW0sXG4gICAgICAgICAgICAgY29sb3IgPSB2aXJ1cy5iaW4pKSArXG4gIGFubm90YXRlKFwicmVjdFwiLFxuICAgICAgICAgICB4bWluID0gYXMuRGF0ZShcIjIwMTktMTAtMDFcIiksXG4gICAgICAgICAgIHhtYXggPSBhcy5EYXRlKEluZiksXG4gICAgICAgICAgIHltaW4gPSAtSW5mLFxuICAgICAgICAgICB5bWF4ID0gSW5mLFxuICAgICAgICAgICBmaWxsID0gXCIjODRCQ0I3XCIsXG4gICAgICAgICAgIGFscGhhID0gMC41KSArXG4gIGFubm90YXRlKFwicmVjdFwiLFxuICAgICAgICAgICB4bWluID0gYXMuRGF0ZShcIjIwMjAtMDMtMDFcIiksXG4gICAgICAgICAgIHhtYXggPSBhcy5EYXRlKFwiMjAyMC0wNi0wMVwiKSxcbiAgICAgICAgICAgeW1pbiA9IC1JbmYsXG4gICAgICAgICAgIHltYXggPSBJbmYsXG4gICAgICAgICAgIGFscGhhID0gMC41KSArXG4gIGdlb21fcG9pbnQocG9zaXRpb24gPSBnZ3N0YW5jZTo6cG9zaXRpb25fZG9kZ2V2KGhlaWdodCA9IDAuMiksXG4gICAgICAgICAgICAgYWxwaGEgPSAwLjcpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKG5hbWUgPSBcIlNhbXBsZSB2aXJhbCBzdGF0dXNcIixcbiAgICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJOZWdhdGl2ZVwiLFwiUG9zaXRpdmVcIiksXG4gICAgICAgICAgICAgICAgICAgICB2YWx1ZXMgPSB2aXJjb2xzKSArXG4gIHNjYWxlX3NpemVfY29udGludW91cyhuYW1lID0gXCJTYW1wbGVzIHBlciBtb250aFwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgcmFuZ2UgPSBjKDMsOCksXG4gICAgICAgICAgICAgICAgICAgICAgICBicmVha3MgPSBjKDEsMyw1LDcpKSArXG4gIGxhYnMoeCA9IFwiU2FtcGxlIGRhdGVcIikgK1xuICBmYWNldF9ncmlkKHJvd3MgPSB2YXJzKHNhbXBsZWxvYyksXG4gICAgICAgICAgICAgc2NhbGVzID0gXCJmcmVlXCIsXG4gICAgICAgICAgICAgc3dpdGNoID0gXCJ5XCIsXG4gICAgICAgICAgICAgbGFiZWxsZXIgPSBhc19sYWJlbGxlcihjKFwic2ludXNcIiA9IFwiU2ludXNcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJzcHV0dW1cIiA9IFwiU3B1dHVtXCIpKSkgK1xuICB0aGVtZShheGlzLnRleHQueSA9IGVsZW1lbnRfYmxhbmsoKSxcbiAgICAgICAgYXhpcy50aXRsZS55ID0gZWxlbWVudF9ibGFuaygpLFxuICAgICAgICBheGlzLnRpY2tzLnkgPSBlbGVtZW50X2JsYW5rKCksXG4gICAgICAgIHN0cmlwLmJhY2tncm91bmQgPSBlbGVtZW50X2JsYW5rKCkpIC0+IHNhbXBsZXN1bW1hcnlcblxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgscGF0aWVudGlkLGRhdGUsc2FtcGxlbG9jLHZpcnVzLmJpbikgJT4lXG4gIGRpc3RpbmN0KCkgJT4lXG4gIGdncGxvdChhZXMoeCA9IGRhdGUsXG4gICAgICAgICAgICAgeSA9IHBhdGllbnRpZCxcbiAgICAgICAgICAgICBjb2xvciA9IHNhbXBsZWxvYyxcbiAgICAgICAgICAgICBzaGFwZSA9IHZpcnVzLmJpbikpICtcbiAgYW5ub3RhdGUoXCJyZWN0XCIsXG4gICAgICAgICAgIHhtaW4gPSBhcy5EYXRlKFwiMjAxOS0xMC0wMVwiKSxcbiAgICAgICAgICAgeG1heCA9IGFzLkRhdGUoSW5mKSxcbiAgICAgICAgICAgeW1pbiA9IC1JbmYsXG4gICAgICAgICAgIHltYXggPSBJbmYsXG4gICAgICAgICAgIGZpbGwgPSBcIiM4NEJDQjdcIixcbiAgICAgICAgICAgYWxwaGEgPSAwLjMpICtcbiAgZ2VvbV9saW5lKGNvbG9yID0gXCJibGFja1wiKSArXG4gIGdlb21fcG9pbnQoc2l6ZSA9IDUsXG4gICAgICAgICAgICAgYWxwaGEgPSAwLjcpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKHZhbHVlcyA9IGxvY2NvbHMsXG4gICAgICAgICAgICAgICAgICAgICBndWlkZSA9IFwibm9uZVwiKSArXG4gIHNjYWxlX3NoYXBlX21hbnVhbChuYW1lID0gXCJTYW1wbGUgdmlyYWwgc3RhdHVzXCIsXG4gICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiTmVnYXRpdmVcIixcIlBvc2l0aXZlXCIpLFxuICAgICAgICAgICAgICAgICAgICAgdmFsdWVzID0gYygxLDE2KSkgK1xuICBsYWJzKHggPSBcIlNhbXBsZSBkYXRlXCIpICtcbiAgZmFjZXRfd3JhcCh+c2FtcGxlbG9jLFxuICAgICAgICAgICAgIGxhYmVsbGVyID0gYXNfbGFiZWxsZXIoYyhcInNpbnVzXCIgPSBcIlNpbnVzXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwic3B1dHVtXCIgPSBcIlNwdXR1bVwiKSkpICtcbiAgdGhlbWUoYXhpcy50aXRsZS55ID0gZWxlbWVudF9ibGFuaygpLFxuICAgICAgICAjYXhpcy50ZXh0LnkgPSBlbGVtZW50X2JsYW5rKCksXG4gICAgICAgIGF4aXMudGlja3MueSA9IGVsZW1lbnRfYmxhbmsoKSxcbiAgICAgICAgbGVnZW5kLnBvc2l0aW9uID0gXCJpbnNpZGVcIixcbiAgICAgICAgbGVnZW5kLnBvc2l0aW9uLmluc2lkZSA9IGMoMC4xMiwwLjkyKSxcbiAgICAgICAgbGVnZW5kLmJhY2tncm91bmQgPSBlbGVtZW50X3JlY3QoY29sb3IgPSBcImJsYWNrXCIpLFxuICAgICAgICBzdHJpcC5iYWNrZ3JvdW5kID0gZWxlbWVudF9ibGFuaygpLFxuICAgICAgICBsZWdlbmQudGl0bGUgPSBlbGVtZW50X3RleHQoc2l6ZSA9IDEyKSxcbiAgICAgICAgbGVnZW5kLnRleHQgPSBlbGVtZW50X3RleHQoc2l6ZSA9IDEyKSkgLT4gc2FtcGxlc3VtbWFyeVxuXG5nZ3NhdmUocGxvdCA9IHNhbXBsZXN1bW1hcnksXG4gICAgICAgXCJhZHVsdF92aXJhbF9zYW1wbGVfc3VtbWFyeV90aW1lbGluZS5wZGZcIixcbiAgICAgICBoZWlnaHQgPSA4LFxuICAgICAgIHdpZHRoID0gOCxcbiAgICAgICB1bml0cyA9IGMoXCJpblwiKSlcblxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgscGF0aWVudGlkLHNhbXBsZWxvYyx2aXJ1cy5iaW4pICU+JVxuICBkaXN0aW5jdCgpICU+JVxuICBjb3VudChzYW1wbGVsb2MsdmlydXMuYmluKVxuYGBgIn0= -->
+
+```r
+allDf %>%
+  ungroup() %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,patientid,date,sampleloc,virus.bin) %>%
+  distinct() %>%
+  group_by(month = floor_date(date, \"month\"),
+           sampleloc,virus.bin) %>%
+  count(index) %>%
+  summarize(sum = sum(n)) %>%
+  ggplot(aes(x = month,
+             y = sampleloc,
+             size = sum,
+             color = virus.bin)) +
+  annotate(\"rect\",
+           xmin = as.Date(\"2019-10-01\"),
+           xmax = as.Date(Inf),
+           ymin = -Inf,
+           ymax = Inf,
+           fill = \"#84BCB7\",
+           alpha = 0.5) +
+  annotate(\"rect\",
+           xmin = as.Date(\"2020-03-01\"),
+           xmax = as.Date(\"2020-06-01\"),
+           ymin = -Inf,
+           ymax = Inf,
+           alpha = 0.5) +
+  geom_point(position = ggstance::position_dodgev(height = 0.2),
+             alpha = 0.7) +
+  scale_color_manual(name = \"Sample viral status\",
+                     labels = c(\"Negative\",\"Positive\"),
+                     values = vircols) +
+  scale_size_continuous(name = \"Samples per month\",
+                        range = c(3,8),
+                        breaks = c(1,3,5,7)) +
+  labs(x = \"Sample date\") +
+  facet_grid(rows = vars(sampleloc),
+             scales = \"free\",
+             switch = \"y\",
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) +
+  theme(axis.text.y = element_blank(),
+        axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        strip.background = element_blank()) -> samplesummary
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,patientid,date,sampleloc,virus.bin) %>%
+  distinct() %>%
+  ggplot(aes(x = date,
+             y = patientid,
+             color = sampleloc,
+             shape = virus.bin)) +
+  annotate(\"rect\",
+           xmin = as.Date(\"2019-10-01\"),
+           xmax = as.Date(Inf),
+           ymin = -Inf,
+           ymax = Inf,
+           fill = \"#84BCB7\",
+           alpha = 0.3) +
+  geom_line(color = \"black\") +
+  geom_point(size = 5,
+             alpha = 0.7) +
+  scale_color_manual(values = loccols,
+                     guide = \"none\") +
+  scale_shape_manual(name = \"Sample viral status\",
+                     labels = c(\"Negative\",\"Positive\"),
+                     values = c(1,16)) +
+  labs(x = \"Sample date\") +
+  facet_wrap(~sampleloc,
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) +
+  theme(axis.title.y = element_blank(),
+        #axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        legend.position = \"inside\",
+        legend.position.inside = c(0.12,0.92),
+        legend.background = element_rect(color = \"black\"),
+        strip.background = element_blank(),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 12)) -> samplesummary
+
+ggsave(plot = samplesummary,
+       \"adult_viral_sample_summary_timeline.pdf\",
+       height = 8,
+       width = 8,
+       units = c(\"in\"))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,patientid,sampleloc,virus.bin) %>%
+  distinct() %>%
+  count(sampleloc,virus.bin)
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  ungroup() %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,patientid,date,sampleloc,virus.bin) %>%
+  distinct() %>%
+  group_by(month = floor_date(date, \"month\"),
+           sampleloc,virus.bin) %>%
+  count(index) %>%
+  summarize(sum = sum(n)) %>%
+  ggplot(aes(x = month,
+             y = sampleloc,
+             size = sum,
+             color = virus.bin)) +
+  annotate(\"rect\",
+           xmin = as.Date(\"2019-10-01\"),
+           xmax = as.Date(Inf),
+           ymin = -Inf,
+           ymax = Inf,
+           fill = \"#84BCB7\",
+           alpha = 0.5) +
+  annotate(\"rect\",
+           xmin = as.Date(\"2020-03-01\"),
+           xmax = as.Date(\"2020-06-01\"),
+           ymin = -Inf,
+           ymax = Inf,
+           alpha = 0.5) +
+  geom_point(position = ggstance::position_dodgev(height = 0.2),
+             alpha = 0.7) +
+  scale_color_manual(name = \"Sample viral status\",
+                     labels = c(\"Negative\",\"Positive\"),
+                     values = vircols) +
+  scale_size_continuous(name = \"Samples per month\",
+                        range = c(3,8),
+                        breaks = c(1,3,5,7)) +
+  labs(x = \"Sample date\") +
+  facet_grid(rows = vars(sampleloc),
+             scales = \"free\",
+             switch = \"y\",
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) +
+  theme(axis.text.y = element_blank(),
+        axis.title.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        strip.background = element_blank()) -> samplesummary
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,patientid,date,sampleloc,virus.bin) %>%
+  distinct() %>%
+  ggplot(aes(x = date,
+             y = patientid,
+             color = sampleloc,
+             shape = virus.bin)) +
+  annotate(\"rect\",
+           xmin = as.Date(\"2019-10-01\"),
+           xmax = as.Date(Inf),
+           ymin = -Inf,
+           ymax = Inf,
+           fill = \"#84BCB7\",
+           alpha = 0.3) +
+  geom_line(color = \"black\") +
+  geom_point(size = 5,
+             alpha = 0.7) +
+  scale_color_manual(values = loccols,
+                     guide = \"none\") +
+  scale_shape_manual(name = \"Sample viral status\",
+                     labels = c(\"Negative\",\"Positive\"),
+                     values = c(1,16)) +
+  labs(x = \"Sample date\") +
+  facet_wrap(~sampleloc,
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) +
+  theme(axis.title.y = element_blank(),
+        #axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        legend.position = \"inside\",
+        legend.position.inside = c(0.12,0.92),
+        legend.background = element_rect(color = \"black\"),
+        strip.background = element_blank(),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 12)) -> samplesummary
+
+ggsave(plot = samplesummary,
+       \"adult_viral_sample_summary_timeline.pdf\",
+       height = 8,
+       width = 8,
+       units = c(\"in\"))
+
+allDf %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,patientid,sampleloc,virus.bin) %>%
+  distinct() %>%
+  count(sampleloc,virus.bin)
+```"

@@ -1,0 +1,52 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgscGF0aWVudGlkLHNhbXBsZWxvYyxkYXRlKSAlPiVcbiAgZGlzdGluY3QoKSAlPiVcbiAgbGVmdF9qb2luKC4sY24pIC0+IGNuXG5cbmxlZnRfam9pbihhbGxEZixjbikgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdSkgJT4lXG4gIGRwbHlyOjpzZWxlY3QoaW5kZXgsc2FtcGxlbG9jLHZpcnVzLmJpbixtZWFuX2NuKSAlPiVcbiAgZGlzdGluY3QoKSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gdmlydXMuYmluLFxuICAgICAgICAgICAgIHkgPSBtZWFuX2NuLFxuICAgICAgICAgICAgIGNvbG9yID0gdmlydXMuYmluKSkgK1xuICBnZW9tX2JveHBsb3QoKSArXG4gIGdlb21faml0dGVyKHdpZHRoID0gMC4xLFxuICAgICAgICAgICAgICBzaXplID0gNSxcbiAgICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfeV9sb2cxMChuYW1lID0gXCJNZWFuIDE2UyBnZW5lXFxuY29waWVzIHBlciBzYW1wbGVcIikgK1xuICBzY2FsZV94X2Rpc2NyZXRlKG5hbWUgPSBcIlNhbXBsZSB2aXJhbCBzdGF0dXNcIixcbiAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiTmVnYXRpdmVcIixcIlBvc2l0aXZlXCIpKSArXG4gIHNjYWxlX2NvbG9yX21hbnVhbCh2YWx1ZXMgPSBjKFwicHVycGxlNFwiLFwib3JhbmdlXCIpKSArXG4gIHRoZW1lKGxlZ2VuZC5wb3NpdGlvbiA9IFwibm9uZVwiKVxuYGBgIn0= -->
+
+```r
+allDf %>%
+  dplyr::select(index,patientid,sampleloc,date) %>%
+  distinct() %>%
+  left_join(.,cn) -> cn
+
+left_join(allDf,cn) %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,sampleloc,virus.bin,mean_cn) %>%
+  distinct() %>%
+  ggplot(aes(x = virus.bin,
+             y = mean_cn,
+             color = virus.bin)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.1,
+              size = 5,
+              alpha = 0.5) +
+  scale_y_log10(name = \"Mean 16S gene\ncopies per sample\") +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_color_manual(values = c(\"purple4\",\"orange\")) +
+  theme(legend.position = \"none\")
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  dplyr::select(index,patientid,sampleloc,date) %>%
+  distinct() %>%
+  left_join(.,cn) -> cn
+
+left_join(allDf,cn) %>%
+  filter(index %in% sinspu) %>%
+  dplyr::select(index,sampleloc,virus.bin,mean_cn) %>%
+  distinct() %>%
+  ggplot(aes(x = virus.bin,
+             y = mean_cn,
+             color = virus.bin)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.1,
+              size = 5,
+              alpha = 0.5) +
+  scale_y_log10(name = \"Mean 16S gene\ncopies per sample\") +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  scale_color_manual(values = c(\"purple4\",\"orange\")) +
+  theme(legend.position = \"none\")
+```"

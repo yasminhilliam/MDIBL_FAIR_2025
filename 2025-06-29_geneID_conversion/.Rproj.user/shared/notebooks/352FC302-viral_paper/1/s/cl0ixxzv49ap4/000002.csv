@@ -1,0 +1,220 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2ludXNhbGxjb21wICU+JVxuICBsZWZ0X2pvaW4oLixtb3N0YWIpICU+JVxuICBmaWx0ZXIoY29tcF9ncm91cCA9PSBcImJlZm9yZVwiKSAlPiVcbiAgbXV0YXRlKHNlbGZfdGVzdCA9IGlmX2Vsc2UoZ3JvdXAgPT0gY29tcF9ncm91cCxcInNlbGZcIixcIm5vbi1zZWxmXCIpKSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gZ3JvdXAsXG4gICAgICAgICAgICAgeSA9IGRpc3RhbmNlLFxuICAgICAgICAgICAgIGdyb3VwID0gZ3JvdXApKSArXG4gIGdlb21fdmlvbGluKGRyYXdfcXVhbnRpbGVzID0gYygwLjUpLFxuICAgICAgICAgICAgICBjb2xvciA9IFwiY2hvY29sYXRlMVwiKSArXG4gIGdlb21faml0dGVyKGFlcyhzaGFwZSA9IHNlbGZfdGVzdCksXG4gICAgICAgICAgICAgIHdpZHRoID0gMC4yLFxuICAgICAgICAgICAgICBjb2xvciA9IFwiY2hvY29sYXRlMVwiLFxuICAgICAgICAgICAgICBzaXplID0gNSxcbiAgICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfc2hhcGVfbWFudWFsKHZhbHVlcyA9IGMoMTYsMSkpICtcbiAgc2NhbGVfeF9kaXNjcmV0ZShuYW1lID0gXCJTYW1wbGUgdmlyYWwgc3RhdHVzXCIsXG4gICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYyhcIlByaW9yXCIsXCJBY3RpdmVcIixcIlBvc3RcIikpICtcbiAgc2NhbGVfeV9jb250aW51b3VzKGxpbWl0cyA9IGMoLTEuMTI4OTYxZS0wNSwxLjA3NTAwMGUrMDApLFxuICAgICAgICAgICAgICAgICAgICAgYnJlYWtzID0gc2VxKDAsMSxieSA9IDAuMjUpKSArXG4gIGxhYnMoeSA9IFwiRGlzdGFuY2UgdG8gY2VudHJvaWRcIixcbiAgICAgICBzdWJ0aXRsZSA9IFwiU2ludXNcIikgK1xuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSBcIm5vbmVcIixcbiAgICAgICAgcGxvdC5zdWJ0aXRsZSA9IGVsZW1lbnRfdGV4dChzaXplID0gMTgsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaGp1c3QgPSAwLjUpKSAtPiBzaW51c3ByaW9ycGxvdFxuXG5yZXZlYWxfZ3JvdXBzKHNpbnVzcHJpb3JwbG90KSAtPiBzaW51c3ByaW9ycmV2ZWFsXG5cbnJldmVhbF9zYXZlKHNpbnVzcHJpb3JyZXZlYWwsXG4gICAgICAgICAgICBcImFkdWx0X3NpbnVzX2JlZm9yZV92aXJhbF9jZW50cm9pZF9kaXN0YW5jZV9ib3hwbG90LnBkZlwiKVxuXG5zaW51c2FsbGNvbXAgJT4lXG4gIGZpbHRlcihjb21wX2dyb3VwID09IFwiYmVmb3JlXCIpIC0+IHNpbnVzY29tcHRlc3RcblxubG1lcihkYXRhID0gc2ludXNjb21wdGVzdCxcbiAgICAgZGlzdGFuY2UgfiBncm91cCArICgxfHBhdGllbnRpZCkpIC0+IHNpbnVzTG1cblxuYW5vdmEoc2ludXNMbSlcblxuZW1tZWFucyhzaW51c0xtLFwiZ3JvdXBcIikgLT4gc2ludXNFbW1cblxuY29udHJhc3Qoc2ludXNFbW0sJ3R1a2V5Jylcblxuc2ludXNhbGxjb21wICU+JVxuICBmaWx0ZXIoY29tcF9ncm91cCA9PSBcImJlZm9yZVwiKSAlPiVcbiAgbXV0YXRlKHNlbGZfdGVzdCA9IGlmX2Vsc2UoZ3JvdXAgPT0gY29tcF9ncm91cCxcInNlbGZcIixcIm5vbi1zZWxmXCIpKSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gZ3JvdXAsXG4gICAgICAgICAgICAgeSA9IGRpc3RhbmNlLFxuICAgICAgICAgICAgIGdyb3VwID0gZ3JvdXApKSArXG4gIGFubm90YXRlKFwic2VnbWVudFwiLFxuICAgICAgICAgICB4ID0gMSxcbiAgICAgICAgICAgeGVuZCA9IDIsXG4gICAgICAgICAgIHkgPSAxLjA1LFxuICAgICAgICAgICBsaW5ld2lkdGggPSAxKSArXG4gIGFubm90YXRlKFwidGV4dFwiLFxuICAgICAgICAgICB4ID0gMS41LFxuICAgICAgICAgICB5ID0gMS4wNzUsXG4gICAgICAgICAgIHNpemUgPSAxNCxcbiAgICAgICAgICAgbGFiZWwgPSBcIioqXCIpICtcbiAgZ2VvbV92aW9saW4oZHJhd19xdWFudGlsZXMgPSBjKDAuNSksXG4gICAgICAgICAgICAgIGNvbG9yID0gXCJjaG9jb2xhdGUxXCIpICtcbiAgZ2VvbV9qaXR0ZXIoYWVzKHNoYXBlID0gc2VsZl90ZXN0KSxcbiAgICAgICAgICAgICAgd2lkdGggPSAwLjIsXG4gICAgICAgICAgICAgIGNvbG9yID0gXCJjaG9jb2xhdGUxXCIsXG4gICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgK1xuICBzY2FsZV9zaGFwZV9tYW51YWwodmFsdWVzID0gYygxNiwxKSkgK1xuICBzY2FsZV94X2Rpc2NyZXRlKG5hbWUgPSBcIlNhbXBsZSB2aXJhbCBzdGF0dXNcIixcbiAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKFwiUHJpb3JcIixcIkFjdGl2ZVwiLFwiUG9zdFwiKSkgK1xuICBzY2FsZV95X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDAsMSxieSA9IDAuMjUpKSArXG4gIGxhYnMoeSA9IFwiRGlzdGFuY2UgdG8gY2VudHJvaWRcIixcbiAgICAgICBzdWJ0aXRsZSA9IFwiU2ludXNcIikgK1xuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSBcIm5vbmVcIixcbiAgICAgICAgcGxvdC5zdWJ0aXRsZSA9IGVsZW1lbnRfdGV4dChzaXplID0gMTgsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaGp1c3QgPSAwLjUpKSAtPiBzaW51c3ByaW9ycGxvdFxuXG5zaW51c3ByaW9ycGxvdFxuXG5nZ3NhdmUocGxvdCA9IHNpbnVzcHJpb3JwbG90LFxuICAgICAgIFwiYWR1bHRfc2ludXNfYmVmb3JlX3ZpcmFsX2NlbnRyb2lkX2Rpc3RhbmNlX2JveHBsb3QucGRmXCIsXG4gICAgICAgaGVpZ2h0ID0gOCxcbiAgICAgICB3aWR0aCA9IDgsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5cbnNpbnVzYWxsY29tcCAlPiVcbiAgZmlsdGVyKGNvbXBfZ3JvdXAgPT0gXCJiZWZvcmVcIikgJT4lXG4gIGZpbHRlcihncm91cCA9PSBcImR1cmluZ1wiKSAlPiVcbiAgZmlsdGVyKGRpc3RhbmNlID4gMC4yNSkgJT4lXG4gIC4kcGF0aWVudGlkIC0+IGxvd2NlbnRwdFxuXG5hbGxEZiAlPiVcbiAgZmlsdGVyKHBhdGllbnRpZCAlaW4lIGxvd2NlbnRwdCkgJT4lXG4gIGZpbHRlcihzYW1wbGVsb2MgPT0gXCJzaW51c1wiKSAlPiVcbiAgbXV0YXRlKGdlbnVzID0gaWZfZWxzZShnZW51cyAlaW4lIGdlbkludCxnZW51cyxcIk90aGVyXCIpKSAlPiVcbiAgZ2dwbG90KGFlcyh4ID0gaW5kZXgsXG4gICAgICAgICAgICAgeSA9IHJlbF9hYixcbiAgICAgICAgICAgICBmaWxsID0gZ2VudXMpKSArXG4gIGdlb21fY29sKHBvc2l0aW9uID0gXCJzdGFja1wiKSArXG4gIGdlb21fcG9pbnQoYWVzKHggPSBpbmRleCxcbiAgICAgICAgICAgICAgICAgeSA9IDEwNSxcbiAgICAgICAgICAgICAgICAgY29sb3IgPSB2aXJ1cy5iaW4pKSArXG4gIHNjYWxlX2NvbG9yX21hbnVhbCh2YWx1ZXMgPSB2aXJjb2xzKSArXG4gIHNjYWxlX2ZpbGxfbWFudWFsKHZhbHVlcyA9IGdlbkNvbHMpICtcbiAgZmFjZXRfZ3JpZChjb2xzID0gdmFycyhwYXRpZW50aWQpLFxuICAgICAgICAgICAgIHNjYWxlcyA9IFwiZnJlZVwiLFxuICAgICAgICAgICAgIHNwYWNlID0gXCJmcmVlXCIpXG5gYGAifQ== -->
+
+```r
+sinusallcomp %>%
+  left_join(.,mostab) %>%
+  filter(comp_group == \"before\") %>%
+  mutate(self_test = if_else(group == comp_group,\"self\",\"non-self\")) %>%
+  ggplot(aes(x = group,
+             y = distance,
+             group = group)) +
+  geom_violin(draw_quantiles = c(0.5),
+              color = \"chocolate1\") +
+  geom_jitter(aes(shape = self_test),
+              width = 0.2,
+              color = \"chocolate1\",
+              size = 5,
+              alpha = 0.5) +
+  scale_shape_manual(values = c(16,1)) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Prior\",\"Active\",\"Post\")) +
+  scale_y_continuous(limits = c(-1.128961e-05,1.075000e+00),
+                     breaks = seq(0,1,by = 0.25)) +
+  labs(y = \"Distance to centroid\",
+       subtitle = \"Sinus\") +
+  theme(legend.position = \"none\",
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> sinuspriorplot
+
+reveal_groups(sinuspriorplot) -> sinuspriorreveal
+
+reveal_save(sinuspriorreveal,
+            \"adult_sinus_before_viral_centroid_distance_boxplot.pdf\")
+
+sinusallcomp %>%
+  filter(comp_group == \"before\") -> sinuscomptest
+
+lmer(data = sinuscomptest,
+     distance ~ group + (1|patientid)) -> sinusLm
+
+anova(sinusLm)
+
+emmeans(sinusLm,\"group\") -> sinusEmm
+
+contrast(sinusEmm,'tukey')
+
+sinusallcomp %>%
+  filter(comp_group == \"before\") %>%
+  mutate(self_test = if_else(group == comp_group,\"self\",\"non-self\")) %>%
+  ggplot(aes(x = group,
+             y = distance,
+             group = group)) +
+  annotate(\"segment\",
+           x = 1,
+           xend = 2,
+           y = 1.05,
+           linewidth = 1) +
+  annotate(\"text\",
+           x = 1.5,
+           y = 1.075,
+           size = 14,
+           label = \"**\") +
+  geom_violin(draw_quantiles = c(0.5),
+              color = \"chocolate1\") +
+  geom_jitter(aes(shape = self_test),
+              width = 0.2,
+              color = \"chocolate1\",
+              size = 5,
+              alpha = 0.5) +
+  scale_shape_manual(values = c(16,1)) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Prior\",\"Active\",\"Post\")) +
+  scale_y_continuous(breaks = seq(0,1,by = 0.25)) +
+  labs(y = \"Distance to centroid\",
+       subtitle = \"Sinus\") +
+  theme(legend.position = \"none\",
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> sinuspriorplot
+
+sinuspriorplot
+
+ggsave(plot = sinuspriorplot,
+       \"adult_sinus_before_viral_centroid_distance_boxplot.pdf\",
+       height = 8,
+       width = 8,
+       units = c(\"in\"))
+
+sinusallcomp %>%
+  filter(comp_group == \"before\") %>%
+  filter(group == \"during\") %>%
+  filter(distance > 0.25) %>%
+  .$patientid -> lowcentpt
+
+allDf %>%
+  filter(patientid %in% lowcentpt) %>%
+  filter(sampleloc == \"sinus\") %>%
+  mutate(genus = if_else(genus %in% genInt,genus,\"Other\")) %>%
+  ggplot(aes(x = index,
+             y = rel_ab,
+             fill = genus)) +
+  geom_col(position = \"stack\") +
+  geom_point(aes(x = index,
+                 y = 105,
+                 color = virus.bin)) +
+  scale_color_manual(values = vircols) +
+  scale_fill_manual(values = genCols) +
+  facet_grid(cols = vars(patientid),
+             scales = \"free\",
+             space = \"free\")
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+sinusallcomp %>%
+  left_join(.,mostab) %>%
+  filter(comp_group == \"before\") %>%
+  mutate(self_test = if_else(group == comp_group,\"self\",\"non-self\")) %>%
+  ggplot(aes(x = group,
+             y = distance,
+             group = group)) +
+  geom_violin(draw_quantiles = c(0.5),
+              color = \"chocolate1\") +
+  geom_jitter(aes(shape = self_test),
+              width = 0.2,
+              color = \"chocolate1\",
+              size = 5,
+              alpha = 0.5) +
+  scale_shape_manual(values = c(16,1)) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Prior\",\"Active\",\"Post\")) +
+  scale_y_continuous(limits = c(-1.128961e-05,1.075000e+00),
+                     breaks = seq(0,1,by = 0.25)) +
+  labs(y = \"Distance to centroid\",
+       subtitle = \"Sinus\") +
+  theme(legend.position = \"none\",
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> sinuspriorplot
+
+reveal_groups(sinuspriorplot) -> sinuspriorreveal
+
+reveal_save(sinuspriorreveal,
+            \"adult_sinus_before_viral_centroid_distance_boxplot.pdf\")
+
+sinusallcomp %>%
+  filter(comp_group == \"before\") -> sinuscomptest
+
+lmer(data = sinuscomptest,
+     distance ~ group + (1|patientid)) -> sinusLm
+
+anova(sinusLm)
+
+emmeans(sinusLm,\"group\") -> sinusEmm
+
+contrast(sinusEmm,'tukey')
+
+sinusallcomp %>%
+  filter(comp_group == \"before\") %>%
+  mutate(self_test = if_else(group == comp_group,\"self\",\"non-self\")) %>%
+  ggplot(aes(x = group,
+             y = distance,
+             group = group)) +
+  annotate(\"segment\",
+           x = 1,
+           xend = 2,
+           y = 1.05,
+           linewidth = 1) +
+  annotate(\"text\",
+           x = 1.5,
+           y = 1.075,
+           size = 14,
+           label = \"**\") +
+  geom_violin(draw_quantiles = c(0.5),
+              color = \"chocolate1\") +
+  geom_jitter(aes(shape = self_test),
+              width = 0.2,
+              color = \"chocolate1\",
+              size = 5,
+              alpha = 0.5) +
+  scale_shape_manual(values = c(16,1)) +
+  scale_x_discrete(name = \"Sample viral status\",
+                   labels = c(\"Prior\",\"Active\",\"Post\")) +
+  scale_y_continuous(breaks = seq(0,1,by = 0.25)) +
+  labs(y = \"Distance to centroid\",
+       subtitle = \"Sinus\") +
+  theme(legend.position = \"none\",
+        plot.subtitle = element_text(size = 18,
+                                     hjust = 0.5)) -> sinuspriorplot
+
+sinuspriorplot
+
+ggsave(plot = sinuspriorplot,
+       \"adult_sinus_before_viral_centroid_distance_boxplot.pdf\",
+       height = 8,
+       width = 8,
+       units = c(\"in\"))
+
+sinusallcomp %>%
+  filter(comp_group == \"before\") %>%
+  filter(group == \"during\") %>%
+  filter(distance > 0.25) %>%
+  .$patientid -> lowcentpt
+
+allDf %>%
+  filter(patientid %in% lowcentpt) %>%
+  filter(sampleloc == \"sinus\") %>%
+  mutate(genus = if_else(genus %in% genInt,genus,\"Other\")) %>%
+  ggplot(aes(x = index,
+             y = rel_ab,
+             fill = genus)) +
+  geom_col(position = \"stack\") +
+  geom_point(aes(x = index,
+                 y = 105,
+                 color = virus.bin)) +
+  scale_color_manual(values = vircols) +
+  scale_fill_manual(values = genCols) +
+  facet_grid(cols = vars(patientid),
+             scales = \"free\",
+             space = \"free\")
+```"

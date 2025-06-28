@@ -1,0 +1,5 @@
+"0","ggplot(data = iris, # use 'data' argument to tell ggplot which dataframe we want to plot from"
+"0","       mapping = aes(x = Petal.Length, # mapping determines which variables are assigned to plot elements"
+"0","                     y = Petal.Width)) -> basicPlot"
+"0",""
+"0","basicPlot"

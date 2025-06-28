@@ -1,0 +1,86 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2luc3B1UENvQU1ldGEgJT4lXG4gIGdyb3VwX2J5KHZpcnVzLmJpbixzYW1wbGVsb2MpICU+JVxuICBzdW1tYXJpc2UoRGltMSA9IG1lYW4oRGltMSksXG4gICAgICAgICAgICBEaW0yID0gbWVhbihEaW0yKSkgLT4gdmlydXNzYW1wbGVsb2NDZW50cm9pZFxuXG5nZ3Bsb3Qoc2luc3B1UENvQU1ldGEsXG4gICAgICAgYWVzKHggPSBEaW0xLFxuICAgICAgICAgICB5ID0gRGltMixcbiAgICAgICAgICAgY29sb3IgPSB2aXJ1cy5iaW4pKSArXG4gIGdlb21fcG9pbnQoc2l6ZSA9IDIsXG4gICAgICAgICAgICAgYWxwaGEgPSAwLjUpICtcbiAgc2NhbGVfY29sb3JfbWFudWFsKG5hbWUgPSBcIlJlc3BpcmF0b3J5IHZpcmFsXFxuaW5mZWN0aW9uIHN0YXR1c1wiLFxuICAgICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYyhcIk5lZ2F0aXZlXCIsXCJQb3NpdGl2ZVwiKSxcbiAgICAgICAgICAgICAgICAgICAgIHZhbHVlcyA9IGMoXCJncmV5NDhcIixcInJlZFwiKSkgK1xuICBzY2FsZV9maWxsX21hbnVhbChuYW1lID0gXCJSZXNwaXJhdG9yeSB2aXJhbFxcbmluZmVjdGlvbiBzdGF0dXNcIixcbiAgICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJOZWdhdGl2ZVwiLFwiUG9zaXRpdmVcIiksXG4gICAgICAgICAgICAgICAgICAgICB2YWx1ZXMgPSBjKFwiZ3JleTQ4XCIsXCJyZWRcIikpICtcbiAgc3RhdF9lbGxpcHNlKHR5cGUgPSBcInRcIikgK1xuICBnZW9tX3BvaW50KGRhdGEgPSB2aXJ1c3NhbXBsZWxvY0NlbnRyb2lkLFxuICAgICAgICAgICAgIGFlcyh4ID0gRGltMSxcbiAgICAgICAgICAgICAgICAgeSA9IERpbTIsXG4gICAgICAgICAgICAgICAgIGZpbGwgPSB2aXJ1cy5iaW4pLFxuICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgIHNoYXBlID0gMjEsXG4gICAgICAgICAgICAgY29sb3IgPSBcImJsYWNrXCIpICtcbiAgc2NhbGVfeF9jb250aW51b3VzKGxpbWl0cyA9IGMoLTEuMiwxLjIpKSArXG4gIHNjYWxlX3lfY29udGludW91cyhsaW1pdHMgPSBjKC0xLjIsMS4yKSkgK1xuICBsYWJzKHggPSBcIlBDb0ExICg0My42JSlcIixcbiAgICAgICB5ID0gXCJQQ29BMiAoMjIuNSUpXCIpICsgXG4gIGZhY2V0X2dyaWQoY29scyA9IHZhcnMoc2FtcGxlbG9jKSxcbiAgICAgICAgICAgICBsYWJlbGxlciA9IGFzX2xhYmVsbGVyKGxvY2xhYnMpKSArXG4gIHRoZW1lKHN0cmlwLmJhY2tncm91bmQgPSBlbGVtZW50X3JlY3QoZmlsbCA9IFwid2hpdGVcIikpIC0+IFBDb0F2aXJ1c3NhbXBsZWxvY1xuXG5nZ3NhdmUocGxvdCA9IFBDb0F2aXJ1cyxcbiAgICAgICBcIk1vcmlzaXRhLUhvcm4uUENvQS52aXJhbC5zdGF0ZS5zYW1wbGUubG9jLnRpZmZcIixcbiAgICAgICB3aWR0aCA9IDEwLFxuICAgICAgIGhlaWdodCA9IDgsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5gYGAifQ== -->
+
+```r
+sinspuPCoAMeta %>%
+  group_by(virus.bin,sampleloc) %>%
+  summarise(Dim1 = mean(Dim1),
+            Dim2 = mean(Dim2)) -> virussamplelocCentroid
+
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = virus.bin)) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Respiratory viral\ninfection status\",
+                     labels = c(\"Negative\",\"Positive\"),
+                     values = c(\"grey48\",\"red\")) +
+  scale_fill_manual(name = \"Respiratory viral\ninfection status\",
+                     labels = c(\"Negative\",\"Positive\"),
+                     values = c(\"grey48\",\"red\")) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = virussamplelocCentroid,
+             aes(x = Dim1,
+                 y = Dim2,
+                 fill = virus.bin),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_x_continuous(limits = c(-1.2,1.2)) +
+  scale_y_continuous(limits = c(-1.2,1.2)) +
+  labs(x = \"PCoA1 (43.6%)\",
+       y = \"PCoA2 (22.5%)\") + 
+  facet_grid(cols = vars(sampleloc),
+             labeller = as_labeller(loclabs)) +
+  theme(strip.background = element_rect(fill = \"white\")) -> PCoAvirussampleloc
+
+ggsave(plot = PCoAvirus,
+       \"Morisita-Horn.PCoA.viral.state.sample.loc.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+sinspuPCoAMeta %>%
+  group_by(virus.bin,sampleloc) %>%
+  summarise(Dim1 = mean(Dim1),
+            Dim2 = mean(Dim2)) -> virussamplelocCentroid
+
+ggplot(sinspuPCoAMeta,
+       aes(x = Dim1,
+           y = Dim2,
+           color = virus.bin)) +
+  geom_point(size = 2,
+             alpha = 0.5) +
+  scale_color_manual(name = \"Respiratory viral\ninfection status\",
+                     labels = c(\"Negative\",\"Positive\"),
+                     values = c(\"grey48\",\"red\")) +
+  scale_fill_manual(name = \"Respiratory viral\ninfection status\",
+                     labels = c(\"Negative\",\"Positive\"),
+                     values = c(\"grey48\",\"red\")) +
+  stat_ellipse(type = \"t\") +
+  geom_point(data = virussamplelocCentroid,
+             aes(x = Dim1,
+                 y = Dim2,
+                 fill = virus.bin),
+             size = 5,
+             shape = 21,
+             color = \"black\") +
+  scale_x_continuous(limits = c(-1.2,1.2)) +
+  scale_y_continuous(limits = c(-1.2,1.2)) +
+  labs(x = \"PCoA1 (43.6%)\",
+       y = \"PCoA2 (22.5%)\") + 
+  facet_grid(cols = vars(sampleloc),
+             labeller = as_labeller(loclabs)) +
+  theme(strip.background = element_rect(fill = \"white\")) -> PCoAvirussampleloc
+
+ggsave(plot = PCoAvirus,
+       \"Morisita-Horn.PCoA.viral.state.sample.loc.tiff\",
+       width = 10,
+       height = 8,
+       units = c(\"in\"))
+```"

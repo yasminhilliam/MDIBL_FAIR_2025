@@ -1,0 +1,124 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsRGYgJT4lXG4gIGZpbHRlcihpbmRleCAlaW4lIHNpbnNwdUZpbHQkaW5kZXgpICU+JVxuICBkcGx5cjo6c2VsZWN0KGluZGV4LHBhdGllbnRpZCxkYXRlLHZpcnVzLmJpbikgJT4lXG4gIGRpc3RpbmN0KCkgJT4lXG4gIGlubmVyX2pvaW4oLixsdW5nZnVuY0RmKSAtPiBsdW5nZnVuY0RmXG5cbiMgRGVmaW5lIHRoZSBwYXRpZW50aWQgYXMgdGhlIHJhbmRvbSBlZmZlY3QgdmFyaWFibGVcbnBhdGllbnRfaWRfZm9ybXVsYSA8LSBcIigxIHwgcGF0aWVudGlkKVwiXG5cbiMgSW5pdGlhbGl6ZSBhIGxpc3QgdG8gc3RvcmUgdGhlIG1vZGVsc1xubHVuZ2Z1bmNtb2RlbHMgPC0gbGlzdCgpXG5cbiMgSXRlcmF0ZSB0aHJvdWdoIGNvbHVtbnMgb2YgdGhlIGRhdGFmcmFtZSBleGNlcHQgZm9yIHRoZSBcInBhdGllbnRpZFwiIGNvbHVtblxuZm9yIChyZXNwb25zZSBpbiBuYW1lcyhsdW5nZnVuY0RmKVs2Omxlbmd0aChuYW1lcyhsdW5nZnVuY0RmKSldKSB7ICAjIEV4Y2x1ZGUgdGhlIGZpcnN0IGNvbHVtbiAoXCJwYXRpZW50aWRcIilcbiAgICBmaXhlZF9lZmZlY3RzIDwtIFwidmlydXMuYmluXCJcbiAgXG4gICAgZm9ybXVsYSA8LSBhcy5mb3JtdWxhKHBhc3RlKHJlc3BvbnNlLCBcIn5cIiwgZml4ZWRfZWZmZWN0cyxcIitcIiwgcGF0aWVudF9pZF9mb3JtdWxhKSlcbiAgXG4gICAgIyBGaXQgdGhlIGxpbmVhciBtaXhlZC1lZmZlY3RzIG1vZGVsXG4gICAgbW9kZWwgPC0gbG1lcihmb3JtdWxhLCBkYXRhID0gbHVuZ2Z1bmNEZilcbiAgXG4gICAgIyBTdG9yZSB0aGUgbW9kZWwgaW4gdGhlIGxpc3QgdXNpbmcgdGhlIHJlc3BvbnNlIHZhcmlhYmxlIG5hbWVcbiAgICBsdW5nZnVuY21vZGVsc1tbcmVzcG9uc2VdXSA8LSBtb2RlbFxuICBcbiAgICAjIE9wdGlvbmFsOiBQcmludCB0aGUgc3VtbWFyeSBvZiB0aGUgbW9kZWxcbiAgICBwcmludChwYXN0ZShcIk1vZGVsIGZvcjpcIiwgcmVzcG9uc2UpKVxuICAgIHByaW50KHN1bW1hcnkobW9kZWwpKVxufVxuXG5sdW5nZnVuY0RmICU+JVxuICBwaXZvdF9sb25nZXIoY29scyA9IGMoNjo5KSxcbiAgICAgICAgICAgICAgIG5hbWVzX3RvID0gXCJtZWFzdXJlXCIsXG4gICAgICAgICAgICAgICB2YWx1ZXNfdG8gPSBcInZhbHVlXCIpICU+JVxuICBnZ3Bsb3QoYWVzKHggPSB2aXJ1cy5iaW4sXG4gICAgICAgICAgICAgeSA9IHZhbHVlLFxuICAgICAgICAgICAgIGNvbG9yID0gbWVhc3VyZSkpICtcbiAgZ2VvbV92aW9saW4obmEucm0gPSBUUlVFLFxuICAgICAgICAgICAgICBzY2FsZSA9IFwiY291bnRcIixcbiAgICAgICAgICAgICAgZHJhd19xdWFudGlsZXMgPSBjKDAuNSkpICtcbiAgZ2VvbV9qaXR0ZXIod2lkdGggPSAwLjA1LFxuICAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgK1xuICBzY2FsZV94X2Rpc2NyZXRlKG5hbWUgPSBcIlJlc3BpcmF0b3J5IHZpcmFsXFxuaW5mZWN0aW9uIHN0YXR1c1wiLFxuICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoXCJOZWdhdGl2ZVwiLFwiUG9zaXRpdmVcIikpICtcbiAgZmFjZXRfZ3JpZChyb3dzID0gdmFycyhtZWFzdXJlKSxcbiAgICAgICAgICAgICBzY2FsZXMgPSBcImZyZWVcIikgK1xuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSBcIm5vbmVcIixcbiAgICAgICAgcGFuZWwuYm9yZGVyID0gZWxlbWVudF9yZWN0KGNvbG9yID0gXCJncmV5NDhcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZpbGwgPSBOQSksXG4gICAgICAgIGF4aXMudGl0bGUueSA9IGVsZW1lbnRfYmxhbmsoKSkgLT4gbHVuZ2Z1bmNWaXJ1c1xuXG5sdW5nZnVuY1ZpcnVzXG5cbmdnc2F2ZShwbG90ID0gbHVuZ2Z1bmNWaXJ1cyxcbiAgICAgICBcInJlc3BpcmF0b3J5Lm1lYXN1cmVzLnZpcnVzLnRpZmZcIixcbiAgICAgICBoZWlnaHQgPSAxMixcbiAgICAgICB3aWR0aCA9IDgsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5gYGAifQ== -->
+
+```r
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  dplyr::select(index,patientid,date,virus.bin) %>%
+  distinct() %>%
+  inner_join(.,lungfuncDf) -> lungfuncDf
+
+# Define the patientid as the random effect variable
+patient_id_formula <- \"(1 | patientid)\"
+
+# Initialize a list to store the models
+lungfuncmodels <- list()
+
+# Iterate through columns of the dataframe except for the \"patientid\" column
+for (response in names(lungfuncDf)[6:length(names(lungfuncDf))]) {  # Exclude the first column (\"patientid\")
+    fixed_effects <- \"virus.bin\"
+  
+    formula <- as.formula(paste(response, \"~\", fixed_effects,\"+\", patient_id_formula))
+  
+    # Fit the linear mixed-effects model
+    model <- lmer(formula, data = lungfuncDf)
+  
+    # Store the model in the list using the response variable name
+    lungfuncmodels[[response]] <- model
+  
+    # Optional: Print the summary of the model
+    print(paste(\"Model for:\", response))
+    print(summary(model))
+}
+
+lungfuncDf %>%
+  pivot_longer(cols = c(6:9),
+               names_to = \"measure\",
+               values_to = \"value\") %>%
+  ggplot(aes(x = virus.bin,
+             y = value,
+             color = measure)) +
+  geom_violin(na.rm = TRUE,
+              scale = \"count\",
+              draw_quantiles = c(0.5)) +
+  geom_jitter(width = 0.05,
+              alpha = 0.5) +
+  scale_x_discrete(name = \"Respiratory viral\ninfection status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  facet_grid(rows = vars(measure),
+             scales = \"free\") +
+  theme(legend.position = \"none\",
+        panel.border = element_rect(color = \"grey48\",
+                                    fill = NA),
+        axis.title.y = element_blank()) -> lungfuncVirus
+
+lungfuncVirus
+
+ggsave(plot = lungfuncVirus,
+       \"respiratory.measures.virus.tiff\",
+       height = 12,
+       width = 8,
+       units = c(\"in\"))
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+allDf %>%
+  filter(index %in% sinspuFilt$index) %>%
+  dplyr::select(index,patientid,date,virus.bin) %>%
+  distinct() %>%
+  inner_join(.,lungfuncDf) -> lungfuncDf
+
+# Define the patientid as the random effect variable
+patient_id_formula <- \"(1 | patientid)\"
+
+# Initialize a list to store the models
+lungfuncmodels <- list()
+
+# Iterate through columns of the dataframe except for the \"patientid\" column
+for (response in names(lungfuncDf)[6:length(names(lungfuncDf))]) {  # Exclude the first column (\"patientid\")
+    fixed_effects <- \"virus.bin\"
+  
+    formula <- as.formula(paste(response, \"~\", fixed_effects,\"+\", patient_id_formula))
+  
+    # Fit the linear mixed-effects model
+    model <- lmer(formula, data = lungfuncDf)
+  
+    # Store the model in the list using the response variable name
+    lungfuncmodels[[response]] <- model
+  
+    # Optional: Print the summary of the model
+    print(paste(\"Model for:\", response))
+    print(summary(model))
+}
+
+lungfuncDf %>%
+  pivot_longer(cols = c(6:9),
+               names_to = \"measure\",
+               values_to = \"value\") %>%
+  ggplot(aes(x = virus.bin,
+             y = value,
+             color = measure)) +
+  geom_violin(na.rm = TRUE,
+              scale = \"count\",
+              draw_quantiles = c(0.5)) +
+  geom_jitter(width = 0.05,
+              alpha = 0.5) +
+  scale_x_discrete(name = \"Respiratory viral\ninfection status\",
+                   labels = c(\"Negative\",\"Positive\")) +
+  facet_grid(rows = vars(measure),
+             scales = \"free\") +
+  theme(legend.position = \"none\",
+        panel.border = element_rect(color = \"grey48\",
+                                    fill = NA),
+        axis.title.y = element_blank()) -> lungfuncVirus
+
+lungfuncVirus
+
+ggsave(plot = lungfuncVirus,
+       \"respiratory.measures.virus.tiff\",
+       height = 12,
+       width = 8,
+       units = c(\"in\"))
+```"

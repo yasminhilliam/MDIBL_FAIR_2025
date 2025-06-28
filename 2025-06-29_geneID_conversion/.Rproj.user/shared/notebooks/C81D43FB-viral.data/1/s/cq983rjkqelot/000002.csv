@@ -1,0 +1,28 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVhZC5jc3YoXCJjeXRva2luZS5kYXRhc2V0LmNzdlwiKSAtPiBjeXRva2luZVxuXG5jeXRva2luZSAlPiVcbiAgZmlsdGVyKHBhdGllbnRpZCAhPSBcIlwiKSAlPiVcbiAgZHBseXI6OnJlbmFtZShwYXRpZW50aWQgPSAxLFxuICAgICAgICAgICAgICAgIGRhdGUgPSAyKSAtPiBjeXRva2luZVxuXG5hcy5EYXRlKGN5dG9raW5lJGRhdGUsXG4gICAgICAgIGZvcm1hdCA9IFwiJW0vJWQvJXlcIikgLT4gY3l0b2tpbmUkZGF0ZVxuYGBgIn0= -->
+
+```r
+read.csv(\"cytokine.dataset.csv\") -> cytokine
+
+cytokine %>%
+  filter(patientid != \"\") %>%
+  dplyr::rename(patientid = 1,
+                date = 2) -> cytokine
+
+as.Date(cytokine$date,
+        format = \"%m/%d/%y\") -> cytokine$date
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+read.csv(\"cytokine.dataset.csv\") -> cytokine
+
+cytokine %>%
+  filter(patientid != \"\") %>%
+  dplyr::rename(patientid = 1,
+                date = 2) -> cytokine
+
+as.Date(cytokine$date,
+        format = \"%m/%d/%y\") -> cytokine$date
+```"

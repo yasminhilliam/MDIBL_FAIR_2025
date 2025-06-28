@@ -1,0 +1,12 @@
+"1","
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9hZChcImVkZ2VSMjAyNF9scnRfb2JqZWN0LlJkYXRhXCIpXG5gYGAifQ== -->
+
+```r
+load(\"edgeR2024_lrt_object.Rdata\")
+```
+
+<!-- rnb-source-end -->
+"
+"0","```r
+load(\"edgeR2024_lrt_object.Rdata\")
+```"

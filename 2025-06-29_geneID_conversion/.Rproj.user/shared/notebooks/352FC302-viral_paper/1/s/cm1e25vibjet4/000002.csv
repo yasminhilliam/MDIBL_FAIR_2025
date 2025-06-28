@@ -1,0 +1,112 @@
+"1","<!-- KNITR_ASIS_OUTPUT_TOKEN -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShsbWVyKGRhdGEgPSBzaW5zcHVBbHBoYSxcbiAgICAgICAgICAgICBTaGFubm9uIH4gdmlydXMuYmluICsoMXxwYXRpZW50aWQpKSlcblxuc2luc3B1QWxwaGEgJT4lXG4gIGdyb3VwX2J5KHZpcnVzLmJpbixzYW1wbGVsb2MpICU+JVxuICBpZGVudGlmeV9vdXRsaWVycyhTaGFubm9uKSAlPiVcbiAgLiRpbmRleCAtPiBTaGFubm9ub3V0bGllcnNcblxuc2luc3B1QWxwaGEgJT4lXG4gIGdyb3VwX2J5KHZpcnVzLmJpbixzYW1wbGVsb2MpICU+JVxuICBpZGVudGlmeV9vdXRsaWVycyhTaW1wc29uKSAlPiVcbiAgLiRpbmRleCAtPiBTaW1wc29ub3V0bGllcnNcblxuc2luc3B1QWxwaGEgJT4lXG4gIG11dGF0ZShvdXRsaWVyID0gaWZfZWxzZShpbmRleCAlaW4lIFNoYW5ub25vdXRsaWVycyxUUlVFLEZBTFNFKSkgJT4lXG4gIGdncGxvdChhZXMoeCA9IHZpcnVzLmJpbixcbiAgICAgICAgICAgICB5ID0gU2hhbm5vbixcbiAgICAgICAgICAgICBjb2xvciA9IHNhbXBsZWxvYykpICtcbiAgI2dlb21fYm94cGxvdChvdXRsaWVycyA9IEZBTFNFKSArXG4gIGdlb21fdmlvbGluKGRyYXdfcXVhbnRpbGVzID0gYygwLjUpLFxuICAgICAgICAgICAgICB0cmltID0gVFJVRSkgK1xuICBnZW9tX2ppdHRlcihhZXMoc2hhcGUgPSBvdXRsaWVyKSxcbiAgICAgICAgICAgICAgd2lkdGggPSAwLjEsXG4gICAgICAgICAgICAgIHNpemUgPSA1LFxuICAgICAgICAgICAgICBhbHBoYSA9IDAuNSkgK1xuICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzID0gbG9jY29scyxcbiAgICAgICAgICAgICAgICAgICAgIGd1aWRlID0gXCJub25lXCIpICtcbiAgc2NhbGVfc2hhcGVfbWFudWFsKG5hbWUgPSBOVUxMLFxuICAgICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYyhcIk5vbi1vdXRsaWVyXCIsXCJPdXRsaWVyXCIpLFxuICAgICAgICAgICAgICAgICAgICAgdmFsdWVzID0gYygxNiwxKSkgK1xuICBzY2FsZV94X2Rpc2NyZXRlKGxhYmVscyA9IGMoXCJOZWdhdGl2ZVwiLFwiUG9zaXRpdmVcIikpICtcbiAgbGFicyh4ID0gXCJTYW1wbGUgdmlyYWwgc3RhdHVzXCIsXG4gICAgICAgeSA9IFwiU2hhbm5vbiBkaXZlcnNpdHkgaW5kZXhcIikgK1xuICBmYWNldF93cmFwKH5zYW1wbGVsb2MsXG4gICAgICAgICAgICAgbGFiZWxsZXIgPSBhc19sYWJlbGxlcihjKFwic2ludXNcIiA9IFwiU2ludXNcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJzcHV0dW1cIiA9IFwiU3B1dHVtXCIpKSkgK1xuICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSBcImluc2lkZVwiLFxuICAgICAgICBsZWdlbmQucG9zaXRpb24uaW5zaWRlID0gYygwLjksMC4xKSxcbiAgICAgICAgbGVnZW5kLmJhY2tncm91bmQgPSBlbGVtZW50X3JlY3QoY29sb3IgPSBcImJsYWNrXCIpLFxuICAgICAgICBzdHJpcC5iYWNrZ3JvdW5kID0gZWxlbWVudF9ibGFuaygpKSAtPiBhZHVsdHNoYW5ub25wbG90XG5cbmdnc2F2ZShwbG90ID0gYWR1bHRzaGFubm9ucGxvdCxcbiAgICAgICBcImFkdWx0X1NESV92aW9saW5fcGxvdC5wZGZcIixcbiAgICAgICBoZWlnaHQgPSA4LFxuICAgICAgIHdpZHRoID0gMTIsXG4gICAgICAgdW5pdHMgPSBjKFwiaW5cIikpXG5cbmFzLmRhdGEuZnJhbWUoZmlzaGVyLmFscGhhKHNpbnNwdU1hdCkpIC0+IHNpbnNwdUZpc2hlclxuXG5yb3duYW1lcyhzaW5zcHVGaXNoZXIpIC0+IHNpbnNwdUZpc2hlciRpbmRleFxuXG5gYGAifQ== -->
+
+```r
+summary(lmer(data = sinspuAlpha,
+             Shannon ~ virus.bin +(1|patientid)))
+
+sinspuAlpha %>%
+  group_by(virus.bin,sampleloc) %>%
+  identify_outliers(Shannon) %>%
+  .$index -> Shannonoutliers
+
+sinspuAlpha %>%
+  group_by(virus.bin,sampleloc) %>%
+  identify_outliers(Simpson) %>%
+  .$index -> Simpsonoutliers
+
+sinspuAlpha %>%
+  mutate(outlier = if_else(index %in% Shannonoutliers,TRUE,FALSE)) %>%
+  ggplot(aes(x = virus.bin,
+             y = Shannon,
+             color = sampleloc)) +
+  #geom_boxplot(outliers = FALSE) +
+  geom_violin(draw_quantiles = c(0.5),
+              trim = TRUE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.1,
+              size = 5,
+              alpha = 0.5) +
+  scale_color_manual(values = loccols,
+                     guide = \"none\") +
+  scale_shape_manual(name = NULL,
+                     labels = c(\"Non-outlier\",\"Outlier\"),
+                     values = c(16,1)) +
+  scale_x_discrete(labels = c(\"Negative\",\"Positive\")) +
+  labs(x = \"Sample viral status\",
+       y = \"Shannon diversity index\") +
+  facet_wrap(~sampleloc,
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) +
+  theme(legend.position = \"inside\",
+        legend.position.inside = c(0.9,0.1),
+        legend.background = element_rect(color = \"black\"),
+        strip.background = element_blank()) -> adultshannonplot
+
+ggsave(plot = adultshannonplot,
+       \"adult_SDI_violin_plot.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+
+as.data.frame(fisher.alpha(sinspuMat)) -> sinspuFisher
+
+rownames(sinspuFisher) -> sinspuFisher$index
+
+```
+
+<!-- rnb-source-end -->
+<!-- KNITR_ASIS_OUTPUT_TOKEN -->"
+"0","```r
+summary(lmer(data = sinspuAlpha,
+             Shannon ~ virus.bin +(1|patientid)))
+
+sinspuAlpha %>%
+  group_by(virus.bin,sampleloc) %>%
+  identify_outliers(Shannon) %>%
+  .$index -> Shannonoutliers
+
+sinspuAlpha %>%
+  group_by(virus.bin,sampleloc) %>%
+  identify_outliers(Simpson) %>%
+  .$index -> Simpsonoutliers
+
+sinspuAlpha %>%
+  mutate(outlier = if_else(index %in% Shannonoutliers,TRUE,FALSE)) %>%
+  ggplot(aes(x = virus.bin,
+             y = Shannon,
+             color = sampleloc)) +
+  #geom_boxplot(outliers = FALSE) +
+  geom_violin(draw_quantiles = c(0.5),
+              trim = TRUE) +
+  geom_jitter(aes(shape = outlier),
+              width = 0.1,
+              size = 5,
+              alpha = 0.5) +
+  scale_color_manual(values = loccols,
+                     guide = \"none\") +
+  scale_shape_manual(name = NULL,
+                     labels = c(\"Non-outlier\",\"Outlier\"),
+                     values = c(16,1)) +
+  scale_x_discrete(labels = c(\"Negative\",\"Positive\")) +
+  labs(x = \"Sample viral status\",
+       y = \"Shannon diversity index\") +
+  facet_wrap(~sampleloc,
+             labeller = as_labeller(c(\"sinus\" = \"Sinus\",
+                                      \"sputum\" = \"Sputum\"))) +
+  theme(legend.position = \"inside\",
+        legend.position.inside = c(0.9,0.1),
+        legend.background = element_rect(color = \"black\"),
+        strip.background = element_blank()) -> adultshannonplot
+
+ggsave(plot = adultshannonplot,
+       \"adult_SDI_violin_plot.pdf\",
+       height = 8,
+       width = 12,
+       units = c(\"in\"))
+
+as.data.frame(fisher.alpha(sinspuMat)) -> sinspuFisher
+
+rownames(sinspuFisher) -> sinspuFisher$index
+
+```"

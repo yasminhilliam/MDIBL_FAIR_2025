@@ -1,7 +1,0 @@
-"0","ggplot(data=iris, "
-"0","       mapping = aes(x=Petal.Length, "
-"0","                     y=Petal.Width, "
-"0","                     color = Species)) + # tell ggplot that color is determined by Species variable"
-"0","  geom_point() -> colorScatter"
-"0","          "
-"0","colorScatter"

@@ -1,8 +1,0 @@
-"0","ggplot(data=iris, "
-"0","       mapping = aes(x=Petal.Length, "
-"0","                     y=Petal.Width, "
-"0","                     color = Species)) + "
-"0","  geom_point() +"
-"0","  geom_smooth(method = lm) -> colorScatterlm"
-"0","          "
-"0","colorScatterlm"

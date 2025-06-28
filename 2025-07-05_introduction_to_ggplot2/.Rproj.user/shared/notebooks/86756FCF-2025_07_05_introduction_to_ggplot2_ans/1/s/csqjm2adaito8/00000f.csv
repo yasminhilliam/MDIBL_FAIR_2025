@@ -1,7 +1,0 @@
-"0","ggplot(data = iris,"
-"0","       mapping = aes(x = Petal.Length,"
-"0","                     y = Petal.Width)) +"
-"0","  geom_point(aes(color = Petal.Length)) +"
-"0","  geom_smooth(method = lm) -> blueCont"
-"0",""
-"0","blueCont"

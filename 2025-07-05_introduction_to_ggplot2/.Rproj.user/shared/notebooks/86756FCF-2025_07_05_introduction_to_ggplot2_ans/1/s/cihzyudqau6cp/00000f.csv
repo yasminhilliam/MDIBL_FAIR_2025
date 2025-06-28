@@ -1,5 +1,0 @@
-"0","if (!requireNamespace(c(""tidyverse"",""ggtext""), quietly = TRUE))"
-"0","  install.packages(c(""tidyverse"",""ggtext""))"
-"0",""
-"0","library(tidyverse)"
-"0","library(ggtext)"

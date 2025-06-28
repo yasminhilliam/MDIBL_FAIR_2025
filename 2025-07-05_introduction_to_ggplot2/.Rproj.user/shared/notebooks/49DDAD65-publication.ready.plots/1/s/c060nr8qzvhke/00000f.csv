@@ -1,6 +1,0 @@
-"0","ggplot(data = mtcars,"
-"0","       aes(x = hp,"
-"0","           y = mpg,"
-"0","           color = mpg)) +"
-"0","  geom_point(size = 3) +"
-"0","  facet_wrap(~ vs)"

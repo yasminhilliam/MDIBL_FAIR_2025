@@ -1,4 +1,0 @@
-"0","counts$time <- factor(counts$time)"
-"0",""
-"0","counts$iron <- factor(counts$iron,"
-"0","                      levels = c(""Low iron"",""High iron""))"

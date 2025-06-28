@@ -1,6 +1,0 @@
-"0","ggplot(data = iris,"
-"0","       aes(x = Species,"
-"0","           y = Petal.Length,"
-"0","           fill = Species)) + "
-"0","  geom_boxplot(outliers = FALSE) +"
-"0","  geom_point()"

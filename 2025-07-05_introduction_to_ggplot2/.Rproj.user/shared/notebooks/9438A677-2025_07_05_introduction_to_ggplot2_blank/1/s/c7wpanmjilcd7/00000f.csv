@@ -1,6 +1,0 @@
-"0","ggsave(plot = facetPlotTidy, # specify plot"
-"0","       ""multi.facet.mtcars.plot.tiff"", # specify file name"
-"0","       height = 4, # plot height"
-"0","       width = 6, # plot width"
-"0","       units = c(""in""), # specify which units to use for height and width"
-"0","       device = ""tiff"") # specify file type for saving - ggsave will also guess depending on the extension used in file name"

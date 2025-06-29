@@ -1,12 +1,13 @@
 ---
-title: "Gene ID Conversion - 06/29/2025"
+title: "Gene ID Conversion"
 author: "Yasmin Hilliam, PhD"
+date: "2025-06-29"
 output: html_notebook
 ---
 
 ### Part I: Gene ID Conversion with `org.Hs.eg.db`
 
-`org.Hs.eg.db` is an R package maintained by Bioconductor that provides genome-wide annotation for the human (org.**Hs**.eg.db) genome using Entrez gene identifiers. There are several other packages that provide annotations for other organisms that can be found at https://bioconductor.org/packages/3.21/data/annotation - most are Eukaryotic model organisms but packages for two strains of *E. coli* are also included (K12, `org.EcK12.eg.db`; Sakai, `org.EcSakai.eg.db`).
+`org.Hs.eg.db` is an R package maintained by Bioconductor that provides genome-wide annotation for the human (org.**Hs**.eg.db) genome using Entrez gene identifiers. There are several other packages that provide annotations for other organisms that can be found at <https://bioconductor.org/packages/3.21/data/annotation> - most are Eukaryotic model organisms but packages for two strains of *E. coli* are also included (K12, `org.EcK12.eg.db`; Sakai, `org.EcSakai.eg.db`).
 
 ```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -16,8 +17,7 @@ BiocManager::install("org.Hs.eg.db")
 library(org.Hs.eg.db) 
 ```
 
-
-We can now use this package to create an identifier conversion table that will allow us to convert Ensembl gene IDs. 
+We can now use this package to create an identifier conversion table that will allow us to convert Ensembl gene IDs.
 
 ```{r}
 # show all identifiers available in this dataset
@@ -27,7 +27,6 @@ keytypes(org.Hs.eg.db)
 help("REFSEQ")
 ```
 
-
 If we know an individual Ensembl ID, we can use the `select()` function to find out its corresponding identifiers.
 
 ```{R}
@@ -36,7 +35,6 @@ select(org.Hs.eg.db,
        keytype = "ENSEMBL", # tells the function that we are using an Ensembl ID as our reference
        columns = c("ENTREZID","SYMBOL","GENENAME")) # selects the identifiers we are interested in
 ```
-
 
 Let's use this function to build our table.
 
@@ -56,15 +54,13 @@ select(org.Hs.eg.db,
        columns = c("ENTREZID","SYMBOL","GENENAME")) -> conv_table
 ```
 
-
-This output gave us a warning: 
+This output gave us a warning:
 
 `'select()' returned 1:many mapping between keys and columns`
 
 ```{r}
 dim(conv_table) # report the dimensions of our conversion table
 ```
-
 
 We can see that the length of our conversion table is greater than the number of Ensembl IDs we provided (46112 vs. 40839). This is because some Ensembl IDs map to multiple other identifiers (not uncommon). Let's look at which IDs have duplicate Ensembl IDs.
 
@@ -74,14 +70,11 @@ summary(duplicated(conv_table$ENTREZID))
 summary(duplicated(conv_table$SYMBOL))
 ```
 
-
 Function `duplicated()` returns a logical vector populated with TRUE or FALSE values that indicate if a value is duplicated. Using `summary()` we can summarize those into a table, as shown above.
-
 
 ```{r}
 head(conv_table[duplicated(conv_table$ENSEMBL),]) # view the first six rows of duplicated IDs
 ```
-
 
 Let's remove the duplicated IDs from our table
 
@@ -90,8 +83,9 @@ conv_table[-c( # -c tells R to remove the following values
   which( # which returns a list of values for which the condition is TRUE
     duplicated( # duplicated returns a logical value
       conv_table$ENSEMBL)==TRUE)),] -> conv_table_unique
-```
 
+conv_table[c(which(duplicated(conv_table$ENSEMBL)==TRUE)),]
+```
 
 Now we can check that we have the expected number of Ensembl entries
 
@@ -100,18 +94,17 @@ summary(duplicated(conv_table_unique$ENSEMBL)) # no duplicates identified
 length(rownames(conv_table_unique)) == length(ensembl_key) # unique table has same number of row names as our list of ensembl IDs
 ```
 
-
 ### Part II: Gene ID conversion with `biomaRt`
 
-`biomaRt` is a package mainatained by Ensembl.org. As well as an R package, it has a browser interface that allows you to retrieve data online: http://useast.ensembl.org/biomart/martview
+`biomaRt` is a package mainatained by Ensembl.org. As well as an R package, it has a browser interface that allows you to retrieve data online: <http://useast.ensembl.org/biomart/martview>
 
-Use these IDs to try out the web interface: 
+Use these IDs to try out the web interface:
 
-- ENSG00000000971
-- ENSG00000004139
-- ENSG00000005339
+-   ENSG00000000971
+-   ENSG00000004139
+-   ENSG00000005339
 
-The web interface can be a little slow, especially if you are trying to search large numbers of IDs. Let's use the R package instead. 
+The web interface can be a little slow, especially if you are trying to search large numbers of IDs. Let's use the R package instead.
 
 ```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -121,13 +114,11 @@ BiocManager::install("biomaRt")
 library(biomaRt) 
 ```
 
-
 Unlike `org.Hs.eg.db`, the `biomaRt` package requires an internet connection to work. First, let's check the available databases.
 
 ```{r}
 listEnsembl()
 ```
-
 
 Let's set the parameters for using the package. We need to specify the database we want to access and the mirror we want to use to access the it. The three available mirrors are "www", "useast", and "asia".
 
@@ -136,13 +127,11 @@ useEnsembl(biomart = "genes",
            mirror = "useast") -> ensembl
 ```
 
-
 Let's look at the datasets that are available in this database.
 
 ```{r}
 View(listDatasets(ensembl))
 ```
-
 
 We want to look at the human dataset so let's add that into our parameters
 
@@ -152,8 +141,7 @@ useEnsembl(biomart = "genes",
            dataset = "hsapiens_gene_ensembl") -> ensembl
 ```
 
-
-Now we can look at the filters (type of query ID) and attrivutes (type of target IDs) to put together a `getBM` function.
+Now we can look at the filters (type of query ID) and attributes (type of target IDs) to put together a `getBM` function.
 
 ```{r}
 View(listFilters(ensembl))
@@ -173,7 +161,6 @@ getBM(mart = ensembl,
 head(biomart_output)
 ```
 
-
 ### Activities
 
 # Green 1
@@ -184,45 +171,41 @@ Use `org.Hs.eg.db` to add a new column with UNIPROT identifiers into your `conv_
 
 ```
 
-
 # Green 2
 
-Use the `biomaRt` package to add a new attribute UniProtKB/Swiss-Prot into your `biomart_output`. Be sure to examine the output carefully - are the entries unique as we specified? 
+Use the `biomaRt` package to add a new attribute UniProtKB/Swiss-Prot into your `biomart_output`. Be sure to examine the output carefully - are the entries unique as we specified?
 
 ```{r}
 
 ```
 
-
 # Green 3
 
 Use `biomaRt` package to retrieve "ensembl_gene_id", "entrezgene_id", external_gene_name", and "description" information for three IDs of interest.
 
-- ENSG00000000971
-- ENSG00000004139
-- ENSG00000005339
+-   ENSG00000000971
+-   ENSG00000004139
+-   ENSG00000005339
 
 ```{R}
 
 ```
 
-
 # Blue 1
 
 Install and use `org.Mm.eg.db` to create a conversion table object for mouse genes with your chosen identifiers.
 
-```{r}  
+```{r}
 
 ```
 
+# Black 1
 
-# Black 1 
-
-Use `org.Hs.eg.db` or `biomaRt` to create an annotation table which has "ENTREZID","SYMBOL","GENENAME" information for all the Ensembl IDs using in `tximport` output. This annotation will be used for the `edgeR` module later in the course. 
+Use `org.Hs.eg.db` or `biomaRt` to create an annotation table which has "ENTREZID","SYMBOL","GENENAME" information for all the Ensembl IDs using in `tximport` output. This annotation will be used for the `edgeR` module later in the course.
 
 Hint: row names of `txi$counts` are Ensembl gene IDs
 
-data_tximport.RDS, the R object file created by `tximport`, is provided if you need it. 
+data_tximport.RDS, the R object file created by `tximport`, is provided if you need it.
 
 ```{r}
 

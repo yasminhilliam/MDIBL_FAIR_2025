@@ -1,4 +1,0 @@
-"0","select(org.Hs.eg.db,"
-"0","       keys = ""ENSG00000108342"", # Ensembl ID we want to find identifiers for"
-"0","       keytype = ""ENSEMBL"", # tells the function that we are using an Ensembl ID as our reference"
-"0","       columns = c(""ENTREZID"",""SYMBOL"",""GENENAME"")) # selects the identifiers we are interested in"

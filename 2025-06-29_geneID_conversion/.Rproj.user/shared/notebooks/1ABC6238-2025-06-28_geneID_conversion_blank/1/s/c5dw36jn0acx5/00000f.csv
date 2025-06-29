@@ -1,4 +1,0 @@
-"0","conv_table[-c( # -c tells R to remove the following values"
-"0","  which( # which returns a list of values for which the condition is TRUE"
-"0","    duplicated( # duplicated returns a logical value"
-"0","      conv_table$ENSEMBL)==TRUE)),] -> conv_table_unique"

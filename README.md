@@ -9,6 +9,8 @@ Code and files for sessions taught at MDIBL FAIR Course 2025
 
 2025-07-05: Common geoms and statistics
 
+2025-07-5: Bacterial RNAseq analysis with HISAT2 and HTSeq
+
 2025-07-08: Microbiome Analysis Workshop Part I
 
 2025-07-09: Microbiome Analysis Workshop Part II

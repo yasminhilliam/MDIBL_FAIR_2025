@@ -19,10 +19,9 @@ library(gplots)
 library(tidyverse)
 ```
 
-
 #### Fisher's exact test
 
-Now we will learn how to analyze contingency tables in R with Fisher's exact test. The following contingency table shows the results of a survey of 500 couples who were asked if they think their partner is messy. 
+Now we will learn how to analyze contingency tables in R with Fisher's exact test. The following contingency table shows the results of a survey of 500 couples who were asked if they think their partner is messy.
 
 ```{r}
 Messymt <- matrix(c(299,208,178,315), 
@@ -35,14 +34,13 @@ Messymt <- matrix(c(299,208,178,315),
 Messymt # this is a Contingency table
 ```
 
-
 Alternative hypotheses:
 
-1. the probability of men being Messy is different from women being Messy 
+1.  the probability of men being Messy is different from women being Messy
 
-2. the probability of men being Messy is greater than women being Messy
+2.  the probability of men being Messy is greater than women being Messy
 
-3. the probability of men being Messy is less than women being Messy
+3.  the probability of men being Messy is less than women being Messy
 
 We will use function `fisher.test` to test the independence of two nominal variables - Messy (Yes/No) and gender (Men/Women)
 
@@ -53,14 +51,12 @@ fisher.test(Messymt,
             alternative = "two.sided")
 ```
 
-
 Alternative hypothesis 2:
 
 ```{r}
 fisher.test(Messymt,
             alternative = "greater")
 ```
-
 
 Alternative hypothesis 3:
 
@@ -69,15 +65,13 @@ fisher.test(Messymt,
             alternative = "less")
 ```
 
-
-Tom Hampton and Todd MacKenzie will cover more about contingency tables and statistics in another session. 
+Tom Hampton and Todd MacKenzie will cover more about contingency tables and statistics in another session.
 
 Now let's build a contingency table for pathway enrichment analysis.
 
 ```{r}
 read.table(file = "InnateImmune.txt") -> innate
 ```
-
 
 Currently this is imported as a dataframe with only one variable, but we want these data as a vector
 
@@ -89,7 +83,6 @@ head(innate_vec)
 length(innate_vec) # there are 561 genes in this list
 ```
 
-
 Import `edgeR` data
 
 ```{r}
@@ -98,8 +91,7 @@ read.csv("log2FC_PA_vs_Untreated.csv") -> edgeR_data
 head(edgeR_data)
 ```
 
-
-Now let's identify upregulated differentially expressed genes (log2 fold change > 0 and FDR < 0.05)
+Now let's identify upregulated differentially expressed genes (log2 fold change \> 0 and FDR \< 0.05)
 
 ```{r}
 edgeR_data %>%
@@ -110,13 +102,11 @@ dim(up_DEGs) # 1032 upregulated genes
 head(up_DEGs)
 ```
 
-
 This has filtered the full dataframe to only those genes that are significantly upregulated. Let's extract a vector of the Ensembl IDs.
 
 ```{R}
 up_DEGs$ENSEMBL -> up_DEGs_vec
 ```
-
 
 As well as a vector of all genes detected in the RNAseq experiment
 
@@ -126,7 +116,6 @@ edgeR_data$ENSEMBL -> all_genes_vec
 length(all_genes_vec)
 ```
 
-
 Now let's use a Venn diagram to visualize the number of genes that are upregulated and included in the innate immunity dataset to build our contingency table.
 
 ```{R}
@@ -134,7 +123,6 @@ venn(list("Upregulated genes" = up_DEGs_vec,
           "Innate immune genes" = innate_vec,
           "Expressed genes" = all_genes_vec))
 ```
-
 
 ```{r}
 up_DEGs_vec -> Upregulated
@@ -167,7 +155,6 @@ matrix(values, nrow = 2,
 innate_immune_path_matrix
 ```
 
-
 Now that we have generated our contingency table, we can run our Fisher's exact test
 
 ```{R}
@@ -175,10 +162,9 @@ fisher.test(innate_immune_path_matrix,
             alternative = "greater")
 ```
 
+Our P value is \< 0.05 so the probability of finding regulated genes is higher among the specified gene list (our innate immune gene list) than in the genes outside of that list. This means that the pathway is over-represented and that the gene set is significantly enriched.
 
-Our P value is < 0.05 so the probability of finding regulated genes is higher among the specified gene list (our innate immune gene list) than in the genes outside of that list. This means that the pathway is over-represented and that the gene set is significantly enriched. 
-
-As you can see, this is still a long-winded way of doing this analysis but fortunately different contributors have made ways to extract all gene lists from a GO or KEGG database from an `edgeR` output and run Fisher's exact test on all your pathways of interest. 
+As you can see, this is still a long-winded way of doing this analysis but fortunately different contributors have made ways to extract all gene lists from a GO or KEGG database from an `edgeR` output and run Fisher's exact test on all your pathways of interest.
 
 ```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -190,13 +176,11 @@ library(GO.db)
 library(org.Hs.eg.db)
 ```
 
-
 Now we'll use the `lrt` object we loaded at the beginning from `edgeR`
 
 ```{r}
 lrt$genes
 ```
-
 
 All the genes are annotated with Ensembl gene IDs but GO terms use ENTREZID, so we need to add ENTREZIDs to our `lrt` object.
 
@@ -206,7 +190,6 @@ read.csv("AnnotTable.csv") -> annot
 left_join(lrt$genes,annot,
           join_by(genes == ENSEMBL)) -> lrt$genes
 ```
-
 
 Now the `lrt` object is ready for pathway analysis using `goana` which is a wrapper function provided for `edgeR`
 
@@ -223,8 +206,7 @@ head(goana_res)
 dim(goana_res)
 ```
 
-
-20960 GO terms have been identified, which are all gene sets! These will not all be significant and may not all be meaningful/important to your work. 
+20960 GO terms have been identified, which are all gene sets! These will not all be significant and may not all be meaningful/important to your work.
 
 It is important to note that these P values are not adjusted for multiple testing, so we need to manually do that ourselves using the Bejamini & Hochberg method ("BH" of "FDR").
 
@@ -238,9 +220,7 @@ p.adjust(goana_res$P.Down,
 head(goana_res)
 ```
 
-
-How many significantly upregulated processes are there? 
-First let's check the **unadjusted** P values and then see how the stringency is changed by adjusting for multiple measurements.
+How many significantly upregulated processes are there? First let's check the **unadjusted** P values and then see how the stringency is changed by adjusting for multiple measurements.
 
 ```{r}
 dim(goana_res %>%
@@ -250,14 +230,12 @@ dim(goana_res %>%
       filter(P.Up.adj < 0.05 & Ont == "BP")) # 1321
 ```
 
-
 How many upregulated GO terms are there in total?
 
 ```{r}
 dim(goana_res %>% 
       filter(P.Up.adj < 0.05)) # 1523
 ```
-
 
 Let's dig in and find some GO terms of interest.
 
@@ -267,13 +245,11 @@ There is a `topGO` function to identify the top enriched GO terms
 topGO(goana_res)
 ```
 
-
 However, this only selects the top 20 GO terms, many of which will be broad and contain lots of genes, so let's narrow down our selection by looking at how many genes are in some GO terms to determine some that may have more specific annotations.
 
 ```{r}
 hist(goana_res$N) # column N shows the number of genes in a GO term
 ```
-
 
 Most GO terms have fewer than 1000 genes, let's look only at those terms
 
@@ -281,13 +257,11 @@ Most GO terms have fewer than 1000 genes, let's look only at those terms
 hist(goana_res$N[goana_res$N < 1000])
 ```
 
-
 Still a lot of genes! Let's narrow down some more.
 
 ```{r}
 hist(goana_res$N[goana_res$N < 200])
 ```
-
 
 Now let's filter our results dataframe based on the number of genes in a GO term and our FDR adjusted P value.
 
@@ -302,8 +276,7 @@ goana_res_filt %>%
   )
 ```
 
-
-Let's practice some more subsetting! 
+Let's practice some more subsetting!
 
 Let's look for barely significant GO terms.
 
@@ -311,7 +284,6 @@ Let's look for barely significant GO terms.
 goana_res %>% 
   filter(P.Up.adj < 0.05 & P.Up.adj > 0.049)
 ```
-
 
 Or we can look for some specific GO terms
 
@@ -323,14 +295,12 @@ goana_res %>%
   filter(row.names(goana_res) %in% c("GO:0009062","GO:0046349","GO:0010803"))
 ```
 
-
 Let's see how many downregulated GO terms there are
 
 ```{r}
 goana_res %>%
   filter(P.Down.adj < 0.05)
 ```
-
 
 Not very many! We have chosen the `edgeR` FDR cutoff of 0.05 to define differentially expressed genes, which then defines the contingency tables. The results of the enrichment analysis will depend on the significance threshold that is used to assess differential expression. You can compare Fisher's exact test results from different differential expression cutoffs as a good sanity check.
 
@@ -344,16 +314,13 @@ Identify GO terms that are almost significantly enriched. For example, look for 
 
 ```
 
-
-
 #### Green 2
 
-Try using different higher or lower FDR cutoffs in the `goana()` argument. How does this affect the enrichment results? 
+Try using different higher or lower FDR cutoffs in the `goana()` argument. How does this affect the enrichment results?
 
 ```{r}
 
 ```
-
 
 #### Blue 1
 
@@ -363,20 +330,17 @@ There is another function called `kegga()` which uses identical arguments to `go
 
 ```
 
-
 How many KEGG pathways were identified?
 
 ```{r}
 
 ```
 
-
 What are the top 10 enriched KEGG pathways in upregulated genes?
 
 ```{r}
 
 ```
-
 
 What are the top 10 enriched KEGG pathways in downregulated genes?
 

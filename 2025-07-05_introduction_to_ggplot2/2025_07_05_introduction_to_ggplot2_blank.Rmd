@@ -10,7 +10,6 @@ knitr::opts_chunk$set(echo = TRUE,
                       collapse = TRUE)
 ```
 
-
 Whilst base `R` plots are quick and useful for examining our data, they don't always offer the flexibility and attractive customization options that we'd like for a presentation or manuscript. This is where `ggplot2` comes in.
 
 This session will teach you the basics of using `ggplot2` to visualize data in R. ggplot was developed in 2005 by Hadley Wickham as an open source data visualization package for R. With `ggplot2`, you can create plots that range from simple scatter diagrams to complex custom plots that are (almost) completely customizable.
@@ -21,7 +20,7 @@ Resources:
 
 <https://ggplot2.tidyverse.org/reference/>
 
-<https://www.youtube.com/@Riffomonas>
+[https://www.youtube.com/\@Riffomonas](https://www.youtube.com/@Riffomonas){.uri}
 
 ------------------------------------------------------------------------
 
@@ -30,13 +29,20 @@ Resources:
 `ggplot2` is included in the `tidyverse` package, so we can simply install and load `tidyverse` for everything we'll cover in this session.
 
 ```{r, message = FALSE}
-if (!requireNamespace(c("tidyverse","ggtext"), quietly = TRUE))
-  install.packages(c("tidyverse","ggtext"))
+packages_to_install <- c("tidyverse","ggtext")
+
+for (package in packages_to_install) {
+  if (!(package %in% rownames(installed.packages()))) {
+    install.packages(package, dependencies = TRUE)
+    print(paste("Installed package:", package))
+  } else {
+    print(paste(package, "is already installed"))
+  }
+}
 
 library(tidyverse)
 library(ggtext)
 ```
-
 
 #### Understanding ggplot syntax
 
@@ -58,7 +64,6 @@ ggplot(data = df, # input data
   geom_point() # add plotting layer
 ```
 
-
 #### Setting up data for success
 
 One of the most important parts of getting ready to plot data in `R` is ensuring that your data are "tidy". When passing instructions to `ggplot2`, the program interprets dataframes in a fixed way:
@@ -73,7 +78,6 @@ Let's examine a dataframe to better understand how `ggplot2` interprets data. He
 head(iris) # view the first six rows of the dataframe
 ```
 
-
 Looking at the first rows of this dataframe we can see that each **variable** is contained in a column and each row is an **observation**. This means that if you have replicate measurements (as in this dataset, there are multiple measurements of each variable per species) you will need to have a row *per replicate* rather than storing the replicate data in columns.
 
 Other important notes about this dataset:
@@ -84,7 +88,7 @@ Other important notes about this dataset:
 
 -   column names and features contain no spaces or "-". `R` doesn't usually like these.
 
-#### Let's build a plot! 
+#### Let's build a plot!
 
 `ggplot2` builds plots in layers. You can start with a layer showing raw data, then continue to add up additional elements to produce your desired graph. This approach will help you reduce the gap between the expected outcomes in your head and the plots in reality.
 
@@ -95,7 +99,6 @@ ggplot(data = iris, # use 'data' argument to tell ggplot which dataframe we want
 
 basicPlot
 ```
-
 
 We have told `ggplot2` which variables we want to plot on the x and y axes but we have not told `ggplot2` which geometric elements (i.e. geoms) to use to construct the plot, so all we have are the axes and a blank plot.
 
@@ -112,14 +115,12 @@ ggplot(data = iris,
 basicScatter
 ```
 
-
 Another way you can add layers to a plot is by simply adding them to the end of the object that we assigned our first plot to. It is very common to see this in online guides and forums (such as Stack Overflow) where you might look for help with `R` coding:
 
 ```{r}
 basicPlot +
   geom_point()
 ```
-
 
 Although this generates the same output, I would generally avoid making your plots this way - if you end up with something that isn't quite working as expected I find it can be easier to fix if all your code is laid out in front of you, rather than having to revisit each individual step in the process of making your plot.
 
@@ -145,7 +146,6 @@ ggplot(data=iris,
 colorScatter
 ```
 
-
 Now we can add a simple regression using `geom_smooth()` and we can demonstrate how changing global vs. specific aesthetics affect geoms. Some geoms have specialized arguments that allow them to function. In this case, `geom_smooth()` allows us to tell it which method to use to generate the curve that it will plot. We will opt for `lm` which is a linear model.
 
 ```{r}
@@ -159,7 +159,6 @@ ggplot(data=iris,
 colorScatterlm
 ```
 
-
 This creates three separate curves that map to the points from each Species by color, as this is what is specified in the global aesthetics. Let's change that and plot a curve that spans all points:
 
 ```{r}
@@ -171,7 +170,6 @@ ggplot(data=iris,
 
 colorScatterlm2
 ```
-
 
 Now we can see that the points are still colored by Species, but the regression is not.
 
@@ -186,7 +184,6 @@ ggplot(data=iris,
 
 basicPlotBlue
 ```
-
 
 Notice how even though we have changed the aesthetic of the points to be "blue", it has not made them blue. If we want to make all the points one color (or a different shape, or a different size) these are *not* set by aesthetics, as they are not dependent on a variable.
 
@@ -206,18 +203,17 @@ openCircleBlue
 # available shapes can be viewed at https://www.datanovia.com/en/blog/ggplot-point-shapes-best-tips/ or by using ggpubr::show_point_shapes()
 ```
 
-
-There are other ways we can control how each layer is rendered. Let's start with controlling "scales". Scales allow us to edit specific elements of the aesthetics and are named in a uniform manner than describes how they act and what they affect. The names are made up of three pieces separated by "_":
+There are other ways we can control how each layer is rendered. Let's start with controlling "scales". Scales allow us to edit specific elements of the aesthetics and are named in a uniform manner than describes how they act and what they affect. The names are made up of three pieces separated by "\_":
 
 -   `scale`
 -   the name of the aesthetic (e.g. `color`, `shape`, `size`, etc.)
 -   the name of the scale (e.g. `manual`, `continuous`, `discrete`, etc.)
 
-Within the scales there are several options we can edit: 
+Within the scales there are several options we can edit:
 
-- `name =` this controls what the variable is called within the plot or legend 
-- `values =` this allows us to manually input the variables (i.e. colors or shapes) used in the plot 
-- `labels =` this controls the data labels (i.e. species names) in the plot or legend
+-   `name =` this controls what the variable is called within the plot or legend
+-   `values =` this allows us to manually input the variables (i.e. colors or shapes) used in the plot
+-   `labels =` this controls the data labels (i.e. species names) in the plot or legend
 
 Let's use `scale_color_manual` to manually select some colors for our plot.
 
@@ -241,7 +237,6 @@ ggplot(data = iris,
 multiColor
 ```
 
-
 Now we have some different colors and data labels in our plot of the Iris data. The `name` and `labels` options in the `scale` are useful for changing how the data are labeled in your plot *without* needing to manipulate the raw data.
 
 We can also use continuous color scales to visually represent changes in values:
@@ -255,7 +250,6 @@ ggplot(data = iris,
 
 blueCont
 ```
-
 
 You can also use other variables within the dataframe to control the aesthetics of the plot.
 
@@ -271,7 +265,6 @@ ggplot(data = iris,
   scale_color_gradient(high = "purple",
                        low = "orange") # manually set the colors of the gradient scale
 ```
-
 
 Obviously there is a little too much data now contained in this plot for it to be particularly useful, but it is a good example of how much data you can display and the different ways you can present it using `R`.
 
@@ -303,7 +296,6 @@ ggplot(data = iris,
 multiColorTidy
 ```
 
-
 Perfect! Now we can write our plot to a pdf:
 
 ```{r}
@@ -316,7 +308,6 @@ multiColorTidy # tell R which plot to write to file
 dev.off() # this tells R that you're done creating a file
 ```
 
-
 Or we can use `ggsave()`, which is a function of `ggplot2` to save as any other graphics file type:
 
 ```{r}
@@ -327,7 +318,6 @@ ggsave(plot = multiColorTidy, # specify plot
        units = c("in"), # specify which units to use for height and width
        device = "tiff") # specify file type for saving - ggsave will also guess depending on the extension used in file name 
 ```
-
 
 #### Plotting group means and error bars
 
@@ -342,8 +332,7 @@ ggplot(data = iris,
   geom_point()
 ```
 
-
-You can see that `geom_boxplot` has automatically generated a box that displays the median (thick line) and box that spans the 25th - 75th percentiles, with whiskers that extend to the furthest value no more than 1.5 X the IQR from the box. Values beyond the whiskers would be counted as outliers and plotted separately. This is great for taking a quick summary look at your data. 
+You can see that `geom_boxplot` has automatically generated a box that displays the median (thick line) and box that spans the 25th - 75th percentiles, with whiskers that extend to the furthest value no more than 1.5 X the IQR from the box. Values beyond the whiskers would be counted as outliers and plotted separately. This is great for taking a quick summary look at your data.
 
 But what if we want to use something like `geom_bar()` that does not have built in group functionality?
 
@@ -357,7 +346,6 @@ iris %>%
 
 head(irisSummary)
 ```
-
 
 We can use the `summarise` function to create a new dataframe that contains a mean and standard deviation for each species. We can write this to a new object and then use this for plotting by providing each `geom` with a different dataframe.
 
@@ -381,10 +369,9 @@ ggplot() + # we do not want global mapping or data for this plot so none is put 
               shape = 1) # set the shape to open circle
 ```
 
-
 Now we can see both the mean and individual values on our bar plot.
 
-Another, more streamlined, way of doing this is using `stat_summary`, where we remove the need to create a separate dataframe by using functions within the `ggplot` package. 
+Another, more streamlined, way of doing this is using `stat_summary`, where we remove the need to create a separate dataframe by using functions within the `ggplot` package.
 
 ```{r}
 ggplot(data = iris,
@@ -403,7 +390,6 @@ ggplot(data = iris,
               width = 0.2)
 ```
 
-
 Voilà! We have *almost* same plot as above but with a step removed. However, you may have noticed that we used function `mean_se`, which calculates the mean and standard error for a vector of `y` values at each unique `x` value (*i.e.* the function receives a vector of values for Petal.Length for each Species) and most of the time we like to use standard deviation. `stat_summary` does not offer this function as part of the package - so what do we do? Create our own.
 
 ```{r}
@@ -413,7 +399,6 @@ mean.sd <- function(x){
          ymax = y + sd(x)) # calculates the maximum value for error bar
 }
 ```
-
 
 Now we can create our plot:
 
@@ -446,7 +431,6 @@ Let's pull up another of `R`'s built-in datasets (mtcars) that will allow us to 
 head(mtcars)
 ```
 
-
 Let's look at mpg (Miles per US Gallon) plotted against hp (Gross horsepower).
 
 ```{r}
@@ -456,7 +440,6 @@ ggplot(data = mtcars,
            color = mpg)) +
   geom_point(size = 3)
 ```
-
 
 Now let's use `facet_wrap()` to split these data up by vs (Enginge shape, 0 = V, 1 = straight).
 
@@ -469,7 +452,6 @@ ggplot(data = mtcars,
   facet_wrap(~ vs)
 ```
 
-
 Let's add another variable facet with `facet_grid()` and split the data by am (Transmission, 0 = automatic, 1 = manual) as well.
 
 ```{r}
@@ -481,7 +463,6 @@ ggplot(data = mtcars,
   facet_grid(cols = vars(vs), # assign a variable to the column panels
              rows = vars(am)) # assign a variable to the row panels
 ```
-
 
 We can see that there are different correlations between hp and mpg depending on the other qualities of the car. However, this plot is now difficult to read because both variables are binaries, meaning it's hard to tell what's what. Let's tidy up these plots and add some labels.
 
@@ -507,7 +488,6 @@ ggplot(data = mtcars,
 facetPlot
 ```
 
-
 Let's tidy the rest of this plot up and then save it to file.
 
 ```{r}
@@ -522,7 +502,6 @@ facetPlot +
 
 facetPlotTidy
 ```
-
 
 Now we can use the same methods as earlier to save our plot to either a PDF or image file (or both!).
 
@@ -545,7 +524,6 @@ ggsave(plot = facetPlotTidy, # specify plot
        device = "tiff") # specify file type for saving - ggsave will also guess depending on the extension used in file name
 ```
 
-
 #### Plotting a time course
 
 For many experiments, it's important to be able to plot a time course. Let's load in some example colony count data from an experiment growing four species of bacteria in both high and low iron conditions, with time points at 0, 6, and 24 hours.
@@ -554,15 +532,13 @@ For many experiments, it's important to be able to plot a time course. Let's loa
 read.csv("cfu_counts_raw.csv") -> counts # read in counts
 ```
 
-
 Let's take a quick look at the format of the data we just loaded and check that the format looks correct for plotting.
 
 ```{r}
 head(counts)
 ```
 
-
-Our dataframe has columns as **variables** and rows as **observations** so we're good to go! 
+Our dataframe has columns as **variables** and rows as **observations** so we're good to go!
 
 In order to plot a time course as a discrete variable that runs along the x axis, we need to change the `time` variable from numeric to a factor in both the raw counts and group means dataframes. Factors can help us control the order in which observations are plotted. By default, ggplot will plot numeric variables in ascending order and character or factor variables in alphabetical order. So, we'll also set the iron level as a factor because I want to plot the low iron condition *before* the high iron condition.
 
@@ -573,7 +549,6 @@ counts$iron <- factor(counts$iron,
                       levels = c("Low iron","High iron"))
 ```
 
-
 Now we can set our custom colors for the plot.
 
 ```{r}
@@ -582,7 +557,6 @@ speciesCols <- c("Pseudomonas aeruginosa" = "#43ba8f",
             "Streptococcus sanguinis" = "#4292c6",
             "Burkholderia orbicola" = "#d57bd4")
 ```
-
 
 Let's create a line plot of log10 CFU/mL per species over time, with facets showing the high and low iron. We will plot a ribbon that represents the standard deviation (`sd`), thin lines that represent each replicate (`tech.rep`), and a thick line representing the mean CFU/mL for each species (`mean.cfu`). We'll utilize the `stat_summary` function that we saw earlier.
 
@@ -624,7 +598,6 @@ counts %>%
         axis.title.y = element_markdown()) # allow axis title to read html code for subscript
 ```
 
-
 ### Activities
 
 #### Green 1
@@ -635,7 +608,6 @@ Create a scatter plot using the columns Sepal.Length (x) and Sepal.Width (y) fro
 
 ```
 
-
 #### Green 2
 
 Make a plot where all the points are green, and the line is colored by the species of iris.
@@ -643,7 +615,6 @@ Make a plot where all the points are green, and the line is colored by the speci
 ```{r}
 
 ```
-
 
 #### Blue 1
 

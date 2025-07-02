@@ -1,3 +1,0 @@
-"0","par(mfrow = c(2, 2))"
-"0",""
-"0","hist(iris$Sepal.Length, main = ""Sepal Length"", xlab = ""Length"")"

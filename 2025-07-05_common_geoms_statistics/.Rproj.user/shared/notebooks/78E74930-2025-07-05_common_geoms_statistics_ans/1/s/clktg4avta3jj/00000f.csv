@@ -1,3 +1,0 @@
-"0","ggplot(data = iris,"
-"0","       aes(x = Petal.Length)) +"
-"0","  geom_histogram(aes(fill = Species))"

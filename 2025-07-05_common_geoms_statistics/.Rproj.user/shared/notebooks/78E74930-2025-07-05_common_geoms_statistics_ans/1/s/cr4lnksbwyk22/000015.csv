@@ -1,8 +1,0 @@
-"0",""
-"0","ggplot(data = gapminder, "
-"0","       aes(x = gdpPercap, "
-"0","           y = lifeExp )) +"
-"0","  geom_bin2d() +"
-"0","  scale_fill_viridis_c() + # this is a color-blind friendly color scale"
-"0","  facet_grid(rows = vars(continent), "
-"0","             scales=""free_y"")"

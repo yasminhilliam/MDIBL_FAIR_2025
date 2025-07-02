@@ -1,6 +1,0 @@
-"0","ggplot(data = iris,"
-"0","       aes(x = Petal.Length)) +"
-"0","  geom_histogram("
-"0","    aes(fill = Species),"
-"0","    color = ""black"" # adds black outline to all bars"
-"0","  ) -> iris_histo"

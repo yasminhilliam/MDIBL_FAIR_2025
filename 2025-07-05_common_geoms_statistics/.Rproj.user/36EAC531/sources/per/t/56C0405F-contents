@@ -5,8 +5,7 @@ date: "2025-07-05"
 output: html_notebook
 ---
 
-
-This session will continue to explore the uses of `ggplot2` and other packages that can improve your data visualization and statistical analyses. 
+This session will continue to explore the uses of `ggplot2` and other packages that can improve your data visualization and statistical analyses.
 
 Let's load the required packages
 
@@ -29,7 +28,6 @@ library(ggridges)
 library(ggreveal)
 ```
 
-
 Now that we understand the building blocks that go into creating a plot with `ggplot` we can make our lives easier by setting a universal theme at the top of our script that will help keep our figures looking consistent.
 
 ```{r}
@@ -46,10 +44,9 @@ theme_replace( # sets individual plot elements without overwriting theme
 )
 ```
 
+You can still manually set all of these plot elements in the plot code itself, but this means that every plot we make shouldn't require quite so much coding to create a consistent visual style.
 
-You can still manually set all of these plot elements in the plot code itself, but this means that every plot we make shouldn't require quite so much coding to create a consistent visual style.  
-
-#### Create histograms, density plots, and violin plots
+#### Create histograms and violin plots to examine distribution
 
 Let's look at the basic scatter plot we created before using the Iris dataset.
 
@@ -60,14 +57,13 @@ ggplot(data = iris,
   geom_point(aes(color = Species))
 ```
 
-
 Histograms offer several benefits in data analysis and visualization. They're an important part of exploratory analysis of your data.
 
-- Visualizing Distribution and Symmetry: Histograms provide a visual representation of the distribution of a dataset. They allow you to see the shape, center, and spread of the data. By examining the histogram, you can quickly identify if the data are skewed, symmetric, or bimodal, which can provide insights into the underlying patterns and characteristics of the data. Understanding the skewness of the data can guide decisions regarding appropriate statistical methods and data transformations.
+-   Visualizing Distribution and Symmetry: Histograms provide a visual representation of the distribution of a dataset. They allow you to see the shape, center, and spread of the data. By examining the histogram, you can quickly identify if the data are skewed, symmetric, or bimodal, which can provide insights into the underlying patterns and characteristics of the data. Understanding the skewness of the data can guide decisions regarding appropriate statistical methods and data transformations.
 
-- Identifying Outliers: Histograms can help identify potential outliers or unusual observations in the data. Outliers appear as bars that are significantly separated from the main distribution or as isolated bars with very low frequencies. Detecting outliers is important for understanding data quality and assessing the impact they may have on statistical analyses.
+-   Identifying Outliers: Histograms can help identify potential outliers or unusual observations in the data. Outliers appear as bars that are significantly separated from the main distribution or as isolated bars with very low frequencies. Detecting outliers is important for understanding data quality and assessing the impact they may have on statistical analyses.
 
-- Data Exploration and Comparison: Histograms allow for the exploration and comparison of multiple variables or subgroups within a dataset. By creating separate histograms for different groups or categories, you can visually compare their distributions and understand the similarities or differences between them.
+-   Data Exploration and Comparison: Histograms allow for the exploration and comparison of multiple variables or subgroups within a dataset. By creating separate histograms for different groups or categories, you can visually compare their distributions and understand the similarities or differences between them.
 
 Let's plot a basic histogram of `Petal.Length`, colored by `Species`
 
@@ -76,7 +72,6 @@ ggplot(data = iris,
        aes(x = Petal.Length)) +
   geom_histogram(aes(fill = Species))
 ```
-
 
 We'll add black outlines to the bars to make them easier to see
 
@@ -89,7 +84,6 @@ ggplot(data = iris,
   ) -> iris_histo
 ```
 
-
 Split the histogram into facets per species.
 
 ```{r}
@@ -100,10 +94,43 @@ iris_histo +
   facet_grid(rows = vars(Species)) # this wraps the data in rows
 ```
 
+Plot the Sepal length per species as a violin plot
+
+```{r}
+ggplot(data = iris,
+       aes(x = Species,
+           y = Sepal.Length,
+           fill = Species)) +
+  geom_violin()
+```
+
+Let's add quantile information to our plots
+
+```{r}
+ggplot(data = iris,
+       aes(x = Species,
+           y = Sepal.Length,
+           fill = Species)) +
+  geom_violin(draw_quantiles = c( # draws quantile lines
+    0.25,0.5,0.75
+  ))
+```
+
+Let's tidy the plot up a little bit! 
+
+```{r}
+ggplot(data = iris,
+       aes(x = Species,
+           y = Sepal.Length,
+           fill = Species)) +
+  geom_violin(alpha = 0.5,
+              draw_quantiles = c(0.25,0.5,0.75)) +
+  labs(y = "Sepal length (mm)")
+```
 
 #### Checking the normality of data
 
-We can check normality of data using the Shapiro-Wilk Test. The `shapiro.test` function takes a single numeric vector as its argument and returns the result of Shapiro-Wilk test. The test evaluates the null hypothesis that the population from which the data are drawn is normally distributed. A P-value less than the significance level (usually 0.05) suggests that the data are **not** normally distributed. 
+We can check normality of data using the Shapiro-Wilk Test. The `shapiro.test` function takes a single numeric vector as its argument and returns the result of Shapiro-Wilk test. The test evaluates the null hypothesis that the population from which the data are drawn is normally distributed. A P-value less than the significance level (usually 0.05) suggests that the data are **not** normally distributed.
 
 ```{r}
 lapply(iris[,1:4], # use lapply to apply the shapiro.test function to multiple columns
@@ -114,9 +141,7 @@ names(normality_tests) <- colnames(iris[, 1:4])
 print(normality_tests)
 ```
 
-
-According to these test results, our only normally distributed data are the Sepal.Width measurements. 
-Let's check this by plotting histograms for each variable using `hist()`. The `par(mfrow = c(2,2))` command sets up a 2 x 2 grid layout for the histograms, allowing them to be displayed in separate panels.
+According to these test results, our only normally distributed data are the Sepal.Width measurements. Let's check this by plotting histograms for each variable using `hist()`. The `par(mfrow = c(2,2))` command sets up a 2 x 2 grid layout for the histograms, allowing them to be displayed in separate panels.
 
 ```{r}
 par(mfrow = c(2, 2))
@@ -129,7 +154,6 @@ hist(iris$Petal.Length, main = "Petal Length", xlab = "Length")
 
 hist(iris$Petal.Width, main = "Petal Width", xlab = "Width")
 ```
-
 
 A slightly more attractive (but possibly less informative) way to visualize this data is using density ridges from `ggridges`.
 
@@ -155,18 +179,17 @@ iris %>%
                                 "Sepal.Width" = "Sepal Width"))
 ```
 
-
 #### Other density plots
 
 Another way to visualize your data is using density plots, also known as kernel density plots. There are several benefits to visualizing your data through density plots:
 
-- Visualize distribution: Density plots provide a smooth, continuous estimate of the underlying probability density function (PDF) of a variable. Unlike histograms, which use discrete bins, density plots show the shape of the distribution without the binning bias. They provide a more detailed and nuanced representation of the data distribution.
+-   Visualize distribution: Density plots provide a smooth, continuous estimate of the underlying probability density function (PDF) of a variable. Unlike histograms, which use discrete bins, density plots show the shape of the distribution without the binning bias. They provide a more detailed and nuanced representation of the data distribution.
 
-- Non-Parametric Estimation: Density plots do not assume a specific distributional form for the data. They are non-parametric and estimate the density function based on the observed data points. This flexibility makes them suitable for exploring and visualizing data that may not adhere to a specific distribution.
+-   Non-Parametric Estimation: Density plots do not assume a specific distributional form for the data. They are non-parametric and estimate the density function based on the observed data points. This flexibility makes them suitable for exploring and visualizing data that may not adhere to a specific distribution.
 
-- Comparison and Overlapping Distributions: Density plots make it easy to compare multiple distributions or visualize the overlap of different groups. By using different colors or line types, you can distinguish and compare distributions visually. This is particularly useful for identifying differences, similarities, or shifts in distributions across different groups or variables.
+-   Comparison and Overlapping Distributions: Density plots make it easy to compare multiple distributions or visualize the overlap of different groups. By using different colors or line types, you can distinguish and compare distributions visually. This is particularly useful for identifying differences, similarities, or shifts in distributions across different groups or variables.
 
-- Communicating Findings: Density plots provide an effective way to communicate distributional characteristics and patterns to others. They offer a visually appealing and intuitive representation of data distributions, making it easier for others to grasp the underlying shape and variability.
+-   Communicating Findings: Density plots provide an effective way to communicate distributional characteristics and patterns to others. They offer a visually appealing and intuitive representation of data distributions, making it easier for others to grasp the underlying shape and variability.
 
 ```{r}
 ggplot(data = gapminder, 
@@ -187,14 +210,13 @@ ggplot(data = gapminder,
   )
 ```
 
-
 #### Adding statistics to your plots
 
-`ggplot` has arguments for completing simple statistical tests through the extension `ggpubr`. 
+`ggplot` has arguments for completing simple statistical tests through the extension `ggpubr`.
 
 `ggpubr` offers additional functions and utilities for data visualization and statistical analysis, specifically designed to work seamlessly with `ggplot2`. Let's add statistics to some box plots. Here we will compare mean life expectancy between continents using the `gapminder` dataset.
 
-Reference: http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/76-add-p-values-and-significance-levels-to-ggplots/#google_vignette
+Reference: <http://www.sthda.com/english/articles/24-ggpubr-publication-ready-plots/76-add-p-values-and-significance-levels-to-ggplots/#google_vignette>
 
 First we need to check the normality of our data
 
@@ -202,11 +224,9 @@ First we need to check the normality of our data
 shapiro.test(gapminder$lifeExp)
 ```
 
-
 Our P value is *much* lower than the 0.05 cutoff value which means our data are not normally distributed, so we need to take that into account when choosing a statistical test.
 
-What test would you use to compare means across continents if the data *were* normally distributed? 
-
+What test would you use to compare means across continents if the data *were* normally distributed?
 
 ```{r}
 ggplot(data = gapminder,
@@ -239,7 +259,6 @@ ggplot(data = gapminder,
   )
 ```
 
-
 Our Kruskal-Wallis test tells us that there is a significant difference between groups, but not between which groups. If our data were normal and we performed an ANOVA we would perform a post-hoc test. Instead, we can use a pairwise Wilcoxon rank sum test.
 
 ```{r}
@@ -248,12 +267,11 @@ pairwise.wilcox.test(gapminder$lifeExp,
                      p.adjust.method = "BH")
 ```
 
-
 Now we can see that all continents are significantly different from one another!
 
 #### Preparing plots for presentation
 
-Sometimes we have very busy plots that would benefit from being revealed in sequence as part of storytelling in a presentation. For that, we can use `ggreveal`, which allows us to reveal parts of a plot sequentially and save each intermediate step for use. Let's look at the changes in life expectancy over several decades. 
+Sometimes we have very busy plots that would benefit from being revealed in sequence as part of storytelling in a presentation. For that, we can use `ggreveal`, which allows us to reveal parts of a plot sequentially and save each intermediate step for use. Let's look at the changes in life expectancy over several decades.
 
 ```{r}
 gapminder %>%
@@ -271,7 +289,6 @@ gapminder %>%
   scale_fill_discrete(name = "Year") -> life_exp
 ```
 
-
 Now that we've created our life expectancy plot we can choose how to reveal the layers.
 
 ```{r}
@@ -280,7 +297,6 @@ reveal_aes(life_exp,
 
 plot_list
 ```
-
 
 You can click through the different plots that `ggreveal` has made. Now let's save all these plots individually.
 
@@ -291,8 +307,7 @@ reveal_save(
 )
 ```
 
-
-### Activities 
+### Activities
 
 #### Green 1
 
@@ -304,7 +319,6 @@ Perform normality tests on the gapminder dataset. Look specifically at the norma
 
 ```
 
-
 #### Green 2
 
 Create a histogram using the `diamonds` data set. Facet so that they are aligned vertically.
@@ -312,7 +326,6 @@ Create a histogram using the `diamonds` data set. Facet so that they are aligned
 ```{r}
 
 ```
-
 
 #### Blue 1
 
@@ -322,7 +335,6 @@ Create a 2D bin (density) plot showing GDP Per Capita and Life Expectancy using 
 
 ```
 
-
 #### Blue 2
 
 Now add density lines to your plot using `geom_density2d()`.
@@ -331,22 +343,19 @@ Now add density lines to your plot using `geom_density2d()`.
 
 ```
 
-
 #### Black 1
 
-Using the gapminder data, use one or more techniques to show the distribution of Life Expectancy over time for each continent. 
+Using the gapminder data, use one or more techniques to show the distribution of Life Expectancy over time for each continent.
 
-**Hint: Explore the geoms we've used to day, or try a new one!**
-You can look up all available geoms here: https://ggplot2.tidyverse.org/reference/index.html
+**Hint: Explore the geoms we've used to day, or try a new one!** You can look up all available geoms here: <https://ggplot2.tidyverse.org/reference/index.html>
 
 ```{r}
 
 ```
 
-
 #### Black 2
 
-Visualize specific comparisons between continents and label with brackets and P values or significance markers. 
+Visualize specific comparisons between continents and label with brackets and P values or significance markers.
 
 **Hint: use the reference above to work out how to do this**
 

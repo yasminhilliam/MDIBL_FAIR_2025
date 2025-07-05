@@ -441,7 +441,7 @@ ggplot(data = mtcars,
   geom_point(size = 3)
 ```
 
-Now let's use `facet_wrap()` to split these data up by vs (Enginge shape, 0 = V, 1 = straight).
+Now let's use `facet_wrap()` to split these data up by vs (Engine shape, 0 = V, 1 = straight).
 
 ```{r}
 ggplot(data = mtcars,
@@ -623,3 +623,19 @@ Make a plot that includes regression lines for individual species as well as the
 ```{r}
 
 ```
+
+
+
+```{r}
+iris %>%
+  pivot_longer(cols = 1:4,
+               names_to = "measurement",
+               values_to = "mm") %>%
+  group_by(Species,measurement) %>%
+  summarise(mean = mean(mm)) %>%
+  ggplot(aes(x = measurement,
+             y = mean,
+             fill = Species)) +
+  geom_col(position = "dodge")
+```
+

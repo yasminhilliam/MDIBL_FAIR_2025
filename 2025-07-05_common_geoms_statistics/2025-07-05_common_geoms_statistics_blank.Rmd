@@ -116,7 +116,7 @@ ggplot(data = iris,
   ))
 ```
 
-Let's tidy the plot up a little bit! 
+Let's tidy the plot up a little bit!
 
 ```{r}
 ggplot(data = iris,

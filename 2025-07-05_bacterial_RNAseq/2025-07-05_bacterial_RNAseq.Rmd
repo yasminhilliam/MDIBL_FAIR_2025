@@ -69,7 +69,7 @@ mkdir trimmed_reads
 cd trimmed_reads
 
 # create symlinks
-lm -s /data/workshop-00/bact_raw/1-CL1_TAACTTGG-GTCGTGAA_L004_R1_001.fastq.gz S1_R1.fastq.gz
+ln -s /data/workshop-00/bact_raw/1-CL1_TAACTTGG-GTCGTGAA_L004_R1_001.fastq.gz S1_R1.fastq.gz
 
 ln -s /data/workshop-00/bact_raw/1-CL1_TAACTTGG-GTCGTGAA_L004_R1_001.fastq.gz S1_R2.fastq.gz
 
@@ -123,7 +123,7 @@ Now we have an index we can align to, so we can use `HISAT2` to generate a .sam 
 mkdir aligned_reads
 
 # use hisat2 function to perform alignment
-hisat2 -p 16 -q --phred33 --summary-file /data/ws08/aliged_reads/S1_alignment_summary.txt -x /data/ws08/build/PAO1 -1 /data/ws08/trimmed_reads/S1_R1.fastq.gz -2 /data/ws08/trimmed_reads/S1_R1.fastq.gz -S /data/ws08/aliged_reads/S1_aligned.reads.sam
+hisat2 -p 16 -q --phred33 --summary-file aligned_reads/S1_alignment_summary.txt -x build/PAO1 -1 trimmed_reads/S1_R1.fastq.gz -2 trimmed_reads/S1_R1.fastq.gz -S aligned_reads/S1_aligned.reads.sam
 
 # navigate to aligned_reads directory
 cd aligned_reads
@@ -141,7 +141,7 @@ Now we have a .sam file containing our alignments that we can feed into `HTSeq` 
 mkdir htseq
 
 # count reads
-htseq-count -f sam -t gene -i locus_tag /data/ws08/aligned_reads/S1_aligned.reads.sam /data/ws08/ncbi_dataset/data/GCF_000006765.1/genomic.gff > /data/ws08/htseq/S1_counts.tsv
+htseq-count -f sam -t gene -i locus_tag aligned_reads/S1_aligned.reads.sam ncbi_dataset/data/GCF_000006765.1/genomic.gff > htseq/S1_counts.tsv
 ```
 
 #### In the terminal: transfer results file from cluster to local machine
@@ -183,7 +183,7 @@ Load text file into UniProt, download desired column information.
 Import UniProt data into R
 
 ```{r}
-read.table("idmapping_2025_06_30.tsv",
+read.table("idmapping_2025_07_05.tsv",
            sep = "\t",
            header = TRUE,
            fill = TRUE) %>%

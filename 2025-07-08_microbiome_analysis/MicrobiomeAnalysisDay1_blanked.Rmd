@@ -1,0 +1,316 @@
+---
+title: "MicrobiomeAnalysisDay1_DADA2"
+author: "Yasmin Hillilam, PhD and Rebecca Valls, PhD"
+date: "2025-7-08"
+output: html_document
+---
+
+------------------------------------------------
+References: 
+
+DADA2 Info: https://benjjneb.github.io/dada2/index.html
+Taxonomic References: https://zenodo.org/record/4587955#.ZCsPZezML0o
+
+## Sequences
+This tutorial begins with sequence files that have already been trimmed of artifacts and primers and split into paired forward and reverse reads. The sequencing facility should provide information on how the sequences have been processed.
+
+Sequencing Information from SeqCoast: Samples were prepared using Zymo Research’s Quick-16S Plus NGS Library Prep kit with phased primers targeting the V3/V4 regions of the 16S gene. Sequencing was performed on the Illumina NextSeq2000 platform using a 600 cycle flow cell kit to produce 2x300bp paired reads. 30-40% PhiX control (unindexed) was spiked into the library pool to support optimal base calling of low diversity libraries on patterned flow cells.
+
+Read demultiplexing, read trimming, and run analytics were performed using DRAGEN v3.10.12, an on-board analysis software on the NextSeq2000. 
+
+The fastq file naming convention is OrderNumber_SeqCoastTubeID_IlluminaSampleSheetID_Read1orRead2. The SeqCoast Tube ID will match up with the sample manifest so that you know which files belongs to which sample. The Illumina Sample Sheet ID is an internal identifier for the sequencer, and R1/R2 tells you which of the paired reads was sequenced first.
+
+We will be using DADA2, where the input are your paired end read fastq files and the output will be ASV tables with all samples that can then be used to analyze your microbiome data.
+
+## Samples
+These samples are from a mouse experiment. Stool was collected from three treatment groups of mice at four different time points. The three treatment groups of mice were (1) Baseline, (2) mice treated with antibiotics and gavaged with (2) PBS or (3) 3 Bacteroides strains. The four time points were stool collected from mice at (1) baseline, (2) during antibiotic treatment, (3) right after the gavage, and (4) right after pulmonary LPS challenge. 
+
+
+
+# Libraries
+Here we load the libraries needed to run the code
+```{r}
+
+#if (!requireNamespace("BiocManager", quietly = TRUE))
+#    install.packages("BiocManager")
+#BiocManager::install("dada2")
+library(dada2)
+
+#Alternative method to download dada2
+#install.packages("devtools")
+#library("devtools")
+
+#devtools::install_github("benjjneb/dada2", ref="v1.16") # change the ref argument to get other versions
+#library("dada2"); packageVersion("dada2")
+
+```
+
+# Quality
+Here we check the quality of our sequences so that we know how to trim our reads.
+Make sure you are in the directory with your fastq sequences and the silva reference.
+```{r}
+
+#Set the filepath to your working directory
+path <- getwd()
+
+#List the filepath to your working directory
+list.files(path)
+
+
+# Forward and reverse fastq filenames have format: 
+#OrderNumber_SeqCoastTubeID_IlluminaSampleSheetID_R1_001.fastq and SAMPLENAME_R2_001.fastq
+#Sort forward file names
+fnFs <- sort(list.files(path, pattern="_R1_001.fastq.gz", full.names = TRUE))
+head(fnFs)  # Show the first few forward file names
+length(fnFs) # Display the number of forward file names
+
+#Sort reverse file names
+fnRs <- sort(list.files(path, pattern="_R2_001.fastq.gz", full.names = TRUE))
+head(fnRs)
+length(fnRs) #helpful when you have dozens or 100s of samples and want to make sure you have the same amount of F as R
+
+#This will return a single sample name for each pair of Forward and Reverse reads
+sample.names <- sapply(strsplit(basename(fnFs), "_R"), `[`,1)
+head(sample.names) # Show the first few sample names
+length(sample.names) # Display the number of sample names
+
+#Visualize quality profiles of forward & reverse  reads
+pdf(file = "QualF.pdf",
+    width = 10,
+    height = 5)
+plotQualityProfile(fnFs[1:2]) # Plot quality profiles for the first 2 forward reads
+dev.off()
+
+#In gray-scale is a heat map of the frequency of each quality score at each base position. The mean quality score at each position is shown by the green line, and the quartiles of the quality score distribution by the orange lines. The red line shows the scaled proportion of reads that extend to at least that position (this is more useful for other sequencing technologies, as Illumina reads are typically all the same length, hence the flat red line).
+
+pdf(file = "QualR.pdf",
+    width = 10,
+    height = 5)
+plotQualityProfile(fnRs[1:5])
+dev.off()
+
+#The reverse reads are of significantly worse quality, especially at the end, which is common in Illumina sequencing. This isn’t too worrisome, as DADA2 incorporates quality information into its error model which makes the algorithm robust to lower quality sequence, but trimming as the average qualities crash will improve the algorithm’s sensitivity to rare sequence variants. Based on these profiles, we will truncate the reverse reads at position 280 where the quality distribution crashes.
+
+
+```
+
+# Filter and trim
+Now that you see the quality of your reads, you can decide where to truncate.
+```{r}
+# Place filtered files in a "filtered" subdirectory
+# Explanation:
+# - `file.path()` creates a file path by concatenating the components (path, directory name, and file name).
+# - `path` represents the working directory.
+# - "filtered" is the subdirectory name where the filtered files will be placed.
+# - `paste0()` concatenates the sample names with "_F_filt.fastq.gz" to form the file names for the filtered forward reads.
+# - The resulting `filtFs` variable holds the file paths for the filtered forward reads.
+filtFs <- file.path(path, "filtered", paste0(sample.names, "_F_filt.fastq.gz"))
+filtRs <- file.path(path, "filtered", paste0(sample.names, "_R_filt.fastq.gz"))
+
+# Assign sample names to the filtered forward and reverse read file paths
+names(filtFs) <- sample.names
+names(filtRs) <- sample.names
+
+# Show the first few sample names with their paths
+head(filtFs)
+head(filtRs)
+
+#trim Forward reads at the 290 bp and rev reads at the 280
+out <- filterAndTrim(fnFs, #file path to the directory containing the forward fastq files
+                     filtFs, #the path to the directory that will contain output filtered forward files
+                     fnRs,  #file path to the directory containing the reverse fastq files
+                     filtRs, #the path to the directory that will contain output filtered reverse files
+                     truncLen=c(290,280), #default is 0 (no truncation). Truncate reads after truncLen bases.
+                     maxN=0, #used to control the maximum number of ambiguous base calls (N) allowed in a read. After truncation, sequences with more than maxN Ns will be discarded. DADA2 requires no Ns
+                     maxEE=c(2,2), #sets maximum number of "expected errors" for (F,R) reads
+                     truncQ=2, #truncate reads at the fist instance of a quality score less than or equal to truncQ
+                     rm.phix=TRUE, #If TRUE, discard reads that match against the phiX genome, as determined by isPhiX. This is commonly used as a control for illumina sequencing runs.
+                     compress=TRUE, #output files are gzipped
+                     multithread=TRUE) # On Windows set multithread=FALSE. Input files are filtered in parallel
+#See how many reads were filtered out
+head(out)
+
+
+
+```
+### Considerations for your own data: 
+Your reads must still overlap after truncation in order to merge them later! The tutorial is using 2x301 V3-V4. Your truncLen must be large enough to maintain 20 + biological.length.variation nucleotides of overlap between them.
+
+#### What happens if you truncate too much? ##
+If sequences are truncated too aggressively, it can lead to the loss of valuable information. Truncation removes bases from the ends of the sequences, which can include important regions for taxonomic classification or functional analysis.
+
+Truncating too much may result in shorter sequences, reducing the overlap between reads and potentially impacting the accuracy of subsequent steps, such as alignment or chimera detection.
+
+Moreover, if truncation is excessively aggressive, it can lead to a higher number of low-quality reads being retained, affecting downstream analyses.
+
+#### What happens if you truncate too little? ##
+If sequences are not truncated enough, it can result in the retention of low-quality bases, including regions with sequencing errors or artifacts. This can introduce noise into the data and impact the accuracy of downstream analyses.
+
+Insufficient truncation may also lead to longer sequences with a higher likelihood of including chimeric sequences, which can affect diversity estimates and taxonomic assignments.
+
+# Learn the error rates
+The DADA2 algorithm makes use of a parametric error model (err) and every amplicon dataset has a different set of error rates. The learnErrors method learns this error model from the data, by alternating estimation of the error rates and inference of sample composition until they converge on a jointly consistent solution. As in many machine-learning problems, the algorithm must begin with an initial guess, for which the maximum possible error rates in this data are used (the error rates if only the most abundant sequence is correct and all the rest are errors).
+
+Accounting for the error rates, DADA2 can improve the quality of the inferred sequence variants (amplicon sequence variants or ASVs) and enhance the reliability of downstream analysis. By estimating error rates, DADA2 can better distinguish genuine biological sequence variants from artifacts introduced during the sequencing process. This improves the accuracy of variant inference and reduces the risk of false positives or erroneous interpretations.Assessing error rates helps optimize the sensitivity of DADA2 to rare sequence variants. Monitoring error rates serves as a quality control measure. Elevated error rates could indicate issues with sequencing or sample quality, highlighting the need for further investigation or potential data filtering.
+
+It is always worthwhile, as a sanity check if nothing else, to visualize the estimated error rates:
+```{r}
+#This takes a little <5min each
+#Option to increase nbases parameter
+errF <- learnErrors(filtFs, multithread=TRUE)
+errR <- learnErrors(filtRs, multithread = TRUE)
+
+#generate plots that show gray dots vs red line. you want gray dots to be along red line
+pdf(file = "errF.pdf",
+    width = 10,
+    height = 10)
+plotErrors(errF, nominalQ=TRUE)
+dev.off()
+ 
+pdf(file = "errR.pdf",
+    width = 10,
+    height = 10)
+plotErrors(errR, nominalQ=TRUE)
+dev.off()
+
+
+```
+
+The error rates for each possible transition (A→C, A→G, …) are shown. Points are the observed error rates for each consensus quality score. The black line shows the estimated error rates after convergence of the machine-learning algorithm. The red line shows the error rates expected under the nominal definition of the Q-score. Here the estimated error rates (black line) are a good fit to the observed rates (points), and the error rates drop with increased quality as expected. Everything looks reasonable and we proceed with confidence.
+
+
+
+#Sample inference
+We are now ready to apply the core sample inference algorithm to the filtered and trimmed sequence data.
+
+```{r}
+
+#sample inference
+dadaFs <- dada(filtFs, err=errF, multithread = TRUE)
+dadaRs <- dada(filtRs, err=errR, multithread = TRUE) 
+
+#Inspecting returned data-class object
+dadaFs[[1]]
+
+```
+
+
+# Merge paired reads
+
+We now merge the forward and reverse reads together to obtain the full denoised sequences. Merging is performed by aligning the denoised forward reads with the reverse-complement of the corresponding denoised reverse reads, and then constructing the merged “contig” sequences. By default, merged sequences are only output if the forward and reverse reads overlap by at least 12 bases, and are identical to each other in the overlap region (but these conditions can be changed via function arguments).
+```{r}
+#Merge paired reads
+mergers <- mergePairs(dadaFs, filtFs, dadaRs, filtRs, verbose=TRUE)
+
+#Construct sequence table 
+seqtab <- makeSequenceTable(mergers)
+dim(seqtab)
+write.csv(seqtab, "July08_2025_MicrobiomeAnalysisDay1_seqtab.csv")
+
+```
+
+# Remove chimeras
+
+The core dada method corrects substitution and indel errors, but chimeras remain. Fortunately, the accuracy of sequence variants after denoising makes identifying chimeric ASVs simpler than when dealing with fuzzy OTUs. Chimeric sequences are identified if they can be exactly reconstructed by combining a left-segment and a right-segment from two more abundant “parent” sequences.
+
+The frequency of chimeric sequences varies substantially from dataset to dataset, and depends on factors including experimental procedures and sample complexity. Here chimeras make up about 2% of the merged sequence variants, but when we account for the abundances of those variants we see they account for 73% of the merged sequence reads. Most of your reads should remain after chimera removal (it is not uncommon for a majority of sequence variants to be removed though). If most of your reads were removed as chimeric, upstream processing may need to be revisited. In almost all cases this is caused by primer sequences with ambiguous nucleotides that were not removed prior to beginning the DADA2 pipeline.
+ 
+
+```{r}
+#Remove chimeras 
+seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", multithread=TRUE, verbose=TRUE)
+
+```
+
+# Track reads through the pipeline
+```{r}
+getN <- function(x) sum(getUniques(x))
+track <- cbind(out, sapply(dadaFs, getN), sapply(dadaRs, getN), sapply(mergers, getN), rowSums(seqtab.nochim))
+
+
+# If processing a single sample, remove the sapply calls: e.g. replace sapply(dadaFs, getN) with getN(dadaFs)
+colnames(track) <- c("input", "filtered", "denoisedF", "denoisedR", "merged", "nonchim")
+rownames(track) <- sample.names
+head(track)
+
+
+
+#This is important for publication. It's usually required to provide input vs final reads analyzed.
+write.table(track, "July08_2025_MicrobiomeAnalysisDay1_track.tsv", sep="\t", quote=F, col.names=NA)
+
+
+```
+
+
+# Assign taxonomy
+It is common at this point, especially in 16S/18S/ITS amplicon sequencing, to assign taxonomy to the sequence variants. The DADA2 package provides a native implementation of the naive Bayesian classifier method for this purpose. The assignTaxonomy function takes as input a set of sequences to be classified and a training set of reference sequences with known taxonomy, and outputs taxonomic assignments with at least minBoot bootstrap confidence.
+
+We maintain formatted training fastas for the RDP training set, GreenGenes clustered at 97% identity, and the Silva reference database, and additional trainings fastas suitable for protists and certain specific environments have been contributed. 
+```{r}
+##DADA2 ##Silva
+taxa <- assignTaxonomy(seqtab.nochim, "silva_nr99_v138.2_toGenus_trainset.fa.gz", multithread=TRUE, tryRC=TRUE)
+
+taxa.print <- taxa # Removing sequence rownames for display only
+rownames(taxa.print) <- NULL
+head(taxa.print)
+
+```
+
+# Make final tables
+```{r}
+#making standard tables
+asv_seqs <- colnames(seqtab.nochim) # Getting the sequence headers from the seqtab.nochim object
+asv_headers <- vector(dim(seqtab.nochim)[2], mode="character") # giving our seq headers more manageable names (ASV_1, ASV_2...)
+
+# Generating the ASV headers using a for loop
+for (i in 1:dim(seqtab.nochim)[2]) {
+    asv_headers[i] <- paste(">ASV", i, sep="_")
+}
+
+# Creating a fasta file of the final ASV sequences
+asv_fasta <- c(rbind(asv_headers, asv_seqs))
+write(asv_fasta, "July08_2025_MicrobiomeAnalysisDay1_fasta.fa")
+
+# Creating the count table needed for phyloseq
+asv_tab <- t(seqtab.nochim)
+row.names(asv_tab) <- sub(">", "", asv_headers)
+write.table(asv_tab, "July08_2025_MicrobiomeAnalysisDay1_counts.tsv", sep="\t", quote=F, col.names=NA)
+
+# Creating the tax table needed for phyloseq
+# creating table of taxonomy and setting any that are unclassified as "NA"
+asv_tax <- taxa
+rownames(asv_tax) <- gsub(pattern=">", replacement="", x=asv_headers)
+
+write.table(asv_tax, "July08_2025_MicrobiomeAnalysisDay1_taxa.tsv", sep = "\t", quote=F, col.names=NA)
+
+##################################################################################################
+
+
+```
+
+#Activities
+
+
+#Green
+#1. What is the purpose of the dada2 package in microbiome analysis?
+
+#2. Describe the differentiating  naming convention for forward and reverse fastq files used in DADA2.
+
+#3. What does the plotQualityProfile function do in the DADA2 pipeline?
+
+#Blue
+#1. Explain the significance of trimming reads at specific positions during the DADA2 pipeline.
+
+#2. Why is it important for forward and reverse reads to overlap after truncation in DADA2?
+
+#3. How does the learnErrors function contribute to the DADA2 pipeline, and why is it important to visualize error rates?
+
+#Black
+
+#1. Discuss the potential consequences of truncating reads too aggressively or not enough in the DADA2 pipeline.
+
+#2. Explain the process and importance of removing chimeras in the DADA2 pipeline.
+
+#3. Describe how the assignTaxonomy function works and its role in assigning taxonomy to sequence variants.
+
+

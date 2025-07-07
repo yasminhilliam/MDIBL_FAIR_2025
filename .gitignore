@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 2025-06-29_overrepresentation_analysis/over-representation_analysis.pptx
+*.gz
+*.zip

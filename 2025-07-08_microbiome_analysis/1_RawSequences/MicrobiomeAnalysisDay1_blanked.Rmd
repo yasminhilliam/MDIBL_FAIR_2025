@@ -9,7 +9,7 @@ output: html_document
 References: 
 
 DADA2 Info: https://benjjneb.github.io/dada2/index.html
-Taxonomic References: https://zenodo.org/record/4587955#.ZCsPZezML0o
+Taxonomic References: https://zenodo.org/records/14169026
 
 ## Sequences
 This tutorial begins with sequence files that have already been trimmed of artifacts and primers and split into paired forward and reverse reads. The sequencing facility should provide information on how the sequences have been processed.
@@ -48,6 +48,7 @@ library(dada2)
 # Quality
 Here we check the quality of our sequences so that we know how to trim our reads.
 Make sure you are in the directory with your fastq sequences and the silva reference.
+
 ```{r}
 
 #Set the filepath to your working directory
@@ -130,9 +131,8 @@ out <- filterAndTrim(fnFs, #file path to the directory containing the forward fa
 #See how many reads were filtered out
 head(out)
 
-
-
 ```
+
 ### Considerations for your own data: 
 Your reads must still overlap after truncation in order to merge them later! The tutorial is using 2x301 V3-V4. Your truncLen must be large enough to maintain 20 + biological.length.variation nucleotides of overlap between them.
 
@@ -176,8 +176,9 @@ dev.off()
 
 ```
 
-The error rates for each possible transition (A→C, A→G, …) are shown. Points are the observed error rates for each consensus quality score. The black line shows the estimated error rates after convergence of the machine-learning algorithm. The red line shows the error rates expected under the nominal definition of the Q-score. Here the estimated error rates (black line) are a good fit to the observed rates (points), and the error rates drop with increased quality as expected. Everything looks reasonable and we proceed with confidence.
+The error rates for each possible transition (A→C, A→G, …) are shown. Points are the observed error rates for each consensus quality score. The black line shows the estimated error rates after convergence of the machine-learning algorithm. The red line shows the error rates expected under the nominal definition of the Q-score. Here the estimated error rates (black line) are a good fit to the observed rates (points), and the error rates drop with increased quality as expected. If everything looks reasonable and we proceed with confidence.
 
+The error rate plots produced here do not look great (black line does not line up with the points well). This is because we are training the model on just two samples - which is not enough to generate good error estimates.
 
 
 #Sample inference
@@ -213,13 +214,15 @@ write.csv(seqtab, "July08_2025_MicrobiomeAnalysisDay1_seqtab.csv")
 
 The core dada method corrects substitution and indel errors, but chimeras remain. Fortunately, the accuracy of sequence variants after denoising makes identifying chimeric ASVs simpler than when dealing with fuzzy OTUs. Chimeric sequences are identified if they can be exactly reconstructed by combining a left-segment and a right-segment from two more abundant “parent” sequences.
 
-The frequency of chimeric sequences varies substantially from dataset to dataset, and depends on factors including experimental procedures and sample complexity. Here chimeras make up about 2% of the merged sequence variants, but when we account for the abundances of those variants we see they account for 73% of the merged sequence reads. Most of your reads should remain after chimera removal (it is not uncommon for a majority of sequence variants to be removed though). If most of your reads were removed as chimeric, upstream processing may need to be revisited. In almost all cases this is caused by primer sequences with ambiguous nucleotides that were not removed prior to beginning the DADA2 pipeline.
+The frequency of chimeric sequences varies substantially from dataset to dataset, and depends on factors including experimental procedures and sample complexity. Here chimeras make up about 97% of the merged sequence variants, but when we account for the abundances of those variants we see they account for 14% of the merged sequence reads. Most of your reads should remain after chimera removal (it is not uncommon for a majority of sequence variants to be removed though). If most of your reads were removed as chimeric, upstream processing may need to be revisited. In almost all cases this is caused by primer sequences with ambiguous nucleotides that were not removed prior to beginning the DADA2 pipeline.
  
 
 ```{r}
 #Remove chimeras 
 seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", multithread=TRUE, verbose=TRUE)
+#Identified 15093 bimeras out of 15414 input sequences. 
 
+sum(seqtab.nochim)/sum(seqtab) #the result is ~14%. This means that ~86% of reads remained after removeBimeraDenovo, although most of the unique variants (15093 bimeras) were removed.
 ```
 
 # Track reads through the pipeline

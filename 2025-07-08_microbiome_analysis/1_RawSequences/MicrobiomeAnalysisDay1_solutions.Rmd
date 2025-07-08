@@ -1,0 +1,46 @@
+#FAIR 2025 Microbiome Day 1 - Activities Solutions
+
+
+```{r}
+#Green
+#1. What is the purpose of the dada2 package in microbiome analysis?
+The DADA2 package is used for high-resolution analysis of microbial communities. It aims to correct sequencing errors, identify true biological sequence variants (ASVs) rather than operational taxonomic units (OTUs), and provide accurate estimates of microbial diversity. This is achieved through denoising, merging paired-end reads, and removing chimeras.
+
+#2. Describe the differentiating naming convention for forward and reverse fastq files used in DADA2.
+In DADA2, forward and reverse fastq files are typically named with suffixes indicating their read direction. For example, sample1_R1.fastq denotes the forward read, while sample1_R2.fastq represents the reverse read. The _R1 and _R2 suffixes help identify the corresponding paired reads.
+
+
+#3. What does the plotQualityProfile function do in the DADA2 pipeline?
+The plotQualityProfile function generates a plot of the quality scores across the length of sequencing reads. It helps visualize the quality of reads at each position, aiding in decisions about where to truncate or filter the reads to ensure high-quality data for downstream analysis.
+
+
+#4. Try truncating at 230 and 230. What happens?
+Truncating both forward and reverse reads at 230 base pairs may result in insufficient overlap between the two reads if the actual read lengths or overlap regions are less than this truncation length. This can lead to a situation where paired-end reads cannot be effectively merged because there isn’t enough shared sequence data. To address this, you may need to increase the truncation length (e.g., to 260 base pairs) to ensure that the reads overlap sufficiently for accurate merging. This adjustment helps in achieving better sequence coverage and improving the overall quality of the merged reads.
+
+#Blue
+#1. Explain the significance of trimming reads at specific positions during the DADA2 pipeline.
+Trimming reads at specific positions removes low-quality bases from the ends of the reads. This is crucial for improving the accuracy of sequence variant calling by ensuring that only high-quality, reliable data is used. Proper trimming helps reduce errors and artifacts in the final dataset.
+
+#2. Why is it important for forward and reverse reads to overlap after truncation in DADA2?
+Overlap between forward and reverse reads is important for accurate merging of paired-end reads into a single sequence. Sufficient overlap ensures that the two reads can be combined into a longer, more accurate sequence, which improves the resolution of sequence variants and reduces errors.
+
+
+#3. How does the learnErrors function contribute to the DADA2 pipeline, and why is it important to visualize error rates?
+The learnErrors function estimates the error rates in the sequencing data, which is essential for correcting errors during denoising. Visualizing error rates helps assess the quality of the sequencing data and ensures that the error model is accurate, leading to more reliable sequence variant identification.
+
+
+#4. What should you do if the black dots are far off from the red line?
+If the black dots (representing observed error rates) are far from the red line (representing the expected error rates), it indicates discrepancies between the observed and expected error rates. This may suggest issues with the error model or data quality. Re-evaluating the error model or adjusting parameters might be necessary to improve accuracy.
+
+#Black
+
+#1. Discuss the potential consequences of truncating reads too aggressively or not enough in the DADA2 pipeline.
+Too Aggressively: Truncating reads too aggressively can result in loss of important sequence information and reduce the length of reads below the required threshold for reliable merging and variant detection. This can lead to reduced sensitivity and loss of data.
+
+Not Enough: Insufficient truncation may retain low-quality bases that can introduce errors and reduce the accuracy of sequence variant calling. This can affect downstream analyses and result in unreliable taxonomic or functional conclusions.
+
+#2. Explain the process and importance of removing chimeras in the DADA2 pipeline.
+Removing chimeras involves identifying and filtering out sequences that are artifacts of PCR, where fragments from different DNA molecules have joined incorrectly. This is crucial for ensuring that the data reflects true biological sequences and not artifacts, which improves the accuracy of microbial community profiling.
+
+#3. Describe how the assignTaxonomy function works and its role in assigning taxonomy to sequence variants.
+The assignTaxonomy function compares the sequence variants (ASVs) against a reference database of known taxonomic sequences. It assigns taxonomic labels to each ASV based on the best match in the database. This function provides the taxonomic classification necessary for interpreting microbial diversity and community composition.

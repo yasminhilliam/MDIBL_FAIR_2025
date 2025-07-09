@@ -1,1 +1,8 @@
-/Users/f006n1k/Documents/GitHub/MDIBL_FAIR_2025/2025-07-05_bacterial_RNAseq
+2025-07-05_bacterial_RNAseq.Rmd
+2025-07-05_bacterial_RNAseq.Rproj
+bacterial_RNAseq.sh
+idmapping_2025_06_30.tsv.gz
+images
+locus_tag.txt
+ncbi_dataset
+S1_counts.tsv

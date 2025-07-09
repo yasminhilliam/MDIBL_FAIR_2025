@@ -1,0 +1,5 @@
+1_RawSequences
+2_DADA2Output
+2025-07-08_microbiome_analysis.Rproj
+Interactive_Experimental_Design.jpeg
+ReadMe.rtf

@@ -1,0 +1,1010 @@
+---
+title: "MicrobiomeAnalysisDay2_Phyloseq_and_Stats"
+author: "Yasmin Hilliam, PhD and Rebecca Valls, PhD"
+date: "2025-7-09"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE) #sets a default option for all code chunks in the R Markdown document. echo = TRUE means that the code itself will be displayed in the final rendered document. This is useful for making the code visible alongside the output.
+
+getwd() -> wd
+
+knitr::opts_knit$set(root.dir = wd) #This line sets the root directory for the R Markdown file. 
+```
+
+## References: 
+
+https://joey711.github.io/phyloseq/ #more detailed phyloseq tutorial
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0061217 #paper on Phyloseq
+
+
+### Directory
+This tutorial begins with input files that were generated using DADA2. You should be in a directory that contains the following files:
+-sample info (metadata.csv)
+-ASV counts (July08_2025_MicrobiomeAnalysisPart2_counts.tsv)
+-taxonomy of each ASV (July08_2025_MicrobiomeAnalysisPart2_taxa.tsv)
+
+
+### Breakdown
+We will first load the necessary libraries, load our files, create a phyloseq object which is a data structure that combines information about taxonomic assignments, sample metadata, and sequence count data. 
+
+The script then proceeds to calculate and plot alpha diversity, which is a measure of diversity within individual samples. This step can provide insights into the richness and evenness of microbial communities within each sample.
+
+Next, the script plots beta diversity, which is a measure of dissimilarity between different samples. This step can reveal patterns of similarity and differences between microbial communities across different samples.
+
+Then, the script generates relative abundance plots, which are visualizations that show the relative abundance of top phyla across the time points of the experiment being analyzed This step can help identify which genera are most abundant and whether there are any patterns of relative abundance that differ between samples. 
+
+We calculate absolute abundance of Bacteroides
+
+Finally, we train a random forest model to predict which Treatment group each sample comes from.
+
+Overall, this pipeline is a useful tool for analyzing and visualizing microbiome data. 
+
+It is helpul if you have a working knowledge of R, specifically how to use ggplot2 to visualize data.
+
+
+## Load the necessary libraries
+```{r, message = FALSE}
+#install.packages("tidyverse")
+library(tidyverse) #R package used for data manipulation and visualization built to work with dataframes. Includes R packages dplyr, ggplot2, tidyr and others.
+
+#BiocManager::install("phyloseq")
+library(phyloseq) #R package that allows for the analysis of microbiome data.  
+
+#install.packages("ggforce") #R package that extends the functionality of ggplot2,
+library(ggforce)
+
+#install.packages("htmltools")
+library(htmltools)
+
+#install.packages("vegan") #an R package that provides tools for performing ecological and environmental analysis.
+library(vegan)
+
+#install.packages("viridis") #n R package that provides a set of color palettes for data visualization. The palettes are designed to be perceptually uniform and colorblind-friendly, making them well-suited for visualizing data in scientific and data-driven contexts. 
+library(viridis)
+
+#install.packages("ggpubr") #provides a convenient set of tools for creating and customizing 'ggplot2' plots, with functions designed to simplify common tasks such as adding statistical tests, arranging multiple plots, and enhancing plot appearance.
+library(ggpubr)
+
+
+#install.packages("decontam") #helps identify and remove contaminant sequences from microbiome data, improving the accuracy of the analysis. It applies statistical methods to distinguish real biological sequences from contaminants, thereby improving the accuracy and reliability of microbiome studies.
+library(decontam)
+
+#install.packages("broom") #simplifies the extraction and organization of statistical model outputs into tidy data frames, making it easier to analyze, manipulate, and visualize model results
+library(broom)
+
+#install.packages("lme4") #used for fitting linear and generalized linear mixed-effects models
+library(lmerTest)
+
+#install.packages("pairwiseAdonis") #pairwise multilevel comparison using adonis
+library("pairwiseAdonis")
+
+#install.packages("randomForest") #version 4.7.1 #used for fitting random forest models for classication and regression
+library(randomForest) 
+
+#install.packages("caTools") #used for moving (rolling, running) window statistic functions, read/write for GIF and ENVI binary files, fast calculation of AUC, LogitBoost classifier, base64 encoder/decoder, round-off error free sum and cumsum, etc.
+library(caTools)
+
+#install.packages("caret") #used for classification and regression training
+library(caret)
+
+```
+
+### Set the theme for plots
+Sets up a global theme for all plots created during this session
+
+```{r, message = FALSE}
+theme_set(theme_bw()) # set global theme to bw
+theme_replace(axis.title.x=element_text(size=14), # set individual theme options for plotting
+
+              axis.title.y=element_text(size=14, angle = 90),
+              axis.text.x = element_text(size = 12,
+                                         angle = 45,
+                                         hjust = 1,
+                                         vjust = 1),
+              axis.text.y=element_text(size=12),
+              legend.title=element_text(size=14),
+              legend.text=element_text(size=12))
+```
+
+### Import the DADA2 output ASV table as a data.frame
+```{r}
+#You need to replace the path with your own directory. You can do this by navigating through Files Pane to your directory, and clicking "Set as Working Directory". Then copy the path to the code below or put "./
+count_df <- as.data.frame(read.table("July08_2025_MicrobiomeAnalysisPart2_counts.tsv", header=T, row.names=1, check.names=F, sep="\t"))
+
+
+#remove part of column names that say "_S**"
+for ( col in 1:ncol(count_df)){
+    colnames(count_df)[col] <-  sub("_S.*", "", colnames(count_df)[col])
+}
+#remove part of column names that say "4683_**"
+for ( col in 1:ncol(count_df)){
+    colnames(count_df)[col] <-  sub("4683_", "", colnames(count_df)[col])
+}
+
+
+#More detailed explanation: This R script preprocesses microbiome count data by loading it into a dataframe (count_df) and cleaning up column names. It removes parts of the names containing "S" and the prefix "4683", standardizing them for further analysis.This type of code might be useful when working with data from sequencing experiments, where sample names often include a suffix indicating the sequencing run or experiment.
+```
+
+### Import the DADA2 output taxa table as a matrix
+```{r}
+#bring in the taxonomy classification for each ASV
+tax_df <- as.matrix(read.table("July08_2025_MicrobiomeAnalysisPart2_taxa.tsv", 
+                               header=TRUE, 
+                               row.names=1, 
+                               check.names=FALSE, 
+                               sep="\t"))
+
+head(tax_df)
+
+```
+
+
+### Import the sample information and place them in desired order
+```{r}
+#Bring in the mouse and treatment information
+metadata <- read_csv("metadata.csv")
+
+#Make the SeqCoastTube names the row names so that we can merge with counts
+metadata <- metadata %>% 
+  remove_rownames %>% 
+  column_to_rownames(var="SeqCoastTube")
+
+#Factor order of sample info in a way that makes sense.
+metadata$Timepoint <- factor(metadata$Timepoint, 
+                             levels = c("Baseline_3", "Baseline_6", "Antibiotics_3",
+                                        "Antibiotics_6", "Gavage_1", "Gavage_4",
+                                        "Before_LPS", "LPS", "Sacrifice" ))
+
+metadata$Treatment <- factor(metadata$Treatment, 
+                             levels = c("Baseline", "PBS", "Bacteroides"))
+
+metadata$Sex <- factor(metadata$Sex, 
+                       levels = c("F", "M"))
+
+
+#This code imports mouse and treatment information from a CSV file into a dataframe called metadata. The code sets the sample names in the SeqCoastTube column as row names for the metadata dataframe, facilitating physloq object building (the row names of your sample data must match the column names of your count data). We also factor (or order) some of the sample info so that plotting later shows our samples in the order we want them.
+
+```
+
+
+# Build the phyloseq object
+```{r}
+metadata %>%
+  mutate(sample_or_control = if_else(Treatment == "Baseline",
+                                     "control",
+                                     "sample")) -> metadata # add sample_or_control column to identify samples for decontam
+
+
+#transform data into phyloseq object
+sample_info_tab_phy <- sample_data(metadata) #function used to create the phyloseq object of sample info
+count_tab_phy <- otu_table(count_df, taxa_are_rows=T) #function used to create phyloseq obect which contains counts of each ASV (not OTU, despite the name of this function being OTU...) 
+tax_tab_phy <- tax_table(tax_df) #function used to create the phyloseq object of the taxonomic classification info for each ASV
+
+#make phyloseq object, which takes the sample information, count, and taxonomic tables as arguments. This object can then be used for downstream analysis and visualization using the phyloseq package.
+Phyloseq_object <- phyloseq(count_tab_phy, #contains ASV counts
+                            tax_tab_phy, #contains taxonomy information for ASVs
+                            sample_info_tab_phy) #contains sample info
+Phyloseq_object #Print phyloseq summary
+
+```
+
+
+# Let's decontaminate the samples
+The decontam package in R identifies and removes contaminant sequences from marker-gene and metagenomics data. By using statistical methods based on sequence prevalence or frequency, it distinguishes true biological sequences from contaminants. This improves data accuracy in microbiome research, ensuring that results reflect the actual microbial community composition.
+
+```{r}
+df <- as.data.frame(sample_data(Phyloseq_object)) # put sample_data into ggplot friendly data frame
+
+df$librarysize <- sample_sums(Phyloseq_object) #generate librarysize column - by summing read counts
+```
+
+### Plot library size
+Visualize which samples have small or large library sizes
+
+```{r, message = FALSE}
+ggplot(data = df, # input dataframe
+       aes(x = reorder(TubeLabel,librarysize), # reorder sample by ascending library size
+           y = librarysize, # set y axis
+           color = sample_or_control)) + # set color of points
+  geom_point(shape = 1, # set point shape
+             alpha = 0.5) + # change point size
+  ylab("Library size") + # relabel y axis
+  xlab("Sample") + # relabel x axis
+  scale_color_discrete(labels = c("Control","Sample")) + # relabel legend categories
+  theme(axis.text.x = element_blank(), # change vertical justification 
+        axis.ticks.x = element_blank(), # remove x axis ticks
+        panel.grid.minor = element_blank(), # remove minor gridlines
+        panel.grid.major = element_blank(), # remove major gridlines
+        legend.title = element_blank(), # remove legend title
+        legend.position = c(0.1,0.9), # move legend
+        legend.background = element_rect(color = "black")) # set outer boundary of legend box
+```
+This generates a warning that there are four samples with 0 reads - we should remove these from our further analysis using *phyloseq*.
+
+```{r, message = FALSE}
+prune_samples(sample_sums(Phyloseq_object)!=0, Phyloseq_object) -> Phyloseq_object_NZ # prune samples with 0 reads
+# rename as filtered phyloseq object so that we do not mix up the two lots of data
+```
+
+### Identify contaminants by frequency
+This method uses the distribution of the frequency of each ASV and the corresponding sample DNA concentration to identify contaminants
+
+```{r, message = FALSE}
+contamdfFreq <- isContaminant(Phyloseq_object_NZ, # input phyloseq object
+                              method = "frequency", # define method for contaminant identification
+                              conc = "DNA_ng.uL") # name column containing DNA concentration information
+
+head(contamdfFreq)
+
+table(contamdfFreq$contaminant)
+```
+
+
+Through the "frequency" method, 125 of our 49432 (~0.25%) ASVs have been called as contaminants. Here, we used the default probability threshold for rejection of the null hypothesis which is 0.1.
+
+### Activity - how is the number of contaminants called affected by making the model more or less stringent? 
+
+```{r message=FALSE}
+contamdfFreqThr <- isContaminant(Phyloseq_object_NZ,
+                                 method = "frequency",
+                                 conc = "DNA_ng.uL",
+                                 threshold = 0.05) # change probability threshold to examine changes in contaminants
+
+table(contamdfFreqThr$contaminant)
+```
+Reducing the probability threshold for the rejection of the null hypothesis makes the model *less* stringent - it now detects fewer contaminants. It is important at this step to take time to examine which ASVs have been identified as contaminants and make a judgement call about how stringent we want our model to be.
+
+Let's take a closer look at the identified contaminants to see how the program is deciding which ASVs are contaminants based on frequency and DNA concentration.
+
+### Plot frequency vs. DNA conc.
+
+```{r, message = FALSE}
+which(contamdfFreq$contaminant) # identify which ASVs are contaminants in our dataframe
+```
+
+Here, the numbers generated indicate the ranked prevalence of the ASVs (i.e. 433 is the 433rd most frequent ASV in the dataset). Fortunately, none of the identified contaminants are among the ASVs with the highest frequency in our dataset. 
+Let's plot an identified non-contaminant [1] alongside an identified contaminant [433] to see how their distributions compare.
+
+```{r, message = FALSE}
+plot_frequency(Phyloseq_object_NZ, 
+               taxa_names(Phyloseq_object_NZ)[c(1,7823)], 
+               conc="DNA_ng.uL") + 
+  xlab("DNA Concentration (ng/uL)")
+```
+
+The dashed black line shows a model of a non-contaminant ASV whose frequency will be independent of DNA concentration. The red line shows the expected correlation of a contaminant ASV whose frequency will be inversely proportional to DNA concentration. Which plot represents a contaminant and which represents a non-contaminant? 
+
+### Identify contaminants through prevalence
+*decontam* also provides a method for identifying contaminants through their presence and absence in known samples and controls. This method does not take into account the DNA concentrations of samples, just whether or not they are identified as sample or control in the metadata.
+
+```{r, message = FALSE}
+sample_data(Phyloseq_object_NZ)$is.neg <- sample_data(Phyloseq_object_NZ)$sample_or_control == "control" # create new variable in phyloseq object that identifies negative controls based on sample_or_control column
+
+contamdfPrev <- isContaminant(Phyloseq_object_NZ, # input phyloseq object
+                               method = "prevalence", # define method for contaminant identification
+                               neg = "is.neg") # define column for identifying negative controls
+
+table(contamdfPrev$contaminant)
+```
+
+This method has identified nearly 100X the number of contaminants than the "frequency" method. This is because we have used the 'Baseline' measurements as controls - this method would only truly be appropriate when utilizing sequencing controls (i.e. DNA extractions performed on water or buffer) instead of control samples.  
+
+### Activity - what happens if we change the threshold for contaminant identification in the "prevalence" method?
+Note: at threshold 0.5, *decontam* will call all ASVs that are more prevalent in controls than samples as contaminants.
+
+```{r, message = FALSE}
+contamdfPrevThr <- isContaminant(Phyloseq_object_NZ, # input phyloseq object
+                                 method = "prevalence", # define method for contaminant identification
+                                 neg = "is.neg", # define column for identifying negative controls
+                                 threshold = 0.5) # define threshold for contaminant identification
+
+table(contamdfPrevThr$contaminant)
+```
+### Plot ASV prevalence in samples vs. controls to check if this method is appropriate
+
+```{r, message = FALSE}
+psPrev <- transform_sample_counts(Phyloseq_object_NZ, 
+                                  function(abund) 1*(abund>0)) # transform sample counts
+
+psPrev.neg <- prune_samples(sample_data(psPrev)$sample_or_control == "control", 
+                            psPrev) # make list of controls
+
+psPrev.pos <- prune_samples(sample_data(psPrev)$sample_or_control == "sample", 
+                            psPrev) # make list of samples
+
+dfPrev <- data.frame(prevPos = taxa_sums(psPrev.pos), # build dataframe
+                     prevNeg = taxa_sums(psPrev.neg),
+                     contaminant = contamdfPrev$contaminant)
+
+ggplot(data = dfPrev, # input dataframe
+       aes(x = prevNeg, # x axis prevalence in negative controls
+           y = prevPos, # y axis prevalence in samples
+           color = contaminant)) + 
+  geom_point(shape = 1) +
+  xlab("Prevalence (controls)") + 
+  ylab("Prevalence (samples)")
+```
+
+The prevalence method is calling **a lot** of our ASVs as contaminants. This is because the "controls" we are using in this case are baseline samples, with our "samples" being treatment or mock treatment. When conducting this kind of experiment, it's best to include an "extraction control" - this is a sample that runs through the entire processing protocol (DNA extraction, amplification, sequencing) with no input in order to identify ASVs that are introduced as a contaminant during any of these steps. In this case, the frequency method would be more appropriate for our data. 
+
+Let's go back to our list of contaminants called by the frequency method and remove those from our ```phyloseq``` object for further downstream processing.
+
+```{r}
+Phyloseq_object_NZ # check dimensions of current phyloseq object
+```
+
+
+"contaminant" is a Boolean variable so using an exclamation point tells phyloseq not to select ASVs which have TRUE in the contaminant column for taxa pruning.
+
+```{r}
+Phyloseq_object_NonContam <- prune_taxa(!contamdfFreq$contaminant,
+                          Phyloseq_object_NZ)
+
+Phyloseq_object_NonContam # check dimensions of new phyloseq object
+```
+
+Voila! Now we have contaminant-free data that can be carried forward into further analysis.
+
+#### Subset
+Subset the phyloseq object to only include a few Timepoints from Baseline, Antibiotics, Gavage 1, and Before LPS. We do not want to analyze Sacrifice time points because this includes samples dissected and collected from the luminal contents
+```{r}
+unique_timepoints <- unique(metadata$Timepoint)
+unique_timepoints #print out the timepoint names
+
+#Let's keep Baseline_3, Antibiotics_3, and Gavage_1, Before_LPS, and LPS
+Phyloseq_subset <- subset_samples(Phyloseq_object_NonContam, Timepoint %in% c("Baseline_3", "Antibiotics_3", "Gavage_1", "Before_LPS", "LPS"))
+
+
+```
+
+
+## Plot alpha diversity metrics
+Alpha diversity is a measure of diversity of taxa within a single microbial community. It describes the number and abundance of different taxa or ASVs within a sample. Alpha diversity metrics typically include measures such as species richness (the total number of unique species), evenness (how evenly distributed the species are), and diversity indices (which take into account both richness and evenness). The goal of alpha diversity analysis is to understand the species diversity within a particular community and how it might be influenced by various environmental or experimental factors. 
+
+```{r}
+
+# Define custom colors for Treatment groups
+custom_colors <- c("Baseline" = "lightgreen", "PBS" = "lightblue", "Bacteroides" = "orange")
+
+#Plot observed alpha diversity for each time point. Here you should use unnormalized data.
+alpha_diversity_observed <- plot_richness(Phyloseq_subset, x="Timepoint", color = "Treatment", measures=c("Observed"))+ 
+  geom_boxplot()+
+  scale_color_manual(values=custom_colors)+
+  ggtitle("Observed (Richness) ")
+
+alpha_diversity_observed
+
+
+#Plot Chao1 alpha diversity for each time point. 
+alpha_diversity_Chao1 <- plot_richness(Phyloseq_subset, x="Timepoint", color = "Treatment", measures=c("Chao1"))+ 
+  geom_boxplot()+
+  scale_color_manual(values=custom_colors)+
+  ggtitle("Chao1 (Richness) ")
+
+alpha_diversity_Chao1
+
+#Plot Shannon alpha diversity for each time point. 
+
+alpha_diversity_Shannon <- plot_richness(Phyloseq_subset, x="Timepoint", color = "Treatment", measures=c("Shannon"))+ 
+  geom_boxplot()+
+  scale_color_manual(values=custom_colors)+
+  ggtitle("Shannon Diversity Index")
+
+alpha_diversity_Shannon
+
+#Plot Fischer alpha diversity for each time point. 
+
+alpha_diversity_Fischer <- plot_richness(Phyloseq_subset, x="Timepoint", color = "Treatment", measures=c("Fisher"))+ 
+  geom_boxplot()+
+  scale_color_manual(values=custom_colors)+
+  ggtitle("Fisher Diversity Index")
+
+alpha_diversity_Fischer
+
+
+
+# More details on what this code is doing.
+
+# Plot richness is a function from the phyloseq package that generates a plot of alpha diversity (in this case, the Shannon diversity index) for different samples (specified by the x argument) and color-coded based on a specific variable (in this case, whether the sample comes from a mouse in the Baseline, PBS, or Bacteroides group).
+
+# geom_boxplot() adds a boxplot layer to the plot generated by plot_richness(). This layer shows the distribution of the Shannon diversity index for each treatment group and the median value represented by a horizontal line inside each box.
+
+# scale_color_manual() changes the color palette of the plot to the specified colors set prior using the viridis color package, a perceptually-uniform color scheme that is easy to interpret for individuals with color vision deficiencies.
+
+# ggtitle adds a main title to the plot
+
+```
+
+Using the phyloseq functions are nice for quick analysis, but if you want to do statistics or use more ggplot functions, it's best to pull the alpha diversity numbers out as a datframe and proceed with stats and plotting.
+```{r}
+#Calculate Fisher's Alpha Diversity and extract as a data frame
+alpha_diversity_fisher_df <- as.data.frame(estimate_richness(Phyloseq_subset, measures = c("Fisher")))
+
+
+# Extract sample data from Phyloseq_subset
+sample_subset_data_df <- as.data.frame(sample_data(Phyloseq_subset))
+
+# Merge alpha diversity data with sample data based on sample names
+# `Row.names` is used to merge data frames based on row names
+merged_data_fisher <- merge(sample_subset_data_df, alpha_diversity_fisher_df, by = "row.names", all.x = TRUE)  # Merge on sample names
+
+# Adjust the merged data frame
+# Set row names to match sample names
+rownames(merged_data_fisher) <- merged_data_fisher$Row.names
+
+# Convert merged data frame to standard data frame format
+merged_data_fisher <- as.data.frame(merged_data_fisher)
+
+# Ensure 'Timepoint' and 'Fisher' columns are correctly formatted
+merged_data_fisher$Timepoint <- as.character(merged_data_fisher$Timepoint)
+merged_data_fisher$Fisher <- as.numeric(merged_data_fisher$Fisher)
+
+#We made a new df so we have to factor again in the order we care about!
+#Factor order of sample info in a way that makes sense.
+merged_data_fisher$Timepoint <- factor(merged_data_fisher$Timepoint, levels = c("Baseline_3", "Antibiotics_3", "Gavage_1", "Before_LPS" , "LPS"))
+
+merged_data_fisher$Treatment <- factor(merged_data_fisher$Treatment, levels = c("Baseline", "PBS", "Bacteroides"))
+
+merged_data_fisher$Sex <- factor(merged_data_fisher$Sex, levels = c("F", "M"))
+
+
+#Plot fisher alpha diversity
+alpha_diversity_richness <- ggplot(merged_data_fisher, aes(x = Timepoint, y = Fisher, color=Treatment)) +
+  geom_boxplot() +
+  scale_color_manual(values = custom_colors) +  # Apply custom colors
+  ggtitle("Alpha Richness: Fisher") +
+  xlab("Timepoint") +  # Label for x-axis
+  ylab("Fisher Index")  # Label for y-axis
+
+alpha_diversity_richness
+
+# Save the plot as a PDF
+ggsave("alpha_diversity_Fischer_plot.tiff", plot = alpha_diversity_richness, width = 6, height = 4)
+
+
+#Run stats in each time point
+
+
+#Subset for Baseline
+fisher_baseline <- merged_data_fisher %>%
+  filter(Timepoint== "Baseline_3")
+
+#Test normality
+shapiro.test(fisher_baseline$Fisher) #not significant means the data is normal, no need to normalize the values
+
+
+fisher_baseline_lm <- lmer(Fisher ~ Treatment + Sex + (1|Cage), data = fisher_baseline)
+summary(fisher_baseline_lm)
+
+
+#Repeat for the other time points
+```
+
+
+
+
+## Plot beta diversity metrics
+Beta diversity is a measure of the dissimilarity or diversity of microbial communities between different samples or sites. It takes into account the differences in the types and relative abundances of microbial species present in each sample. Beta diversity can be calculated using different metrics, such as UniFrac or Bray-Curtis distance, and can be visualized using various methods, such as principal coordinate analysis (PCoA) or hierarchical clustering. The measure of beta diversity is important in understanding the differences and similarities between microbial communities and can help to identify factors that drive these differences, such as environmental or host factors.
+
+### Prepare data for ordination plots
+```{r}
+#Remove ASVs that do not show appear more than 1 time in more than 10% the samples
+filteredASVs = genefilter_sample(Phyloseq_subset, #genefilter_sample() function is used to filter samples based on certain criteria
+                                 filterfun_sample(function(x) x > 1),  #filterfun_sample() function is applied with a condition that keeps only those samples (ASVs) where the abundance is greater than 1. This will remove ASVs with low abundance across all samples.
+                                 A=0.10*nsamples(Phyloseq_subset)) #A argument specifies the minimum proportion of samples in which an ASV must exceed the filtering threshold (1 in this case). An ASV must exceed the threshold (abundance > 1) in at least 10% of the samples to be retained.
+
+# Remove samples that have zero total counts
+Phyloseq_subset_pruned <- prune_samples(sample_sums(Phyloseq_subset) > 0, Phyloseq_subset)
+
+# Prune taxa based on filtered ASVs
+Phyloseq_subset_prunedst = prune_taxa(filteredASVs, Phyloseq_subset_pruned)
+
+#Explanation: This is a common approach to reduce the noise in the dataset and improve the accuracy of downstream analysis.
+
+#Transform to even sampling depth.
+Phyloseq_subset_pruned_transformed = transform_sample_counts(Phyloseq_subset_prunedst, function(x) x/sum(x)*100) 
+
+#Explanation: The function transform_sample_counts is being used to divide each count in a sample by the sum of all counts in that sample, and then multiply the result by 100. This effectively converts the counts to percentages, with each value representing the relative abundance of a particular ASV within its respective sample. The resulting object is called Phyloseq_object_pruned_transformed.
+```
+
+
+### Calculate distance and plot PCoA
+```{r}
+
+#Calculate Bray-Curtis dissimilarity distance matrix for the pruned and transformed 'Phyloseq object'.
+distance_bray = phyloseq::distance(Phyloseq_subset_pruned_transformed, method = "bray")
+
+#Additional information: The Bray-Curtis dissimilarity metric is commonly used in microbiome research to compare the relative abundance of different microbial taxa between samples. It is calculated by taking the sum of the absolute differences in relative abundance between two samples, divided by the sum of the relative abundances in both samples. The resulting dissimilarity matrix can be used to perform various downstream analyses, such as ordination and clustering, to visualize and explore patterns in the data. 
+
+#Other types of beta diversity include jaccard, UniFrac, weighted-UniFrac, morisita.
+# Bray: widely used dissimilarity metric in microbiome studies that takes into account both taxon presence/absence and abundance information.
+# Jaccard: calculates dissimilarity based on the presence or absence of microbial taxa. It is a binary metric that considers only the shared and non-shared taxa between communities, ignoring the abundance information.
+# UniFrac: considers the phylogenetic relatedness of taxa when calculating dissimilarity between communities.
+# Morisita-Horn:  considering both taxon abundance and prevalence. It is suitable for quantifying compositional dissimilarity between communities with skewed abundance distributions.It provides higher weight to abundant taxa and is less influenced by rare taxa.
+
+
+#Perform a principal coordinate analysis (PCoA) on the distance matrix
+ordinate_PCoA_bray = ordinate(Phyloseq_subset_pruned_transformed, method = "PCoA", distance = "distance_bray")
+
+#Additional information: The PCoA algorithm aims to find a new set of axes that capture the most variation in the dissimilarity matrix while preserving the pairwise distances between samples as much as possible. PCoA is a popular method for visualizing high-dimensional distance data in a lower-dimensional space, such as a 2D or 3D plot, making it easier to visualize and interpret patterns in the data. The resulting PCoA plot can be used to explore relationships between samples and identify potential patterns or clusters in the data.
+
+#Plot the results with points colored by the Treatment group.
+PCoA_plot_all <- plot_ordination(Phyloseq_subset_pruned_transformed, ordinate_PCoA_bray, color = "Treatment")+
+  stat_ellipse() #adds an ellipse to a scatter plot to help visualize the distribution of points in the plot. The ellipse is drawn using a confidence interval, which can be specified using the level argument. By default, stat_ellipse() uses a 95% confidence interval.
+PCoA_plot_all
+
+
+
+#Plot the results with points colored by the Treatment group over time
+PCoA_plot_overtime <- plot_ordination(Phyloseq_subset_pruned_transformed, ordinate_PCoA_bray, color = "Treatment")+
+  facet_wrap(~ Timepoint, ncol = 5) +  # Arrange plots in a grid with 5 columns based on Timepoint
+  stat_ellipse()+
+  scale_color_manual(values = custom_colors)  # Apply custom colors
+
+
+PCoA_plot_overtime
+
+# Save the plot as a PDF
+ggsave("PCoA_plot_overtime_plot.tiff", plot = PCoA_plot_overtime, width = 6, height = 4)
+
+
+
+
+```
+
+### Complete stats to identify whether there is a difference in beta diversity between treatment groups
+This analysis aims to identify differences in beta diversity between treatment groups at two time points: "Baseline_3" and "Before_LPS". For each time point, the data is subsetted, and Bray-Curtis dissimilarity distance matrices are calculated. Principal Coordinate Analysis (PCoA) is performed to visualize these differences, and the results are plotted with treatment group distinctions. Finally, PERMANOVA (Permutational Multivariate Analysis of Variance) is used to statistically test for differences in beta diversity between treatment groups, accounting for factors such as sex and cage. This comprehensive approach ensures a robust analysis of beta diversity variations across different conditions.
+```{r}
+#######################Baseline_3########################
+#Subset phyloseq object to only have the data from Baseline_3
+Phyloseq_subset_pruned_transformed_Baseline3 <- subset_samples(Phyloseq_subset_pruned_transformed, Timepoint == "Baseline_3")
+
+#Calculate Bray-Curtis dissimilarity distance matrix
+distance_bray_Baseline_3 = phyloseq::distance(Phyloseq_subset_pruned_transformed_Baseline3, method = "bray")
+
+#Perform a principal coordinate analysis (PCoA) on the distance matrix
+baseline_3_ordinate_PCoA_bray = ordinate(Phyloseq_subset_pruned_transformed_Baseline3, method = "PCoA", distance = "distance_bray_Baseline_3")
+
+PCoA_plot_baseline3 <- plot_ordination(Phyloseq_subset_pruned_transformed_Baseline3, baseline_3_ordinate_PCoA_bray, color = "Treatment")+
+  theme_bw()+
+  stat_ellipse() #adds an ellipse to a scatter plot to help visualize the distribution of points in the plot. The ellipse is drawn using a confidence interval, which can be specified using the level argument. By default, stat_ellipse() uses a 95% confidence interval.
+PCoA_plot_baseline3
+
+ord_Baseline3_df <- data.frame(sample_data(Phyloseq_subset_pruned_transformed_Baseline3))
+
+# Run PERMANOVA using adonis2
+Baseline_3_perm_results <- adonis2(distance_bray_Baseline_3 ~ Treatment + Sex + (1|Cage), data = ord_Baseline3_df, permutations = 999)
+
+Baseline_3_perm_results
+
+########################Before_LPS#######################
+#Subset phyloseq object to only have the data from Before_LPS
+Phyloseq_subset_pruned_transformed_Before_LPS <- subset_samples(Phyloseq_subset_pruned_transformed, Timepoint == "Before_LPS")
+
+#Calculate Bray-Curtis dissimilarity distance matrix
+distance_bray_Before_LPS = phyloseq::distance(Phyloseq_subset_pruned_transformed_Before_LPS, method = "bray")
+
+#Perform a principal coordinate analysis (PCoA) on the distance matrix
+Before_LPS_ordinate_PCoA_bray = ordinate(Phyloseq_subset_pruned_transformed_Before_LPS, method = "PCoA", distance = "distance_bray_Before_LPS")
+
+PCoA_plot_Before_LPS <- plot_ordination(Phyloseq_subset_pruned_transformed_Before_LPS, Before_LPS_ordinate_PCoA_bray, color = "Treatment")+
+  theme_bw()+
+  stat_ellipse() #adds an ellipse to a scatter plot to help visualize the distribution of points in the plot. The ellipse is drawn using a confidence interval, which can be specified using the level argument. By default, stat_ellipse() uses a 95% confidence interval.
+PCoA_plot_Before_LPS
+
+ord_Before_LPS_df <- data.frame(sample_data(Phyloseq_subset_pruned_transformed_Before_LPS))
+
+#Make a scree plot
+plot_scree(Before_LPS_ordinate_PCoA_bray)
+
+#plot the 2nd, and 3rd axes
+PCoA_plot_Before_LPS_2n3axes <- plot_ordination(Phyloseq_subset_pruned_transformed_Before_LPS, Before_LPS_ordinate_PCoA_bray, color = "Treatment", axes = c(2,3))+
+  theme_bw()+
+  stat_ellipse() #adds an ellipse to a scatter plot to help visualize the distribution of points in the plot. The ellipse is drawn using a confidence interval, which can be specified using the level argument. By default, stat_ellipse() uses a 95% confidence interval.
+PCoA_plot_Before_LPS_2n3axes
+
+
+
+# Run PERMANOVA using adonis2
+before_LPS_perm_results <- adonis2(distance_bray_Before_LPS ~ Treatment + Sex, data = ord_Before_LPS_df, permutations = 999) #see what happens when you add by="terms" to the adonis2 command
+
+before_LPS_perm_results
+
+```
+Adonis is a function from the vegan package in R that performs Permutational Multivariate Analysis of Variance (PERMANOVA). It is used to test the significance of group differences in multivariate data based on distance matrices, such as those representing beta diversity in ecological or microbiome studies. By using permutation tests, adonis assesses whether the observed differences between groups are statistically significant
+
+
+## Plot relative abundance
+Here we perform a series of steps to analyze and visualize the top 10 most abundant genera in a phyloseq object. First, it merges all amplicon sequence variants (ASVs) at the genus level using tax_glom, consolidating data into broader taxonomic groups. It then identifies and extracts the top 10 most abundant genera. The data is pruned to include only these top 10 genera, and their relative abundances are normalized to percentages. A melted dataframe is created for these normalized abundances, which is then averaged by timepoint and treatment. Finally, a bar plot is generated using ggplot2 to visualize the relative abundance of these top 10 genera, comparing treatment groups and faceting by timepoint.
+```{r}
+# Aggregates the taxonomic classification at the Genus level
+dat.aglo = tax_glom(Phyloseq_subset_prunedst, taxrank = "Genus")
+
+# Sorts genera by their summed abundance in descending order and selects the top 10
+top10 <- names(sort(taxa_sums(dat.aglo), decreasing = TRUE)[1:10])
+top10
+
+
+# Transforms the phyloseq object into a long-format dataframe where each row represents a single OTU
+dat.dataframe <- psmelt(dat.aglo)
+
+# Updates the Genus column to "Other" for all OTUs not in the top10 list
+dat.dataframe$Genus <- ifelse(dat.dataframe$OTU %in% top10, as.character(dat.dataframe$Genus), "Other")
+
+# Groups data by Timepoint, Treatment, and Genus, then calculates the mean abundance for each group
+dat.dataframe.agr= aggregate(Abundance~Timepoint+Treatment+Genus, data=dat.dataframe, FUN=mean)
+
+# Normalize the aggregated data to ensure percentages sum to 100% within each Timepoint and Treatment group
+dat.dataframe.agr <- dat.dataframe.agr %>%
+  group_by(Timepoint, Treatment) %>%
+  mutate(Abundance = Abundance / sum(Abundance) * 100)
+
+# Ensure that the Genus column is a factor with the specified order
+genus_order <- c("Bacteroides", 
+                  "Burkholderia-Caballeronia-Paraburkholderia",
+                  "Clostridium sensu stricto 1",
+                  "Diaphorobacter",
+                  "Faecalibaculum",
+                  "Lachnospiraceae NK4A136 group",
+                  "Lactobacillus",
+                  "Ralstonia",
+                  "Romboutsia",
+                  "Turicibacter",
+                  "Other")
+
+# Define a colorblind-friendly palette with 10 distinct colors
+colorblind_palette <- c("#D55E00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", 
+                        "#E69F10", "#CC79A7", "pink", "#F2C300", "#C69C6C", "gray")  
+
+
+# Plot relative abundance of top 10 genera in the gut, normalized for each sample
+relative_abundance_plot <- ggplot(dat.dataframe.agr, aes(x = Treatment, y = Abundance, fill = Genus)) +
+  geom_bar(stat = "identity") +
+  xlab("Treatment Group") +
+  ylab("Relative Abundance %") +
+  labs(fill = "Genus") +
+  scale_fill_manual(values = setNames(colorblind_palette, genus_order)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  facet_wrap(~Timepoint, ncol = 5)
+
+ggsave("relative_abundance_plot.tiff", plot = relative_abundance_plot, width = 12, height = 6)
+
+```
+
+
+
+
+### Plot relative abundance of just Bacteroides
+```{r}
+#Use your pruned and transformed phyloseq object
+Phyloseq_subset_pruned_transformed
+
+#combine all taxa relative abundance at the genus level
+genus_rel_abundance <- tax_glom(Phyloseq_subset_pruned_transformed, "Genus")  # Aggregate at genus level
+
+#Extract and Prepare Data for Plotting:
+genus_rel_abundance_df <- psmelt(genus_rel_abundance)
+
+genus_rel_abundance_df_bacteroides <- genus_rel_abundance_df %>% filter(Genus == "Bacteroides")
+
+
+#Plot relative abundance across experiment
+ra_Bacteroides_across_timeline_smooth <- ggplot(genus_rel_abundance_df_bacteroides, aes(x = Timepoint, y = Abundance, color = Treatment, shape = Sex)) +
+  geom_point() +
+  geom_line(aes(group = interaction(Cage,Mouse_.)), size = 0.25) +  # Add this line to connect points for each MouseID
+  stat_summary(fun.y = mean, size=2, geom = "line", aes(group = Treatment)) +
+  scale_y_continuous(trans = 'identity') +
+  scale_color_manual(values = c("Baseline" = "lightgreen", "PBS" = "lightblue", "Bacteroides" = "orange")) +
+  labs(
+    y = expression(paste("Relative Abundance of ", italic("Bacteroides"), " (%)")),  # Italicizes "Bacteroides" in the y-axis label
+    x = "Time Point",  # X-axis label
+    color = "Treatment Group"  # Legend title for color
+  )
+
+ra_Bacteroides_across_timeline_smooth
+
+ra_Bacteroides_across_timeline_boxplot <- ggplot(genus_rel_abundance_df_bacteroides, aes(x = Timepoint, y = Abundance, color = Treatment)) +
+  geom_boxplot(outliers = TRUE)+
+  scale_y_continuous(trans = 'identity') +
+  scale_color_manual(values = c("Baseline" = "lightgreen", "PBS" = "lightblue", "Bacteroides" = "orange")) +
+  labs(
+    y = expression(paste("Relative Abundance of ", italic("Bacteroides"), " (%)")),  # Italicizes "Bacteroides" in the y-axis label
+    x = "Time Point",  # X-axis label
+    color = "Treatment Group"  # Legend title for color
+  )
+ra_Bacteroides_across_timeline_boxplot
+
+
+```
+
+### Run stats on relative abundance of Bacteroides at each timepoint
+```{r}
+#Subset bacteroides relative abundance for just Before_LPS
+bacteroides_rel_ab_LPS <- genus_rel_abundance_df_bacteroides %>%
+  filter(Timepoint== "LPS")
+
+bacteroides_relabundance_lm <- lmer(Abundance ~ Treatment + Sex + (1|Cage), data = bacteroides_rel_ab_LPS)
+
+summary(bacteroides_relabundance_lm)
+
+
+```
+## Absolute Abundance
+#Figure out absolute abundance of Bacteroides using the Zymo-spike in control unique taxa
+```{r}
+#Subset the Phyloseq object to only include time point LPS
+Phyloseq_LPS <- subset_samples(Phyloseq_object, Timepoint %in% "LPS")
+
+# Filter out ASVs belonging to the genus Allobacillus
+Phyloseq_LPS_filtered <- subset_taxa(Phyloseq_LPS, Genus != "Allobacillus")
+
+# Transform the sample counts to relative abundance
+Phyloseq_LPS_transformed <- transform_sample_counts(Phyloseq_LPS_filtered, 
+                                                    function(x) x/sum(x)*100)
+
+#Determine abundance of your spike in for each of the LPS samples
+#The spike in Imtechella halotolerans is gram negative (just like Bacteroides), so let's use that one
+#Number of cells 2x10^7
+#16s Copies 6.0x10^7
+#Total DNA 67.2 ng
+
+
+#combine all taxa relative abundance at the genus level
+genus_Phyloseq_LPS_transformed <- tax_glom(Phyloseq_LPS_transformed, "Genus")  # Aggregate at genus level
+
+#Extract and Prepare Data for Plotting:
+genus_Phyloseq_LPS_df <- psmelt(genus_Phyloseq_LPS_transformed)
+
+genus_Phyloseq_LPS_df_imtechella <- genus_Phyloseq_LPS_df %>% filter(Genus == "Imtechella")
+
+#16s Targeted Sequencing
+#1 Complete the following equation by filling in the relevant data
+#SpikeIn Volume Used (uL)/20uL * Theoretical Value Table 1 * (1/(%relative abundance)-1)
+
+#2 Simplify the left side of the equation to scale the theoretical data relative to the input volume used
+Imtechella_theoretical <- (20/20)*6 * 10^7
+
+#3 Simplify the right side of the equation to determine the absolute abundance scaling factor
+#Create a string of abundances in percentage form
+Imtechella_percent <- (genus_Phyloseq_LPS_df_imtechella$Abundance)/100
+Imtechella_scaling_factor <- ((1/Imtechella_percent)-1)
+
+#4. Simplify the equation to get the total gene copies
+total_gene_copies <-  Imtechella_theoretical * Imtechella_scaling_factor
+
+#5 Note the copy number above still includes gene copies belonging to the other Spike-In organism. In order to remove these copies, multiply the value provided in Table 1 by the same sample input proportion uused above and subtract from total.
+total_gene_copies_noAllobacillus_noImtechella <- total_gene_copies-Imtechella_theoretical
+
+#6 Estimate total cell number from total 16s copy number assuming an average of 3 16s gene copies per bacterial genome. As bacteria are monoploid, genome copy number and cell number can be considered equivalent
+total_cell_number <- total_gene_copies_noAllobacillus_noImtechella/3
+
+
+#7 We need to recalculate relative abundance without the spiked in microbes
+
+#combine all taxa relative abundance at the genus level
+genus_Phyloseq_LPS <- tax_glom(Phyloseq_LPS, "Genus")  # Aggregate at genus level, working with the phyloseq object of UNTRANSFORMED data
+
+#filter out the genera Allobacillus and Imtechella
+genus_Phyloseq_LPS_no_spikein <- subset_taxa(genus_Phyloseq_LPS, !Genus %in% c("Allobacillus", "Imtechella"))
+
+#Transform to relative abundance
+genus_Phyloseq_LPS_no_spikein_transformed = transform_sample_counts(genus_Phyloseq_LPS_no_spikein, function(x) x/sum(x)*100) 
+
+
+#8 Pull the relative abundance of Bacteroides
+#Extract and Prepare Data for Plotting:
+genus_Phyloseq_LPS_no_spikein_transformed_df <- psmelt(genus_Phyloseq_LPS_no_spikein_transformed)
+
+genus_Bacteroides_ra_no_spikein <- genus_Phyloseq_LPS_no_spikein_transformed_df %>% filter(Genus == "Bacteroides")
+
+#9 Calculate the absolute abundance of Bacteroides using the total cell number
+
+bacteroides_absolute_abundance <- (genus_Bacteroides_ra_no_spikein$Abundance/100)*total_cell_number
+
+#10 Add bacteroides_absolute_abundance to the genus_Bacteroides_ra_no_spikein df so that you can run a linear model
+
+ 
+genus_Bacteroides_ra_no_spikein$Bacteroides_absolute_abundance <- bacteroides_absolute_abundance+1
+
+#11 Stats: Check normalist and run a linear model to see if treatment and sex have a significant affect on Bacteroides absolute abundance
+
+#Test normality
+shapiro.test(genus_Bacteroides_ra_no_spikein$Bacteroides_absolute_abundance) # significant means the data is not normal, need to normalize the values
+
+bacteroides_absolute_abundance_lm <- lmer(log2(Bacteroides_absolute_abundance) ~ Treatment + Sex + (1|Cage), data = genus_Bacteroides_ra_no_spikein)
+
+summary(bacteroides_absolute_abundance_lm) #treatment has a significant affect on Bacteroides absolute abundance, but sex does not
+
+#plot
+aa_Bacteroides_atLPS_boxplot <- ggplot(genus_Bacteroides_ra_no_spikein, aes(x = Treatment, y = Bacteroides_absolute_abundance, color = Treatment)) +
+  geom_boxplot(outliers = TRUE)+
+  scale_y_continuous(trans = 'identity') +
+  scale_color_manual(values = c("PBS" = "lightblue", "Bacteroides" = "orange")) +
+  labs(
+    y = expression(paste("Absolute Abundance of ", italic("Bacteroides"))),  # Italicizes "Bacteroides" in the y-axis label
+    x = "Treatment",  # X-axis label
+    color = "Treatment Group"  # Legend title for color
+  )
+aa_Bacteroides_atLPS_boxplot
+
+
+```
+
+## Random Forest Models with Microbiome Data
+#Let's train a random forest model on whether or not a mouse belongs to the Treatment group + or - Bacteroides
+```{r}
+set.seed(42)
+
+#Make a df where the sample names (TubeLabels)are the rownames and the column names are genus names with relative abundance
+# Subset samples to Timepoint LPS
+Phyloseq_LPS <- subset_samples(Phyloseq_object, Timepoint %in% "LPS")
+
+# Aggregate at genus level (using untransformed data)
+genus_Phyloseq_LPS <- tax_glom(Phyloseq_LPS, "Genus")
+
+# Filter out spike-in genera Allobacillus and Imtechella
+genus_Phyloseq_LPS_no_spikein <- subset_taxa(genus_Phyloseq_LPS, !Genus %in% c("Allobacillus", "Imtechella"))
+
+# Transform to relative abundance (%)
+genus_Phyloseq_LPS_no_spikein_transformed <- transform_sample_counts(genus_Phyloseq_LPS_no_spikein, function(x) x / sum(x) * 100)
+
+
+# Extract abundance data (otu_table) from phyloseq object
+genus_counts <- otu_table(genus_Phyloseq_LPS_no_spikein_transformed)
+
+# Transpose the abundance matrix to have samples as rows and genera as columns
+genus_abundance_df <- as.data.frame(t(genus_counts))
+
+# Set row names of the data frame to be the TubeLabel from sample data
+rownames(genus_abundance_df) <- sample_data(genus_Phyloseq_LPS_no_spikein_transformed)$TubeLabel
+
+
+
+#Extract the metadata from the phyloseq object
+metadata_LPS <- sample_data(genus_Phyloseq_LPS_no_spikein_transformed)
+
+
+#train a randomforest model
+treatment_rf = randomForest(as.factor(metadata_LPS$Treatment) ~., 
+                                 data = genus_abundance_df, 
+                                 ntree=10000,  importance=TRUE)
+treatment_rf
+
+#print variable importance plots
+importance(treatment_rf)
+varImpPlot(treatment_rf, cex=0.5, main= "Variable Importance Plot for Treatment", n.var=10)
+
+#That's a pretty good OOB! 0% Error!
+#Looks like AV_50 is the most important ASV for predicting which treatment group that sample comes from
+
+
+sex_rf = randomForest(as.factor(metadata_LPS$Sex) ~., 
+                                 data = genus_abundance_df, 
+                                 ntree=10000,  importance=TRUE)
+sex_rf
+
+
+
+#print variable importance plots
+importance(sex_rf)
+varImpPlot(sex_rf, cex=0.5, main= "Variable Importance Plot for Treatment", n.var=10)
+
+```
+
+
+```{r}
+#Separate your training and test data to test a rf on predicting treatment
+
+# Create a split vector
+split <- sample.split(metadata_LPS$Treatment, SplitRatio = 0.75)
+
+# Split the data
+train_genus <- genus_abundance_df[split, ]
+test_genus <- genus_abundance_df[!split, ]
+
+train_metadata <- metadata_LPS[split, ]
+test_metadata <- metadata_LPS[!split, ]
+
+# Fit the Random Forest model on the training data
+treatment_trained_rf <- randomForest(as.factor(train_metadata$Treatment) ~ ., 
+                       data = train_genus, 
+                       ntree = 10000,  
+                       importance = TRUE)
+
+# Print model summary
+print(treatment_trained_rf)
+
+ # Predict treatment on the test data
+treatment_predictions <- predict(treatment_trained_rf, newdata = test_genus)
+treatment_predictions
+
+#Evaluate the performance of the models:
+# Confusion matrix for Treatment predictions
+confusionMatrix(treatment_predictions, as.factor(test_metadata$Treatment))
+
+
+```
+
+Knowing which ASVs are important is helpful but doesn't mean much without the genus names. Let's extract those and make new variable plots
+```{r}
+# Extract taxonomy table
+tax_table <- tax_table(genus_Phyloseq_LPS_no_spikein_transformed)
+
+# Extract genus names from taxonomy table
+genus_names <- tax_table[, "Genus"]  # Assuming "Genus" is the column name containing genus names
+
+genus_names_df <- as.data.frame(genus_names)
+
+
+colnames(genus_abundance_df) <- genus_names
+
+
+# Extract variable importance
+var_importance_treatment_rf <- importance(treatment_rf)
+
+# Convert to data frame for easier manipulation
+var_importance_treatment_rf_df <- as.data.frame(var_importance_treatment_rf)
+
+# Add a column for variable names
+var_importance_treatment_rf_df$Variable <- rownames(var_importance_treatment_rf_df)
+
+# Sort by the importance measure (MeanDecreaseGini or MeanDecreaseAccuracy)
+# Assuming you want to use MeanDecreaseGini
+var_importance_treatment_rf_df <- var_importance_treatment_rf_df[order(var_importance_treatment_rf_df$MeanDecreaseGini, decreasing = TRUE),]
+
+# Select the top 10 variables
+top_10_vars_treatment <- head(var_importance_treatment_rf_df, 10)
+
+# Print the top 10 variables
+print(top_10_vars_treatment)
+
+# Convert row names to a column in top_10_vars (if they are not already)
+genus_names_df$Variable <- rownames(genus_names_df)
+
+# Add the 'Genus' column to top_10_vars by merging with genus_names_df
+top_10_vars_treatment_with_genus <- top_10_vars_treatment %>%
+  left_join(genus_names_df, by = "Variable")
+
+# Ensure the Genera are in the order of highest Mean Decrease Accuracy
+top_10_vars_treatment_with_genus <- top_10_vars_treatment_with_genus %>%
+  arrange(desc(MeanDecreaseAccuracy))
+
+top_10_vars_treatment_with_genus <- top_10_vars_treatment_with_genus %>%
+  arrange(desc(MeanDecreaseGini))
+
+# Create the plot2
+MeanDecreaseAccuracy_treatment <- ggplot(top_10_vars_treatment_with_genus, aes(x = MeanDecreaseAccuracy, y = reorder(Genus, MeanDecreaseAccuracy))) +
+  geom_col(fill = "skyblue") +
+  theme_minimal() +
+  labs(
+    x = "Mean Decrease Accuracy",
+    y = "Genus",
+    title = "Mean Decrease Accuracy"
+  )+
+  theme(
+    axis.text.y = element_text(face = "italic")
+  )
+
+# Save the plot as a PDF
+ggsave("MeanDecreaseAccuracy_treatment_plot.tiff", plot = MeanDecreaseAccuracy_treatment, width = 6, height = 4)
+
+MeanDecreaseGini_treatment <- ggplot(top_10_vars_treatment_with_genus, aes(x = MeanDecreaseGini, y = reorder(Genus, MeanDecreaseGini))) +
+  geom_col(fill = "purple") +
+  theme_minimal() +
+  labs(
+    x = "Mean Decrease Gini",
+    y = "Genus",
+    title = "Mean Decrease Gini"
+  )+
+  theme(
+    axis.text.y = element_text(face = "italic")
+  )
+
+# Save the plot as a PDF
+ggsave("MeanDecreaseGini_treatment_plot.tiff", plot = MeanDecreaseGini_treatment, width = 6, height = 4)
+
+```
+
+

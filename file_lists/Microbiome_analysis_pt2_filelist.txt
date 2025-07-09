@@ -1,0 +1,14 @@
+_d6320_zymobiomics_spike-in_control_i.pdf
+2025-07-09_microbiome_analysis_pt2.Rproj
+alpha_diversity_Fischer_plot.tiff
+July08_2025_MicrobiomeAnalysisPart2_counts.tsv
+July08_2025_MicrobiomeAnalysisPart2_taxa.tsv
+MeanDecreaseAccuracy_treatment_plot.tiff
+MeanDecreaseGini_treatment_plot.tiff
+metadata.csv
+MicrobiomeAnalysisDay2.Rmd
+MicrobiomeDay2 Environment.RData
+PCoA_plot_overtime_plot.tiff
+ReadMe.rtf
+relative_abundance_plot.tiff
+SOP_20230725_BF_Zymo_[D6320] Calculation Updates.pdf

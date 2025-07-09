@@ -1,0 +1,12 @@
+2025-07-05_common_geoms_statistics_ans.nb.html
+2025-07-05_common_geoms_statistics_ans.Rmd
+2025-07-05_common_geoms_statistics_blank.nb.html
+2025-07-05_common_geoms_statistics_blank.Rmd
+2025-07-05_common_geoms_statistics.Rproj
+life_exp_0.tiff
+life_exp_1.tiff
+life_exp_2.tiff
+life_exp_3.tiff
+life_exp_4.tiff
+life_exp_5.tiff
+life_exp_6_last.tiff
